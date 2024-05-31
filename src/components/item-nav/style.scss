@@ -1,0 +1,87 @@
+.itNav {
+  position: fixed;
+  bottom: 0;
+  left:0;
+  z-index: $z-itemnav-mobile;
+  width: 100%;
+ // height: $itemNavbarHeight;
+  padding: 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(140%);
+
+  @include desktop() {
+    right: $desktopGutter;
+    bottom: $desktopGutter;
+    display: block;
+    width: auto;
+    left:auto;
+    //max-width: calc(var(--main-w) - 60px);
+    max-width: 60%; // this works for now otherwsie set css var for <main> width
+  }
+
+  // If it has touch evenet hide the buttons, but !NOT isf the scenn is too large
+  // Then swiping becomes a nonsense & we have space to show buttons ... so just use them!
+
+  @at-root {
+    .touchevents .item-nav button {
+      display: none;
+
+      @include desktop() {
+        display: inherit;
+      }
+    }
+  }
+
+  .item-nav-buttons {
+    display: flex;
+  }
+}
+
+.itemNavOn {
+  transform: translateY(0%);
+}
+
+.nav {
+  top: 0;
+  right: 0;
+  display: flex;
+  //  width: 100%;
+  // NO nigel height: 100%;
+  padding: $itemNavbarPadd;
+  background-color: var(--c-main);
+  color: var(--c-main-font);
+  transition: width 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include desktop() {
+    border-radius: var(--panel-radius);
+    box-shadow: 0 2px 2px rgba(#000, 0.5);
+  }
+
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+  //  justify-content: flex-end; // align items on the 'main' axis (the row)
+}
+
+.actionsNav {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 9999;
+  color: inherit;
+  display: flex;
+
+  @include desktop() {
+    position: fixed;
+    bottom: $desktopGutter + $desktopGutter + $itemNavbarHeight;
+    top: auto;
+    right: $desktopGutter;
+    color: #000;
+    flex-direction: column;
+
+    button {
+      border-radius: 50% !important;
+      // /margin: $gridGap;
+      background-color: rgba(#fff, 0.5);
+      box-shadow: 0 2px 2px rgba(#000, 0.5);
+    }
+  }
+}

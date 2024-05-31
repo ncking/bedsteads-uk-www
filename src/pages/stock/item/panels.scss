@@ -1,0 +1,60 @@
+.layout {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 90px;
+}
+
+.slider {
+  transform: translate3d(110%, 0px, 0px);
+  /* @keyframes duration | easing-function | delay | name */
+  animation-name: initialSlideIn;
+  animation-duration: .6s;
+  animation-timing-function: ease;
+  animation-delay: .2s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes initialSlideIn {
+  0% {
+    transform: translate3d(100px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+// So we can set the vertial position
+
+.panel {
+  //  @include fixBlurryTextAfterTransform();
+  width: 100%;
+  min-width: 100%; // VERY important NIGEL, otherwise its dosent *instanly calc the correct width (leaves as auto, then expands to correct when image is loaded)
+  min-height: 100vh;
+  background-color: white;
+  padding-bottom: $itemNavbarHeight;
+  position: absolute;
+  // otherwise, the out of focus panels, push down the hieight if taller than the in focus panel
+  top: 0;
+  box-shadow: -4px -9px 9px rgb(0 0 0 / 35%);
+
+  &:nth-child(3) {
+    //display: none;
+    transform: translate3d(105%, 0, 0);
+  }
+}
+
+.swiping {
+  height: var(--mobile-ht);
+  top: var(--header-h);
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+}
+
+.active {
+  height: 100vh;
+  overflow: hidden;
+}

@@ -1,0 +1,25 @@
+.wrap {
+    ul {
+        padding: 0;
+
+        &:global(.list-disc)  {
+            padding-left: 2ch;
+        }
+
+    }
+}
+
+.rights {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style-type: none;
+        margin-bottom: 16px;
+    }
+
+    span {
+        font-weight: bold;
+        ;
+    }
+}

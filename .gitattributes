@@ -1,0 +1,7 @@
+# Never turn autocrlf on, it causes nothing but headaches and sorrows.
+# git config --global core.autocrlf false
+# avoid any crlf conversion altogether if you can.
+# you can use git add --renormalize . to apply those .gitattributes settings immediately.
+
+# list all types which explicitly need that kind of conversion.
+# *.java +crlf

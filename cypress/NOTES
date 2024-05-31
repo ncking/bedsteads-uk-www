@@ -1,0 +1,26 @@
+1. Cypress no longer supports cypress.json, please remove it from your project. 
+   use cypress.config.cjs instrad
+
+2. add testing-library/cypress/add-commands  to get RTL chaining methods ... makes it simplier
+
+
+3. use the "Page Object Pattern" so we can "call" pages and reuse tests accross them ... https://www.toolsqa.com/cypress/page-object-pattern-in-cypress/
+   NOt incorgahged any more??
+
+
+4. context() is identical to describe() and 
+   specify() is identical to it(), so choose whatever terminology works best for you.
+
+
+5. Because the window is re-created with each cy.visit
+
+
+
+
+
+
+
+RECEPIES
+https://github.com/cypress-io/cypress-example-recipes/tree/master/examples
+https://github.com/cypress-io/cypress-example-recipes#stubbing-and-spying
+https://glebbahmutov.com/cypress-examples/#miscellaneous-recipes

@@ -1,0 +1,49 @@
+
+
+.favourite {
+  @at-root header & {
+    margin-left: auto;
+  }
+}
+
+.numberFavs {
+  display: inline;
+  position: relative;
+}
+
+.total {
+  top: -25px;
+  right: 15px;
+  position: absolute;
+  top: 9999;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.pulse {
+  &:before {
+    animation: pulsate 1.5s ease-out;
+    background-color: #666;
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    width: 65px;
+    height: 65px;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}

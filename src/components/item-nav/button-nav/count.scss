@@ -1,0 +1,30 @@
+
+.paginator {
+  display: none;
+  align-items: center;
+  @include desktop() {
+    display: flex;
+    
+  }
+
+  button {
+    svg{
+      transform-origin: center center;
+    }
+    &.left svg {
+      transform: rotate(180deg);
+    }
+
+    &.top svg {
+      transform: rotate(270deg);
+    }
+  }
+}
+
+.resultCount {
+  display: none;
+
+  @include desktop() {
+    display: flex;
+  }
+}

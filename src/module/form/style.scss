@@ -1,0 +1,83 @@
+.btn {
+  svg {
+    font-size: 30px;
+  }
+}
+
+.overlay {
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px) saturate(150%);
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+// .wrap {
+//   margin: auto;
+//   display: flex;
+//   height: 100vh;
+//   flex-direction: column;
+//   justify-content: center;
+
+//   p {
+//     margin-bottom: 30px;
+//   }
+//   a {
+//     text-decoration: underline;
+//     color: var(--c-primary);
+//   }
+// }
+
+
+.title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+.stockList {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.stockItemWrap {
+  display: flex;
+  align-items: center;
+  // max-height: 60px;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // white-space:pre;
+}
+.stockItem {
+  // opacity:.3;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  background-color: rgba(63, 63, 60, 0.1);
+  box-shadow: rgba(63, 63, 60, 0.6) 0px 0px 0px 1px inset; /// dropshaow to outline radius, works better tahn outline
+  color: rgb(63, 63, 60);
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.img {
+  width: 60px;
+  height: 42px;
+  border-radius: 2px;
+  background-size: 60px 42px;
+}
+
+.ref {
+  color: #000;
+  font-weight: bold;
+  padding: 0 10px;
+}

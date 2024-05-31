@@ -1,0 +1,15 @@
+
+.slideUp {
+  overflow: hidden; 
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.2s;
+  top: 20px;
+  opacity: 0;
+}
+
+
+.active {
+  top: 0px;
+  opacity: 1;
+}

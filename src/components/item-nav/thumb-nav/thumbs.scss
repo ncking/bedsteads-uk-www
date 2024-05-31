@@ -1,0 +1,68 @@
+
+
+.itemThumbs {
+  $buttonWidth: 40px;
+  $buttonWidths: 2 * $buttonWidth;
+
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+
+  @include desktop() {
+    width: auto;
+  }
+
+  @at-root {
+    .swiping .thumb-slider {
+      opacity: 0;
+    }
+  }
+
+  >div:hover {
+    cursor: pointer;
+  }
+}
+
+//
+.thumbs {
+  display: flex;
+  will-change: transform;
+
+
+  .thumb {
+    width: 100px;
+    height: 65px;
+    margin-right: 10px;
+    background-color: var(--c-img);
+    transition: opacity 0.5s;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+
+    &.portraitThumb {
+      width: 46px;
+    }
+  }
+
+}
+
+
+.slider {
+  display: block;
+  transition: opacity 0.5s ease-out;
+  animation-timing-function: ease-out;
+}
+
+.thumbs .loaded div.intrinsic-img {
+  height: 100%;
+}

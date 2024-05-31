@@ -1,0 +1,16 @@
+.main {
+  position: absolute; //@important; we need is for all absolute child els ... dont remove
+  top: var(--main-t);
+  right: 0;
+  width: var(--main-w); // we now use the <OverlayMain/> compoent which has default styling
+  left:auto; // we now use the <OverlayMain/> compoent which has default styling
+  @include desktop() {
+    top: 0;
+    min-height: 101vh; // @NK we really do ned this; ie map page needs a scrollbar forced
+  }
+}
+
+.overlay {
+  --menu-bg-c: rgba(0, 0, 0, 0.6);
+  //--menu-bd-filter: blur(4px) saturate(120%);
+}

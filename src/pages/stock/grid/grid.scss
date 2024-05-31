@@ -1,0 +1,48 @@
+.grid {
+  $tileBedBreakpoints: (
+    400: 2,
+    520: 4,
+    1440: 6,
+    2200: 8,
+  );
+
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-auto-flow: row dense;
+
+  @each $width, $col in $tileBedBreakpoints {
+    @media only screen and (min-width: #{$width}px) {
+      //width: percentage(1/$col);
+      grid-template-columns: repeat($col, 1fr);
+    }
+  }
+
+  a {
+    grid-column-end: span 2; // .tile is also used for mattress
+    grid-row: span 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: var(--c-white);
+    transition: opacity 0.4s ease-in;
+    animation: fadein 450ms;
+    overflow: hidden;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    &:nth-child(2n + 1) {
+      background-color: var(--c-grey);
+    }
+  }
+}
+
+.gridFurniture {
+  a {
+    grid-column-end: span 2;
+    &.portrait {
+      grid-column-end: span 1;
+    }
+  }
+}

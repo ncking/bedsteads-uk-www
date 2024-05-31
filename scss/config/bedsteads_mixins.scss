@@ -1,0 +1,19 @@
+@mixin icon($img, $bg: $menuBgColour, $size: 25px, $pos: 'center center') {
+    background-size: #{$size} auto;
+    cursor: pointer;
+
+    @include iconImage($img, $bg, $pos);
+
+    &:hover {
+        @include opacity(1);
+    }
+}
+
+@mixin hoverStyle() {
+    transition: background-color 250ms ease-in;
+
+    &:hover:not([disabled]) {
+        background-color: var(--c-bg-hover);
+        cursor: pointer;
+    }
+}

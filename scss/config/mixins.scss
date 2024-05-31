@@ -1,0 +1,59 @@
+// stylelint-disable --- we dont want @content being re-ordered as it is the overide 
+@mixin min($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint) + 1px) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+@mixin max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+@mixin desktop() {
+    @include min(large) {
+        @content;
+    }
+}
+
+@mixin desktopLg() {
+    @include min(full) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @include max(large) {
+        @content;
+    }
+}
+
+@mixin expandChevron {
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: "\ea50";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 16px;
+        font-family: 'icomoon' !important;
+
+        @content;
+    }
+}

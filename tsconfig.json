@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "es2022",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["webworker","dom", "es2022"],
+    "declaration": false,
+    "moduleResolution": "node", 
+    "skipLibCheck": true,
+    "jsx": "react-jsx", 
+    "allowJs": true,
+    "checkJs": true,
+    "downlevelIteration": false,
+    "declarationMap": false,
+    "outDir": ".build/",
+    "sourceMap": false,
+    "baseUrl": "./",
+    "paths": {
+      "@components" : ["./src/components"],
+      "@lib" : ["./src/lib/"],
+      "@store" : ["./src/store/"],
+      "@types" : ["./src/types/index.d"],
+      "@config": ["./src/config/embeded-client-config"],
+      "@server/*" : ["./server/*"],
+      "@server/repo/*": ["./server/dbase/repository/*"],
+    },
+    "typeRoots": [
+      "./types",
+      "./global.d.ts",
+      "./node_modules/@types"
+    ]
+  },
+  "include": ["src/**/*", "server/**/*",  "*.ts"],
+  "exclude": ["*.scss",".build", "node_modules", "./bootstrap.js"]
+}

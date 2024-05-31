@@ -1,0 +1,11 @@
+# Ignore everything
+**
+
+!./public
+!./.build
+!./package.json 
+!./package-lock.json 
+
+
+**/public/image
+**/public/sitemap

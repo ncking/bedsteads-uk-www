@@ -1,0 +1,102 @@
+// @value navOpen as navOpen from "sass-loader!../body.module.scss";
+// @value navOpen as navOpen from "sass-loader!/src/pages/_document/header-mobile/body.module.scss";
+
+.burgerButton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  width: $mobileHeaderHeight;
+  height: $mobileHeaderHeight;
+  margin-left: auto;
+  background-color: transparent;
+  color: var(--c-main-font);
+  fill: currentColor;
+
+  @include desktop() {
+    display: none;
+  }
+
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 46px;
+  height: 46px;
+  font-size: 0;
+  text-indent: -9999px;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+
+  span {
+    transition: background-color 0.25s 0.2s;
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 13px;
+    right: 13px;
+    height: 2px;
+    background: currentColor;
+
+    &:before,
+    &:after {
+      transition-duration: 0.2s, 0.2s;
+      transition-delay: 0.2s, 0s;
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      content: '';
+    }
+
+    &:before {
+      transition-property: top, transform, background-color;
+      top: -6px;
+    }
+
+    &:after {
+      transition-property: bottom, transform, background-color;
+      bottom: -6px;
+    }
+  }
+}
+
+
+/**
+** MENU OPEN
+** i like the transitions here https://www.wisedog.gr/
+**/
+
+body[data-nav] {
+
+  .hamburger {
+    span {
+      background: none;
+
+      &:before,
+      &:after {
+        background-color: currentColor;
+        transition-delay: 0s, 0.2s;
+      }
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+}
