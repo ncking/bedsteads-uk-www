@@ -9,6 +9,17 @@
   "engines": {
     "node": "22"
   },
+  "keywords": [
+    "react",
+    "preact",
+    "jamstack",
+    "node",
+    "typescript",
+    "ssr",
+    "cypress",
+    "docker",
+    "vite"
+  ],
   "sideEffects": false,
   "scripts": {
     "start": "node ./.build/init.js",
