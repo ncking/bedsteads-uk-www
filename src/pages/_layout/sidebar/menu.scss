@@ -1,0 +1,57 @@
+.menu {
+  // @NK do we need to fix this?/ its OK as is https://stackoverflow.com/questions/2861247/center-aligning-a-fixed-position-div
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  margin: auto;
+  padding: 1rem 0 0;
+
+  ul {
+    flex: 1 0 auto;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    $anchorHt: 40px;
+    flex: 1;
+    text-align: center;
+
+    &:not(.contactSocial) a {
+      display: block;
+      line-height: 2.2rem;
+      @include hoverStyle();
+    }
+
+    a:not([href^="mailto:"]) {
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.contact {
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.contactSocial {
+  margin: 16px 0
+}
+
+.active {
+  color: var(--c-white);
+}
+
+
+
+.privacy {
+  font-size: 80%;
+  flex-basis: 40px;
+  text-align: center;
+  opacity:.5;
+  // background-color: aqua;
+}

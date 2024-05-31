@@ -1,0 +1,70 @@
+# Cypress generated files #
+######################
+cypress.env.json
+cypress.meta.json
+cypress/logs/
+cypress/videos/*
+cypress/examples/*
+cypress/screenshots/*
+cypress/integration/_generated/*
+cypress/data/migration/generated/*.csv
+cypress/fixtures/example.json
+cypress/build/*
+
+# Cruft
+*~
+*#
+.#*
+.DS_Store
+@rz
+# Test
+coverage
+.eslintcache
+
+# Logs
+*.log
+assets/*
+
+# @NK 100% SURE, ignore all images & add in the few you need!!!
+*.jpg
+!/public/img/*
+vite.config.ts
+build.sh
+
+# npm & yarn
+node_modules/
+.npm
+.yarn-integrity
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock*
+
+## Built or symlinked / mounted files/dir
+public/image
+public/sitemap
+public/dist
+public/robots.txt
+public/humans.txt
+
+
+*.pbf
+*.mbtiles
+
+
+# Editor/IDE
+.idea
+component
+server.dist
+test-results/
+playwright-report/
+stats.html
+*.stackdump
+docker-compose.yml
+
+
+## env files
+*.env
+.env.*
+!.env.example
+.build

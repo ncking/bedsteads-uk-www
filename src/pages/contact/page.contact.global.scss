@@ -1,0 +1,55 @@
+#location-map {
+    display: block;
+    background-color: transparent;
+
+    @include desktop() {
+        height: 100vh;
+        padding: 0; // need to null the viewport padding, for intrinsic images
+    }
+    // Essentially Google Maps does not like the way BootStrap handels the max-width of images. So you need to put a little hack in your CSS...
+    img {
+        max-width: none;
+    }
+}
+
+.contact-details {
+    padding: 4rem 2rem;
+
+    @include desktop() {
+        --c-bg-hover: #ccc;
+
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+        max-width: 400px;
+        background-color: var(--c-white);
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    p {
+        margin: 2rem 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    
+}
+
+//
+.hours {
+    width: 100%;
+    min-height: 40vh;
+
+    .columns {
+        margin-bottom: 40px;
+        line-height: 1.6rem;
+
+    
+    }
+}

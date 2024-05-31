@@ -1,0 +1,20 @@
+.viewport {
+  width: 100%;
+  background-color: var(--c-img);
+
+  /**
+ https://dev.to/frehner/css-vh-dvh-lvh-svh-and-vw-units-27k4
+    **/
+  height: 90vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(100vh - var(--main-t));
+
+  /**/
+  max-height: calc(100vh - (var(--main-t) + 40px)); // minus 2 * the minimim gutter
+  max-height: 100svh;
+
+  @include desktop() {
+    height: auto; // for desktop its the ratio that gives the height
+    max-height: 100vh;
+    padding-top: 66%;
+  }
+}

@@ -1,0 +1,20 @@
+
+// @value sidebar as sidebar from "sass-loader!/src/pages/_document/sidebar/sidebar.scss";
+// @value mask as mask from "sass-loader!./nav-mask/style.module.scss";
+
+
+body[data-nav] {
+
+
+
+
+  .mask {
+    z-index: $z-sidenav-mobile - 10;
+    opacity: 1;
+  }
+
+
+
+}
+
+

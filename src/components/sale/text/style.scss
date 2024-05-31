@@ -1,0 +1,32 @@
+.wrap {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  //outline: 2px solid red;
+  z-index: 100;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+  font-size: 30px;
+  @media screen and (min-width: 500px) {
+    font-size: 40px;
+  }
+}
+
+.title {
+  display: block;
+  background: #917744;
+  background: linear-gradient(to right, #917744 11%, #e2d7a1 50%, #917744 91%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+
+}
+
+.strap {
+  color: #fff;
+  font-size: 50%;
+}

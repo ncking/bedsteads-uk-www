@@ -1,0 +1,42 @@
+/*
+* acheived through float grid
+* set the text panel to the bottom
+* on large set negative matgin on 1st
+* on small, flip to flexbox & change order???
+*/
+
+.resultCount {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  line-height: normal;
+}
+
+.total {
+  display: inline-block;
+  margin-top: -0.5rem;
+  font-size: 0.7rem;
+  margin-left: 5px;
+}
+
+.odometer {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  margin-left: var(--gutter-half);
+  li {
+    width: 1ch; //@nk since 2014 for all major. ch: Represents the width, or more precisely the advance measure, of the glyph "0" (zero, the Unicode character U+0030) in the element's font
+  }
+}
+
+nav .resultCount {
+  font-size: 24px;
+  margin: 0 20px;
+
+  .odometer {
+    margin: 0;
+  }
+  .total {
+    font-size: 14px;
+  }
+}

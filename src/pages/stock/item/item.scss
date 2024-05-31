@@ -1,0 +1,36 @@
+
+.gallery > div {
+  margin-bottom: 1px;
+  background-color: var(--c-img);
+}
+
+.item {
+  position: relative;
+
+  &:after {
+    height: 5px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    content: '';
+    box-shadow: $shadowHorizontalUp;
+    opacity: 0;
+    transition: opacity 0.65 ease;
+    .scrolled & {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+.copy {
+    max-width: $maxColumnWidth;
+    white-space: break-spaces;
+}
+
+
+.mainImage{
+  background-color: #dedede;
+}

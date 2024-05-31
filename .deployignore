@@ -1,0 +1,8 @@
+.vscode
+.babelrc
+.deployignore
+.editorconfig
+.gitignore
+.next
+package-lock.json
+package.json

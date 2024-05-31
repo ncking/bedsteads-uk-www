@@ -1,0 +1,36 @@
+:root {
+  --c-white: #fff;
+  --c-grey: #eee;
+  --c-img: #ccc;
+  --c-main: #26282d;
+  --c-main-font: #bbb;
+
+  // --c-main: #1f2021;
+  // --c-main-font: #eee;
+
+  --c-body: #fff;
+  --c-bg-hover: rgba(255, 255, 255, 0.08);
+  --gutterMin: 20px;
+  --gutterMax: 160px;
+  --scaler: 4vw;
+  --gutter: clamp(var(--gutterMin), var(--scaler), var(--gutterMax));
+  --gutter-half: calc(var(--gutter) / 2);
+  --gutter-quater: calc(var(--gutter) / 4);
+
+  //
+  --sidenav-w: 0px;
+  --main-w: 100vw;
+  --header-h: #{$mobileHeaderHeight};
+  --main-t: var(--header-h);
+  --mobile-ht : calc( 100vh -  var(--header-h));
+  --panel-radius:0;
+  //
+  @include desktop() {
+    --tmp-main: calc(100vh * 1.5151);
+    --sidenav-w: clamp(300px, calc(100% - var(--tmp-main)), 650px);
+    --main-w: calc(100% - calc(var(--sidenav-w) + 0px));
+    --main-t: 0px;
+    --header-h: 0px;
+    --panel-radius:5px;
+  }
+}

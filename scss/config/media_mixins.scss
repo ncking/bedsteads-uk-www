@@ -1,0 +1,29 @@
+@mixin mobileL() {
+    @media all and (min-width: 680px) {
+        @content;
+    }
+}
+
+@mixin mobileM() {
+    @media all and (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin mobileM() {
+    @media all and (min-width: 480px) {
+        @content;
+    }
+}
+
+// after, smoothscrolling or swiping out panels we get blurry text
+
+@mixin fixBlurryTextAfterTransform {
+    //TranslateZ also works as it is a hack to add hardware acceleration to the animation.
+    transform: translateZ(0);
+    // https://stackoverflow.com/questions/14677490/blurry-text-after-using-css-transform-scale-in-chrome
+    backface-visibility: hidden;
+    //Both of these properties fix the problem that you are having but some people also like to add
+    // -webkit-font-smoothing: subpixel-antialiased;
+    // this messes up the overflow; NK filter: blur(.0px)
+}

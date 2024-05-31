@@ -1,0 +1,12 @@
+.error {
+    height: 100vh;
+    min-height: 100%;
+    background: url(/img/404_knob.jpg) no-repeat top center #f4f0f2;
+    overflow:hidden; /// we need this otherwise the h1 margin pushed the bg down
+}
+
+
+.message{
+      padding: 0 var(--gutter)
+}
+

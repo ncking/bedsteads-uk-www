@@ -1,0 +1,28 @@
+
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  border-radius: 0;
+}
+
+// we want full ht & maintain ration for thr main stock image
+
+// 1. in mobile not an issue
+// 2. so we set the with of the <main/> via js
+//    We must do this accoss the **entire site, to maintain an even sidebar width
+
+// 3. Now to get a fixed menu, we need 3 wrappers
+//    a) the outer for the flex-box
+//    b) drawer for transition in/out & to give 100% width parent to the children
+//    c) the actual content which is fixed & width:inherit
+
+
+
+td,
+th {
+    vertical-align: top;
+    padding: 0.625rem 0;
+    padding-left: 0; // so its always in-line with the other text
+    text-align: left;
+}

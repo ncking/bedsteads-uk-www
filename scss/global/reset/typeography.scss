@@ -1,0 +1,56 @@
+h1,
+h2 {
+    color: rgb(36, 42, 49);
+    color: inherit;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    text-align: left;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    margin: var(--gutter) 0 0 0;
+    //font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / (maximum viewport width - minimum viewport width)));
+    // font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(28px + (12) * ((100vw - 300px) / (1900 - 300)));
+}
+
+h2 {
+    margin: 2rem 0;
+    font-size: calc(22px + (0) * ((100vw - 300px) / (1900 - 300)));
+
+    @include desktop() {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+p {
+    max-width: 600px;
+    font: inherit;
+    text-align: justify;
+    // hypenization of wrapping text
+    hyphens: auto;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    hyphenate-limit-chars: 6 3 3;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;
+    hyphenate-limit-zone: 8%;
+
+    @include desktop() {
+        text-align: initial;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+    //line-height:26px;
+}
+
+a[target="_blank"] {
+    text-decoration: underline;
+    text-decoration-color: #3d494b;
+}

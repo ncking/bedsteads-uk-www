@@ -1,0 +1,59 @@
+.speedDial {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 9999;
+  color: inherit;
+  display: flex;
+  height: $mobileHeaderHeight;
+  color: var(--c-main-font);
+
+  @include mobile{
+    --btn-width : 48px
+  }
+  @include desktop() {
+    position: fixed;
+    bottom: $desktopGutter + $desktopGutter + $itemNavbarHeight;
+    top: auto;
+    right: $desktopGutter;
+    color: #000;
+    flex-direction: column;
+    height: auto;
+
+    button {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+
+      overflow: hidden;
+      border-radius: calc($mobileHeaderHeight / 2) !important;
+      background-color: rgba(#fff, 0.6);
+      box-shadow: 0 2px 2px rgba(#000, 0.5);
+      transition: all 0.3s ease-out 0.1s;
+    }
+
+    &:hover {
+      button {
+        background-color: rgba(#fff, 1);
+        .text {
+          padding-right: 20px;
+          max-width: 200px;
+          width: 110px;
+        }
+      }
+    }
+  }
+}
+
+.text {
+  display: none;
+  @include desktop() {
+    display: inline;
+    white-space: nowrap;
+    max-width: 0;
+    transition: all 0.3s ease-out 0.1s;
+    height: 100%;
+    width: 0;
+    text-align: left;
+  }
+}
