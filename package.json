@@ -1,6 +1,6 @@
 {
   "name": "bedsteads-www",
-  "version": "5.2.32",
+  "version": "5.2.33",
   "description": "Antique Beds and furniture website",
   "author": "nigel.c.king@gmail.com",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "start": "node ./.build/init.js",
     "dev": "nuggins dev",
     "build": "nuggins build && npm run build:sw",
+    "build:docker": "nuggins build --docker",
     "build:server": "nuggins build --server",
     "build:client": "nuggins build --client",
     "build:sw": "tsx ./service-worker/build-sw.js",

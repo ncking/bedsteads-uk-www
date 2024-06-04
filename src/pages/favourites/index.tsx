@@ -3,7 +3,7 @@ import { cx } from '@raiz/browser'
 import { navigate } from '@raiz/nuggins'
 import { RESPONSE_SLICE_DATA } from '@raiz/nuggins/common'
 import { Tile, FavouriteBtn, StatsRow } from '@components'
-import { fetchApi } from '@lib'
+import { getFavourites } from '@lib'
 import { favStore } from '@store'
 import * as styles from './style.scss'
 
@@ -13,7 +13,7 @@ export default () => {
 
   useEffect(() => {
     const ids = Array.from(favs).map(item => item[0])
-    fetchApi('/favourites', { data: { ids } }).then((res) => {
+    getFavourites(ids).then((res) => {
       const loadedItems = {}
       const { favourites = [] } = res[RESPONSE_SLICE_DATA] || {}
       favourites.map(item => (loadedItems[item.id] = item))
@@ -35,6 +35,9 @@ export default () => {
       return
     }
     const item = loadedItems[id]
+    if (!item) {
+      return
+    }
     const { slug, title, info, stats, category } = item || {}
     const catSlug = category.split('_').shift()
     const url = `/${catSlug}/${slug}_${id}` /// iterate over the favs

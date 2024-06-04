@@ -1,18 +1,17 @@
-import * as endpoints from '@server/api'
 import * as serverConfig from '@server/config'
 import { templates } from '@server/lib/image'
 import * as clientConfig from "./src/config/client.js"
 //
-import storePlugin from "@raiz/nuggins/plugins/store"
-import vitePlugin from "@raiz/nuggins/plugins/vite"
-import healthPlugin from "@raiz/nuggins/plugins/healthcheck"
-import consolePlugin from "@raiz/nuggins/plugins/console"
-import swPlugin from "@raiz/nuggins/plugins/service-worker"
-import ssrPlugin from "@raiz/nuggins/plugins/ssr"
-import redirectPlugin from "@raiz/nuggins/plugins/redirect"
-import svgPlugin from "@raiz/nuggins/plugins/svg"
-import apiPlugin from "@raiz/nuggins/plugins/api"
-import staticFilesPlugin from "@raiz/nuggins/plugins/static"
+import storePlugin from "@raiz/nuggins/modules/store"
+import vitePlugin from "@raiz/nuggins/modules/vite"
+import healthPlugin from "@raiz/nuggins/modules/healthcheck"
+import consolePlugin from "@raiz/nuggins/modules/console"
+import swPlugin from "@raiz/nuggins/modules/service-worker"
+import ssrPlugin from "@raiz/nuggins/modules/ssr"
+import redirectPlugin from "@raiz/nuggins/modules/redirect"
+import svgPlugin from "@raiz/nuggins/modules/svg"
+import apiPlugin from "@raiz/nuggins/modules/api"
+import staticFilesPlugin from "@raiz/nuggins/modules/static"
 
 
 
@@ -50,8 +49,9 @@ export default ({ log }) => {
                 }
             }),
             apiPlugin({
+                dir: './server/api',
                 prefix: '/api',
-                endpoints,
+                type: 'rest',
                 debug: true,
                 expires: 0
             })

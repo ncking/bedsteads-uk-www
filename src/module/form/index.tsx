@@ -3,7 +3,7 @@ import { cx } from '@raiz/browser'
 import { getPathname } from '@raiz/nuggins'
 import { useForm } from '@raiz/react-simple-form'
 import { TelLink, EmailLink } from '@components'
-import { fetchApi, getThumbSrc } from '@lib'
+import { getThumbSrc, createEnquiry } from '@lib'
 import { CloseBtn } from './close'
 import * as formStyle from './form.scss'
 import * as styles from './style.scss'
@@ -33,7 +33,7 @@ export default ({ item }) => {
     onSubmit(data) {
       data.item = { id, title, url: getPathname() }
 
-      fetchApi('/enquiry', { data }).then((res) => {
+      createEnquiry(data).then((res) => {
         const { data } = res
         const didSubmit = !!(data && data?.success)
         setSuccess(didSubmit)
