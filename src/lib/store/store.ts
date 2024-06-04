@@ -1,5 +1,5 @@
 import { getGlobalStore } from '@raiz/nuggins'
-// import { getGlobalStore } from '@raiz/nuggins/plugins/store/client.js'
+// import { getGlobalStore } from '@raiz/nuggins/modules/store/client.js'
 import { StockItem } from '@types'
 export const NOT_FOUND = 'k'
 export const store = {}
