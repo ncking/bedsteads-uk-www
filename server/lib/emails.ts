@@ -1,8 +1,7 @@
 import { __DEV__, env } from '@raiz/cli'
 import { log } from '@raiz/core'
 import { findUnsent, markSent } from '@server/repo/enquiry'
-import nodemailer from 'nodemailer'
-import { emailTemplate } from './email'
+import { emailTemplate } from './email-template'
 
 const host = env.stringRequired('EMAIL_HOST')
 const port = env.intRequired('EMAIL_HOST_PORT')
