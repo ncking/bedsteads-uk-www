@@ -44,7 +44,6 @@ const sendEmail = async (props) => {
     return log.info('DEVELOPMENT: skipping email')
   }
 
-  console.log(rec)
   const transporter = nodemailer.createTransport({
     host,
     port,
