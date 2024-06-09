@@ -23,13 +23,6 @@ coverage
 
 # Logs
 *.log
-assets/*
-
-# @NK 100% SURE, ignore all images & add in the few you need!!!
-*.jpg
-!/public/img/*
-vite.config.ts
-build.sh
 
 # npm & yarn
 node_modules/
@@ -40,17 +33,9 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock*
 
-## Built or symlinked / mounted files/dir
-public/image
-public/sitemap
-public/dist
-public/robots.txt
-public/humans.txt
-
 
 *.pbf
 *.mbtiles
-
 
 # Editor/IDE
 .idea
@@ -67,4 +52,21 @@ docker-compose.yml
 *.env
 .env.*
 !.env.example
+
+
+
+
+# @NK our app
+*.jpg
+!/public/img/*
+vite.config.ts
+build.sh
+## Built or symlinked / mounted files/dir
+public/image
+public/sitemap
+public/dist
+public/robots.txt
+public/humans.txt
+assets/*
 .build
+.output

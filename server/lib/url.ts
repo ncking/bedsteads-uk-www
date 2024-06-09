@@ -1,5 +1,5 @@
 import { log } from '@raiz/core'
-import { domain } from '../config/index'
+import { domain } from '@server/config'
 
 export function createAbsoluteUrl(src) {
   if (src.includes('https')) {

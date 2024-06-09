@@ -27,13 +27,10 @@ const f_Ratio = 1.5
 const f_tile_portrait_width = 400 // the breakpoint for single portrait
 const f_tile_width = widths[0] // 520px
 
-export const templates = async (args, httpError) => {
-  const { template, size, pathname, srcFile, outFile, srcDir } = args
+export const templates = async ({ template, size, pathname, srcFile, outFile, srcDir }, httpError) => {
   let webP = true
   let quality = 70
 
-
-  console.log('*********', args)
   try {
     function render(args) {
       const img = sharp(srcFile)
