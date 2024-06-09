@@ -23,7 +23,7 @@ const RowTemplate = (props) => {
   )
 }
 
-export default ({ item }) => {
+ const ContactForm = ({ item }) => {
   const { id, images, title } = item
   const [success, setSuccess] = useState(null)
 
@@ -31,8 +31,7 @@ export default ({ item }) => {
     template: RowTemplate,
 
     onSubmit(data) {
-      data.item = { id, title, url: getPathname() }
-
+      data.id =  id 
       createEnquiry(data).then((res) => {
         const { data } = res
         const didSubmit = !!(data && data?.success)
@@ -48,6 +47,9 @@ export default ({ item }) => {
   if (!id || !images) {
     return null
   }
+
+
+
   let content
   if (success) {
     content = (
@@ -126,3 +128,6 @@ export default ({ item }) => {
     </div>
   )
 }
+
+
+export default ContactForm

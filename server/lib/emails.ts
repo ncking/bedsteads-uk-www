@@ -32,7 +32,7 @@ export const sendEmails = async () => {
 
 const sendEmail = async (props) => {
 
-  const { email, id, enquiry, url, title } = props
+  const { email, id, enquiry} = props
   const html = emailTemplate(props)
   const rec = {
     from: '"Website enquiry 🌐" <website@bedsteads-uk.co.uk>', // sender address
