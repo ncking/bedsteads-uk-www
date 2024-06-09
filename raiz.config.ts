@@ -23,10 +23,10 @@ export default ({ log }) => {
         modules: [// order is respected for middleware & plugins ... DEV middleware/plugins dropped in PROD, module.deps = [mudule, module2] for dependences
             vitePlugin({ config: viteOverides, ssr: false }),
             storePlugin({ data: { config: clientConfig } }),
-            healthPlugin(),
-            consolePlugin(),
-            swPlugin(),
-            ssrPlugin(),
+            // healthPlugin(),
+            // consolePlugin(),
+           // swPlugin(),
+           // ssrPlugin(),
             svgPlugin({ inline: svgs }),
             redirectPlugin({
                 '/doubles': '/double',
