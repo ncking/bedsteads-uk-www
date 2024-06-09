@@ -1,4 +1,4 @@
-import { renderToString } from 'react-dom/server';
+import { renderToString } from 'react-dom/server'
 /*
 
   "react": ["node_modules/preact/compat"],

@@ -31,7 +31,7 @@ export const sendEmails = async () => {
 
 const sendEmail = async (props) => {
   const { email, enquiry } = props
-  const html =  '' ///emailTemplate(props)
+  const html = '' /// emailTemplate(props)
   const rec = {
     from: `"Website enquiry 🌐" <${user}>`,
     to: toEmail,
