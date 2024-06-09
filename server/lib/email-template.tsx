@@ -1,12 +1,12 @@
 
 import { renderToString } from 'react-dom/server';
-import { domain } from '@server/config'
+import { createAbsoluteUrl } from '@server/lib'
 
 
 export const emailTemplate = (props) => {
 
   const { email, id, url, enquiry, title } = props
-  const fullUrl = `${domain}/${url}`
+  const fullUrl = createAbsoluteUrl(url)
 
   return renderToString(<>
     <h3>
