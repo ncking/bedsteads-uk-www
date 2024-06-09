@@ -1,7 +1,7 @@
 import { __DEV__, env } from '@raiz/cli'
 import { log } from '@raiz/core'
-import nodemailer from 'nodemailer'
 import { findUnsent, markSent } from '@server/repo/enquiry'
+import nodemailer from 'nodemailer'
 import { emailTemplate } from './email-template'
 
 const host = env.stringRequired('EMAIL_HOST')
@@ -30,11 +30,10 @@ export const sendEmails = async () => {
 }
 
 const sendEmail = async (props) => {
-
   const { email, enquiry } = props
   const html = emailTemplate(props)
   const rec = {
-    from: `"Website enquiry 🌐" <${user}>`, 
+    from: `"Website enquiry 🌐" <${user}>`,
     to: toEmail,
     subject: 'Website enquiry',
     text: enquiry,

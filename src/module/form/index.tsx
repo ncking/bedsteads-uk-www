@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { cx } from '@raiz/browser'
-import { getPathname } from '@raiz/nuggins'
 import { useForm } from '@raiz/react-simple-form'
 import { TelLink, EmailLink } from '@components'
 import { getThumbSrc, createEnquiry } from '@lib'
@@ -23,15 +22,15 @@ const RowTemplate = (props) => {
   )
 }
 
- const ContactForm = ({ item }) => {
-  const { id, images, title } = item
+const ContactForm = ({ item }) => {
+  const { id, images } = item
   const [success, setSuccess] = useState(null)
 
   const { Textarea, Field, Form, Submit, form } = useForm({
     template: RowTemplate,
 
     onSubmit(data) {
-      data.id =  id 
+      data.id = id
       createEnquiry(data).then((res) => {
         const { data } = res
         const didSubmit = !!(data && data?.success)
@@ -47,8 +46,6 @@ const RowTemplate = (props) => {
   if (!id || !images) {
     return null
   }
-
-
 
   let content
   if (success) {
@@ -128,6 +125,5 @@ const RowTemplate = (props) => {
     </div>
   )
 }
-
 
 export default ContactForm
