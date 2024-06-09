@@ -1,16 +1,14 @@
 
 import { renderToString } from 'react-dom/server';
-import { createAbsoluteUrl } from '@server/lib'
 
 
 export const emailTemplate = (props) => {
 
-  const { email, id, url, enquiry, title } = props
-  const fullUrl = createAbsoluteUrl(url)
+  const { email, enquiry, id, url, title } = props
 
   return renderToString(<>
     <h3>
-      <a href={fullUrl} target="_blank">REF: #{id}</a></h3>
+      <a href={url} target="_blank">REF: #{id}</a></h3>
     <h4>Web enquiry from: {email}</h4>
     <br />
     <br />
@@ -21,7 +19,7 @@ export const emailTemplate = (props) => {
 
     <br />
     <br />
-    link: <a href={fullUrl} target="_blank">{fullUrl}</a><br />
+    link: <a href={url} target="_blank">{url}</a><br />
     reply: <a href={`mailto:${email}?subject=${title}`}>reply</a>
   </>)
 }
