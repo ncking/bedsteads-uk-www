@@ -34,7 +34,6 @@ export const sendEmails = async () => {
 const sendEmail = async (props) => {
 
   const { email, id, enquiry, url, title } = props
-  const domain = `https://www.bedsteads-uk.co.uk`
   const html = emailTemplate(props)
   const rec = {
     from: '"Website enquiry 🌐" <website@bedsteads-uk.co.uk>', // sender address
