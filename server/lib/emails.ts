@@ -1,5 +1,6 @@
 import { __DEV__, env } from '@raiz/cli'
 import { log } from '@raiz/core'
+import nodemailer from 'nodemailer'
 import { findUnsent, markSent } from '@server/repo/enquiry'
 import { emailTemplate } from './email-template'
 
@@ -13,9 +14,7 @@ export const sendEmails = async () => {
   const data = await findUnsent()
   const arr = await data.toArray()
   log.info(`${arr.length} emails to send`)
-  if (__DEV__) {
-    //return log.info('DEVELOPMENT: skipping email')
-  }
+
   await Promise.all(
     arr.map(async (doc) => {
       try {
@@ -32,26 +31,28 @@ export const sendEmails = async () => {
 
 const sendEmail = async (props) => {
 
-  const { email, enquiry, item } = props
+  const { email, enquiry } = props
   const html = emailTemplate(props)
   const rec = {
-    from: '"Website enquiry 🌐" <website@bedsteads-uk.co.uk>', // sender address
-    to: toEmail, // list of receivers  , enquiries@bedsteads-uk.co.uk
+    from: `"Website enquiry 🌐" <${user}>`, 
+    to: toEmail,
     subject: 'Website enquiry',
     text: enquiry,
     replyTo: email,
     html,
   }
-
+  if (__DEV__) {
+    return log.info('DEVELOPMENT: skipping email')
+  }
 
   console.log(rec)
-  // const transporter = nodemailer.createTransport({
-  //   host,
-  //   port,
-  //   auth: {
-  //     user,
-  //     pass,
-  //   },
-  // })
-  // await transporter.sendMail(rec)
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    auth: {
+      user,
+      pass,
+    },
+  })
+  await transporter.sendMail(rec)
 }
