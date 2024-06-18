@@ -4,7 +4,7 @@ import { Button } from '@components'
 import config from '@config'
 import mapJson from './gmap.json'
 import mapStyle from './style/grey.json'
-import './page.contact.global.scss'
+import './styles.scss?global'
 
 export default ({ content }) => {
   mapJson.mapOptions.styles = mapStyle

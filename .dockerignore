@@ -3,6 +3,7 @@
 
 !./public
 !./.build
+!./.output
 !./package.json 
 !./package-lock.json 
 

@@ -1,3 +1,3 @@
 import { initSSR } from '@raiz/nuggins'
-import { Layout } from './pages/_layout'
+import { Layout } from './layouts/main'
 export const render = await initSSR(Layout)

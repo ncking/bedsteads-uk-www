@@ -1,2 +1,2 @@
 export { default } from '../_default'
-import './style.scss'
+import './style.scss?global'

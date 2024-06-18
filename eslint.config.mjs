@@ -37,7 +37,7 @@ export default [
             ...esJs.configs.recommended.rules,
             ...esTs.configs.recommended.rules,
             ...stylistic.configs["recommended-flat"].rules,
-            "@stylistic/quotes": ["error", "single"],
+            "@stylistic/quotes": ["error", "single", { avoidEscape: true, allowTemplateLiterals: true }], // Strings must use singlequote  @stylistic/quotes
             //'@stylistic/indent': ['error', 4],
             'import/order': [
                 'error',

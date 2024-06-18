@@ -1,11 +1,10 @@
 import { nativeScrollbar, loadScript } from '@raiz/browser'
 import { init, onloadComplete, importModule } from '@raiz/nuggins'
-import { Layout } from './pages/_layout'
-import ErrorPage from './pages/error/index'
+import { Layout } from './layouts/main'
 import '/scss/global/index.global.scss'
 
 nativeScrollbar()
-init(Layout, { ErrorPage })
+init(Layout)
 
 onloadComplete(() => {
   const host = window.location.origin
