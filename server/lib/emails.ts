@@ -40,6 +40,7 @@ const sendEmail = async (props) => {
     replyTo: email,
     html,
   }
+
   if (__DEV__) {
     return log.info('DEVELOPMENT: skipping email')
   }

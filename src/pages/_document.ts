@@ -21,7 +21,7 @@ export default async ({ response, tagRenderer, plugins, isDev }) => {
       `style-src 'self' 'unsafe-inline' ${googleDomains}`, // add in nonced tags for unsafe-inline
     ]
     response.addHttpHeader('Content-Security-Policy', rules.join(';'))
-      .addHttpHeader('feature-policy', 'accelerometer \'none\'; camera \'none\'; geolocation \'none\'; gyroscope \'none\'; magnetometer \'none\'; microphone \'none\'; payment \'none\'; usb \'none\'')
+      .addHttpHeader('feature-policy', `accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'`)
       .addHttpHeader('referrer-policy', 'strict-origin-when-cross-origin')
       .addHttpHeader('strict-transport-security', 'max-age=63072000; includeSubDomains; preload') // https://tylermade.net/2017/05/01/nginx-security-hardening/
       .addHttpHeader('x-frame-options', 'SAMEORIGIN')

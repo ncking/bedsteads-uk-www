@@ -53,7 +53,6 @@
   color: red;
   min-height: 30px;
   line-height: 30px;
-  //outline:1px solid red
 }
 
 .submit {
@@ -62,8 +61,5 @@
   background-color: var(--c-main) !important; // otherwise for <button> you get the :focus style when clicked
   color: var(--c-body);
   cursor: pointer;
-  // &[disabled] {
-  //   opacity: 0.4;
-  // }
 }
 

@@ -1,11 +1,5 @@
 import { renderToString } from 'react-dom/server'
-/*
 
-  "react": ["node_modules/preact/compat"],
-  "react-dom/test-utils": ["node_modules/preact/test-utils"],
-  "react-dom": ["node_modules/preact/compat"],
-  "react-ssr-prepass": ["node_modules/preact/preact-ssr-prepass"],
-  */
 export const emailTemplate = (props) => {
   const { email, enquiry, id, url, title } = props
 
