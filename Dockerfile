@@ -1,4 +1,4 @@
-FROM node:22.2.0-alpine3.20
+FROM node:22.3.0-alpine3.20
 RUN apk add nano curl
 WORKDIR /usr/src/app
 ARG NODE_ENV=production
