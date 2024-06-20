@@ -1,5 +1,5 @@
-import { email } from '@server/config'
 import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server'
+import { email } from '@server/config'
 import { bases } from './utils/bases'
 import { KELCOL_LINK } from './utils/constants'
 import { kelcolTiles } from './utils/kelcol'
