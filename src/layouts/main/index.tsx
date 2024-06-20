@@ -7,17 +7,15 @@ import * as style from './styles.scss'
 
 export const Layout = (props) => {
   const { route, response, request, component: Page, ...context } = props
-  const { params, id, meta = {} } = route
-  const itemPage = id === 'item' // @todo replace with <Helmet/> style
-  const gridPage = meta?.category
-  const args = { ...response?.getPageData(), route, context, params, gridPage, itemPage } // reshape the args ... need to lift this up above to @raiz/client
+
+  const args = { ...response?.getPageData(), route, context, params: route.params } // reshape the args ... need to lift this up above to @raiz/client
 
   useEffect(() => {
     burgerClose()
     scrollTo({ top: 0 })
   }, [request])
 
-  console.log(args)
+
   return (
     <>
       <HeaderMobile {...args} />

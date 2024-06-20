@@ -13,14 +13,20 @@ export const HeaderMobile = ({ route, itemPage, gridPage }) => {
   const { categoryLabel } = resultSet
   let children
 
-  const catUrl = getPathname().split('/').splice(0, 2).join('/')
-  const catLink = (
-    <Link href={catUrl} className={cx(styles.addPadding, 'logotype')}>
-      {categoryLabel}
-    </Link>
-  )
+ 
+  // const { params, id, meta = {} } = route
+  // const itemPage =  // @todo replace with <Helmet/> style
+  // const gridPage = !!meta?.category
 
-  if (itemPage) {
+
+  if ('item' === route?.id) {
+    const catUrl = getPathname().split('/').splice(0, 2).join('/')
+    const catLink = (
+      <Link href={catUrl} className={cx(styles.addPadding, 'logotype')}>
+        {categoryLabel}
+      </Link>
+    )
+  
     children = (
       <>
         <Link href={catUrl} className="logotype">
@@ -35,8 +41,12 @@ export const HeaderMobile = ({ route, itemPage, gridPage }) => {
       </>
     )
   }
-  else if (gridPage) {
-    children = catLink
+  else if (route?.meta?.category) {
+    children = (
+      <Link href={route.url} className={cx(styles.addPadding, 'logotype')}>
+        {route?.meta.label}
+      </Link>
+    )
   }
   else {
     children = (
