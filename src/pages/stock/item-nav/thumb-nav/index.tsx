@@ -19,7 +19,7 @@ const thumbClicked = (i) => {
 
 let _scroller
 
-const ItemNav = ({ images = [], id }) => {
+export const ThumbNav = ({ images = [], id }) => {
   const elRef = useRef<HTMLInputElement>(null)
   const [sliderStyle, setStyle] = useState({})
   const isMounted = useIsMounted()
@@ -93,5 +93,3 @@ const ItemNav = ({ images = [], id }) => {
     </div>
   )
 }
-
-export default ItemNav

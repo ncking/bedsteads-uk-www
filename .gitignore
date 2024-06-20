@@ -59,7 +59,7 @@ docker-compose.yml
 # @NK our app
 *.jpg
 !/public/img/*
-vite.config.ts
+vite.config*
 build.sh
 ## Built or symlinked / mounted files/dir
 public/image

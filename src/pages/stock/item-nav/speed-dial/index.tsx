@@ -2,11 +2,10 @@ import { cx } from '@raiz/browser'
 import { ContactButton, FavouriteBtn } from '@components'
 import * as styles from './style.scss'
 
-export const SpeedDial = ({ item }) => {
-  const { id } = item
+export const SpeedDial = ({ id }) => {
   return (
     <div className={cx(styles.speedDial)}>
-      <ContactButton item={item}>
+      <ContactButton id={id}>
         <div className={styles.text}>contact us</div>
       </ContactButton>
       <FavouriteBtn

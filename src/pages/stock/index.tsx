@@ -1,59 +1,52 @@
-import { useEffect, useRef } from 'react'
-import { PanelStack, ItemNav } from '@components'
-import { setCurrentItem, addItemToStore, getResultSet } from '@lib'
+import { useRef, useEffect } from 'react'
+import { PanelStack } from '@components'
+import { stockStore } from '@store'
 import Grid from './grid'
-import Item from './item'
-
-let lastItemMetrics
+import { ItemLayout } from './item-layout'
+import { ItemNav } from './item-nav'
 
 const StockLayout = (props) => {
-  const { filters, item: ajaxRequestedItem } = props
-  const { id, category, size } = filters
+  const { item: ajaxRequestedItem, route } = props
   const gridRef = useRef<HTMLDivElement>(null!)
-
-  /*
-     * Item
-     *
-     *  1. sold/deleted & DOM request ... will be in props from the start as imbedded in page
-     *  2. Ajax request, props.item will initall be nill ... as its ajaxa must be in tile list ... so just read the basics
-     *     ... then on ajax complete ajaxRequestedItem will be pupulated & re-rendered with full data
-     */
-
-  if (ajaxRequestedItem) {
-    addItemToStore(ajaxRequestedItem) // we do this so that once loaded its not constantly flashing from empty
-  }
-  const item = setCurrentItem(id)
+  const filters = { ...route.meta, ...route.params }
+  const { id } = filters
+  if (ajaxRequestedItem) stockStore.add(ajaxRequestedItem) // we do this so that once loaded its not constantly flashing from empty
+  const { resultSet, stock, item } = stockStore.initSync(filters)
 
   useEffect(() => {
-    const metrics = getResultSet()
-    /**
-         * So if w have last item filters & they match the gid filters get the position ...
-         * The edge cases non really ... in mobile the nav option just isnt there (no menu on item page)
-         * In desktop it means go to grid, will alawys put you in the scroll pos , 1st time ... which is what we want (kind of)
-         */
-    if (lastItemMetrics && !id && metrics.key === lastItemMetrics.key) {
-      const { gridIdx = 0 } = lastItemMetrics
-      const el = gridRef.current.children[gridIdx]
-      el
-      && setTimeout(() => {
-        // take the position here >> after render
-        const { top } = el.getBoundingClientRect()
-        const ypos = Math.max(0, top - 100)
-        window.scrollTo(0, ypos)
-      }, 0)
-    }
-    lastItemMetrics = { ...metrics, ypos: window.scrollY }
+    stockStore.updateState()
   }, [id])
 
   return (
     <>
       <PanelStack active={id}>
-        <Grid {...{ category, size }} ref={gridRef} />
-        <Item item={item} />
+        <Grid {...filters} stock={stock} ref={gridRef} />
+        {item && <ItemLayout item={item} />}
       </PanelStack>
-      <ItemNav item={id && item} filterCategory={category || size} />
+      {item && <ItemNav item={item} resultSet={resultSet} />}
     </>
   )
 }
 
 export default StockLayout
+
+// useEffect(() => {
+
+//   /**
+//        * So if w have last item filters & they match the gid filters get the position ...
+//        * The edge cases non really ... in mobile the nav option just isnt there (no menu on item page)
+//        * In desktop it means go to grid, will alawys put you in the scroll pos , 1st time ... which is what we want (kind of)
+//        */
+//   if (lastItemMetrics && !id && resultSet.categoryLabel === lastItemMetrics.categoryLabel) {
+//     const { gridIdx = 0 } = lastItemMetrics
+//     const el = gridRef.current.children[gridIdx]
+//     el
+//       && setTimeout(() => {
+//         // take the position here >> after render
+//         const { top } = el.getBoundingClientRect()
+//         const ypos = Math.max(0, top - 100)
+//         window.scrollTo(0, ypos)
+//       }, 0)
+//   }
+//   lastItemMetrics = { ...resultSet, ypos: window.scrollY }
+// }, [id])

@@ -1,1 +1,2 @@
-export * from './store-favourites'
+export * from './favourites'
+export * from './stock'

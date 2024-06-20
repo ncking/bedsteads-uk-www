@@ -37,7 +37,13 @@ export const FavouriteBtnTotal = (props) => {
   )
 }
 
-export const FavouriteBtn = (props) => {
+interface Props {
+  id: number
+  onClick?: CallableFunction
+  render?: CallableFunction
+  className?: string
+}
+export const FavouriteBtn = (props: Props) => {
   const [, trigger] = useState({})
   const { id, className, onClick, render = noop } = props
   const isFave = favStore.isFavourite(id)
