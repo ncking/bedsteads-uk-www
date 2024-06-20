@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { TOUCH_DEVICE } from '@raiz/browser'
 import { SwipeStack, useWindowSize } from '@raiz/react'
-import { findItems, next, prev, itemAnalyics } from '@lib'
+import { next, prev, itemAnalyics } from '@lib'
+import { stockStore } from '@store'
 import { ItemPage } from './item-page'
 import * as styles from './panels.scss'
 
@@ -18,8 +19,7 @@ const onChange = (dir) => {
  */
 
 let hasLoaded = false
-const ItemPageLayout = (props) => {
-  const { item } = props
+export const ItemLayout = ({ item }) => {
   const { isDesktop } = useWindowSize()
 
   useEffect(() => {
@@ -28,21 +28,20 @@ const ItemPageLayout = (props) => {
     // for inital load boath show the SEO/SSR single product
     hasLoaded = true
   }, [])
+
   const isSwiper = !isDesktop && TOUCH_DEVICE
   const hasLoadedAndMobile = hasLoaded && isSwiper
   return hasLoadedAndMobile
     ? (
       <SwipeStack
         key="swipestack"
-        items={findItems(item)}
+        items={stockStore.getSwipSet()}
         styles={styles}
         Panel={ItemPage}
         onChange={onChange}
       />
       )
     : (
-      <ItemPage key="product" item={item} activePanel={true} />
+      <ItemPage key="product" activePanel={true} item={item} />
       )
 }
-
-export default ItemPageLayout

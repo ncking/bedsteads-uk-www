@@ -19,7 +19,8 @@
     "paths": {
       "@components" : ["./src/components"],
       "@lib" : ["./src/lib/"],
-      "@store" : ["./src/store/"],
+      "@store" : ["./src/store/index"],
+      "@store/*" : ["./src/store/*"],
       "@types" : ["./src/types/index.d"],
       "@config": ["./src/config/embeded-client-config"],
       "@server/*" : ["./server/*"],

@@ -1,13 +1,14 @@
 import { cx } from '@raiz/browser'
 import { loadChunk, Overlay } from '@raiz/nuggins'
 import { Button } from '@components'
+import { stockStore } from '@store'
 import * as styles from './style.scss'
 
-export const ContactButton = ({ item, ...rest }) => {
+export const ContactButton = ({ children, id }) => {
   const handleClick = async () => {
     const ContactForm = await loadChunk('form')
-    ContactForm
-    && Overlay.show(<ContactForm item={item} />, {
+
+    ContactForm && Overlay.show(<ContactForm item={stockStore.getItemById(id)} />, {
       className: styles.overlay,
       close: 'esc',
     })
@@ -15,7 +16,7 @@ export const ContactButton = ({ item, ...rest }) => {
 
   return (
     <Button
-      {...rest}
+      children={children}
       icon="contact"
       viewbox="0 -960 960 960"
       className={cx(styles.btn)}

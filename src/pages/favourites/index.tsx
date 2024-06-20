@@ -55,8 +55,8 @@ export default () => {
               DELETED
             </h2>
             <FavouriteBtn
-              className={styles.fav}
               id={id}
+              className={styles.fav}
               onClick={e => removeFadeOut(id, e)}
             />
           </div>
@@ -72,8 +72,8 @@ export default () => {
         <div className={styles.details}>
           <h2>{title}</h2>
           <FavouriteBtn
-            className={styles.fav}
             id={id}
+            className={styles.fav}
             onClick={(e) => {
               e.stopPropagation()
               removeFadeOut(id, e)

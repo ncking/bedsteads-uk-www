@@ -1,29 +1,27 @@
 import { setUnsetBodyClass, cx } from '@raiz/browser'
 import { Link, getPathname } from '@raiz/nuggins'
 import { HeaderSticky } from '@raiz/react'
-
 import { Button, ResultCount } from '@components'
+import { stockStore } from '@store/stock'
 import BurgerButton from '../burger-button'
 import NavMask from '../nav-mask'
 import * as styles from './style.scss'
 export * from '../menu'
 
-export const HeaderMobile = (props) => {
-  const { id, category, size, name: routeName } = props
-  let catLabel
-        = 'furniture' === category
-          ? 'antique furniture'
-          : `${size || category} beds`
-
+export const HeaderMobile = ({ route }) => {
+  const resultSet = stockStore.useStore(s => s.resultSet)
+  const { categoryLabel } = resultSet
+  const itemPage = route?.id === 'item'
   let children
+
   const catUrl = getPathname().split('/').splice(0, 2).join('/')
   const catLink = (
     <Link href={catUrl} className={cx(styles.addPadding, 'logotype')}>
-      {catLabel}
+      {categoryLabel}
     </Link>
   )
 
-  if (id) {
+  if (itemPage) {
     children = (
       <>
         <Link href={catUrl} className="logotype">
@@ -32,13 +30,13 @@ export const HeaderMobile = (props) => {
             className={styles.backBtn}
             ariaLabel="back to list"
           />
-          {catLabel}
+          {categoryLabel}
         </Link>
         <ResultCount />
       </>
     )
   }
-  else if (category) {
+  else if (categoryLabel) {
     children = catLink
   }
   else {
@@ -49,7 +47,7 @@ export const HeaderMobile = (props) => {
     )
   }
 
-  const enableStickyHeader = routeName === 'home'
+  const enableStickyHeader = route?.id === 'home'
   setUnsetBodyClass(styles.fullHeight, enableStickyHeader)
   return (
     <>
@@ -61,7 +59,7 @@ export const HeaderMobile = (props) => {
       >
         {children}
       </HeaderSticky>
-      {!id && <BurgerButton />}
+      {!itemPage && <BurgerButton />}
     </>
   )
 }

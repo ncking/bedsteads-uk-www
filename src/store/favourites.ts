@@ -1,6 +1,7 @@
 import { isEqualShallow, localStorageSimple } from '@raiz/browser'
 import { createStore } from '@raiz/react-simple-store'
-import { analyticsFav, findItem } from '@lib'
+import { analyticsFav } from '@lib'
+import { stockStore } from '@store'
 
 const storage = localStorageSimple('BEDSTEADS_FAVS')
 const KEY = 'favourites'
@@ -30,7 +31,7 @@ const actions = (set) => {
       return remove(id)
     }
     else {
-      const item = findItem(id)
+      const item = stockStore.getItemById(id)
       if (item) {
         favourites.set(id, { created: Date.now() })
         analyticsFav({ id, total: getTotal() })

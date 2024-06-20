@@ -8,7 +8,7 @@ const args = {
   icon: 'arrow',
 }
 
-const ButtonNav = ({ filterCategory }) => {
+export const ButtonNav = ({ categoryLabel }) => {
   const handleKeyUp = ({ keyCode }) => {
     if (keyCode === KEY_LEFT) {
       prev()
@@ -27,13 +27,13 @@ const ButtonNav = ({ filterCategory }) => {
 
         <Button
           onClick={() => (prev(), itemAnalyics('prev button'))}
-          ariaLabel={`previous ${filterCategory}`}
+          ariaLabel={`previous ${categoryLabel}`}
           className={styles.left}
           {...args}
         />
         <Button
           onClick={() => (next(), itemAnalyics('next button'))}
-          ariaLabel={`next ${filterCategory}`}
+          ariaLabel={`next ${categoryLabel}`}
           {...args}
         />
         <Button
@@ -49,5 +49,3 @@ const ButtonNav = ({ filterCategory }) => {
     </KeyboardLayer>
   )
 }
-
-export default ButtonNav

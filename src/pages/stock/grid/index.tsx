@@ -1,27 +1,27 @@
 import { forwardRef } from 'react'
 import { cx } from '@raiz/browser'
 import { Tile } from '@components'
-import { getFilteredStock } from '@lib'
 import * as styles from './grid.scss'
 
 interface Props {
   category: string
   size: number
+  stock: [Record<string, any>]
 }
 
 const Grid = forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { category: filterCategory, size: filterSize } = props
+  const { category, size, stock } = props
   /**
-     * STOCK always there !!!
-     * Please dont overthink this .... this is ***CORRECT
-     */
-  const baseDir = filterSize || filterCategory
+   * STOCK always there !!!
+   * Please dont overthink this .... this is ***CORRECT
+   */
+  const baseDir = size || category
 
-  const tiles = getFilteredStock().map((item) => {
+  const tiles = stock.map((item) => {
     const { id, slug } = item
     return (
       <Tile
-        key={`${filterCategory}:${id}:${filterSize}`}
+        key={`${category}:${id}:${size}`} /** Key is not just ID, otherwise on category change, some tiles remain ... as expected, but looks janky  */
         {...item}
         url={`/${baseDir}/${slug}_${id}`}
         classPortrait={styles.portrait}
@@ -34,7 +34,7 @@ const Grid = forwardRef<HTMLDivElement, Props>((props, ref) => {
       ref={ref}
       className={cx(
         styles.grid,
-        filterCategory === 'furniture' ? styles.gridFurniture : '',
+        category === 'furniture' ? styles.gridFurniture : '',
       )}
     >
       {tiles}

@@ -1,21 +1,18 @@
-import React from 'react'
 import { arrayValues } from '@raiz/browser'
 import { BedsteadsImage, SlideUp, SaleStockBanner } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
-import * as I from '@types'
 import Stats from './stats'
 import * as styles from './item.scss'
 import * as statusStyles from './status.scss'
 
-interface Props {
-  item: I.StockItem
-  activePanel?: boolean
-}
 /**
  * So its **alkways in the store, either from Document request or
  * from the embeded store
  */
-export const ItemPage: React.FC<Props> = ({ item = {}, activePanel }) => {
+export const ItemPage = ({ activePanel, item }) => {
+  if (!item) {
+    return null
+  }
   const {
     id,
     images = [],
@@ -23,7 +20,7 @@ export const ItemPage: React.FC<Props> = ({ item = {}, activePanel }) => {
     description,
     status,
     info,
-  } = item as I.StockItem
+  } = item
   const [mainImage, ...otherImages] = images
   // @ nk this is the cause of all my empty images problems
   if (!arrayValues(images)) {
