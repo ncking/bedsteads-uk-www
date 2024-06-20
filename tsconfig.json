@@ -23,8 +23,10 @@
       "@store/*" : ["./src/store/*"],
       "@types" : ["./src/types/index.d"],
       "@config": ["./src/config/embeded-client-config"],
-      "@server/*" : ["./server/*"],
-      "@server/repo/*": ["./server/dbase/repository/*"]
+      "@common": ["./src/common"],
+      "@server" : ["./src/server/index"],
+      "@server/*" : ["./src/server/*"],
+      "@server/repo/*": ["./src/server/dbase/repository/*"]
       
     },
     "typeRoots": [

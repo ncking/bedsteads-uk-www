@@ -1,4 +1,4 @@
-import { sendEmails } from '@server/lib'
+import { sendEmails } from '@server'
 import { saveEnquiry } from '@server/repo/enquiry'
 import { findOnePublic, getCanonical } from '@server/repo/stock'
 

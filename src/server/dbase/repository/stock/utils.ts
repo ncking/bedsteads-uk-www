@@ -1,4 +1,4 @@
-import { createAbsoluteUrl } from '@server/lib'
+import { createAbsoluteUrl } from '@server'
 
 export const getCanonical = (model) => {
   const { category, slug, id } = model

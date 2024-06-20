@@ -18,8 +18,8 @@ const NavLink = ({ id, noLi = false, ...rest }) => {
   return (
     <li
       className={
-                getPathname().startsWith(url) ? stylesMenu.active : undefined
-            }
+        getPathname().startsWith(url) ? stylesMenu.active : undefined
+      }
     >
       {link}
     </li>
@@ -90,14 +90,7 @@ export const Sidebar = () => {
         </ul>
 
         <footer className={stylesMenu.privacy}>
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          {' '}
-          {company}
-          {' '}
-          ·
-          {' '}
+          {`©${new Date().getFullYear()} ${company} . `}
           <NavLink id="privacy" noLi={true} />
         </footer>
       </div>

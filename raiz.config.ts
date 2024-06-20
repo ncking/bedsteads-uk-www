@@ -1,5 +1,5 @@
 import * as serverConfig from '@server/config'
-import { templates } from '@server/lib/image'
+import { templates } from '@server/image'
 import * as clientConfig from "./src/config/client.js"
 //
 import storePlugin from "@raiz/nuggins/modules/store"
@@ -49,7 +49,7 @@ export default ({ log }) => {
                 }
             }),
             apiPlugin({
-                dir: './server/api',
+                dir: './src/api',
                 prefix: '/api',
                 type: 'rest',
                 debug: true,
