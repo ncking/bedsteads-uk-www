@@ -47,14 +47,8 @@ export const stockImageTileSrc = ({
  * If its a landscape portrait we use the tag s_0
  * else we use the tile src
  */
-export const stockGallerySrc = ({ id, src }) => {
-  return getTaggedImagePath(id, src, 'gallery')
-}
+export const stockGallerySrc = ({ id, src }) => getTaggedImagePath(id, src, 'gallery')
 
-export const getMainImageSrc = ({ id, src, r = 0 }) => {
-  return getTaggedImagePath(id, src, r > 100 ? 'main-c' : 'main')
-}
+export const getMainImageSrc = ({ id, src, r = 0 }) => getTaggedImagePath(id, src, r > 100 ? 'main-c' : 'main')
 
-export const getThumbSrc = ({ id, src, r }) => {
-  return getTaggedImagePath(id, src, r > 90 ? 'thumb-p' : 'thumb')
-}
+export const getThumbSrc = ({ id, src, r }) => getTaggedImagePath(id, src, r > 90 ? 'thumb-p' : 'thumb')
