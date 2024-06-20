@@ -1,6 +1,5 @@
-import { createSockImagePath } from '@server/common'
 import * as serverConfig from '@server/config'
-import { createAbsoluteUrl } from '@server/lib'
+import { createAbsoluteUrl, createSockImagePath } from '@server'
 const { company } = serverConfig
 
 export const createJsonLd = (props) => {

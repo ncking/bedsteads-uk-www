@@ -3,7 +3,7 @@ import {
   createAbsoluteUrl,
   createOgUrl,
   createTwitterImg,
-} from '@server/lib'
+} from '@server'
 
 export default async ({ response, request }) => {
   const description = 'Large range of antique beds, French beds, iron Beds & antique furniture. 100s of antique beds on show at our Somerset showroom, South West of Bristol'

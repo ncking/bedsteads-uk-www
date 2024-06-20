@@ -1,5 +1,5 @@
-export * from '../../src/config/client'
-import { domain, company } from '../../src/config/client'
+export * from 'src/config/client'
+import { domain, company } from 'src/config/client'
 
 /**
  * Favicons stuff

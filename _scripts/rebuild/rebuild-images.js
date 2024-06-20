@@ -1,7 +1,7 @@
 import * as dbase from '#dbase'
-import { getImageAssetFilePath, getimagesize, stockImageUrlRegex, renderStockImage } from "@server/lib"
+import { getImageAssetFilePath, getimagesize, stockImageUrlRegex, renderStockImage, stockImageTileSrc, stockGallerySrc, getMainImageSrc, getThumbSrc  } from "@server"
 import { fixSlashes } from '@raiz/cli'
-import { stockImageTileSrc, stockGallerySrc, getMainImageSrc, getThumbSrc } from '@server/common'
+
 /**
  * loop all beds % find if we have images to create the
  * thumbs & sizes

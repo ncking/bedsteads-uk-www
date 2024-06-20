@@ -8,7 +8,7 @@ import {
   facebookLink,
   instagramLink,
 } from '@server/config'
-import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server/lib'
+import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server'
 
 const content = `
     <div data-jsx="gmap" class="viewport"></div>

@@ -1,7 +1,6 @@
 import { parse } from 'node:url'
 import { log } from '@raiz/core'
-import { createSockImagePath } from '@server/common'
-import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server/lib'
+import { organizationJsonLd, createAbsoluteUrl, createOgUrl, createSockImagePath} from '@server'
 
 import {
   findOnePublic,
