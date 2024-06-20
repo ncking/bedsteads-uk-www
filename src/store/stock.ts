@@ -6,7 +6,7 @@ const actions = (set) => {
   /**
    * Run @ creation only
    */
-  const stockArray = getGlobalStore().stock || []
+  const stockArray = getGlobalStore()?.stock || []
   const idMap = {}
   stockArray.map(item => add(item))
   /**
