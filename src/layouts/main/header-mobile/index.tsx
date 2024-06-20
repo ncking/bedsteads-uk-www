@@ -8,10 +8,9 @@ import NavMask from '../nav-mask'
 import * as styles from './style.scss'
 export * from '../menu'
 
-export const HeaderMobile = ({ route }) => {
+export const HeaderMobile = ({ route, itemPage, gridPage }) => {
   const resultSet = stockStore.useStore(s => s.resultSet)
   const { categoryLabel } = resultSet
-  const itemPage = route?.id === 'item'
   let children
 
   const catUrl = getPathname().split('/').splice(0, 2).join('/')
@@ -36,7 +35,7 @@ export const HeaderMobile = ({ route }) => {
       </>
     )
   }
-  else if (categoryLabel) {
+  else if (gridPage) {
     children = catLink
   }
   else {
