@@ -65,8 +65,9 @@ build.sh
 public/image
 public/sitemap
 public/dist
-public/robots.txt
-public/humans.txt
+public/google*.html
+# public/robots.txt
+# public/humans.txt
 assets/*
 .build
 .output
