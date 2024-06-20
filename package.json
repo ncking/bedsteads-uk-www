@@ -33,9 +33,9 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "format": "prettier --write \"{src,test}/**/*.{js,ts,tsx}\"",
-    "lint": "eslint ./src ./server",
+    "lint": "eslint ./src",
     "lint:css": "stylelint --allow-empty-input \"**/*.{css,scss}\"",
-    "lint:fix": "eslint ./src ./server --fix"
+    "lint:fix": "eslint ./src  --fix"
   },
   "overrides": {
     "@testing-library/cypress": {

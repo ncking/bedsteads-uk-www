@@ -1,5 +1,5 @@
-import { company } from '@server/config'
 import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server'
+import { company } from '@server/config'
 
 export default async ({ request, response }) => {
   const title = `Favourite items from  ${company}`

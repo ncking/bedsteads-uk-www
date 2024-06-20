@@ -4,7 +4,7 @@ import { createStore } from '@raiz/react-simple-store'
 
 const actions = (set) => {
   /**
-   * Run @ creation only 
+   * Run @ creation only
    */
   const stockArray = getGlobalStore().stock || []
   const idMap = {}
@@ -63,11 +63,11 @@ const actions = (set) => {
     initSync({ id, size, category }) { // id, category, size
       /**
        * -1 NOT '0'
-       * if its not found (sold)  ... 
-       *   a) ++ yeild '0' 
-       *   b) -- yeilds -2 >> maxPos 
+       * if its not found (sold)  ...
+       *   a) ++ yeild '0'
+       *   b) -- yeilds -2 >> maxPos
        */
-      idx = -1 
+      idx = -1
       item = getItemById(id)
       filteredStock = []
       id = parseInt(id)
