@@ -15,7 +15,6 @@ export const Layout = (props) => {
     scrollTo({ top: 0 })
   }, [request])
 
-
   return (
     <>
       <HeaderMobile {...args} />
