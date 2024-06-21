@@ -1,21 +1,21 @@
 import { forwardRef } from 'react'
 import { cx } from '@raiz/browser'
 import { Tile } from '@components'
+import type { Stock } from '@types'
 import * as styles from './grid.scss'
-import type { StockArray } from '@types'
 
 interface Props {
   category: string
   size: number
-  stock: StockArray
+  stock: Stock[]
 }
 
 const Grid = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { category, size, stock } = props
   /**
-   * STOCK always there !!!
-   * Please dont overthink this .... this is ***CORRECT
-   */
+     * STOCK always there !!!
+     * Please dont overthink this .... this is ***CORRECT
+     */
   const baseDir = size || category
 
   const tiles = stock.map((item) => {

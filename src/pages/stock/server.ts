@@ -45,15 +45,15 @@ export default async ({ response, route, request }) => {
     const itemJsonLd = createJsonLd(model)
     const [sentanceOne, sentanceTwo] = fullDesc.split('.')
     const description
-            = sentanceOne.length < 50
-              ? `${String(sentanceOne).trim()}. ${String(sentanceTwo).trim()}`
-              : sentanceOne
+      = sentanceOne.length < 50
+        ? `${String(sentanceOne).trim()}. ${String(sentanceTwo).trim()}`
+        : sentanceOne
     const sockImagePath = createSockImagePath(id)
     const mainImageUrl = createAbsoluteUrl(
-            `${sockImagePath}/${images[0].src}`.replace(
-              '.jpg',
-              ',t_main,s_1.jpg',
-            ),
+      `${sockImagePath}/${images[0].src}`.replace(
+        '.jpg',
+        ',t_main,s_1.jpg',
+      ),
     )
 
     response
@@ -70,13 +70,13 @@ export default async ({ response, route, request }) => {
         url: canonical,
         site_name: 'Bedsteads',
         image: mainImageUrl,
-      }) // min 200 x 200 px
+      })
   }
   else {
     const tag = size || category
 
     const defaultDesc
-            = 'Large range of antique beds, French beds, iron Beds &amp; antique furniture. 100s of antique beds on show at our Somerset showroom, South West of Bristol'
+      = 'Large range of antique beds, French beds, iron Beds &amp; antique furniture. 100s of antique beds on show at our Somerset showroom, South West of Bristol'
     const titles = {
       antique: [
         'Antique beds | Antique French beds | Iron Beds | Wood Beds',
@@ -124,7 +124,7 @@ export default async ({ response, route, request }) => {
           url: createAbsoluteUrl(pathname),
           site_name: 'Bedsteads',
           image: createOgUrl(tag),
-        }) // min 200 x 200 px
+        })
     }
   }
 }

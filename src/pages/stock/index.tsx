@@ -10,7 +10,7 @@ const StockPage = (props) => {
   const gridRef = useRef<HTMLDivElement>(null!)
   const { id } = filters
   if (ajaxRequestedItem) stockStore.add(ajaxRequestedItem) // we do this so that once loaded its not constantly flashing from empty
-  const { resultSet, stock, item } = stockStore.initSync(filters)
+  const { stock, item } = stockStore.initSync(filters)
 
   useEffect(() => {
     stockStore.updateState()
@@ -22,7 +22,7 @@ const StockPage = (props) => {
         <Grid {...filters} stock={stock} ref={gridRef} />
         {item && <ItemLayout item={item} />}
       </PanelStack>
-      {item && <ItemNav item={item} resultSet={resultSet} />}
+      {item && <ItemNav item={item} />}
     </>
   )
 }

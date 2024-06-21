@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { StatsRow, SalePrice, isSaleItem } from '@components'
-import { StockItem } from '@types'
+import type { Stock } from '@types'
 import * as styles from './stats.scss'
 
 interface Props {
-  item: StockItem
+  item: Stock
 }
 
 const Stats: FC<Props> = ({ item }) => {

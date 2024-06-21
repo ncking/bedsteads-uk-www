@@ -50,11 +50,11 @@ export const createCompositeImage = async ({
     })
   })
 
-  await Promise.allSettled(buffers).then((resolvedBuffer) => {
-    resolvedBuffer.map((buff, i) => {
-      imagesWithCoords[i].input = buff.value
-    })
+  const results: any[] = await Promise.allSettled(buffers)
+  results.map((buff, i) => {
+    imagesWithCoords[i].input = buff.value
   })
+
   /**
      * We MUST flatten to a new image, otherwise checks like canvas size
      * will ref the composite parts;

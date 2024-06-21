@@ -9,11 +9,8 @@ export const StatsRow = ({ item, value, label }) => {
     value = (
       <>
         <span className={styles.was}>
-          original
-          {priceWasFmt}
+          {`${priceWasFmt}  `}
         </span>
-        ,
-        {' '}
         {value}
       </>
     )
