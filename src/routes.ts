@@ -93,7 +93,7 @@ export const routes = [
     id: 'furniture',
     meta: {
       title: 'antique furniture',
-      label: 'antique furniture',
+      label: 'furniture',
       category: 'furniture',
     },
   },

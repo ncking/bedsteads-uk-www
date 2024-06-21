@@ -8,55 +8,49 @@ import NavMask from '../nav-mask'
 import * as styles from './style.scss'
 export * from '../menu'
 
-export const HeaderMobile = ({ route, itemPage, gridPage }) => {
-  const resultSet = stockStore.useStore(s => s.resultSet)
-  const { categoryLabel } = resultSet
+export const HeaderMobile = ({ route, filters }) => {
+
+  const { meta = {} } = route
+  const itemPage = filters?.id// @todo replace with <Helmet/> style
+  const gridPage = !!meta?.category
+  const enableStickyHeader = route?.id === 'home'
+  const catUrl = getPathname().split('/').splice(0, 2).join('/')
+  const categoryLabel =   'furniture' === filters.category
+  ? 'furniture'
+  : `${filters.size || filters.category} beds`
+  /**
+   * 
+   */
   let children
+  if (itemPage) {
+    children = <>
+      <Link href={catUrl} className="logotype">
+        <Button
+          icon="arrow"
+          className={styles.backBtn}
+          ariaLabel="back to list"
+        />
+        {categoryLabel}
+      </Link>
+      <ResultCount />
+    </>
 
- 
-  // const { params, id, meta = {} } = route
-  // const itemPage =  // @todo replace with <Helmet/> style
-  // const gridPage = !!meta?.category
-
-
-  if ('item' === route?.id) {
-    const catUrl = getPathname().split('/').splice(0, 2).join('/')
-    const catLink = (
+  } else if (gridPage) {
+    children = <>
       <Link href={catUrl} className={cx(styles.addPadding, 'logotype')}>
         {categoryLabel}
       </Link>
-    )
-  
-    children = (
-      <>
-        <Link href={catUrl} className="logotype">
-          <Button
-            icon="arrow"
-            className={styles.backBtn}
-            ariaLabel="back to list"
-          />
-          {categoryLabel}
-        </Link>
-        <ResultCount />
-      </>
-    )
-  }
-  else if (route?.meta?.category) {
-    children = (
-      <Link href={route.url} className={cx(styles.addPadding, 'logotype')}>
-        {route?.meta.label}
-      </Link>
-    )
-  }
-  else {
-    children = (
-      <Link href="/" className={cx(styles.addPadding, 'logotype')}>
+      <BurgerButton />
+    </>
+  } else {
+    children = <>
+     <Link href="/" className={cx(styles.addPadding, 'logotype')}>
         BEDSTEADS
       </Link>
-    )
+      <BurgerButton />
+    </>
   }
 
-  const enableStickyHeader = route?.id === 'home'
   setUnsetBodyClass(styles.fullHeight, enableStickyHeader)
   return (
     <>
@@ -68,7 +62,6 @@ export const HeaderMobile = ({ route, itemPage, gridPage }) => {
       >
         {children}
       </HeaderSticky>
-      {!itemPage && <BurgerButton />}
     </>
   )
 }

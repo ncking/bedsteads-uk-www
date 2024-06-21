@@ -7,8 +7,8 @@ import * as style from './styles.scss'
 
 export const Layout = (props) => {
   const { route, response, request, component: Page, ...context } = props
-
-  const args = { ...response?.getPageData(), route, context, params: route.params } // reshape the args ... need to lift this up above to @raiz/client
+  const filters = { ...route.meta, ...route.params }
+  const args = { ...response?.getPageData(), route, context, params: route.params, filters } // reshape the args ... need to lift this up above to @raiz/client
 
   useEffect(() => {
     burgerClose()
