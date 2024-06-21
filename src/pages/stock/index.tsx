@@ -5,7 +5,7 @@ import Grid from './grid'
 import { ItemLayout } from './item-layout'
 import { ItemNav } from './item-nav'
 
-const StockLayout = (props) => {
+const StockPage = (props) => {
   const { item: ajaxRequestedItem, filters } = props
   const gridRef = useRef<HTMLDivElement>(null!)
   
@@ -28,4 +28,4 @@ const StockLayout = (props) => {
   )
 }
 
-export default StockLayout
+export default StockPage

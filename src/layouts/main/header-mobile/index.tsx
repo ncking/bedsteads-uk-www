@@ -2,7 +2,6 @@ import { setUnsetBodyClass, cx } from '@raiz/browser'
 import { Link, getPathname } from '@raiz/nuggins'
 import { HeaderSticky } from '@raiz/react'
 import { Button, ResultCount } from '@components'
-import { stockStore } from '@store/stock'
 import BurgerButton from '../burger-button'
 import NavMask from '../nav-mask'
 import * as styles from './style.scss'
@@ -15,7 +14,7 @@ export const HeaderMobile = ({ route, filters }) => {
   const gridPage = !!meta?.category
   const enableStickyHeader = route?.id === 'home'
   const catUrl = getPathname().split('/').splice(0, 2).join('/')
-  const categoryLabel =   'furniture' === filters.category
+  const categoryLabel = 'furniture' === filters.category
   ? 'furniture'
   : `${filters.size || filters.category} beds`
   /**
