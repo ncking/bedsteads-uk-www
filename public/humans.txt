@@ -13,7 +13,7 @@ Contact: info@raizmedia.co.uk
 From: Bristol, England
 
 /* SITE */
-Last update: 21/06/2024, 11:41:00
+Last update: 21/06/2024, 11:42:19
 Standards: HTML5, CSS3
 Language: English
 Components: React, Preact, Node
