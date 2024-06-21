@@ -21,7 +21,7 @@ export interface Image {
   r: number
 }
 
-export interface StockItem {
+export interface Stock {
   id: number
   images: Image[]
   category: string
@@ -36,4 +36,4 @@ export interface StockItem {
   onBeforeClick?: CallableFunction
 }
 
-export type StockArray = StockItem[]
+export type StockArray = Stock[]
