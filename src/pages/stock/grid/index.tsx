@@ -2,11 +2,12 @@ import { forwardRef } from 'react'
 import { cx } from '@raiz/browser'
 import { Tile } from '@components'
 import * as styles from './grid.scss'
+import type { StockArray } from '@types'
 
 interface Props {
   category: string
   size: number
-  stock: [Record<string, any>]
+  stock: StockArray
 }
 
 const Grid = forwardRef<HTMLDivElement, Props>((props, ref) => {

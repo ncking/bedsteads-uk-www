@@ -21,7 +21,7 @@
       "@lib" : ["./src/lib/"],
       "@store" : ["./src/store/index"],
       "@store/*" : ["./src/store/*"],
-      "@types" : ["./src/types/index.d"],
+      "@types" : ["./src/types"],
       "@config": ["./src/config/embeded-client-config"],
       "@common": ["./src/common"],
       "@server" : ["./src/server/index"],
