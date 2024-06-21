@@ -87,15 +87,12 @@ const actions = (set) => {
       })
       const total = filteredStock.length
       maxPos = Math.max(total - 1, 0)
-      const categoryLabel = 'furniture' === category ? 'antique furniture' : `${size || category} beds`
       /**
        *
        */
       resultSet = {
-        category,
         size,
         total,
-        categoryLabel, // used as a key & label for button nav labels
       }
       return { resultSet, stock: filteredStock, item }
     },

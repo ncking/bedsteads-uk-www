@@ -4,13 +4,6 @@ export interface Route {
   isGrid: boolean
   name: string
 }
-export interface RouteRegex extends Route {
-  regex: RegExp
-}
-
-export type RouteMap = {
-  [P in string]: Route
-}
 
 export type StockInfo = [string, string]
 
@@ -31,9 +24,15 @@ export interface Stock {
   description: string
   info: StockInfoArray
   status: string
+  // price number, fmt string
+  price:number
+  priceFmt:string
+  priceWasFmt?:string
+  //
   size?: string
-  isFurniture?: boolean
+  isRepo?: 1 | undefined
+  isFurniture?: 1 | undefined
+  isSale? : boolean
   onBeforeClick?: CallableFunction
+  canonical?:string
 }
-
-export type StockArray = Stock[]

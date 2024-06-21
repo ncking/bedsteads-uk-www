@@ -8,7 +8,7 @@ const args = {
   icon: 'arrow',
 }
 
-export const ButtonNav = ({ categoryLabel }) => {
+export const ButtonNav = () => {
   const handleKeyUp = ({ keyCode }) => {
     if (keyCode === KEY_LEFT) {
       prev()
@@ -27,13 +27,13 @@ export const ButtonNav = ({ categoryLabel }) => {
 
         <Button
           onClick={() => (prev(), itemAnalyics('prev button'))}
-          ariaLabel={`previous ${categoryLabel}`}
+          ariaLabel="previous"
           className={styles.left}
           {...args}
         />
         <Button
           onClick={() => (next(), itemAnalyics('next button'))}
-          ariaLabel={`next ${categoryLabel}`}
+          ariaLabel="next"
           {...args}
         />
         <Button

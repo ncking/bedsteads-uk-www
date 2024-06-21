@@ -1,7 +1,5 @@
-/**
- * NK we have thisas we havent got round to chnaging
- * schema & ***ADMIN
- */
+import type {Stock} from '@types'
+
 
 function priceFormat(n) {
   if (n) {
@@ -10,7 +8,7 @@ function priceFormat(n) {
   return 'P.O.A'
 }
 
-export function transformData(item, options = {}) {
+export function transformData(item, options = {}): Stock {
   const { gridDetails } = options
   if (!item) {
     return null
@@ -67,7 +65,7 @@ export function transformData(item, options = {}) {
     slug,
     category,
     title: String(title).trim(),
-  }
+  } as Stock
 
   if (isRepro) {
     // its an object ... should be an array ...reproduction_price
@@ -137,24 +135,7 @@ export function transformData(item, options = {}) {
       info.push(['size', s])
       newItem.size = s
     }
-
-    /**
-         *
-        "renamedToInfo" : [
-            {
-                "label" : "Overall length",
-                "immutable" : true,
-                "type" : "length"
-            },
-            {
-                "label" : "Overall width",
-                "immutable" : true,
-                "type" : "length"
-            }
-            ....
-         *
-         */
-    Array.from(renamedToInfo || []).map(({ value, label }) => {
+    (Array.from(renamedToInfo || []) as any[]).map(({ value, label }) => {
       if (value) {
         info.push([label, value])
       }

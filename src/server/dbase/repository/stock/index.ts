@@ -2,7 +2,9 @@ import { createSimpleCache } from '@raiz/core'
 import { connect } from '@server/dbase'
 import { STOCK_COLLECTION } from './constants'
 import { transformData } from './transform-data'
+
 export * from './utils'
+
 const cache = createSimpleCache()
 const projection = {
   '_id': 0,
@@ -39,7 +41,7 @@ const getResults = async ({ filters = {}, sort = { id: -1 } }) => {
 /**
  * EXPORTS
  */
-export const findOnePublic = async (id) => {
+export const findOnePublic = async (id)=> {
   const results = await stockCache({ id: +id }, result => result.project(projection).toArray())
   if (!results) {
     return null
