@@ -8,7 +8,6 @@ import { ItemNav } from './item-nav'
 const StockPage = (props) => {
   const { item: ajaxRequestedItem, filters } = props
   const gridRef = useRef<HTMLDivElement>(null!)
-  
   const { id } = filters
   if (ajaxRequestedItem) stockStore.add(ajaxRequestedItem) // we do this so that once loaded its not constantly flashing from empty
   const { resultSet, stock, item } = stockStore.initSync(filters)
