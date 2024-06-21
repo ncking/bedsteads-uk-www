@@ -1,12 +1,13 @@
 import { isEqualShallow } from '@raiz/browser'
 import { getGlobalStore } from '@raiz/nuggins'
 import { createStore } from '@raiz/react-simple-store'
+import type { StockArray } from '@types'
 
 const actions = (set) => {
   /**
    * Run @ creation only
    */
-  const stockArray = getGlobalStore()?.stock || []
+  const stockArray: StockArray = getGlobalStore()?.stock || []
   const idMap = {}
   stockArray.map(item => add(item))
   /**
@@ -94,7 +95,7 @@ const actions = (set) => {
         category,
         size,
         total,
-        categoryLabel, // used as a key & label for mobile haeder & button nav labels
+        categoryLabel, // used as a key & label for button nav labels
       }
       return { resultSet, stock: filteredStock, item }
     },
