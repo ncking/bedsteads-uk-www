@@ -1,13 +1,18 @@
 import { isEqualShallow } from '@raiz/browser'
 import { getGlobalStore } from '@raiz/nuggins'
 import { createStore } from '@raiz/react-simple-store'
-import type { StockArray } from '@types'
+import type { Stock } from '@types'
+
+
+
+
+
 
 const actions = (set) => {
   /**
    * Run @ creation only
    */
-  const stockArray: StockArray = getGlobalStore()?.stock || []
+  const stockArray: Stock[] = getGlobalStore()?.stock || []
   const idMap = {}
   stockArray.map(item => add(item))
   /**
@@ -61,7 +66,7 @@ const actions = (set) => {
       set({ resultSet, idx })
     },
 
-    initSync({ id, size, category }) { // id, category, size
+    init({ id, size, category }) { // id, category, size
       /**
        * -1 NOT '0'
        * if its not found (sold)  ...
@@ -69,9 +74,9 @@ const actions = (set) => {
        *   b) -- yeilds -2 >> maxPos
        */
       idx = -1
-      item = getItemById(id)
+      id = id ? parseInt(id) : null
+      item = id ? getItemById(id) : null
       filteredStock = []
-      id = parseInt(id)
       /**
        *
        */
