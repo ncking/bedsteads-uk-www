@@ -1,13 +1,13 @@
 import { isEqualShallow } from '@raiz/browser'
 import { getGlobalStore } from '@raiz/nuggins'
 import { createStore } from '@raiz/react-simple-store'
-import type { StockArray } from '@types'
+import type { Stock } from '@types'
 
 const actions = (set) => {
   /**
    * Run @ creation only
    */
-  const stockArray: StockArray = getGlobalStore()?.stock || []
+  const stockArray: Stock[] = getGlobalStore()?.stock || []
   const idMap = {}
   stockArray.map(item => add(item))
   /**
