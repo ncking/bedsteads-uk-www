@@ -63,7 +63,10 @@ export const Sidebar = () => {
         </ul>
 
         <ul>
-          <NavLink id="contact" />
+        {'faq,sustainability,contact'.split(',')
+            .map(id => (
+              <NavLink id={id} key={id} />
+            ))}
         </ul>
 
         <ul className={stylesMenu.contact}>

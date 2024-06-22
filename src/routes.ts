@@ -12,25 +12,18 @@ export const routes = [
   {
     url: '/favourites',
     page: 'favourites',
-    id: 'favourites',
-    meta: { title: 'contact', label: 'Contact Bedsteads' },
+    id: 'favourites'
   },
   {
     url: '/faq',
     page: 'faq',
-    id: 'faq',
-    meta: {
-      title: 'reproduction beds'
-    },
+    id: 'faq'
   },
 
   {
     url: '/sustainability',
     page: 'sustainability',
-    id: 'sustainability',
-    meta: {
-      title: 'sustainability'
-    },
+    id: 'sustainability'
   },
 
   {
