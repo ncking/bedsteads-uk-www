@@ -36,7 +36,7 @@ export const ItemLayout = ({ item }) => {
   if (!hasLoadedAndMobile) {
     return <ItemPage key="product" activePanel={true} item={item} />
   }
-
+  
   const items = stockStore.getSwipSet()
 
 
