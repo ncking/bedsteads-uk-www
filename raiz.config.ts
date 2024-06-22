@@ -25,7 +25,7 @@ export default ({ log }) => {
             storePlugin({ data: { config: clientConfig } }),
             healthPlugin(),
             consolePlugin(),
-            // swPlugin(),
+            swPlugin(),
             ssrPlugin(),
             svgPlugin({ inline: svgs }),
             redirectPlugin({
