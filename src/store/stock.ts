@@ -61,7 +61,7 @@ const actions = (set) => {
       set({ resultSet, idx })
     },
 
-    initSync({ id, size, category }) { // id, category, size
+    init({ id, size, category }) { // id, category, size
       /**
        * -1 NOT '0'
        * if its not found (sold)  ...
