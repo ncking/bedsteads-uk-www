@@ -69,9 +69,10 @@ const actions = (set) => {
        *   b) -- yeilds -2 >> maxPos
        */
       idx = -1
-      item = getItemById(id)
+      id = id ? parseInt(id) : null
+      item = id ? getItemById(id) : null
       filteredStock = []
-      id = parseInt(id)
+
       /**
        *
        */

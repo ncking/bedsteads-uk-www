@@ -7,8 +7,8 @@ import {
 
 export default async ({ response, request }) => {
   const description = 'Your information is securely stored. Under data protection law, you have rights'
-  const metaTitle = '------Bedsteads Privacy Policy - How we store your personal information'
-  const title = '*********** Bedsteads Privacy Policy'
+  const metaTitle = 'Bedsteads Privacy Policy - How we store your personal information'
+  const title = 'Bedsteads Privacy Policy'
 
   response
     .setRobots('index,follow')
