@@ -21,115 +21,37 @@ export default () => {
         <h1 className="flex__col--full">Welcome to Bedsteads</h1>
         <div className="flex__col">
        
-        What makes an Item Antique? 
+      
 
-An antique is an item that is 100 years old or more. They are often items which are cherished due to their aesthetic or historical qualities. 
+        2nd Section: ‘Terms of service, Sustainability & Returns’
 
-What is the difference between Antique, Vintage and Retro? 
+Terms of Service and Sustainability:
 
-Antique items are 100 years sold or more, vintage items are generally considered to be between 20 and 100 years old, and retro items tend to be around 20 years old or less. 
+We take great pride in restoring and refurbishing our beds and bedroom furniture and would be happy to own any and all of our beautiful pieces. Our sympathetic restoration honours the items past life, whilst also ensuring they are sturdy, functional and fit for purpose for their new life with you.
 
-Generally, with each of these classifications, the items tend to be collectible or sought after and aesthetically reflect the styles of their times. 
+There may be small signs of pre-loved life which adds to the charm of purchasing items of age. 
 
-Classifications:  
+Please be aware that all of our beds come apart, into a head board, a foot board and siderails. Bundle of slats or bed bases (which arrive folded for ease of transport and access) are separate, we ensure these are a good fit for your bed prior to sending out.  As our beds come in these sections, this allows for more manoeuvrability into your desired room e.g. headboards can be turned upside down and knobs can be removed to help get them up tighter stairwells. 
 
-Across our website you will notice us using words such as ‘Victorian’, Classic, Louis etc. below is a list of definitions to help demystify what we antique sellers mean:
+We photograph, describe and measure accurately. Please feel free to ask for further photographs if needed. Please ensure you check dimensions, and check for access into your house or room. 
 
-What does ‘Victorian’ mean?: 
+We are incredibly proud of our work here at Bedsteads, our small team are sure that your items will exceed your expectations.
 
-This generally refers to beds constructed within the Victorian era of 1820 – 1914, around Queen Victoria’s reign. Styles during this period straddle the movements of the time, a delightful mixture of Aestheticism which encourages beauty for beauty’s sake, and the industrial revolution which demanded practicality and functionality. 
+Why are Antiques a sustainable choice?
 
-Art Nouveaux: 
+Buying and restoring antique furniture is an active practice of exercising sustainability. Recent studies have shown that antique items have a carbon footprint many times lower than contemporary pieces of furniture. In our experience, Antique items are made with, and restored using much higher quality materials and craftsmanship which are less commonly used in modern furniture, and when looked after, could last many lifetimes. Antiques can be refinished, resold and loved again many times over, meaning they are a conscientious choice for the environmentally friendly minded. 
 
-Originating in Europe, Art Nouveau furniture showcases sinuous and sculptural forms, characterized by curving lines, graceful arches, and sensuous ornamentation (Taken from Nickle Bed)
+Mark and Nikki have cultivated an approach to restoration where we are able to do virtually all restoration work ourselves in-house, meaning we keep our carbon footprint low by not having to transport our precious beds any further than from our work and show rooms, to your home. We use very local businesses for any work such as upholstery and powder coating as a way to support our local communities and keep our carbon footprint lower.
 
-What is a ‘Louis’ item of Furniture? : 
-
-Distinguishing between Louis XV, Louis XVI, and Louis XIV antique furniture requires an understanding of the distinct characteristics and styles associated with each period. Here are some key features to look for:
-
-Louis XIV (mid-17th century to early 18th century):
-
-Emphasis on grandeur and opulence.
-Heavy and robust furniture designs.
-Elaborate ornamentation, including intricate carving and gilding.
-Baroque style with bold and exaggerated curves.
-Rich materials such as walnut, oak, and mahogany.
-Symmetry and balance in overall form.
-
-Louis XV (early to mid-18th century):
-
-Transition towards a more delicate and sensual style.
-Curvaceous forms, characterized by sinuous lines and flowing contours.
-Ornamentation featuring rocaille (shell-like) motifs, floral designs, and asymmetry.
-Lighter construction compared to Louis XIV furniture.
-Materials like rosewood, satinwood, and tulipwood commonly used.
-Cabriole legs with intricate scrollwork and often adorned with ormolu (gilded bronze) mounts.
-
-Louis XVI (late 18th century):
-
-Neoclassical influence, reflecting a return to classical Greek and Roman aesthetics.
-Clean lines and geometric shapes.
-Symmetry and proportion in design.
-More restrained ornamentation, with motifs such as laurel wreaths, urns, and fluting.
-Lighter colours and pastel hues used in upholstery and finishes.
-Mahogany, walnut, and fruitwoods frequently utilized.
-Straight, tapered legs, often with fluted details
- 
-Names of Makers: 
-Winfield, Mercier, Schoolbred, Krieger, 
-
-R.W Winfield: 
-
-R. W. Winfield & Co is a renowned British company, founded in 1829 known for its exceptional craftsmanship in the realm of furniture and beds. With a legacy spanning several decades, R. W. Winfield & Co has earned a distinguished reputation for producing high-quality, handcrafted pieces that epitomize elegance and durability.
-
-Today, R. W. Winfield & Co continues to be a prominent name in the world of furniture, garnering recognition for its commitment to preserving traditional techniques while incorporating innovative design elements. With each piece, R. W. Winfield & Co carries forward a legacy of artistry, providing customers with timeless and remarkable furnishings that stand the test of time.
-
-
-Mercier Frères: 
-
-Mercier Frères is a distinguished company renowned for its exquisite craftsmanship in the realm of luxury goods and accessories. Established in France by André Mercier in 1828, Mercier Frères has a long-standing heritage which exemplifies a commitment to artistry and refinement. 
-
-The allure of Mercier Frères antique beds lies not only in their visual appeal but also in their exceptional quality and durability. These beds have withstood the test of time. Owning a Mercier Frères antique bed is to possess a cherished piece of history, a luxurious sanctuary that transcends time.
-
-James Schoolbred
-
-James (or Jas) Shoolbred was a prominent British furniture manufacturer and retailer known for its exquisite craftsmanship and high-quality furnishings. Founded in the mid-19th century, the company quickly gained recognition for its exceptional designs and attention to detail.
-
-Although the original Jas Shoolbred company ceased operations in the mid-20th century, their name and designs continue to be revered by collectors and enthusiasts of antique and vintage furniture. Jas Shoolbred pieces are sought after for their timeless beauty, superior craftsmanship, and historical significance, making them highly coveted additions to any discerning collector's home.
-
-Maison Krieger: 
-
-Maison Krieger, a renowned French furniture manufacturer and retailer, flourished during the 19th and early 20th centuries. Established by Antoine Krieger in Paris during the mid-19th century
-
-A distinguishing feature of Maison Krieger was their ability to seamlessly blend different design styles. The company adeptly merged elements from neoclassical, Empire, and Art Nouveau periods, resulting in unique and harmonious furniture that appealed to a diverse range of tastes. This fusion of styles contributed to Maison Krieger's reputation for innovative and visionary design.
+With our hand painted finishes, we use paint companies which are VOC free, committed to sustainability and use natural pigments to help keep impact as low as possible. 
 
 
 
+Returns:
 
+At Bedsteads, we have every confidence that you will be delighted with your items. However, where necessary, we offer a full refund policy. If you wish to return an item, please contact us via email or telephone within 48 hours of delivery, and we will discuss options of how to proceed.
 
-This is a poem Chat GBT made up which we thought we could tack on to the end of the 3rd section as a nice little end to the page: 
-
-Slumber’s Echos: A Tribute to the antique bed. 
-
-In rooms of history, where stories lie, 
-Rests the antique bed, beneath time's sky. 
-With grace and elegance, it holds the past, 
-A testament to beauty that will forever last.
-
-Carved with precision, a work of art, 
-Crafted by hands, each delicate part. 
-Whispers of secrets and dreams untold, 
-In its aged embrace, memories unfold.
-
-Weathered wood, with a patina divine, 
-Witnessing slumbers of a bygone time. 
-Silent witness to tales of love and woe, 
-An antique bed's journey, only it can know.
-
-Where sleepers once laid their weary heads, 
-Now cherished heirlooms in silent beds. 
-Oh, antique bed, keeper of nostalgia's reign, 
-May your presence forever enchant and sustain.
+We would expect to see the item returned to us in the same good condition as when it left us, within 14 days of purchase, using one of our trusted couriers to ensure the items safety – please note we are unable to refund courier costs for customers. 
 
 
 
