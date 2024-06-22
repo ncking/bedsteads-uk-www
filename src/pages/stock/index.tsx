@@ -16,15 +16,13 @@ const StockPage = (props) => {
     stockStore.updateState()
   }, [id])
 
-  if(!id){
-    return    <Grid {...filters} stock={stock} ref={gridRef} />
+  if (!id) {
+    return <Grid {...filters} stock={stock} ref={gridRef} />
   }
 
   return (
     <>
-      <PanelStack active={id}>
-        {item && <ItemLayout item={item} />}
-      </PanelStack>
+      <ItemLayout item={item} />
       {item && <ItemNav item={item} />}
     </>
   )
