@@ -16,6 +16,24 @@ export const routes = [
     meta: { title: 'contact', label: 'Contact Bedsteads' },
   },
   {
+    url: '/faq',
+    page: 'faq',
+    id: 'faq',
+    meta: {
+      title: 'reproduction beds'
+    },
+  },
+
+  {
+    url: '/sustainability',
+    page: 'sustainability',
+    id: 'sustainability',
+    meta: {
+      title: 'sustainability'
+    },
+  },
+
+  {
     url: '/contact',
     page: 'contact',
     id: 'contact',
