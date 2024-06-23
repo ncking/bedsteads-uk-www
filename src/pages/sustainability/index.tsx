@@ -12,7 +12,7 @@ export default () => {
         tag="div"
         className="viewport"
         responsive="1"
-        src="/image/index/cover,t_viewport.jpg"
+        src="/image/page/spanners,t_viewport.jpg"
       >
         <div className={cx(styles.title, 'logotype')}>Bedsteads</div>
       </BedsteadsImage>
