@@ -20,16 +20,19 @@ export default () => {
       >
         <div className={cx(styles.title, 'logotype')}>
           {t1}
+          {t2}
+          {t3}
         </div>
       </BedsteadsImage>
 
       <div className="flex flex-text">
 
         <div className="flex__col">
-        {t2}
+        {t4}
         </div>
         <div className="flex__col">
-        {t3}
+        {t5}
+        {t6}
         </div>
 
 
