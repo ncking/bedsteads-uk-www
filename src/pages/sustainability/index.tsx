@@ -18,17 +18,14 @@ export default () => {
       </BedsteadsImage> */}
 
       <div className="flex flex-text">
-        <h1 className="flex__col--full">Terms of service, Sustainability & Returns</h1>
+        <h1 className="flex__col--full">Terms of service<br/> Sustainability & Returns</h1>
         <div className="flex__col">
-
-
           <p>
             We take great pride in restoring and refurbishing our beds and bedroom furniture and would be happy to
             own any and all of our beautiful pieces.
             Our sympathetic restoration honours the items past life, whilst also ensuring they are sturdy, functional and fit for purpose for their new life with you.
 
           </p>
-
           <p>
             There may be small signs of pre-loved life which adds to the charm of purchasing items of age.
             <br />
@@ -38,21 +35,13 @@ export default () => {
             <br />
             As our beds come in these sections, this allows for more manoeuvrability into your desired room e.g. headboards can be turned upside down and knobs can be removed to help get them up tighter stairwells.
           </p>
-
           <p>
             We photograph, describe and measure accurately.<br />
             Please feel free to ask for further photographs if needed. Please ensure you check dimensions, and check for access into your house or room.
           </p>
           <p>
             We are incredibly proud of our work here at Bedsteads, our small team are sure that your items will exceed your expectations.
-
           </p>
-
-
-
-
-
-
         </div>
 
         <div className="flex__col">
