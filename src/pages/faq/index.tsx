@@ -18,7 +18,7 @@ export default () => {
       </BedsteadsImage> */}
 
       <div className="flex flex-text">
-        <h1 className="flex__col--full">Welcome to Bedsteads</h1>
+        <h1 className="flex__col--full">Classifications</h1>
         <div className="flex__col">
 
 
