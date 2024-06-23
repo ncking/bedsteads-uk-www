@@ -25,7 +25,7 @@ export const ErrorPage = (props) => {
 
   return (
     <Row className={styles.error}>
-      <Container className="columns copy">
+      <Container >
         <div className={styles.message}>
           <h1>{message}</h1>
           <p>{copy}</p>
