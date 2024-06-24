@@ -9,9 +9,6 @@ export const Intro = ({ className, links = [], children }) => {
      return <li key={label} ><a href={`#${hash}`}>{label}</a></li>
     })
 
-
-    console.log(_links)
-
     return (
         <div className={cx(styles.intro, className)}>
             <div className={styles.title}>{children}</div>
