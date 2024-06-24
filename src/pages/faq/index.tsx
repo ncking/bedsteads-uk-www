@@ -1,6 +1,5 @@
 import { cx } from '@raiz/browser'
-import { Columns, Container, Row } from '@raiz/react'
-import { BedsteadsImage, Column } from '@components'
+import { BedsteadsImage } from '@components'
 import * as styles from './style.scss'
 import { t1, t2, t3, t4, t5, t6 } from './text'
 
