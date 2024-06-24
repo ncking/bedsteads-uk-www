@@ -1,6 +1,5 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage } from '@components'
-import * as styles from './style.scss'
+import { BedsteadsImage, Intro } from '@components'
 import { t1, t2, t3, t4, t5, t6 } from './text'
 
 
@@ -13,18 +12,18 @@ export default () => {
         alt="Reflection of Bedsteads delivery van, in bed knob"
         lazy="false"
         tag="div"
-        className={styles.top}
+        className="viewport"
         responsive="1"
-        src="/image/page/shavings,t_viewport.jpg"
+        src="/image/page/spanners,t_viewport.jpg"
       >
-        <div className={cx(styles.title, 'logotype')}>
-
-        </div>
+        <Intro className={cx()}  list={['What makes an Item Antique?', 'Classifications', 'Names of Makers']}>
+        Additional information
+        </Intro>
       </BedsteadsImage>
 
 
       <div className="flex flex-text">
-        <h1 className="flex__col--full">Terms of service, Sustainability & Returns</h1>
+        <h1 className="flex__col--full">Additional information</h1>
         <div className="flex__col">{t1}{t2}{t3}{t4}</div>
         <div className="flex__col">{t5}{t6}</div>
       </div>
