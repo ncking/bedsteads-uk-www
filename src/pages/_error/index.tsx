@@ -8,6 +8,8 @@ export default  (props) => {
   let copy = ''
   let message = ''
 
+ 
+
   if (200 !== status) {
     // its a Response Error
     if (404 === status) {
@@ -24,7 +26,7 @@ export default  (props) => {
 
   return (
     <div className={styles.error}>
-      <div>
+      <div className="columns copy">
         <div className={styles.message}>
           <h1>{message}</h1>
           <p>{copy}</p>
