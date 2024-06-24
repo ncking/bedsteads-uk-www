@@ -1,10 +1,9 @@
 import { cx } from '@raiz/browser'
 import { BedsteadsImage, Intro } from '@components'
 
-
 const links = [
   { hash: '', label: 'Antiques a sustainable choice?' },
-  { hash: '', label: 'Returns' }
+  { hash: '', label: 'Returns' },
 ]
 
 export default () => {
@@ -20,12 +19,17 @@ export default () => {
         src="/image/page/shavings,t_viewport.jpg"
       >
         <Intro className={cx()} links={links}>
-         Sustainability & Returns
+          Sustainability & Returns
         </Intro>
       </BedsteadsImage>
 
       <div className="flex flex-text">
-        <h1 className="flex__col--full">Terms of service<br /> Sustainability & Returns</h1>
+        <h1 className="flex__col--full">
+          Terms of service
+          <br />
+          {' '}
+          Sustainability & Returns
+        </h1>
         <div className="flex__col">
           <p>
             We take great pride in restoring and refurbishing our beds and bedroom furniture and would be happy to
@@ -43,7 +47,8 @@ export default () => {
             As our beds come in these sections, this allows for more manoeuvrability into your desired room e.g. headboards can be turned upside down and knobs can be removed to help get them up tighter stairwells.
           </p>
           <p>
-            We photograph, describe and measure accurately.<br />
+            We photograph, describe and measure accurately.
+            <br />
             Please feel free to ask for further photographs if needed. Please ensure you check dimensions, and check for access into your house or room.
           </p>
           <p>
@@ -52,7 +57,6 @@ export default () => {
         </div>
 
         <div className="flex__col">
-
 
           <h2>Why are Antiques a sustainable choice?</h2>
           <p>

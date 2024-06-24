@@ -12,18 +12,18 @@ export const routes = [
   {
     url: '/favourites',
     page: 'favourites',
-    id: 'favourites'
+    id: 'favourites',
   },
   {
     url: '/faq',
     page: 'faq',
-    id: 'faq'
+    id: 'faq',
   },
 
   {
     url: '/sustainability',
     page: 'sustainability',
-    id: 'sustainability'
+    id: 'sustainability',
   },
 
   {

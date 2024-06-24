@@ -1,12 +1,11 @@
 import { cx } from '@raiz/browser'
 import { BedsteadsImage, Intro } from '@components'
 
-
 const a1 = `what-makes-an-antique`
 const links = [
   { hash: a1, label: 'What is an Antique?' },
   { hash: '', label: 'Classifications' },
-  { hash: '', label: 'Names of Makers' }
+  { hash: '', label: 'Names of Makers' },
 ]
 
 export default () => {
@@ -27,11 +26,9 @@ export default () => {
         </Intro>
       </BedsteadsImage>
 
-
       <div className="flex flex-text">
         <h1 className="flex__col--full">Additional information</h1>
         <div className="flex__col">
-
 
           {/* <h2>Classifications</h2> */}
           <h2 id={a1}>What makes an Item Antique?</h2>
@@ -46,17 +43,11 @@ export default () => {
             Generally, with each of these classifications, the items tend to be collectible or sought after and aesthetically reflect the styles of their times.
           </p>
 
-
-
-
           <h2>Classifications</h2>
           <p>
             Across our website you will notice us using words such as ‘Victorian’, Classic, Louis etc. below is a list of definitions to help demystify what we antique sellers mean:
 
           </p>
-
-
-
 
           <h4>What does ‘Victorian’ mean?</h4>
           <p>
@@ -66,19 +57,12 @@ export default () => {
             sake, and the industrial revolution which demanded practicality and functionality.
           </p>
 
-
-
           <h4> Art Nouveaux</h4>
           <p>
             Originating in Europe, Art Nouveau furniture showcases sinuous and sculptural forms,
             characterized by curving lines, graceful arches, and sensuous ornamentation
             {/* (Taken from Nickle Bed) */}
           </p>
-
-
-
-
-
 
           <h4>What is a ‘Louis’ item of Furniture?</h4>
           <p>
@@ -120,12 +104,6 @@ export default () => {
             Straight, tapered legs, often with fluted details
           </p>
 
-
-
-
-
-
-
         </div>
         <div className="flex__col">
 
@@ -142,7 +120,8 @@ export default () => {
             Today, R. W. Winfield & Co continues to be a prominent name in the world of furniture, garnering recognition for its commitment to preserving
             traditional techniques while incorporating innovative design elements.
           </p>
-          <p>With each piece, R. W.
+          <p>
+            With each piece, R. W.
             Winfield & Co carries forward a legacy of artistry, providing customers with timeless and remarkable furnishings that stand the test of time.
           </p>
 
@@ -158,8 +137,6 @@ export default () => {
           </p>
           <p>Owning a Mercier Frères antique bed is to possess a cherished piece of history, a luxurious sanctuary that transcends time.</p>
 
-
-
           <h4>James Schoolbred</h4>
           <p>
             James (or Jas) Shoolbred was a prominent British furniture manufacturer and retailer known for its exquisite craftsmanship and high-quality furnishings.
@@ -174,7 +151,6 @@ export default () => {
             making them highly coveted additions to any discerning collector's home.
           </p>
 
-
           <h4>Maison Krieger</h4>
           <p>
             Maison Krieger, a renowned French furniture manufacturer and retailer, flourished during the 19th and early 20th
@@ -183,7 +159,8 @@ export default () => {
           <p>
             A distinguishing feature of Maison Krieger was their ability to seamlessly blend different design styles.
             The company adeptly merged elements from neoclassical, Empire, and Art Nouveau periods, resulting in unique
-            and harmonious furniture that appealed to a diverse range of tastes.<br />
+            and harmonious furniture that appealed to a diverse range of tastes.
+            <br />
             This fusion of styles contributed to Maison Krieger's reputation for innovative and visionary design.
           </p>
 

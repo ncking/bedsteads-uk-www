@@ -41,7 +41,7 @@ const getResults = async ({ filters = {}, sort = { id: -1 } }) => {
 /**
  * EXPORTS
  */
-export const findOnePublic = async (id)=> {
+export const findOnePublic = async (id) => {
   const results = await stockCache({ id: +id }, result => result.project(projection).toArray())
   if (!results) {
     return null

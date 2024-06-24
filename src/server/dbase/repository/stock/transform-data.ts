@@ -1,5 +1,4 @@
-import type {Stock} from '@types'
-
+import type { Stock } from '@types'
 
 function priceFormat(n) {
   if (n) {

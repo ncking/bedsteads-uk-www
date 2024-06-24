@@ -63,7 +63,7 @@ export const Sidebar = () => {
         </ul>
 
         <ul>
-        {'faq,sustainability,contact'.split(',')
+          {'faq,sustainability,contact'.split(',')
             .map(id => (
               <NavLink id={id} key={id} />
             ))}
