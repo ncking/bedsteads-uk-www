@@ -1,4 +1,6 @@
+import { cx } from '@raiz/browser'
 import { BedsteadsImage, Intro } from '@components'
+import * as styles from './style.scss'
 
 export default () => {
   return (
@@ -12,7 +14,7 @@ export default () => {
         responsive="1"
         src="/image/index/cover,t_viewport.jpg"
       >
-        <Intro className="logotype">Bedsteads</Intro>
+        <Intro className={cx("logotype", styles.intro)}>Bedsteads</Intro>
       </BedsteadsImage>
 
       <div className="flex flex-text">
