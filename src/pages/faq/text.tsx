@@ -1,5 +1,5 @@
 export const t1 = <>
-    <h1>Classifications</h1>
+    {/* <h2>Classifications</h2> */}
     <h2>What makes an Item Antique?</h2>
     <p>
         An antique is an item that is 100 years old or more. They are often items which are cherished due to their aesthetic or historical qualities.

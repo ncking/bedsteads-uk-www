@@ -15,40 +15,19 @@ export default () => {
         tag="div"
         className={styles.top}
         responsive="1"
-        src="/image/page/spanners,t_viewport.jpg"
+        src="/image/page/shavings,t_viewport.jpg"
       >
         <div className={cx(styles.title, 'logotype')}>
-          {t1}
-          {t2}
-          {t3}
+
         </div>
       </BedsteadsImage>
 
-      <Row>
-        <Columns className="cols-1 md:cols-2 xl:cols-3">
 
-          <Column text={true} indent={true}>
-            {t4}
-          </Column>
-
-          <Column text={true}>
-            {t5}
-            {t6}
-          </Column>
-
-          <Column>
-            <BedsteadsImage
-              alt="Reflection of Bedsteads delivery van, in bed knob"
-              lazy="false"
-              tag="div"
-              className={styles.top}
-              responsive="1"
-              src="/image/page/spanners,t_viewport.jpg"
-            />
-          </Column>
-          </Columns>
-
-      </Row>
+      <div className="flex flex-text">
+        <h1 className="flex__col--full">Terms of service, Sustainability & Returns</h1>
+        <div className="flex__col">{t1}{t2}{t3}{t4}</div>
+        <div className="flex__col">{t5}{t6}</div>
+      </div>
     </>
   )
 }
