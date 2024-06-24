@@ -5,6 +5,9 @@ import { getSiteLink } from '@lib'
 import * as logoStyles from './logo.scss'
 import * as stylesMenu from './menu.scss'
 import * as styles from './sidebar.scss'
+
+
+const abLinks = document?.cookie ? 'faq,sustainability,contact' : 'contact'
 /**
  *
  */
@@ -63,7 +66,7 @@ export const Sidebar = () => {
         </ul>
 
         <ul>
-          {'faq,sustainability,contact'.split(',')
+          {abLinks.split(',')
             .map(id => (
               <NavLink id={id} key={id} />
             ))}
