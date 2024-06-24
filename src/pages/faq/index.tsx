@@ -1,8 +1,8 @@
 import { cx } from '@raiz/browser'
-import { Container, Row } from '@raiz/react'
-import { BedsteadsImage } from '@components'
+import { Columns, Container, Row } from '@raiz/react'
+import { BedsteadsImage, Column } from '@components'
 import * as styles from './style.scss'
-import {t1, t2, t3, t4, t5, t6} from './text'
+import { t1, t2, t3, t4, t5, t6 } from './text'
 
 
 export default () => {
@@ -25,28 +25,31 @@ export default () => {
         </div>
       </BedsteadsImage>
 
-      <div className="flex flex-text">
+      <Row>
+        <Columns className="cols-1 md:cols-2 xl:cols-3">
 
-        <div className="flex__col">
-        {t4}
-        </div>
-        <div className="flex__col">
-        {t5}
-        {t6}
-        </div>
+          <Column text={true} indent={true}>
+            {t4}
+          </Column>
 
+          <Column text={true}>
+            {t5}
+            {t6}
+          </Column>
 
-        <div className="flex__col">
-          <BedsteadsImage
-            alt="Reflection of Bedsteads delivery van, in bed knob"
-            lazy="false"
-            tag="div"
-            className={styles.top}
-            responsive="1"
-            src="/image/page/spanners,t_viewport.jpg"
-          />
-        </div>
-      </div>
+          <Column>
+            <BedsteadsImage
+              alt="Reflection of Bedsteads delivery van, in bed knob"
+              lazy="false"
+              tag="div"
+              className={styles.top}
+              responsive="1"
+              src="/image/page/spanners,t_viewport.jpg"
+            />
+          </Column>
+          </Columns>
+
+      </Row>
     </>
   )
 }

@@ -1,5 +1,6 @@
 export * from './bedsteads-image'
 export * from './button'
+export * from './column'
 export * from './contact-button'
 export * from './favourites-button'
 export * from './html'
