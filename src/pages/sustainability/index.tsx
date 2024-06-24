@@ -1,6 +1,11 @@
 import { cx } from '@raiz/browser'
 import { BedsteadsImage, Intro } from '@components'
-import * as styles from './style.scss'
+
+
+const links = [
+  { hash: '', label: 'Why are Antiques a sustainable choice?' },
+  { hash: '', label: 'Returns' }
+]
 
 export default () => {
   return (
@@ -14,7 +19,7 @@ export default () => {
         responsive="1"
         src="/image/page/shavings,t_viewport.jpg"
       >
-        <Intro className={cx()} list={['Antiques a sustainable choice', 'returns']}>
+        <Intro className={cx()} links={links}>
          Sustainability & Returns
         </Intro>
       </BedsteadsImage>

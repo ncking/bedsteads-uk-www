@@ -3,17 +3,22 @@ import { cx } from '@raiz/browser'
 import * as styles from './styles.scss'
 
 
-export const Intro = ({ className, list, children }) => (
-    <div className={cx(styles.intro, className)}>
-        <div className={styles.title}>{children}</div>
-        <ul className={styles.list}>
-            <li>Item Antique?</li>
-            <li>What makes an Item Antique?</li>
-            <li>Item Antique?</li>
-        </ul>
-    </div>
-)
+export const Intro = ({ className, links = [], children }) => {
 
+    const _links = links.map(({hash, label}) =>{
+     return <li key={label} ><a href={`#${hash}`}>{label}</a></li>
+    })
+
+
+    console.log(_links)
+
+    return (
+        <div className={cx(styles.intro, className)}>
+            <div className={styles.title}>{children}</div>
+            {_links.length ? <ul className={styles.list}>{_links}</ul> : null}
+        </div>
+    )
+}
 
 
 
