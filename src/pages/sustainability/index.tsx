@@ -6,7 +6,7 @@ export default () => {
   return (
     <>
 
-      {/* <BedsteadsImage
+      <BedsteadsImage
         alt="Reflection of Bedsteads delivery van, in bed knob"
         lazy="false"
         tag="div"
@@ -15,10 +15,10 @@ export default () => {
         src="/image/page/spanners,t_viewport.jpg"
       >
         <div className={cx(styles.title, 'logotype')}>Bedsteads</div>
-      </BedsteadsImage> */}
+      </BedsteadsImage>
 
       <div className="flex flex-text">
-        <h1 className="flex__col--full">Terms of service<br/> Sustainability & Returns</h1>
+        <h1 className="flex__col--full">Terms of service<br /> Sustainability & Returns</h1>
         <div className="flex__col">
           <p>
             We take great pride in restoring and refurbishing our beds and bedroom furniture and would be happy to
