@@ -1,7 +1,6 @@
-import { Container, Row } from '@raiz/react'
 import * as styles from './style.scss'
 
-export const ErrorPage = (props) => {
+export default  (props) => {
   // !!NOT from current request as we my have code triggered errors
 
   const { response } = props
@@ -24,13 +23,13 @@ export const ErrorPage = (props) => {
   }
 
   return (
-    <Row className={styles.error}>
-      <Container>
+    <div className={styles.error}>
+      <div>
         <div className={styles.message}>
           <h1>{message}</h1>
           <p>{copy}</p>
         </div>
-      </Container>
-    </Row>
+      </div>
+    </div>
   )
 }
