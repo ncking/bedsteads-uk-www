@@ -4,7 +4,7 @@ import { BedsteadsImage, Intro } from '@components'
 
 const a1 = `what-makes-an-antique`
 const links = [
-  { hash: a1, label: 'What makes an Item Antique?' },
+  { hash: a1, label: 'What is an Antique?' },
   { hash: '', label: 'Classifications' },
   { hash: '', label: 'Names of Makers' }
 ]

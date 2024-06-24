@@ -3,7 +3,7 @@ import { BedsteadsImage, Intro } from '@components'
 
 
 const links = [
-  { hash: '', label: 'Why are Antiques a sustainable choice?' },
+  { hash: '', label: 'Antiques a sustainable choice?' },
   { hash: '', label: 'Returns' }
 ]
 
