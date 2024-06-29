@@ -7,7 +7,7 @@ import * as stylesMenu from './menu.scss'
 import * as styles from './sidebar.scss'
 
 
-const abLinks = document?.cookie ? 'faq,sustainability,contact' : 'contact'
+const abLinks = document?.cookie || true ? 'faq,sustainability,contact' : 'contact'
 /**
  *
  */
