@@ -66,3 +66,7 @@ export const Column = ({ className = '', indent = false, span = null, ...rest })
 
 
 export const TextBlock = (props) => <div className={cx(styles.text)} {...props}></div>
+
+
+
+export const H1 = ({children}) =>   <Column span={12}><TextBlock><h1>{children}</h1></TextBlock></Column>

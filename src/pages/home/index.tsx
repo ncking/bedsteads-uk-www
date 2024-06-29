@@ -1,5 +1,5 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage, Intro, Columns, Column, TextBlock } from '@components'
+import { BedsteadsImage, Intro, Columns, Column, TextBlock, H1 } from '@components'
 import * as styles from './style.scss'
 
 export default () => {
@@ -21,9 +21,9 @@ export default () => {
 
       <Columns className="cols-1 md:cols-2 xl:cols-3">
 
-        <Column span={12}><TextBlock><h1>Welcome to Bedsteads</h1></TextBlock></Column>
+        <H1>Welcome to Bedsteads</H1>
 
-        <Column indent={true}>
+        <Column>
           <TextBlock>
             <p>
               For a huge range of Antique Beds and furniture come and see Mark & Nikki Ashton at their showroom housed in Chelvey Court Barn a picturesque medieval stone barn on the outskirt of Bristol
