@@ -60,7 +60,7 @@ export const ItemPage = ({ activePanel, item }) => {
             )}
 
         <Columns className="cols-1 md:cols-2 xl:cols-3">
-          <Column className='md:order-3'><Stats item={item} /></Column>
+          <Column className='md:order-3'><TextBlock><Stats item={item} /></TextBlock></Column>
           <Column span={12}><TextBlock><h1>{title}</h1></TextBlock></Column>
           <Column><TextBlock>{description}</TextBlock></Column>
         </Columns>
