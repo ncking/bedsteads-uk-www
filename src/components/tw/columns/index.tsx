@@ -36,11 +36,11 @@ dosent
 **/
 
 export const Columns = ({
-    className,
+    className = '',
     margin = '',
     container = true,
     children,
-    columns,
+    columns = '',
     ...rest
 }) => {
     return (
@@ -58,6 +58,6 @@ export const Columns = ({
     )
 }
 
-export const Column = ({ className, ...rest }) => (
-    <div className={cx(styles.column, className)} {...rest}></div>
+export const Column = ({ className = '', indent = false, span = null, ...rest }) => (
+    <div className={cx(styles.column, span && `col-span-${span}`, className)} {...rest}></div>
 )

@@ -1,5 +1,5 @@
 import { arrayValues } from '@raiz/browser'
-import { BedsteadsImage, SlideUp, SaleStockBanner } from '@components'
+import { BedsteadsImage, SlideUp, SaleStockBanner, Columns, Column } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
 import Stats from './stats'
 import * as styles from './item.scss'
@@ -49,6 +49,8 @@ export const ItemPage = ({ activePanel, item }) => {
       >
       </BedsteadsImage>
       <SlideUp start={arrayValues(info)}>
+
+
         {status
           ? (
             <div className={statusStyles.status}>{status}</div>
@@ -57,15 +59,13 @@ export const ItemPage = ({ activePanel, item }) => {
             <SaleStockBanner item={item} />
             )}
 
-        <div className={`${styles.item} flex flex-text`}>
-          <Stats item={item} />
-          <h1 className="flex__col--full">{title}</h1>
-          <div className={`${styles.copy} flex__col`}>
-            {description}
-          </div>
-        </div>
+        <Columns className="cols-1 md:cols-2 xl:cols-3">
+          <Column className='md:order-3'><Stats item={item} /></Column>
+          <Column span={12}><h1>{title}</h1></Column>
+          <Column>{description}</Column>
+        </Columns>
 
-        <div className={styles.gallery} data-testid="gallery">
+        <Column span={12}>
           {(activePanel ? otherImages : []).map(({ src, r }, i) => {
             // a hack so that only the active panel has full height ... now that they are stacked the tallest will set the height!! if we dont do this
             return (
@@ -82,7 +82,11 @@ export const ItemPage = ({ activePanel, item }) => {
               />
             )
           })}
-        </div>
+        </Column>
+
+
+
+
       </SlideUp>
     </>
   )

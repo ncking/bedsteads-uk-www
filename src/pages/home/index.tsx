@@ -5,8 +5,8 @@ import * as styles from './style.scss'
 export default () => {
   return (
     <>
-      {/* <SaleMain ></SaleMain> */}
-      <BedsteadsImage
+  
+      {/* <BedsteadsImage
         alt="Reflection of Bedsteads delivery van, in bed knob"
         lazy="false"
         tag="div"
@@ -15,18 +15,17 @@ export default () => {
         src="/image/index/cover,t_viewport.jpg"
       >
         <Intro className={cx("logotype", styles.intro)}>Bedsteads</Intro>
-      </BedsteadsImage>
+      </BedsteadsImage> */}
 
-      <Row>
-        <h1 className="flex__col--full">Welcome to Bedsteads</h1>
-      </Row>
+
 
       <Columns className="cols-1 md:cols-2 xl:cols-3">
-        <Column className={`col-span-10`}>
-          <h1 className="flex__col--full">Welcome to Bedsteads</h1>
+
+        <Column span={12}>
+          <h1>Welcome to Bedsteads</h1>
         </Column>
 
-        <Column>
+        <Column indent={true}>
           <p>
             For a huge range of Antique Beds and furniture come and see Mark & Nikki Ashton at their showroom housed in Chelvey Court Barn a picturesque medieval stone barn on the outskirt of Bristol
           </p>
