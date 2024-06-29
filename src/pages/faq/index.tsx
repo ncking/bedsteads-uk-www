@@ -1,6 +1,6 @@
 import { cx } from '@raiz/browser'
 import { BedsteadsImage, Intro } from '@components'
-
+import * as styles from './style.scss'
 const a1 = `what-makes-an-antique`
 const links = [
   { hash: a1, label: 'What is an Antique?' },
@@ -13,7 +13,7 @@ export default () => {
     <>
       {/* <SaleMain ></SaleMain> */}
 
-      <BedsteadsImage
+      {/* <BedsteadsImage
         alt="Reflection of Bedsteads delivery van, in bed knob"
         lazy="false"
         tag="div"
@@ -24,11 +24,20 @@ export default () => {
         <Intro className={cx()} links={links}>
           Additional information
         </Intro>
-      </BedsteadsImage>
+      </BedsteadsImage> */}
 
       <div className="flex flex-text">
-        <h1 className="flex__col--full">Additional information</h1>
+
         <div className="flex__col">
+          <BedsteadsImage
+            className={styles.colImg1}
+            alt="Reflection of Bedsteads delivery van, in bed knob"
+            lazy="false"
+            src="/image/page/barn,t_col.jpg"
+          >
+            <h1 className="flex__col--full">Additional information</h1>
+
+          </BedsteadsImage>
 
           {/* <h2>Classifications</h2> */}
           <h2 id={a1}>What makes an Item Antique?</h2>
@@ -105,7 +114,15 @@ export default () => {
           </p>
 
         </div>
-        <div className="flex__col">
+        <div className={cx('flex__col', styles.colOff)}>
+
+
+          <BedsteadsImage
+            className={styles.colImg}
+            alt="Reflection of Bedsteads delivery van, in bed knob"
+            lazy="false"
+            src="/image/page/fire,t_col.jpg"
+          />
 
           <h2>Names of Makers</h2>
           <h4>R.W Winfield</h4>
@@ -124,7 +141,12 @@ export default () => {
             With each piece, R. W.
             Winfield & Co carries forward a legacy of artistry, providing customers with timeless and remarkable furnishings that stand the test of time.
           </p>
-
+          <BedsteadsImage
+            className={styles.colImg}
+            alt="Reflection of Bedsteads delivery van, in bed knob"
+            lazy="false"
+            src="/image/page/spanners,t_col.jpg"
+          />
           <h4>Mercier Frères</h4>
           <p>
             Mercier Frères is a distinguished company renowned for its exquisite craftsmanship in the realm of luxury

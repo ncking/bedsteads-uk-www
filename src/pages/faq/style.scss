@@ -1,70 +1,21 @@
-.title {
-  position: absolute;
-  bottom: 0;
-  margin: var(--gutter);
-  color: var(--c-main-font);
-  font-size: calc(36px + (22) * ((100vw - 300px) / (1900 - 300)));
-}
-
-
-
-
-.top{height:100vh}
-
-
-.grid {
-
-
-  >div {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 100%;
-    grid-gap: var(--rabbits-grid-gap);
-  }
-
-
-  @mixin colour($i) {
-    $colors: red, orange, yellow, green, blue, purple, aquamarine, peachpuff;
-    background: lighten(nth($colors, $i), 20%);
- background: #ccc
-}
-
-  .c12 {
-    grid-column: span 1;
-    grid-row: span 2;
-    @include colour(1);
-  }
-
-  .c11 {
-    grid-column: span 1;
-    grid-row: span 1;
-    @include colour(2);
-  }
-
-  .c21 {
-    grid-column: span 2;
-    grid-row: span 1;
-    @include colour(3);
-  }
-
-  .c22 {
-    grid-column: span 2;
-    grid-row: span 2;
-    @include colour(4);
-  }
-
-  .c13 {
-    grid-column: span 1;
-    grid-row: span 3;
-    @include colour(5);
-  }
-
-  .c31 {
-    grid-column: span 3;
-    grid-row: span 1;
-    @include colour(6);
-  }
+.colImg {
+ height:600px;
+ background-color: #ccc;
+ margin: 0 var(--gutter-half-n) var(--gutter-half) var(--gutter-half-n) ;
 
 }
+
+
+
+.colImg1 {
+    height:600px;
+    background-color: orange;
+    margin: 0 var(--gutter-half-n) var(--gutter-half) -103px ;
+   
+   }
+
+
+   .colOff{
+    background-color: #eee;
+    color:#333
+   }

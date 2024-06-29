@@ -13,6 +13,7 @@
   --scaler: 4vw;
   --gutter: clamp(var(--gutterMin), var(--scaler), var(--gutterMax));
   --gutter-half: calc(var(--gutter) / 2);
+  --gutter-half-n: calc(var( --gutter-half) * -1);
   --gutter-quater: calc(var(--gutter) / 4);
 
   --sidenav-w: 0px;
