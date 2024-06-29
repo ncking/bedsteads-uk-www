@@ -1,0 +1,8 @@
+.row {
+
+    display: flex;
+background-color: rgb(127, 127, 240);
+    &.felxColumn {
+        display: column;
+    }
+}

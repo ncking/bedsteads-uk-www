@@ -1,5 +1,5 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage, Intro } from '@components'
+import { BedsteadsImage, Intro, Columns, Column, Row } from '@components'
 import * as styles from './style.scss'
 
 export default () => {
@@ -17,9 +17,16 @@ export default () => {
         <Intro className={cx("logotype", styles.intro)}>Bedsteads</Intro>
       </BedsteadsImage>
 
-      <div className="flex flex-text">
+      <Row>
         <h1 className="flex__col--full">Welcome to Bedsteads</h1>
-        <div className="flex__col">
+      </Row>
+
+      <Columns className="cols-1 md:cols-2 xl:cols-3">
+        <Column className={`col-span-10`}>
+          <h1 className="flex__col--full">Welcome to Bedsteads</h1>
+        </Column>
+
+        <Column>
           <p>
             For a huge range of Antique Beds and furniture come and see Mark & Nikki Ashton at their showroom housed in Chelvey Court Barn a picturesque medieval stone barn on the outskirt of Bristol
           </p>
@@ -39,9 +46,9 @@ export default () => {
             National and International collection and delivery can be arranged, please do contact us for delivery quotation.
 
           </p>
-        </div>
+        </Column>
 
-        <div className="flex__col">
+        <Column>
           <h2> Our fabulous team and skills</h2>
           <p>
             As a family business, we have a small and incredibly talented team of craftspeople with a wide range of expertise and
@@ -58,8 +65,8 @@ export default () => {
             We are also able to seamlessly lengthen any type of bed, and widen metal bed frames,
             our restoration process is sympathetic and respectful to honour and respect the past life of the item.
           </p>
-        </div>
-      </div>
+        </Column>
+      </Columns>
     </>
   )
 }

@@ -1,0 +1,88 @@
+  /**
+https://css-tricks.com/almanac/properties/g/grid-template-columns/#:~:text=The%20fit%2Dcontent()%20function,never%20shrinks%20beyond%20a%20minimum.
+
+https://stackoverflow.com/questions/52417889/setting-minimum-and-maximum-number-of-columns-using-css-grid
+
+
+WE want 
+1. A column layout
+2. Columns must be able to cope with gaps
+3. columns if dont span the full row, keep a max width
+4. columns wrap in response to the containers width, not the @media width
+5. We can re-order
+
+We have 3 options
+1. CSS Columns (meant for text, but we can fudge)
+2. Flexbox
+3. Css Grid
+
+Css Grid meets all our requirements!!!,
+its not perfect
+
+How it works?
+
+grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1fr)) ;
+
+
+**/
+
+.columns {
+ 
+
+  &.bottom {
+    margin-bottom: var(--gutter)
+  }
+
+}
+
+
+
+
+.columns+.columns {
+  margin-top: var(--gutter);
+}
+
+/**
+Combine conter class
+**/
+
+
+
+.column {
+  background: rgba(#7e5c31, .2);
+ // padding: var(--gutter);
+  /// NO we need this for STICKY & Tawilwind dosent havr this !!!  overflow: hidden; // so our grid isnt broken
+
+  // &:last-child{
+  //   grid-column: 2 / 4 ;// starts at 2 & finishes @4 ... so 2+3
+  // }
+ // grid-column: span var(--columns) ;
+ 
+
+  // @include desktop{
+  //   grid-column: span 6 ;
+  // }
+}
+
+
+
+// .grid-cols-24 {
+//   grid-template-columns: repeat(8, minmax(0, 1fr));
+// }
+
+
+ //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  /**
+  So this is the **best we can do without JS
+  1. repeat: 
+  2. auto-fit: fit as many columns as fit (or there are)
+  3. minmax( min: size calculated, max: 1 column)
+  4. max() so the minimum is the max of 400px, or the element width devided by the max number of columns +1
+   **** we plus one to compensate for the grid-gap, its a botch but works ****
+   If you set a gap to zero, it works by deviding by number of columns (rather than +1)
+   We want a maxx of 3 columns on our website* with a gap hence: `100%/4`
+  **/
+  // grid-template-columns: repeat(auto-fit,
+  //     minmax(max(400px, calc(33% - var(--gutter))),
+  //       1fr));
+
