@@ -1,5 +1,5 @@
 import { arrayValues } from '@raiz/browser'
-import { BedsteadsImage, SlideUp, SaleStockBanner, Columns, Column } from '@components'
+import { BedsteadsImage, SlideUp, SaleStockBanner, Columns, Column, TextBlock } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
 import Stats from './stats'
 import * as styles from './item.scss'
@@ -61,8 +61,8 @@ export const ItemPage = ({ activePanel, item }) => {
 
         <Columns className="cols-1 md:cols-2 xl:cols-3">
           <Column className='md:order-3'><Stats item={item} /></Column>
-          <Column span={12}><h1>{title}</h1></Column>
-          <Column>{description}</Column>
+          <Column span={12}><TextBlock><h1>{title}</h1></TextBlock></Column>
+          <Column><TextBlock>{description}</TextBlock></Column>
         </Columns>
 
         <Column span={12}>

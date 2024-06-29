@@ -49,7 +49,7 @@ Combine conter class
 
 
 .column {
-  background: rgba(#7e5c31, .2);
+  //background: rgba(#7e5c31, .2);
  // padding: var(--gutter);
   /// NO we need this for STICKY & Tawilwind dosent havr this !!!  overflow: hidden; // so our grid isnt broken
 
@@ -63,7 +63,6 @@ Combine conter class
   //   grid-column: span 6 ;
   // }
 
-  
 }
 
 
@@ -92,3 +91,9 @@ Combine conter class
   //     minmax(max(400px, calc(33% - var(--gutter))),
   //       1fr));
 
+
+  .text {
+   // background-color: rgb(205, 49, 200);
+   // background-color: #ccc;
+    margin:60px
+  }
