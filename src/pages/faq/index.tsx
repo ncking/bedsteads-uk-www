@@ -10,7 +10,7 @@ const links = [
 
 export default () => {
   return (
-    <Columns className="cols-1 md:cols-2 xl:cols-3">
+    <Columns className="cols-1 md:cols-2 xxl:cols-3">
 
 
 
@@ -177,6 +177,15 @@ export default () => {
             This fusion of styles contributed to Maison Krieger's reputation for innovative and visionary design.
           </p>
         </TextBlock>
+      </Column>
+
+      <Column>
+      <BedsteadsImage
+          className={styles.colImg}
+          alt="Reflection of Bedsteads delivery van, in bed knob"
+          lazy="false"
+          src="/image/page/beds,t_col.jpg"
+        />
       </Column>
     </Columns>
   )
