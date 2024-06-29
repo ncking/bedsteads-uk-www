@@ -28,10 +28,6 @@ export default () => {
 
 
 
-        <H1>  Terms of service
-          <br />
-          {' '}
-          Sustainability & Returns</H1>
 
 
 

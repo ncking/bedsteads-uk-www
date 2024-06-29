@@ -8,8 +8,9 @@
     display: grid;
     grid-gap: var(--gap);
     position: relative; // @NK dont remove this
-    width: 100%;
     grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    // width: 100%; we dont need this ... BUT IF WE DO ADD BOX_SIZING
+    box-sizing: border-box;
 }
 
 .cols-subgrid {
@@ -113,11 +114,11 @@
 }
 
 .col-span-11 {
-    grid-column: span 11 / span 10;
+    grid-column: span 11 / span 11;
 }
 
 .col-span-12 {
-    grid-column: span 12 / span 10;
+    grid-column: span 12 / span 12;
 }
 
 

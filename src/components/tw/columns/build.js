@@ -76,11 +76,11 @@ const snippet = `
     grid-column: span 10 / span 10;
 }
 .col-span-11 {
-    grid-column: span 11 / span 10;
+    grid-column: span 11 / span 11;
 }
 
 .col-span-12 {
-    grid-column: span 12 / span 10;
+    grid-column: span 12 / span 12;
 }
 
 

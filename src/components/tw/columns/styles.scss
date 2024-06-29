@@ -26,74 +26,33 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 **/
 
-.columns {
- 
+  .columns {
 
-  &.bottom {
-    margin-bottom: var(--gutter)
+    margin: 60px;
+
+    &.bottom {
+      margin-bottom: var(--gutter)
+    }
+
   }
 
-}
+
+  .columns+.columns {
+    margin-top: var(--gutter);
+  }
 
 
 
-
-.columns+.columns {
-  margin-top: var(--gutter);
-}
-
-/**
-Combine conter class
-**/
+  .column {
+background-color: rgb(175, 141, 78);
+  }
 
 
-
-.column {
- 
- // padding: var(--gutter);
-  /// NO we need this for STICKY & Tawilwind dosent havr this !!!  overflow: hidden; // so our grid isnt broken
-
-  // &:last-child{
-  //   grid-column: 2 / 4 ;// starts at 2 & finishes @4 ... so 2+3
-  // }
- // grid-column: span var(--columns) ;
- 
-
-  // @include desktop{
-  //   grid-column: span 6 ;
-  // }
-
-}
-
-
-.indent{
-  padding-left:60px
-}
-
-
-// .grid-cols-24 {
-//   grid-template-columns: repeat(8, minmax(0, 1fr));
-// }
-
-
- //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  /**
-  So this is the **best we can do without JS
-  1. repeat: 
-  2. auto-fit: fit as many columns as fit (or there are)
-  3. minmax( min: size calculated, max: 1 column)
-  4. max() so the minimum is the max of 400px, or the element width devided by the max number of columns +1
-   **** we plus one to compensate for the grid-gap, its a botch but works ****
-   If you set a gap to zero, it works by deviding by number of columns (rather than +1)
-   We want a maxx of 3 columns on our website* with a gap hence: `100%/4`
-  **/
-  // grid-template-columns: repeat(auto-fit,
-  //     minmax(max(400px, calc(33% - var(--gutter))),
-  //       1fr));
 
 
   .text {
-   // background-color: rgb(205, 49, 200);
-   // background-color: #ccc;
-    margin:60px
+    // background-color: rgb(205, 49, 200);
+    // background-color: #ccc;
+    margin: 60px;
+    white-space: break-spaces;
   }

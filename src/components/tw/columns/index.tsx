@@ -47,6 +47,7 @@ export const Columns = ({
         <div
             className={cx(
                 'cols',
+                styles.columns,
                 className,
                 styles[margin],
                 columns && `cols-${columns}`,
