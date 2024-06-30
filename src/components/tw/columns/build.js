@@ -146,8 +146,10 @@ const lines = [
 }
 
 .col-span-full {
-    grid-column: var(--columns) / var(--columns);
+    grid-column: 1/-1; //https://stackoverflow.com/questions/47319464/make-a-grid-column-span-the-entire-row
 }
+
+
 .hidden{
     display:none
 }

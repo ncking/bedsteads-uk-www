@@ -71,4 +71,4 @@ export const TextBlock = (props) => <div className={cx(styles.text)} {...props}>
 
 
 
-export const H1 = ({children}) =>   <Column span={12}><TextBlock><h1>{children}</h1></TextBlock></Column>
+export const H1 = ({children}) =>   <Column className="col-span-full"><TextBlock><h1>{children}</h1></TextBlock></Column>

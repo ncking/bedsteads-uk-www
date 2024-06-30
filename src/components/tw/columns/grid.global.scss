@@ -20,7 +20,8 @@
 }
 
 .col-span-full {
-    grid-column: var(--columns) / var(--columns);
+    grid-column: 1 /-1;
+    background-color: green;
 }
 .hidden{
     display:none
