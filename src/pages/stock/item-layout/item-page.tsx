@@ -59,13 +59,13 @@ export const ItemPage = ({ activePanel, item }) => {
             <SaleStockBanner item={item} />
             )}
 
-        <Columns className="cols-1 md:cols-2 xl:cols-3" page={true}>
+        <Columns className="cols-1 md:cols-2 xxl:cols-3" page={true}>
           <Column className='md:order-3'><TextBlock><Stats item={item} /></TextBlock></Column>
           <H1>{title}</H1>
           <Column><TextBlock>{description}</TextBlock></Column>
         </Columns>
 
-        <Column span={12}>
+        <Column>
           {(activePanel ? otherImages : []).map(({ src, r }, i) => {
             // a hack so that only the active panel has full height ... now that they are stacked the tallest will set the height!! if we dont do this
             return (

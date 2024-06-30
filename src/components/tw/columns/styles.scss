@@ -52,14 +52,17 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
   .textBlock {
     // background-color: rgb(205, 49, 200);
     // background-color: #ccc;
-    padding: 0 var(--gutter-half); // sameas the old setup
+    padding: 0 var(--gutter); // sameas the old setup
     white-space: break-spaces;
   }
 
 
   .page {
    // outline: 2px solid red;
-    padding: var(--page-padding)
+     padding: var(--page-padding);
+  //  // @media only screen and (min-width: 1200px) {
+  //     --columns: 3;
+  //  // }
   }
 
 
