@@ -1,17 +1,31 @@
 import { Link } from '@raiz/nuggins'
 import { Gmap, Html } from '@raiz/react'
-import { Button } from '@components'
+import { Button, EmailLink, TelLink } from '@components'
 import config from '@config'
 import mapJson from './gmap.json'
 import mapStyle from './style/grey.json'
 import * as styles from './styles.scss'
 
-export default ({ content }) => {
+export default (props) => {
+
+
+  const {
+    company,
+    email,
+    streetAddress,
+    postcode,
+    tel,
+    openingHours,
+    facebookLink,
+    instagramLink,
+  } = config()
+
+
 
   mapJson.mapOptions.styles = mapStyle
   mapJson.id = 'location-map'
   mapJson.className = 'viewport'
-  mapJson.markers[0].title = config().company // runtime config not buildtime
+  mapJson.markers[0].title = company // runtime config not buildtime
 
 
 
@@ -27,22 +41,22 @@ export default ({ content }) => {
         </p>
         <hr />
         <p>
-          ${streetAddress}<br />
-          ${postcode}
+          {streetAddress}<br />
+          {postcode}
         </p>
         <p>
-          ${openingHours.join('<br />')}<br />
+          {openingHours.join('<br />')}<br />
           Saturday by arrangement - please do contact us to arrange a visit on a Saturday.
         </p>
         <hr />
         <p>
-          <a href="tel:${tel}">t: ${tel}</a>
+          <TelLink>t: {tel}</TelLink>
           <br />
-          <a href="mailto:${email}">e: ${email}</a>
+          <EmailLink>e: {email}</EmailLink>
         </p>
         <p>
-          <a href="${facebookLink}" data-jsx="button" icon="facebook" label="facebook page" viewbox='0 0 32 32'></a>
-          <a href="${instagramLink}" data-jsx="button" icon="instagram" label="instagram page" viewbox='0 0 32 32'></a>
+          <Link href={facebookLink} data-jsx="button" icon="facebook" label="facebook page" viewbox='0 0 32 32'></Link>
+          <Link href={instagramLink} data-jsx="button" icon="instagram" label="instagram page" viewbox='0 0 32 32'></Link>
         </p>
       </div>
     </>)
