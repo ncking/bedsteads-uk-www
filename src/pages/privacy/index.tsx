@@ -218,9 +218,7 @@ export default () => {
           <p>
             If you have any concerns about our use of your personal
             information, you can make a complaint to us at
-            {' '}
-            {emailLink}
-            .
+            &nbsp;<EmailLink />&nbsp;
             <br />
             <br />
             You can also complain to the ICO if you are unhappy with
