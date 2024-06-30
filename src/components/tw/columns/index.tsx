@@ -37,8 +37,7 @@ dosent
 
 export const Columns = ({
     className = '',
-    margin = '',
-    container = true,
+    page = false,
     children,
     columns = '',
     ...rest
@@ -49,8 +48,8 @@ export const Columns = ({
                 'cols',
                 styles.columns,
                 className,
-                styles[margin],
                 columns && `cols-${columns}`,
+                page && styles.page
             )}
             {...rest}
         >
@@ -71,4 +70,4 @@ export const TextBlock = (props) => <div className={cx(styles.textBlock)} {...pr
 
 
 
-export const H1 = ({children}) =>   <Column className="col-span-full"><TextBlock><h1>{children}</h1></TextBlock></Column>
+export const H1 = ({children}) =>   <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column>

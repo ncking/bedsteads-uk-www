@@ -11,7 +11,7 @@ export default () => {
 
   return (
 
-    <Columns className="cols-1 md:cols-2 xl:cols-3">
+    <Columns className="cols-1 md:cols-2 xl:cols-3" page={true}>
 
 
         <H1>Bedsteads Privacy Policy</H1>

@@ -19,6 +19,10 @@
   --gutter-half-n: calc(var( --gutter-half) * -1);
   --gutter-quater: calc(var(--gutter) / 4);
 
+
+
+  --page-padding: clamp(0px, var(--scaler), var(--gutterMax));
+
   --sidenav-w: 0px;
   --main-w: 100vw;
   --header-h: #{$mobileHeaderHeight};

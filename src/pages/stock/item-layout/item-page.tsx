@@ -59,7 +59,7 @@ export const ItemPage = ({ activePanel, item }) => {
             <SaleStockBanner item={item} />
             )}
 
-        <Columns className="cols-1 md:cols-2 xl:cols-3">
+        <Columns className="cols-1 md:cols-2 xl:cols-3" page={true}>
           <Column className='md:order-3'><TextBlock><Stats item={item} /></TextBlock></Column>
           <H1>{title}</H1>
           <Column><TextBlock>{description}</TextBlock></Column>

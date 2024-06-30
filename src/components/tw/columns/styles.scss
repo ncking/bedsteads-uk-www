@@ -57,6 +57,12 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
   }
 
 
-  .textPageOffest {
-    padding: 60px
+  .page {
+    outline: 2px solid red;
+    padding: var(--page-padding)
+  }
+
+
+  .h1{
+    margin-bottom: var(--gutter-half);
   }
