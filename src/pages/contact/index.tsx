@@ -55,8 +55,8 @@ export default (props) => {
           <EmailLink>e: {email}</EmailLink>
         </p>
         <p>
-          <Link href={facebookLink} data-jsx="button" icon="facebook" label="facebook page" viewbox='0 0 32 32'></Link>
-          <Link href={instagramLink} data-jsx="button" icon="instagram" label="instagram page" viewbox='0 0 32 32'></Link>
+          <Button href="{facebookLink}" data-jsx="button" icon="facebook" label="facebook page" viewbox='0 0 32 32'></Button>
+          <Button href="{instagramLink}" data-jsx="button" icon="instagram" label="instagram page" viewbox='0 0 32 32'></Button>
         </p>
       </div>
     </>)
