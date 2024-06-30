@@ -136,7 +136,8 @@ const lines = [
     display: grid;
     grid-gap: var(--gap);
     position: relative; // @NK dont remove this
-    width: 100%;
+    // WE dont need this & messes up a added padding, without border-box width: 100%;
+    box-sizing: border-box;
     grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
 }
 
