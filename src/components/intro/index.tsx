@@ -7,19 +7,11 @@ export const Intro = ({ className, links = [], children }) => {
     return <li key={label}><a href={`#${hash}`}>{label}</a></li>
   })
 
-  return <>
-    <Columns className={cx(styles.intro, 'cols-1', className)}>
-      <Column span={12}>
-        <TextBlock>
+  return (
+    <div className={cx(styles.intro, className)}>
+
 
           <div className={styles.title}>{children}</div>
           {_links.length ? <ul className={styles.list}>{_links}</ul> : null}
-
-
-
-      </TextBlock>
-    </Column>
-  </Columns >
-
-  </>
+  </div>)
 }
