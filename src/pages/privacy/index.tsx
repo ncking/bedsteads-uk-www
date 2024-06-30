@@ -1,7 +1,7 @@
 import { cx } from '@raiz/browser'
 import { Link } from '@raiz/nuggins'
 import config from '@config'
-import { Column, Columns, TextBlock } from '@components'
+import { Column, Columns, TextBlock, H1 } from '@components'
 import { getSiteLink } from '@lib'
 import styles from './style.scss'
 
@@ -13,9 +13,9 @@ export default () => {
 
     <Columns className="cols-1 md:cols-2 xl:cols-3">
 
-      <Column span={12}>
-        <TextBlock> <h1>Bedsteads Privacy Policy</h1></TextBlock>
-      </Column>
+
+        <H1>Bedsteads Privacy Policy</H1>
+
 
 
 

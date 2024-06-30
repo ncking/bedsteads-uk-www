@@ -6,7 +6,7 @@ export default () => {
   return (
     <>
 
-      {/* <BedsteadsImage
+      <BedsteadsImage
         alt="Reflection of Bedsteads delivery van, in bed knob"
         lazy="false"
         tag="div"
@@ -15,7 +15,7 @@ export default () => {
         src="/image/index/cover,t_viewport.jpg"
       >
         <Intro className={cx("logotype", styles.intro)}>Bedsteads</Intro>
-      </BedsteadsImage> */}
+      </BedsteadsImage>
 
 
 
