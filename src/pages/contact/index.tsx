@@ -41,18 +41,18 @@ export default (props) => {
         </p>
         <hr />
         <p>
-          {streetAddress}<br />
-          {postcode}
+          ${streetAddress}<br />
+          ${postcode}
         </p>
         <p>
-          {openingHours.join('<br />')}<br />
+          ${openingHours.join('<br />')}<br />
           Saturday by arrangement - please do contact us to arrange a visit on a Saturday.
         </p>
         <hr />
         <p>
-          <TelLink>t: {tel}</TelLink>
+          <TelLink>t: ${tel}</TelLink>
           <br />
-          <EmailLink>e: {email}</EmailLink>
+          <EmailLink>e: ${email}</EmailLink>
         </p>
         <p>
           <Link href={facebookLink} data-jsx="button" icon="facebook" label="facebook page" viewbox='0 0 32 32'></Link>
