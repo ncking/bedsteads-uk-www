@@ -67,7 +67,7 @@ export const Column = ({ className = '', indent = false,  ...rest }) => (
 
 
 
-export const TextBlock = (props) => <div className={cx(styles.text)} {...props}></div>
+export const TextBlock = (props) => <div className={cx(styles.textBlock)} {...props}></div>
 
 
 
