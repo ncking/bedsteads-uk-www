@@ -1,5 +1,8 @@
 //@ts-nocheck
 import { cx } from '@raiz/browser'
+import { Link } from '@raiz/nuggins'
+import { getSiteLink } from '@lib'
+
 import * as styles from './styles.scss'
 import './grid.global.scss'
 
@@ -60,7 +63,7 @@ export const Columns = ({
 
 export const Column = ({ className = '', children }) => (
     // SPAN only works with a responsive size ... as the NUMBER OF COLUMNS CHANGE!!!
-    <div className={cx(styles.column,  className)}>{children}</div>
+    <div className={cx(styles.column, className)}>{children}</div>
 )
 
 
@@ -70,4 +73,6 @@ export const TextBlock = (props) => <div className={cx(styles.textBlock)} {...pr
 
 
 
-export const H1 = ({children}) =>   <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column>
+export const H1 = ({ children }) => <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column>
+
+

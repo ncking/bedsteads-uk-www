@@ -1,24 +1,16 @@
-import { cx } from '@raiz/browser'
 import { Link } from '@raiz/nuggins'
 import config from '@config'
-import { Column, Columns, TextBlock, H1 } from '@components'
+import { Column, Columns, TextBlock, H1, EmailLink } from '@components'
 import { getSiteLink } from '@lib'
 import styles from './style.scss'
 
 export default () => {
   const { streetAddress, postcode } = config()
-  const emailLink = <Link {...getSiteLink('email')} />
 
   return (
 
     <Columns className="cols-1 md:cols-2 xl:cols-3" page={true}>
-
-
-        <H1>Bedsteads Privacy Policy</H1>
-
-
-
-
+      <H1>Bedsteads Privacy Policy</H1>
       <Column>
         <TextBlock>
           <h2>Our contact details</h2>
@@ -39,7 +31,7 @@ export default () => {
             </li>
             <li>
               <span>E-mail:</span>
-              {emailLink}
+              <EmailLink />
             </li>
             <li>
               <span>Date completed:</span>
@@ -218,11 +210,7 @@ export default () => {
               circumstances. You are not required to pay any
               charge for exercising your rights. If you make a
               request, we have one month to respond to you. Please
-              contact us at
-              {' '}
-              {emailLink}
-              {' '}
-              if you wish to make a
+              contact us at&nbsp;<EmailLink />&nbsp;if you wish to make a
               request.
             </li>
           </ul>
