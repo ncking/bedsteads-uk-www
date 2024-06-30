@@ -1,16 +1,10 @@
 import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server'
 
 import { bases } from './utils/bases'
-import { KELCOL_LINK } from './utils/constants'
 import { kelcolTiles } from './utils/kelcol'
 
-const sizes
-    = '2\'6"/75cm, 3\'0"/90cm, 4\'0"/120cm, 4\'6"/135cm, 5\'0"/150cm, 5\'6"/165cm, 6\'0"/180cm'.split(
-      ',',
-    )
-let tilesHusaByeHtml = ''
-
-;[...kelcolTiles, ...bases].map((tile) => {
+const sizes = '2\'6"/75cm, 3\'0"/90cm, 4\'0"/120cm, 4\'6"/135cm, 5\'0"/150cm, 5\'6"/165cm, 6\'0"/180cm'.split(',',)
+const content = [...kelcolTiles, ...bases].map((tile) => {
   const { alt, details, title, prices, name, make, slug, noImage } = tile
 
   let rowsHtml = ''
@@ -21,7 +15,7 @@ let tilesHusaByeHtml = ''
   const img = noImage
     ? '<div></div>'
     : `<img alt="${alt}" ratio="130" src="/image/mattress/${slug}/${name},t_mattress.jpg" />`
-  tilesHusaByeHtml += `
+  return `
     <div class="tile">
         ${img}
         <div class="mattress-stats">
@@ -36,12 +30,11 @@ let tilesHusaByeHtml = ''
 
 
 export default async ({ response, request }) => {
-  const title
-        = 'Mattresses - British Made mattress renowned worldwide for quality and comfort, and handmade bed bases'
+  const title = 'Mattresses - British Made mattress renowned worldwide for quality and comfort, and handmade bed bases'
   const description = 'Large range of antique beds, French beds, iron Beds & antique furniture. 100s of antique beds on show at our Somerset showroom, South West of Bristol'
   response
     .setRobots('index,follow')
-    .setData({ content })
+    .setData({ content: content.join('') })
     .setJsonLd(organizationJsonLd)
     .setTitle(title)
     .setDescription(description)
