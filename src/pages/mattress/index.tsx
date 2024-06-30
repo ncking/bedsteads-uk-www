@@ -1,23 +1,22 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage, Intro, Columns, Column, EmailLink, H1, TextBlock } from '@components'
+import { BedsteadsImage, Intro, Columns, Column, EmailLink, H1, TextBlock, Html } from '@components'
 import * as styles from './style.scss'
 import { Link } from '@raiz/nuggins'
 const KELCOL_LINK = <Link href="https://kelcol.co.uk">Kelcol</Link>
 
 
-export default () => {
+export default ({ content }) => {
+
     return (
         <>
 
-            <div className={styles.mattressGrid}>
-
+            <div className={styles.grid}>
+                <Html>{content}</Html>
             </div>
 
 
             <Columns className="cols-1 md:cols-2 xl:cols-3" page={true}>
-
                 <H1>Mattresses & Bases</H1>
-
                 <Column>
                     <TextBlock>
                         <p>
@@ -60,25 +59,25 @@ export default () => {
 
                 <Column>
                     <TextBlock>
-                    <h2>Firm edge bases</h2>
-                    <p>
-                        Firm edge bases are manufactured with traditional cone spring and
-                        webbing construction to give a spring top with firm edges.
-                    </p>
-                    <p>
-                        They are available in any depth, 2" (5cm) & 4" (10cm) being the most popular.
-                    </p>
-                    <h2>Platform bases</h2>
-                    <p>
-                        Platform bases are supplied with pegboard breather tops for
-                        strength and hygiene. They are available in any depth, 2" (5cm)
-                        & 4" (10cm) being the most popular.
-                    </p>
-                    <h2>Slatted bases</h2>
-                    <p>
-                        Pine slats Free of Charge when bought with one of our beds. Slats
-                        for customers own bed POA choice of timbers possible.
-                    </p>
+                        <h2>Firm edge bases</h2>
+                        <p>
+                            Firm edge bases are manufactured with traditional cone spring and
+                            webbing construction to give a spring top with firm edges.
+                        </p>
+                        <p>
+                            They are available in any depth, 2" (5cm) & 4" (10cm) being the most popular.
+                        </p>
+                        <h2>Platform bases</h2>
+                        <p>
+                            Platform bases are supplied with pegboard breather tops for
+                            strength and hygiene. They are available in any depth, 2" (5cm)
+                            & 4" (10cm) being the most popular.
+                        </p>
+                        <h2>Slatted bases</h2>
+                        <p>
+                            Pine slats Free of Charge when bought with one of our beds. Slats
+                            for customers own bed POA choice of timbers possible.
+                        </p>
                     </TextBlock>
                 </Column>
             </Columns>
