@@ -145,6 +145,9 @@ const lines = [
     grid-template-columns: subgrid;
 }
 
+.col-span-full {
+    grid-column: var(--columns) / var(--columns);
+}
 .hidden{
     display:none
 }

@@ -59,8 +59,9 @@ export const Columns = ({
     )
 }
 
-export const Column = ({ className = '', indent = false, span = null, ...rest }) => (
-    <div className={cx(styles.column, span && `col-span-${span}`, className)} {...rest}></div>
+export const Column = ({ className = '', indent = false,  ...rest }) => (
+    // SPAN only works with a responsive size ... as the NUMBER OF COLUMNS CHANGE!!!
+    <div className={cx(styles.column,  className)} {...rest}></div>
 )
 
 
