@@ -43,7 +43,7 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 
   .column {
-    background-color: rgb(175, 141, 78);
+   // background-color: rgb(175, 141, 78);
   }
 
 
@@ -58,11 +58,11 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 
   .page {
-    outline: 2px solid red;
+   // outline: 2px solid red;
     padding: var(--page-padding)
   }
 
 
   .h1{
-    margin-bottom: var(--gutter-half);
+    margin-bottom: var(--gutter);
   }
