@@ -1,5 +1,5 @@
 import { arrayValues } from '@raiz/browser'
-import { BedsteadsImage, SlideUp, SaleStockBanner, Columns, Column, TextBlock, H1 } from '@components'
+import { BedsteadsImage, SlideUp, SaleStockBanner, Column, MainBlock } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
 import Stats from './stats'
 import * as styles from './item.scss'
@@ -54,16 +54,16 @@ export const ItemPage = ({ activePanel, item }) => {
         {status
           ? (
             <div className={statusStyles.status}>{status}</div>
-            )
+          )
           : (
             <SaleStockBanner item={item} />
-            )}
+          )}
 
-        <Columns className="cols-1 md:cols-2 xxl:cols-3" page={true}>
-          <Column className='md:order-3'><TextBlock><Stats item={item} /></TextBlock></Column>
-          <H1>{title}</H1>
-          <Column><TextBlock>{description}</TextBlock></Column>
-        </Columns>
+
+        <MainBlock title={title} classNames={['md:order-3']}>
+          <Stats item={item} />
+          <>{description}</>
+        </MainBlock>
 
         <Column>
           {(activePanel ? otherImages : []).map(({ src, r }, i) => {

@@ -70,24 +70,24 @@ export const Column = ({ className = '', children }) => (
 
 
 
-export const TextBlock = (props) => <div className={cx(styles.textBlock)} {...props}></div>
+export const TextBlock = ({className, ...rest}) => <div className={cx(styles.textBlock, className)} {...rest}></div>
 
 
 
 export const H1 = ({ children }) => <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column>
 
 
-export const MainBlock = ({ title, children }) => {
+export const MainBlock = ({ title, children, classNames = [] }) => {
 
 
     return (<>
 
         <Columns className="cols-1 md:cols-2 xl:cols-3" page={true}>
             <H1>{title}</H1>
-            <TextBlock>
+            <TextBlock className={[classNames[0]]}>
                 {children[0]}
             </TextBlock>
-            <TextBlock>
+            <TextBlock className={[classNames[1]]}>
                 {children[1]}
             </TextBlock>
         </Columns>

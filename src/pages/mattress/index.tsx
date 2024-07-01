@@ -9,7 +9,6 @@ export default ({ content }) => {
 
     return (
         <>
-
             <div className={styles.grid}>
                 <Html>{content}</Html>
             </div>
@@ -74,9 +73,6 @@ export default ({ content }) => {
                     </p>
                 </>
             </MainBlock>
-
-
-
         </>)
 
 }
