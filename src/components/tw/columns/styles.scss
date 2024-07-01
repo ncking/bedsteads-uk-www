@@ -43,7 +43,7 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 
   .column {
-   // background-color: rgb(175, 141, 78);
+    // background-color: rgb(175, 141, 78);
   }
 
 
@@ -58,17 +58,23 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 
   .page {
-   // outline: 2px solid red;
-     padding: var(--page-padding);
-  //  // @media only screen and (min-width: 1200px) {
-  //     --columns: 3;
-  //  // }
+    // outline: 2px solid red;
+    padding: var(--page-padding);
+    //  // @media only screen and (min-width: 1200px) {
+    //     --columns: 3;
+    //  // }
   }
 
 
-  .h1{
+  .h1 {
     margin-bottom: var(--gutter);
-    h1{
+
+    h1 {
       max-width: 600px;
     }
+  }
+
+
+  .mainBlock {
+    background-color: palevioletred;
   }
