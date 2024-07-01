@@ -47,7 +47,7 @@ export default ({ content }) => {
                     <p>
                         We can supply bases for your antique bed in
                         any unusual size or shape. Please email
-                        <EmailLink />  for a quote.
+                        &nbsp;<EmailLink />&nbsp;for a quote.
                     </p>
                 </>
 
