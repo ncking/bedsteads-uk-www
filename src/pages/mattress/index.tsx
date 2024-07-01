@@ -18,7 +18,7 @@ export default ({ content }) => {
                     <p>
                         Mattresses can be bought with our beds or separately, with direct
                         to customer delivery from the manufacturer.
-                        Our Sleepwell mattresses are hand made in England by ${KELCOL_LINK}, in Yorkshire
+                        Our Sleepwell mattresses are hand made in England by {KELCOL_LINK}, in Yorkshire
                     </p>
                     <p>
                         Mattresses are available in all comfort choices. Please
@@ -26,7 +26,7 @@ export default ({ content }) => {
                     </p>
                     <p>
                         If you are looking for a spring count not listed, or a comfort
-                        feel not mentioned, please enquire as ${KELCOL_LINK} make a wider
+                        feel not mentioned, please enquire as {KELCOL_LINK} make a wider
                         range than we stock.
                     </p>
                     <h2>Bases</h2>
