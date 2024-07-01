@@ -5,6 +5,7 @@ import { getSiteLink } from '@lib'
 
 import * as styles from './styles.scss'
 import './grid.global.scss'
+import { Children } from 'react'
 
 /**
 https://css-tricks.com/almanac/properties/g/grid-template-columns/#:~:text=The%20fit%2Dcontent()%20function,never%20shrinks%20beyond%20a%20minimum.
@@ -76,3 +77,19 @@ export const TextBlock = (props) => <div className={cx(styles.textBlock)} {...pr
 export const H1 = ({ children }) => <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column>
 
 
+export const MainBlock = ({ title, children }) => {
+
+
+    return (<>
+
+        <Columns className="cols-1 md:cols-2 xl:cols-3" page={true}>
+            <H1>{title}</H1>
+            <TextBlock>
+                {children[0]}
+            </TextBlock>
+            <TextBlock>
+                {children[1]}
+            </TextBlock>
+        </Columns>
+    </>)
+}

@@ -34,9 +34,9 @@ export default () => {
       >
       </BedsteadsImage>
 
-      <div className='md:col-span-2'>
 
-        <Columns className="cols-1 md:cols-2">
+
+
           <TextBlock>
             <h2 id={a1}>What makes an Item Antique?</h2>
             <p>
@@ -70,6 +70,14 @@ export default () => {
               {/* (Taken from Nickle Bed) */}
             </p>
           </TextBlock>
+
+
+          <BedsteadsImage
+          className={styles.colImg}
+          alt="Reflection of Bedsteads delivery van, in bed knob"
+          lazy="false"
+          src="/image/page/fire,t_col.jpg"
+        />
 
           <TextBlock>
 
@@ -114,18 +122,13 @@ export default () => {
               Straight, tapered legs, often with fluted details
             </p>
           </TextBlock>
-        </Columns>
-      </div>
+ 
 
+    
 
       <Column className={cx(styles.colOff)}>
 
-        <BedsteadsImage
-          className={styles.colImg}
-          alt="Reflection of Bedsteads delivery van, in bed knob"
-          lazy="false"
-          src="/image/page/fire,t_col.jpg"
-        />
+       
         <TextBlock>
           <h2>Names of Makers</h2>
           <h4>R.W Winfield</h4>
