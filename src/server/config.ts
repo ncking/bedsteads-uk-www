@@ -27,7 +27,6 @@ export const priceRange = '£150 - £20000'
 export const GA = 'UA-672201-1'
 export const gmapApiKey = 'UA-672201-1'
 export const googleWebmasterVerification = 'S7aP7w4mEgJVKolP4FP1-8c1UOvlyzEQnZi87peQLkE'
-export const version = '1.3.5'
 export const sitemapUrl = `${domain}/sitemap/index.xml` // need for robots.txt & sitemap gen ....
 
 /**

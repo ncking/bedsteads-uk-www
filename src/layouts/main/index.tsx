@@ -21,9 +21,26 @@ export const Layout = (props: Context) => {
       <HeaderMobile {...args} />
       <Sidebar />
       <OverlayMain className={style.main} error={response.status !== 200}>
+        {/* <PageSwitch animations={animations}>
+
+        </PageSwitch> */}
         <Page {...args} />
       </OverlayMain>
       <Overlay className={style.overlay} hasTrans={false}></Overlay>
     </>
   )
 }
+
+// const easing = 'cubic-bezier(0.55, 0.055, 0.675, 0.19)'
+// const animationIn = [
+//     [{ opacity: 0 }, { opacity: 1 }],
+//     { duration: 300, fill: 'forwards', easing },
+// ]
+// const animationOut = [
+//     [{ opacity: 1 }, { opacity: 0 }],
+//     { duration: 300, fill: 'forwards', easing },
+// ]
+// const animations = [// https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats
+//     animationIn,
+//     animationOut,
+// ]

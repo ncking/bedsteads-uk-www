@@ -1,6 +1,6 @@
 import * as styles from './style.scss'
 
-export const ErrorPage = (props) => {
+export default (props) => {
   // !!NOT from current request as we my have code triggered errors
 
   const { response } = props

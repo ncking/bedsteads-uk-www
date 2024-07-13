@@ -1,64 +1,63 @@
-import { SLEEPWELL_LINK } from './constants'
 const tilesMap = {
   limoges: {
     details: `
-        Open coil bonnel spring - available in different tensions<br/>
-        Framed unit<br/>
-        Demask fabric option<br/>
-        Tufted<br/>
-        Fluted border<br/>
-        Rebound cotton<br/>
-        Three layers of luxury filling<br/>
+        Open coil bonnel spring - available in different tensions
+        Framed unit
+        Demask fabric option
+        Tufted
+        Fluted border
+        Rebound cotton
+        Three layers of luxury filling
         Handles for ease of turning`,
     alt: 'Side view photograph of Limoges mattress',
   },
   bordeaux: {
     details: `
-        1000 Pocket spring<br/>
-        Firm tension spring<br/>
-        White sumptuous fibre filling<br/>
-        Demask fabric option<br/>
-        Tufted<br/>
-        Fluted border<br/>
-        Handles for ease of turning<br/>
+        1000 Pocket spring
+        Firm tension spring
+        White sumptuous fibre filling
+        Demask fabric option
+        Tufted
+        Fluted border
+        Handles for ease of turning
         Ventilators to help mattress breathe`,
     alt: 'Side view photograph of Bordeaux mattress',
   },
   montpellier: {
-    details: `1200 Pocket spring<br/>
-        Firm support<br/>
-        Four layers of luxury and sumptuous fillings<br/>
-        Rebound cotton<br/>
-        Demask Fabric option<br/>
-        Tufted<br/>
-        Hand side stitching<br/>
-        Handles for ease of turning<br/>
+    details: `1200 Pocket spring
+        Firm support
+        Four layers of luxury and sumptuous fillings
+        Rebound cotton
+        Demask Fabric option
+        Tufted
+        Hand side stitching
+        Handles for ease of turning
         Ventilators to help mattress breathe`,
     alt: 'Side view photograph of Montpellier mattress',
   },
   chartres: {
     details: `
-        1500 Pocket spring<br/>
+        1500 Pocket spring
         Five layers of luxury fillings: Lambswool and cotton
         Demask fabric option
-        Tufted<br/>
-        Double layer of Hand side stitching<br/>
-        White sumptuous fibre<br/>
-        Handles for ease of turning<br/>
+        Tufted
+        Double layer of Hand side stitching
+        White sumptuous fibre
+        Handles for ease of turning
         Ventilators to help mattress breathe`,
     alt: 'Side view photograph of Chartres mattress',
   },
   paris: {
     details: `
-        3000 Pocket spring<br/>
-        Five layers of luxury fillings: <br/>
+        3000 Pocket spring
+        Five layers of luxury fillings:
             wool,
             cashmere, 
             I-fibre technology
-            Demask fabric option<br/>
-        Four rows of hand side stitching<br/>
-        Woollen pom-pom tufting<br/>
-        Handles for ease of turning<br/>
+            Demask fabric option
+        Four rows of hand side stitching
+        Woollen pom-pom tufting
+        Handles for ease of turning
         Ventilators to help mattress breathe`,
     alt: 'Side view photograph of Paris mattress',
   },
@@ -87,7 +86,6 @@ prices.map((linearray) => {
     title,
     prices,
     ...tilesMap[name],
-    make: SLEEPWELL_LINK,
     slug: 'kelcol',
   })
 })

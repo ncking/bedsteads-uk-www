@@ -3,11 +3,6 @@ import { getGlobalStore } from '@raiz/nuggins'
 import { createStore } from '@raiz/react-simple-store'
 import type { Stock } from '@types'
 
-
-
-
-
-
 const actions = (set) => {
   /**
    * Run @ creation only

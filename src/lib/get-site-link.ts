@@ -20,7 +20,7 @@ export const getSiteLink = (id) => {
     routes.map((route) => {
       const { url, id, meta = {} } = route
       const { title, label } = meta
-      linkMap[id] = { url, title, label }
+      linkMap[id] = { url, title: (title || label || id) }
     })
   }
 

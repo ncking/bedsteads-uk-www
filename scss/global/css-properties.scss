@@ -3,17 +3,27 @@
   --c-white: #fff;
   --c-grey: #eee;
   --c-img: #ccc;
-  --c-main: #26282d;
+  --c-black: #26282d;
+  /**
+  **/
+  --c-main: var(--c-black);
   --c-main-font: #bbb;
   --c-body: #fff;
   --c-bg-hover: rgba(255, 255, 255, 0.08);
 
-  --gutterMin: 20px;
+  --gutterMin: 10px;
   --gutterMax: 160px;
   --scaler: 4vw;
   --gutter: clamp(var(--gutterMin), var(--scaler), var(--gutterMax));
   --gutter-half: calc(var(--gutter) / 2);
+  --gutter-half-n: calc(var( --gutter-half) * -1);
   --gutter-quater: calc(var(--gutter) / 4);
+  --gutter2 : calc(var(--gutter) * 2);
+ 
+
+  --rz-img-bg:#dedede;
+
+  --page-padding: clamp(0px, var(--scaler), var(--gutterMax));
 
   --sidenav-w: 0px;
   --main-w: 100vw;

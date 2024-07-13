@@ -17,35 +17,35 @@ const thumbClicked = (i) => {
   itemAnalyics('thumb select')
 }
 
-let _scroller
-
 export const ThumbNav = ({ images = [], id }) => {
   const elRef = useRef<HTMLInputElement>(null)
   const [sliderStyle, setStyle] = useState({})
   const isMounted = useIsMounted()
 
   useEffect(() => {
-    const unbindResize = addWindowResize(
-      () => {
-        const wrapEl = elRef.current as HTMLElement
-        const wrapWidth = (wrapEl.parentNode as HTMLElement).offsetWidth
-        const thumbsWidth = wrapEl.offsetWidth
-        _scroller && _scroller?.destroy()
+    let _scroller
 
-        _scroller = scroller({
-          el: wrapEl,
-          updateCallback: x =>
-            isMounted()
-            && setStyle({
-              transform: `translate3d(${-1 * x}px, 0px, 0px)`,
-            }),
-          initialX: -100,
-          boundX: [0, Math.ceil(thumbsWidth - wrapWidth)],
-        })
-        _scroller.move(0)
-      },
-      { leading: true },
-    )
+    const rezizeFn = () => {
+      const wrapEl = elRef.current as HTMLElement
+
+      const wrapWidth = (wrapEl.parentNode as HTMLElement).offsetWidth
+      const thumbsWidth = wrapEl.offsetWidth
+      _scroller && _scroller?.destroy()
+
+      _scroller = scroller({
+        el: wrapEl,
+        updateCallback: x =>
+          isMounted()
+          && setStyle({
+            transform: `translate3d(${-1 * x}px, 0px, 0px)`,
+          }),
+        initialX: -100,
+        boundX: [0, Math.ceil(thumbsWidth - wrapWidth)],
+      })
+      _scroller.move(0)
+    }
+
+    const unbindResize = addWindowResize(rezizeFn, { leading: true })
 
     /**
          *

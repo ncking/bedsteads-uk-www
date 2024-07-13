@@ -49,6 +49,10 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
       return render(mainSizes[size])
     }
 
+    if (template === 'col') {
+      return render({ height: 600 })
+    }
+
     let item
     const { id } = stockMatcher.exec(pathname)?.groups || {} /// we will be a valid id ... as we have source files
     if (id) {
