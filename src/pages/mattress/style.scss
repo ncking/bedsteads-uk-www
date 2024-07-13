@@ -1,6 +1,58 @@
-.mattress-stats {
-    padding: var(--gutter);
+.grid {
+    /*
+    * must be multiples of 2
+    */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row dense;
+    --c-grey: #fff; // inside the grid this is only use to alternate the bg on the tiles, so a cheap way of removing checker board
+    background-color: #efefef;
+
+    @each $width,
+    $col in $tileMattressBreakpoints {
+        @media only screen and (min-width: #{$width}px) {
+            //width: percentage(1/$col);
+            grid-template-columns: repeat($col, 1fr);
+        }
+    }
+
+    @media only screen and (max-width: #{$showImageBr}px) {
+        .tile>div:nth-child(1) {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        h2 {
+            margin-top: 1rem;
+        }
+    }
+
+
+
+    // >div:nth-child(2n+1) {
+    //     background-color: var(--c-grey);
+    // }
+
+
+}
+
+
+.tile {
+    overflow: hidden;
+    min-width: 0;
+}
+
+
+
+.mattressStats {
     font-size: 0.9rem;
+    white-space: pre-line;
+    margin: var(--gutter-half);
+
+    @include min(md) {
+        max-width: 300px;
+    }
 
     tr {
         border-bottom: 1px solid #ccc;
@@ -16,40 +68,9 @@
         }
     }
 
-    h2{
-        margin:0;
+    h2 {
+        margin: 0;
         height: 4rem;
-    line-height: 1.5rem;
-//background-color: red;
-    }
-}
-
-.mattress-grid {
-    /*
-    * must be multiples of 2
-    */
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-flow: row dense;
-
-    --c-grey: #fff; // inside the grid this is only use to alternate the bg on the tiles, so a cheap way of removing checker board
-    @each $width,
-        $col in $tileMattressBreakpoints {
-        @media only screen and (min-width: #{$width}px) {
-            //width: percentage(1/$col);
-            grid-template-columns: repeat($col, 1fr);
-        }
-    }
-
-    @media only screen and (max-width: #{$showImageBr}px) {
-        .tile > div:nth-child(1) {
-            display: none;
-        }
-    }
-
-    @media only screen and (max-width: 700px) {
-        h2 {
-            margin-top: 1rem;
-        }
+        line-height: 1.5rem;
     }
 }

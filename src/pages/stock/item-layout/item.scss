@@ -1,8 +1,4 @@
 
-.gallery > div {
-  margin-bottom: 1px;
-  background-color: var(--c-img);
-}
 
 .item {
   position: relative;
@@ -17,20 +13,31 @@
     box-shadow: $shadowHorizontalUp;
     opacity: 0;
     transition: opacity 0.65 ease;
+
     .scrolled & {
       opacity: 1;
     }
   }
 }
 
+.reorder {
+  :first-child {
+    order: 1;
+    margin-bottom: var(--gutter);
+    @include min(md) {
+      order: -1;
+      margin-bottom:  var(--gutter-half);
+    }
+  }
 
+  :last-child {
+    order: 2;
+  }
 
-.copy {
-    max-width: $maxColumnWidth;
-    white-space: break-spaces;
 }
 
 
-.mainImage{
-  background-color: #dedede;
+.gallery>div {
+  margin-bottom: 1px;
 }
+

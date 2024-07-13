@@ -32,20 +32,19 @@ export const ItemLayout = ({ item }) => {
   const isSwiper = !isDesktop && TOUCH_DEVICE
   const hasLoadedAndMobile = hasLoaded && isSwiper
 
-
   if (!hasLoadedAndMobile) {
     return <ItemPage key="product" activePanel={true} item={item} />
   }
-  
+
   const items = stockStore.getSwipSet()
 
-
-  return <SwipeStack
-    key="swipestack"
-    items={items}
-    styles={styles}
-    Panel={ItemPage}
-    onChange={onChange}
-  />
-
+  return (
+    <SwipeStack
+      key="swipestack"
+      items={items}
+      styles={styles}
+      Panel={ItemPage}
+      onChange={onChange}
+    />
+  )
 }

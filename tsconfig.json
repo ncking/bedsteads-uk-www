@@ -17,16 +17,20 @@
     "sourceMap": false,
     "baseUrl": "./",
     "paths": {
-      "@components" : ["./src/components"],
-      "@lib" : ["./src/lib/"],
-      "@store" : ["./src/store/index"],
-      "@store/*" : ["./src/store/*"],
-      "@types" : ["./src/types"],
-      "@config": ["./src/config/embeded-client-config"],
+      "@/*" : ["./src/*"],
       "@common": ["./src/common"],
+      "@components" : ["./src/components"],
+      "@components/*" : ["./src/components*"],
+      "@config": ["./src/config/embeded-client-config"],
+      "@layouts/*" : ["./src/layouts/*"],
+      "@lib" : ["./src/lib/"],
       "@server" : ["./src/server/index"],
       "@server/*" : ["./src/server/*"],
-      "@server/repo/*": ["./src/server/dbase/repository/*"]
+      "@server/repo/*": ["./src/server/dbase/repository/*"],
+      "@store" : ["./src/store/index"],
+      "@store/*" : ["./src/store/*"],
+      "@types" : ["./src/types"]
+
       
     },
     "typeRoots": [

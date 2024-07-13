@@ -50,7 +50,7 @@ export const createCompositeImage = async ({
     })
   })
 
-  const results: any[] = await Promise.allSettled(buffers)
+  const results = await Promise.allSettled(buffers)
   results.map((buff, i) => {
     imagesWithCoords[i].input = buff.value
   })

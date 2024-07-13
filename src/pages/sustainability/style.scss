@@ -1,0 +1,8 @@
+.title {
+  position: absolute;
+  bottom: 0;
+  margin: var(--gutter);
+  color: var(--c-main-font);
+  font-size: calc(36px + (22) * ((100vw - 300px) / (1900 - 300)));
+}
+

@@ -1,0 +1,94 @@
+  /**
+https://css-tricks.com/almanac/properties/g/grid-template-columns/#:~:text=The%20fit%2Dcontent()%20function,never%20shrinks%20beyond%20a%20minimum.
+
+https://stackoverflow.com/questions/52417889/setting-minimum-and-maximum-number-of-columns-using-css-grid
+
+
+WE want 
+1. A column layout
+2. Columns must be able to cope with gaps
+3. columns if dont span the full row, keep a max width
+4. columns wrap in response to the containers width, not the @media width
+5. We can re-order
+
+We have 3 options
+1. CSS Columns (meant for text, but we can fudge)
+2. Flexbox
+3. Css Grid
+
+Css Grid meets all our requirements!!!,
+its not perfect
+
+How it works?
+
+grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1fr)) ;
+
+
+**/
+
+  .columns {
+
+
+    &.bottom {
+      margin-bottom: var(--gutter)
+    }
+
+  }
+
+
+  .columns+.columns {
+    margin-top: var(--gutter);
+  }
+
+
+
+  .column {
+    // background-color: rgb(175, 141, 78);
+  }
+
+
+
+
+  .textBlock {
+    // background-color: rgb(205, 49, 200);
+    // background-color: #ccc;
+    // padding: 0 var(--gutter); // sameas the old setup
+    white-space: break-spaces;
+  }
+
+
+  .page {
+    // outline: 2px solid red;
+    padding: var(--page-padding);
+    //  // @media only screen and (min-width: 1200px) {
+    //     --columns: 3;
+    //  // }
+  }
+
+
+  .h1 {
+
+    margin-bottom: var(--gutter-half);
+
+    h1 {
+      max-width: 600px;
+    }
+  }
+
+
+  .mainBlock {
+    h1 {
+      margin: 0
+    }
+    max-width:1000px;
+   // background-color: palevioletred;
+    grid-gap: 0 var(--gutter) !important;
+    /**
+    **/
+ margin:  var(--gutter);
+
+
+    // @media screen and (min-width: 2000px) {
+    //   --columns: 3 !important;
+    // }
+  }

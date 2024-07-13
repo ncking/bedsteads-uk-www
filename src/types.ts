@@ -25,14 +25,14 @@ export interface Stock {
   info: StockInfoArray
   status: string
   // price number, fmt string
-  price:number
-  priceFmt:string
-  priceWasFmt?:string
+  price: number
+  priceFmt: string
+  priceWasFmt?: string
   //
   size?: string
   isRepo?: 1 | undefined
   isFurniture?: 1 | undefined
-  isSale? : boolean
+  isSale?: boolean
   onBeforeClick?: CallableFunction
-  canonical?:string
+  canonical?: string
 }

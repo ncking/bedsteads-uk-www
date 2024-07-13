@@ -1,0 +1,23 @@
+$ht: 600px;
+
+.colImg {
+    height: $ht;
+    background-color: #ccc;
+  //  margin: 0 var(--gutter-half-n) var(--gutter-half) var(--gutter-half-n);
+
+}
+
+
+
+.colImg1 {
+    height: $ht;
+    background-color: orange;
+ //margin: 0 var(--gutter-half-n) var(--gutter-half) -103px;
+
+}
+
+
+.colOff {
+    background-color: #eee;
+    color: #333
+}

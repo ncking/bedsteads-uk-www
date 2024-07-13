@@ -5,9 +5,9 @@ import { getSiteLink } from '@lib'
 import * as logoStyles from './logo.scss'
 import * as stylesMenu from './menu.scss'
 import * as styles from './sidebar.scss'
-/**
- *
- */
+
+const abLinks = 'faq,sustainability,contact'
+
 const NavLink = ({ id, noLi = false, ...rest }) => {
   const props = getSiteLink(id)
   const { url } = props
@@ -63,7 +63,10 @@ export const Sidebar = () => {
         </ul>
 
         <ul>
-          <NavLink id="contact" />
+          {abLinks.split(',')
+            .map(id => (
+              <NavLink id={id} key={id} />
+            ))}
         </ul>
 
         <ul className={stylesMenu.contact}>

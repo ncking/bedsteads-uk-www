@@ -8,6 +8,8 @@
     top: 0;
     min-height: 101vh; // @NK we really do ned this; ie map page needs a scrollbar forced
   }
+  //  background: rgba(#7e5c31, .2);
+    color:var(--c-black)
 }
 
 .overlay {

@@ -1,18 +1,31 @@
-import { cx } from '@raiz/browser'
 import { Link } from '@raiz/nuggins'
+import { EmailLink, MainBlock } from '@components'
 import config from '@config'
 import { getSiteLink } from '@lib'
 import styles from './style.scss'
 
 export default () => {
   const { streetAddress, postcode } = config()
-  const emailLink = <Link {...getSiteLink('email')} />
 
   return (
-    <div className={cx('copy', styles.wrap)}>
-      <div className="flex flex-text">
-        <h1 className="flex__col--full">Bedsteads Privacy Policy</h1>
-        <div className="flex__col">
+
+    <>
+      {/* <BedsteadsImage
+        alt="Reflection of Bedsteads delivery van, in bed knob"
+        lazy="false"
+        tag="div"
+        className="viewport"
+        responsive="1"
+        src="/image/page/shavings,t_viewport.jpg"
+      >
+        <Intro>
+        Bedsteads Privacy Policy
+        </Intro>
+      </BedsteadsImage> */}
+
+      <MainBlock title="Bedsteads Privacy Policy">
+
+        <>
           <h2>Our contact details</h2>
           <ul>
             <li>
@@ -31,7 +44,7 @@ export default () => {
             </li>
             <li>
               <span>E-mail:</span>
-              {emailLink}
+              <EmailLink />
             </li>
             <li>
               <span>Date completed:</span>
@@ -162,9 +175,9 @@ export default () => {
             - we do not record our calls and telephone payments are
             processed through A2B Trust Payments.
           </p>
-        </div>
+        </>
 
-        <div className="flex__col">
+        <>
           <h2>How we store your personal information</h2>
           <p>
             Your information is securely stored.
@@ -208,11 +221,9 @@ export default () => {
               circumstances. You are not required to pay any
               charge for exercising your rights. If you make a
               request, we have one month to respond to you. Please
-              contact us at
-              {' '}
-              {emailLink}
-              {' '}
-              if you wish to make a
+              contact us at&nbsp;
+              <EmailLink />
+&nbsp;if you wish to make a
               request.
             </li>
           </ul>
@@ -220,9 +231,9 @@ export default () => {
           <p>
             If you have any concerns about our use of your personal
             information, you can make a complaint to us at
-            {' '}
-            {emailLink}
-            .
+            &nbsp;
+            <EmailLink />
+&nbsp;
             <br />
             <br />
             You can also complain to the ICO if you are unhappy with
@@ -252,8 +263,11 @@ export default () => {
           ICO website:
           {' '}
           <Link url="https://www.ico.org.uk" />
-        </div>
-      </div>
-    </div>
+
+        </>
+
+      </MainBlock>
+
+    </>
   )
 }
