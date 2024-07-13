@@ -26,8 +26,10 @@
 .reorder {
   :first-child {
     order: 1;
+    margin-bottom: var(--gutter);
     @include min(md) {
-      order: -1
+      order: -1;
+      margin-bottom:  var(--gutter-half);
     }
   }
 
