@@ -50,15 +50,13 @@ export const ItemPage = ({ activePanel, item }) => {
       </BedsteadsImage>
       <SlideUp start={arrayValues(info)}>
 
-
         {status
           ? (
             <div className={statusStyles.status}>{status}</div>
-          )
+            )
           : (
             <SaleStockBanner item={item} />
-          )}
-
+            )}
 
         <MainBlock title={title} classNames={['md:order-3']}>
           <Stats item={item} />
@@ -83,9 +81,6 @@ export const ItemPage = ({ activePanel, item }) => {
             )
           })}
         </Column>
-
-
-
 
       </SlideUp>
     </>

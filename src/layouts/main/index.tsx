@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Overlay, OverlayMain,PageSwitch } from '@raiz/nuggins'
+import { Overlay, OverlayMain, PageSwitch } from '@raiz/nuggins'
 import type { Context } from '@raiz/nuggins'
 import { HeaderMobile } from './header-mobile'
 import { burgerClose } from './header-mobile'
@@ -21,16 +21,15 @@ export const Layout = (props: Context) => {
       <HeaderMobile {...args} />
       <Sidebar />
       <OverlayMain className={style.main} error={response.status !== 200}>
-      {/* <PageSwitch animations={animations}>
-       
+        {/* <PageSwitch animations={animations}>
+
         </PageSwitch> */}
-         <Page {...args} />
+        <Page {...args} />
       </OverlayMain>
       <Overlay className={style.overlay} hasTrans={false}></Overlay>
     </>
   )
 }
-
 
 // const easing = 'cubic-bezier(0.55, 0.055, 0.675, 0.19)'
 // const animationIn = [

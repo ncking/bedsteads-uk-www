@@ -1,4 +1,4 @@
-//@ts-nocheck
+// @ts-nocheck
 import { cx } from '@raiz/browser'
 import { Link } from '@raiz/nuggins'
 import { getSiteLink } from '@lib'
@@ -12,8 +12,7 @@ https://css-tricks.com/almanac/properties/g/grid-template-columns/#:~:text=The%2
 
 https://stackoverflow.com/questions/52417889/setting-minimum-and-maximum-number-of-columns-using-css-grid
 
-
-WE want 
+WE want
 1. A column layout
 2. Columns must be able to cope with gaps
 3. columns if dont span the full row, keep a max width
@@ -32,62 +31,53 @@ How it works?
 
 grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1fr)) ;
 
-
-
 So we set the *max columns for the set & mark if the number of cols
-dosent  
+dosent
 
 **/
 
 export const Columns = ({
-    className = '',
-    page = false,
-    children,
-    columns = '',
-    ...rest
+  className = '',
+  page = false,
+  children,
+  columns = '',
+  ...rest
 }) => {
-    return (
-        <div
-            className={cx(
-                'cols',
-                styles.columns,
-                className,
-                columns && `cols-${columns}`,
-                page && styles.page
-            )}
-            {...rest}
-        >
-            {children}
-        </div>
-    )
+  return (
+    <div
+      className={cx(
+        'cols',
+        styles.columns,
+        className,
+        columns && `cols-${columns}`,
+        page && styles.page,
+      )}
+      {...rest}
+    >
+      {children}
+    </div>
+  )
 }
 
 export const Column = ({ className = '', children }) => (
-    // SPAN only works with a responsive size ... as the NUMBER OF COLUMNS CHANGE!!!
-    <div className={cx(styles.column, className)}>{children}</div>
+  // SPAN only works with a responsive size ... as the NUMBER OF COLUMNS CHANGE!!!
+  <div className={cx(styles.column, className)}>{children}</div>
 )
-
-
-
 
 export const TextBlock = ({ className, ...rest }) => <div className={cx(styles.textBlock, className)} {...rest}></div>
 
-
-
 export const H1 = ({ children }) => children ? <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column> : null
 
-
 export const MainBlock = ({ title = null, children, classNames = [] }) => {
-
-
-    return (
-        <Columns className={cx('cols-1 md:cols-2', styles.mainBlock)}>
-            <H1>{title}</H1>
-            <TextBlock className={[classNames[0]]}>
-                {children[0]}
-            </TextBlock>
-            <TextBlock className={[classNames[1]]}>
-                {children[1]}
-            </TextBlock>
-        </Columns>)
+  return (
+    <Columns className={cx('cols-1 md:cols-2', styles.mainBlock)}>
+      <H1>{title}</H1>
+      <TextBlock className={[classNames[0]]}>
+        {children[0]}
+      </TextBlock>
+      <TextBlock className={[classNames[1]]}>
+        {children[1]}
+      </TextBlock>
+    </Columns>
+  )
 }

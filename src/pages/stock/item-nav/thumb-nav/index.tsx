@@ -17,8 +17,6 @@ const thumbClicked = (i) => {
   itemAnalyics('thumb select')
 }
 
-
-
 export const ThumbNav = ({ images = [], id }) => {
   const elRef = useRef<HTMLInputElement>(null)
   const [sliderStyle, setStyle] = useState({})
@@ -28,7 +26,6 @@ export const ThumbNav = ({ images = [], id }) => {
     let _scroller
 
     const rezizeFn = () => {
-
       const wrapEl = elRef.current as HTMLElement
 
       const wrapWidth = (wrapEl.parentNode as HTMLElement).offsetWidth
@@ -46,11 +43,7 @@ export const ThumbNav = ({ images = [], id }) => {
         boundX: [0, Math.ceil(thumbsWidth - wrapWidth)],
       })
       _scroller.move(0)
-
-
-
     }
-
 
     const unbindResize = addWindowResize(rezizeFn, { leading: true })
 

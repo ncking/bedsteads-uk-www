@@ -23,7 +23,6 @@ export default () => {
         </Intro>
       </BedsteadsImage>
 
-
       <MainBlock>
 
         <>

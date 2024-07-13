@@ -10,8 +10,8 @@ export const Intro = ({ className, links = [], children }) => {
   return (
     <div className={cx(styles.intro, className)}>
 
-
-          <div className={styles.title}>{children}</div>
-          {_links.length ? <ul className={styles.list}>{_links}</ul> : null}
-  </div>)
+      <div className={styles.title}>{children}</div>
+      {_links.length ? <ul className={styles.list}>{_links}</ul> : null}
+    </div>
+  )
 }

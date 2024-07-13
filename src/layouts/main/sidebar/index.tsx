@@ -6,7 +6,6 @@ import * as logoStyles from './logo.scss'
 import * as stylesMenu from './menu.scss'
 import * as styles from './sidebar.scss'
 
-
 const abLinks = document?.cookie || true ? 'faq,sustainability,contact' : 'contact'
 /**
  *

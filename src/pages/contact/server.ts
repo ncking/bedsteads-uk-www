@@ -10,8 +10,6 @@ import {
   instagramLink,
 } from '@server/config'
 
-
-
 export default async ({ request, response }) => {
   const title = `Contact ${company} | Location | Hours of business | Sales and Services, Contact us`
   const description = `tel: ${tel} email: ${email}. Located just to the SW of Bristol we are easily reached via the M5 motorway. address: ${streetAddress} ${postcode}`

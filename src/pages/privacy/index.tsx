@@ -1,6 +1,6 @@
 import { Link } from '@raiz/nuggins'
-import config from '@config'
 import { Column, Columns, TextBlock, H1, EmailLink, BedsteadsImage, Intro, MainBlock } from '@components'
+import config from '@config'
 import { getSiteLink } from '@lib'
 import styles from './style.scss'
 
@@ -8,7 +8,6 @@ export default () => {
   const { streetAddress, postcode } = config()
 
   return (
-
 
     <>
       {/* <BedsteadsImage
@@ -178,7 +177,6 @@ export default () => {
           </p>
         </>
 
-
         <>
           <h2>How we store your personal information</h2>
           <p>
@@ -223,7 +221,9 @@ export default () => {
               circumstances. You are not required to pay any
               charge for exercising your rights. If you make a
               request, we have one month to respond to you. Please
-              contact us at&nbsp;<EmailLink />&nbsp;if you wish to make a
+              contact us at&nbsp;
+              <EmailLink />
+&nbsp;if you wish to make a
               request.
             </li>
           </ul>
@@ -231,7 +231,9 @@ export default () => {
           <p>
             If you have any concerns about our use of your personal
             information, you can make a complaint to us at
-            &nbsp;<EmailLink />&nbsp;
+            &nbsp;
+            <EmailLink />
+&nbsp;
             <br />
             <br />
             You can also complain to the ICO if you are unhappy with
@@ -265,10 +267,6 @@ export default () => {
         </>
 
       </MainBlock>
-
-
-
-
 
     </>
   )

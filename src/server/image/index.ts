@@ -50,7 +50,7 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
     }
 
     if (template === 'col') {
-      return render({height: 600 })
+      return render({ height: 600 })
     }
 
     let item

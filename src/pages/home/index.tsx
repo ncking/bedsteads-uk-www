@@ -14,29 +14,26 @@ export default () => {
         responsive="1"
         src="/image/index/cover,t_viewport.jpg"
       >
-        <Intro className={cx("logotype", styles.intro)}>Bedsteads</Intro>
+        <Intro className={cx('logotype', styles.intro)}>Bedsteads</Intro>
       </BedsteadsImage>
-
-
-
 
       <MainBlock title="Welcome to Bedsteads">
         <>
           <p>
-            For a huge range of Antique Beds and furniture come and see Mark & Nikki Ashton at their showroom 
+            For a huge range of Antique Beds and furniture come and see Mark & Nikki Ashton at their showroom
             housed in Chelvey Court Barn a picturesque medieval stone barn on the outskirt of Bristol
           </p>
           <p>
-            Mark and Nikki and their team of skilled craftspeople have been 
-            sourcing restoring and recreating antique beds and bedroom furniture for over 30 years 
+            Mark and Nikki and their team of skilled craftspeople have been
+            sourcing restoring and recreating antique beds and bedroom furniture for over 30 years
             conserving beautiful pieces of history and making heirlooms for the future.
           </p>
           <p>
-            Our unique pieces have been sourced from all over the UK, France, 
+            Our unique pieces have been sourced from all over the UK, France,
             Spain, Portugal, Ireland and beyond, so there is a vast array from simple all iron to opulent brass & iron, beautiful fruitwood beds, bedroom suits and upholstered beds in all sizes.
           </p>
           <p>
-            Our showroom has a broader selection of beds and antique furniture including chests, 
+            Our showroom has a broader selection of beds and antique furniture including chests,
             Antique Tables, chairs and armoires in painted and original finishes along with other types and styles of bedroom furniture.
           </p>
           <p>
@@ -62,7 +59,7 @@ export default () => {
             our restoration process is sympathetic and respectful to honour and respect the past life of the item.
           </p>
         </>
-      </MainBlock >
+      </MainBlock>
     </>
   )
 }

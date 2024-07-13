@@ -115,7 +115,7 @@ const sizes = ['sm', 'md', 'lg', 'xl', 'xxl']
 /*
 2xl ... is NOT avlid class name https://www.w3.org/TR/CSS21/syndata.html#:~:text=In%20CSS%2C%20identifiers%20(including%20element,hyphen%20followed%20by%20a%20digit.
 
-&& here 
+&& here
 https://github.com/sass/sass/issues/2956
 
 Just bail & use xxl , or if were got many more xl2,xl3
@@ -158,10 +158,10 @@ const lines = [
     snippet,
 ] /// for the base mobile sizes
 sizes.map((size) => {
-    const line = `@include min(${size}){
+  const line = `@include min(${size}){
         ${snippet.replaceAll('.', `.${size}\\:`)}
     }`
-    lines.push(line)
+  lines.push(line)
 })
 
 const str = lines.join('\n')

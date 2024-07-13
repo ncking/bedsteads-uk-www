@@ -1,4 +1,3 @@
-
 const tilesMap = {
   base2: {
     slug: 'kelcol',
