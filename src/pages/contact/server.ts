@@ -5,9 +5,6 @@ import {
   streetAddress,
   postcode,
   tel,
-  openingHours,
-  facebookLink,
-  instagramLink,
 } from '@server/config'
 
 export default async ({ request, response }) => {

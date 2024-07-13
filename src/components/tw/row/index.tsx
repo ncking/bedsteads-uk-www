@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { cx } from '@raiz/browser'
 import * as styles from './styles.scss'
 
