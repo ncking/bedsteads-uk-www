@@ -1,5 +1,4 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage, Columns, Column, TextBlock, H1 } from '@components'
 import * as styles from './styles.scss'
 
 export const Intro = ({ className, links = [], children }) => {
