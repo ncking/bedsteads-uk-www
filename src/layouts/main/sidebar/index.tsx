@@ -6,10 +6,8 @@ import * as logoStyles from './logo.scss'
 import * as stylesMenu from './menu.scss'
 import * as styles from './sidebar.scss'
 
-const abLinks = true ? 'faq,sustainability,contact' : 'contact'
-/**
- *
- */
+const abLinks = 'faq,sustainability,contact'
+
 const NavLink = ({ id, noLi = false, ...rest }) => {
   const props = getSiteLink(id)
   const { url } = props
