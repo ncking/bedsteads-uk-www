@@ -70,7 +70,7 @@ export const Column = ({ className = '', children }) => (
 
 
 
-export const TextBlock = ({className, ...rest}) => <div className={cx(styles.textBlock, className)} {...rest}></div>
+export const TextBlock = ({ className, ...rest }) => <div className={cx(styles.textBlock, className)} {...rest}></div>
 
 
 
@@ -81,7 +81,7 @@ export const MainBlock = ({ title, children, classNames = [] }) => {
 
 
     return (
-    <div className={cx(styles.mainBlock)}>
+        <Columns className={cx('cols-1 md:cols-2 xl:cols-3',  styles.mainBlock)}>
             <H1>{title}</H1>
             <TextBlock className={[classNames[0]]}>
                 {children[0]}
@@ -89,5 +89,5 @@ export const MainBlock = ({ title, children, classNames = [] }) => {
             <TextBlock className={[classNames[1]]}>
                 {children[1]}
             </TextBlock>
-        </div>)
+        </Columns>)
 }
