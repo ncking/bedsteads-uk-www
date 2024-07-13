@@ -1,5 +1,5 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage, Columns, Column, TextBlock, Intro } from '@components'
+import { BedsteadsImage, MainBlock, Intro } from '@components'
 import * as styles from './style.scss'
 const a1 = `what-makes-an-antique`
 const links = [
@@ -9,29 +9,24 @@ const links = [
 ]
 
 export default () => {
-  return (
-    <Columns className="cols-1 md:cols-2 xxl:cols-3">
+  return (<>
 
-      <BedsteadsImage
-        className={cx(styles.colImg1, 'md:col-span-2')}
-        alt="Reflection of Bedsteads delivery van, in bed knob"
-        lazy="false"
-        src="/image/page/spanners,t_col.jpg"
-      >
-        <Intro className={cx()} links={links}>
-          Sustainability & Returns
-        </Intro>
-      </BedsteadsImage>
+    <BedsteadsImage
+      alt="Reflection of Bedsteads delivery van, in bed knob"
+      lazy="false"
+      tag="div"
+      className="viewport"
+      responsive="1"
+      src="/image/page/spanners,t_viewport.jpg"
+    >
+      <Intro className={cx()} links={links}>
+        Sustainability & Returns
+      </Intro>
+    </BedsteadsImage>
 
-      <BedsteadsImage
-        className={cx(styles.colImg1, 'md:col-span-1')}
-        alt="Reflection of Bedsteads delivery van, in bed knob"
-        lazy="false"
-        src="/image/page/brushes,t_col.jpg"
-      >
-      </BedsteadsImage>
+    <MainBlock>
 
-      <TextBlock>
+      <>
         <h2 id={a1}>What makes an Item Antique?</h2>
         <p>
           An antique is an item that is 100 years old or more. They are often items which are cherished due to their aesthetic or historical qualities.
@@ -63,16 +58,6 @@ export default () => {
           characterized by curving lines, graceful arches, and sensuous ornamentation
           {/* (Taken from Nickle Bed) */}
         </p>
-      </TextBlock>
-
-      <BedsteadsImage
-        className={styles.colImg}
-        alt="Reflection of Bedsteads delivery van, in bed knob"
-        lazy="false"
-        src="/image/page/fire,t_col.jpg"
-      />
-
-      <TextBlock>
 
         <h4>What is a ‘Louis’ item of Furniture?</h4>
         <p>
@@ -113,78 +98,68 @@ export default () => {
           Mahogany, walnut, and fruitwoods frequently utilized.
           Straight, tapered legs, often with fluted details
         </p>
-      </TextBlock>
+      </>
 
-      <Column className={cx(styles.colOff)}>
+      <>
+        <h2>Names of Makers</h2>
+        <h4>R.W Winfield</h4>
+        <p>
+          R. W. Winfield & Co is a renowned British company, founded in 1829 known for its exceptional craftsmanship in the realm
+          of furniture and beds.
+          <br />
+          With a legacy spanning several decades, R. W. Winfield & Co
+          has earned a distinguished reputation for producing high-quality, handcrafted pieces that epitomize elegance and durability.
+        </p>
+        <p>
+          Today, R. W. Winfield & Co continues to be a prominent name in the world of furniture, garnering recognition for its commitment to preserving
+          traditional techniques while incorporating innovative design elements.
+        </p>
+        <p>
+          With each piece, R. W.
+          Winfield & Co carries forward a legacy of artistry, providing customers with timeless and remarkable furnishings that stand the test of time.
+        </p>
 
-        <TextBlock>
-          <h2>Names of Makers</h2>
-          <h4>R.W Winfield</h4>
-          <p>
-            R. W. Winfield & Co is a renowned British company, founded in 1829 known for its exceptional craftsmanship in the realm
-            of furniture and beds.
-            <br />
-            With a legacy spanning several decades, R. W. Winfield & Co
-            has earned a distinguished reputation for producing high-quality, handcrafted pieces that epitomize elegance and durability.
-          </p>
-          <p>
-            Today, R. W. Winfield & Co continues to be a prominent name in the world of furniture, garnering recognition for its commitment to preserving
-            traditional techniques while incorporating innovative design elements.
-          </p>
-          <p>
-            With each piece, R. W.
-            Winfield & Co carries forward a legacy of artistry, providing customers with timeless and remarkable furnishings that stand the test of time.
-          </p>
-        </TextBlock>
+        <h4>Mercier Frères</h4>
+        <p>
+          Mercier Frères is a distinguished company renowned for its exquisite craftsmanship in the realm of luxury
+          goods and accessories. Established in France by André Mercier in 1828, Mercier Frères has a long-standing heritage which exemplifies a
+          commitment to artistry and refinement.
+        </p>
+        <p>
+          The allure of Mercier Frères antique beds lies not only in their visual appeal but also in their exceptional quality and durability.
+          These beds have withstood the test of time.
+        </p>
+        <p>Owning a Mercier Frères antique bed is to possess a cherished piece of history, a luxurious sanctuary that transcends time.</p>
 
-        <BedsteadsImage
-          className={styles.colImg}
-          alt="Reflection of Bedsteads delivery van, in bed knob"
-          lazy="false"
-          src="/image/page/spanners,t_col.jpg"
-        />
-        <TextBlock>
-          <h4>Mercier Frères</h4>
-          <p>
-            Mercier Frères is a distinguished company renowned for its exquisite craftsmanship in the realm of luxury
-            goods and accessories. Established in France by André Mercier in 1828, Mercier Frères has a long-standing heritage which exemplifies a
-            commitment to artistry and refinement.
-          </p>
-          <p>
-            The allure of Mercier Frères antique beds lies not only in their visual appeal but also in their exceptional quality and durability.
-            These beds have withstood the test of time.
-          </p>
-          <p>Owning a Mercier Frères antique bed is to possess a cherished piece of history, a luxurious sanctuary that transcends time.</p>
+        <h4>James Schoolbred</h4>
+        <p>
+          James (or Jas) Shoolbred was a prominent British furniture manufacturer and retailer known for its exquisite craftsmanship and high-quality furnishings.
+        </p>
+        <p>
+          Founded in the mid-19th century, the company quickly gained recognition for its exceptional designs and attention to detail.
+          Although the original Jas Shoolbred company ceased operations in the mid-20th century, their name and designs continue to be revered by
+          collectors and enthusiasts of antique and vintage furniture.
+        </p>
+        <p>
+          Jas Shoolbred pieces are sought after for their timeless beauty, superior craftsmanship, and historical significance,
+          making them highly coveted additions to any discerning collector's home.
+        </p>
 
-          <h4>James Schoolbred</h4>
-          <p>
-            James (or Jas) Shoolbred was a prominent British furniture manufacturer and retailer known for its exquisite craftsmanship and high-quality furnishings.
-          </p>
-          <p>
-            Founded in the mid-19th century, the company quickly gained recognition for its exceptional designs and attention to detail.
-            Although the original Jas Shoolbred company ceased operations in the mid-20th century, their name and designs continue to be revered by
-            collectors and enthusiasts of antique and vintage furniture.
-          </p>
-          <p>
-            Jas Shoolbred pieces are sought after for their timeless beauty, superior craftsmanship, and historical significance,
-            making them highly coveted additions to any discerning collector's home.
-          </p>
+        <h4>Maison Krieger</h4>
+        <p>
+          Maison Krieger, a renowned French furniture manufacturer and retailer, flourished during the 19th and early 20th
+          centuries. Established by Antoine Krieger in Paris during the mid-19th century
+        </p>
+        <p>
+          A distinguishing feature of Maison Krieger was their ability to seamlessly blend different design styles.
+          The company adeptly merged elements from neoclassical, Empire, and Art Nouveau periods, resulting in unique
+          and harmonious furniture that appealed to a diverse range of tastes.
+          <br />
+          This fusion of styles contributed to Maison Krieger's reputation for innovative and visionary design.
+        </p>
+      </>
 
-          <h4>Maison Krieger</h4>
-          <p>
-            Maison Krieger, a renowned French furniture manufacturer and retailer, flourished during the 19th and early 20th
-            centuries. Established by Antoine Krieger in Paris during the mid-19th century
-          </p>
-          <p>
-            A distinguishing feature of Maison Krieger was their ability to seamlessly blend different design styles.
-            The company adeptly merged elements from neoclassical, Empire, and Art Nouveau periods, resulting in unique
-            and harmonious furniture that appealed to a diverse range of tastes.
-            <br />
-            This fusion of styles contributed to Maison Krieger's reputation for innovative and visionary design.
-          </p>
-        </TextBlock>
-      </Column>
-
-    </Columns>
+    </MainBlock >
+  </>
   )
 }

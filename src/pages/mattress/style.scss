@@ -6,6 +6,7 @@
     grid-template-columns: 1fr;
     grid-auto-flow: row dense;
     --c-grey: #fff; // inside the grid this is only use to alternate the bg on the tiles, so a cheap way of removing checker board
+    background-color: #efefef;
 
     @each $width,
     $col in $tileMattressBreakpoints {
@@ -38,23 +39,20 @@
 
 
 .tile {
-   // background-color: aquamarine;
     overflow: hidden;
     min-width: 0;
-   
- 
 }
 
 
 
 .mattressStats {
     font-size: 0.9rem;
-    white-space:pre-line;
+    white-space: pre-line;
     margin: var(--gutter-half);
+
     @include min(md) {
-        max-width:300px;
-      }
-   
+        max-width: 300px;
+    }
 
     tr {
         border-bottom: 1px solid #ccc;
@@ -76,5 +74,3 @@
         line-height: 1.5rem;
     }
 }
-
-
