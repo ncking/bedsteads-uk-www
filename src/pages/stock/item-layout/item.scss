@@ -1,5 +1,4 @@
-
-.gallery > div {
+.gallery>div {
   margin-bottom: 1px;
   background-color: var(--c-img);
 }
@@ -17,20 +16,30 @@
     box-shadow: $shadowHorizontalUp;
     opacity: 0;
     transition: opacity 0.65 ease;
+
     .scrolled & {
       opacity: 1;
     }
   }
 }
 
-.reorder{
-  background-color: red;
-  order:1;
+.reorder {
+  :first-child {
+    order: 1;
+    @include min(md) {
+      order: -1
+    }
+  }
+
+  :last-child {
+    order: 2;
+  }
+
 }
 
 
 
 
-.mainImage{
+.mainImage {
   background-color: #dedede;
 }

@@ -26,13 +26,22 @@
             margin-top: 1rem;
         }
     }
+
+
+
+    // >div:nth-child(2n+1) {
+    //     background-color: var(--c-grey);
+    // }
+
+
 }
 
 
 .tile {
-    background-color: aquamarine;
+   // background-color: aquamarine;
     overflow: hidden;
     min-width: 0;
+   
  
 }
 
@@ -40,10 +49,11 @@
 
 .mattressStats {
   //  margin: var(--gutter);
-    background-color: bisque;
+  //  background-color: bisque;
     font-size: 0.9rem;
     white-space:pre-line;
     margin: var(--gutter-half);
+    //max-width:300px;
 
     tr {
         border-bottom: 1px solid #ccc;
