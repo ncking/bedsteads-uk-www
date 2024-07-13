@@ -53,7 +53,10 @@
     font-size: 0.9rem;
     white-space:pre-line;
     margin: var(--gutter-half);
-    //max-width:300px;
+    @include min(md) {
+        max-width:300px;
+      }
+   
 
     tr {
         border-bottom: 1px solid #ccc;
