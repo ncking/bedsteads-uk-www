@@ -1,5 +1,5 @@
 import { Link } from '@raiz/nuggins'
-import { Column, Columns, TextBlock, H1, EmailLink, BedsteadsImage, Intro, MainBlock } from '@components'
+import { EmailLink, MainBlock } from '@components'
 import config from '@config'
 import { getSiteLink } from '@lib'
 import styles from './style.scss'

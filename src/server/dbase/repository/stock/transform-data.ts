@@ -134,7 +134,7 @@ export function transformData(item, options = {}): Stock {
       info.push(['size', s])
       newItem.size = s
     }
-    (Array.from(renamedToInfo || []) as any[]).map(({ value, label }) => {
+    (Array.from(renamedToInfo || [])).map(({ value, label }: { value: string, label: string }) => {
       if (value) {
         info.push([label, value])
       }

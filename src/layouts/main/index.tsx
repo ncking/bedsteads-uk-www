@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Overlay, OverlayMain, PageSwitch } from '@raiz/nuggins'
+import { Overlay, OverlayMain } from '@raiz/nuggins'
 import type { Context } from '@raiz/nuggins'
 import { HeaderMobile } from './header-mobile'
 import { burgerClose } from './header-mobile'
