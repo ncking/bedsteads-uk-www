@@ -84,9 +84,10 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
     grid-gap: var(--gutter) !important;
     /**
     **/
-    margin: var(--gutter);
+ margin: var(--gutter);
+ padding: var(--gutter);
 
-    @media screen and (min-width: 2281px) {
+    @media screen and (min-width: 2000px) {
       --columns: 3 !important;
     }
   }
