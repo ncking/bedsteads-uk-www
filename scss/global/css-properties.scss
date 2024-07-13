@@ -12,7 +12,7 @@
   --c-bg-hover: rgba(255, 255, 255, 0.08);
 
   --gutterMin: 10px;
-  --gutterMax: 60px;
+  --gutterMax: 160px;
   --scaler: 4vw;
   --gutter: clamp(var(--gutterMin), var(--scaler), var(--gutterMax));
   --gutter-half: calc(var(--gutter) / 2);

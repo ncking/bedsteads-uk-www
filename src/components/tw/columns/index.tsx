@@ -74,14 +74,14 @@ export const TextBlock = ({ className, ...rest }) => <div className={cx(styles.t
 
 
 
-export const H1 = ({ children }) => <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column>
+export const H1 = ({ children }) => children ? <Column className={cx('col-span-full', styles.h1)}><TextBlock><h1>{children}</h1></TextBlock></Column> : null
 
 
-export const MainBlock = ({ title, children, classNames = [] }) => {
+export const MainBlock = ({ title = null, children, classNames = [] }) => {
 
 
     return (
-        <Columns className={cx('cols-1 md:cols-2',  styles.mainBlock)}>
+        <Columns className={cx('cols-1 md:cols-2', styles.mainBlock)}>
             <H1>{title}</H1>
             <TextBlock className={[classNames[0]]}>
                 {children[0]}

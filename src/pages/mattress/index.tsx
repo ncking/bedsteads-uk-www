@@ -1,6 +1,6 @@
 import { cx } from '@raiz/browser'
 import { EmailLink, MainBlock } from '@components'
-import { ImageLoadLazy} from '@raiz/react'
+import { ImageLoadLazy } from '@raiz/react'
 import * as styles from './style.scss'
 import { Link } from '@raiz/nuggins'
 const KELCOL_LINK = <Link href="https://kelcol.co.uk">Kelcol</Link>
