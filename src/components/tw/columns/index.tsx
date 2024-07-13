@@ -81,7 +81,7 @@ export const MainBlock = ({ title, children, classNames = [] }) => {
 
 
     return (
-        <Columns className={cx('cols-1 md:cols-2 xl:cols-3',  styles.mainBlock)}>
+        <Columns className={cx('cols-1 md:cols-2',  styles.mainBlock)}>
             <H1>{title}</H1>
             <TextBlock className={[classNames[0]]}>
                 {children[0]}

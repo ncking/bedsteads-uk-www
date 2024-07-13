@@ -52,7 +52,7 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
   .textBlock {
     // background-color: rgb(205, 49, 200);
     // background-color: #ccc;
-   // padding: 0 var(--gutter); // sameas the old setup
+    // padding: 0 var(--gutter); // sameas the old setup
     white-space: break-spaces;
   }
 
@@ -67,7 +67,7 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 
   .h1 {
-    
+
     margin-bottom: var(--gutter);
 
     h1 {
@@ -77,12 +77,16 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 
   .mainBlock {
-    h1{
-      margin:0
+    h1 {
+      margin: 0
     }
     background-color: palevioletred;
-    grid-gap: var(--gutter)!important;
+    grid-gap: var(--gutter) !important;
     /**
     **/
     margin: var(--gutter);
+
+    @media screen and (min-width: 2281px) {
+      --columns: 3 !important;
+    }
   }
