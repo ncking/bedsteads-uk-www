@@ -68,7 +68,7 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
   .h1 {
 
-    margin-bottom: var(--gutter);
+    margin-bottom: var(--gutter-half);
 
     h1 {
       max-width: 600px;
@@ -80,14 +80,15 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
     h1 {
       margin: 0
     }
-    background-color: palevioletred;
-    grid-gap: var(--gutter) !important;
+    max-width:1000px;
+   // background-color: palevioletred;
+    grid-gap: 0 var(--gutter) !important;
     /**
     **/
- margin: var(--gutter);
- padding: var(--gutter);
+ margin:  var(--gutter);
 
-    @media screen and (min-width: 2000px) {
-      --columns: 3 !important;
-    }
+
+    // @media screen and (min-width: 2000px) {
+    //   --columns: 3 !important;
+    // }
   }
