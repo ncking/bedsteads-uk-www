@@ -8,14 +8,13 @@
 
 
 .img{
-    height:600px
 }
 
 .mattressStats {
     margin: var(--gutter);
     background-color: bisque;
     font-size: 0.9rem;
-    white-space: pre;
+    white-space:pre-line;
 
     tr {
         border-bottom: 1px solid #ccc;
