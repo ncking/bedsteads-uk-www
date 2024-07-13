@@ -12,7 +12,7 @@ export default () => {
   return (<>
 
     <BedsteadsImage
-      alt="Reflection of Bedsteads delivery van, in bed knob"
+      alt="rows of old  imperial spanners"
       lazy="false"
       tag="div"
       className="viewport"
@@ -20,7 +20,7 @@ export default () => {
       src="/image/page/spanners,t_viewport.jpg"
     >
       <Intro className={cx()} links={links}>
-        Sustainability & Returns
+      Additional information
       </Intro>
     </BedsteadsImage>
 
