@@ -76,3 +76,26 @@ export default ({ content }) => {
         </>)
 
 }
+
+
+
+const Tile = () => {
+
+
+    const { alt, details, title, prices, name, make, slug, noImage } = tile
+
+
+    const img = noImage ? <div></div> : <img alt={alt} ratio="130" src={`/image/mattress/${slug}/${name},t_mattress.jpg`} />
+    return (
+        <div className={styles.tile}>
+            ${img}
+            <div className={styles.mattressStats}>
+                <h2>{title}</h2>
+                <table>
+                    {prices.map((str, i) => <tr><td>{sizes[i]}</td><td>{str}</td></tr>)}
+                    <tr><td>Manufacturer</td><td>{make}</td></tr>
+                </table>
+                {details}
+            </div>
+        </div>)
+}

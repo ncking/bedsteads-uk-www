@@ -1,32 +1,9 @@
 import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server'
-
 import { bases } from './utils/bases'
 import { kelcolTiles } from './utils/kelcol'
 
+const tiles = [...kelcolTiles, ...bases]
 const sizes = '2\'6"/75cm, 3\'0"/90cm, 4\'0"/120cm, 4\'6"/135cm, 5\'0"/150cm, 5\'6"/165cm, 6\'0"/180cm'.split(',',)
-const content = [...kelcolTiles, ...bases].map((tile) => {
-  const { alt, details, title, prices, name, make, slug, noImage } = tile
-
-  let rowsHtml = ''
-  prices.map((str, i) => {
-    rowsHtml += `<tr><td>${sizes[i]}</td><td>${str}</td></tr>`
-  })
-  rowsHtml += `<tr><td>Manufacturer</td><td>${make}</td></tr>`
-  const img = noImage
-    ? '<div></div>'
-    : `<img alt="${alt}" ratio="130" src="/image/mattress/${slug}/${name},t_mattress.jpg" />`
-  return `
-    <div class="tile">
-        ${img}
-        <div class="mattress-stats">
-            <h2>${title}</h2>
-            <table>${rowsHtml}</table>
-            ${details}
-        </div>
-    </div>`
-})
-
-
 
 
 export default async ({ response, request }) => {
@@ -34,7 +11,7 @@ export default async ({ response, request }) => {
   const description = 'Large range of antique beds, French beds, iron Beds & antique furniture. 100s of antique beds on show at our Somerset showroom, South West of Bristol'
   response
     .setRobots('index,follow')
-    .setData({ content: content.join('') })
+    .setData({ tiles, sizes })
     .setJsonLd(organizationJsonLd)
     .setTitle(title)
     .setDescription(description)
