@@ -1,5 +1,4 @@
-import { Link } from '@raiz/nuggins'
-import { Gmap, Html } from '@raiz/react'
+import { Gmap } from '@raiz/react'
 import { Button, EmailLink, TelLink } from '@components'
 import config from '@config'
 import mapJson from './gmap.json'

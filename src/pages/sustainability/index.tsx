@@ -1,6 +1,6 @@
 import { cx } from '@raiz/browser'
 import { BedsteadsImage, Intro } from '@components'
-import {  MainBlock } from '@components'
+import { MainBlock } from '@components'
 const links = [
   { hash: '', label: 'Antiques a sustainable choice?' },
   { hash: '', label: 'Returns' },

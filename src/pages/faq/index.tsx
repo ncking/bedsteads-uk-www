@@ -1,5 +1,5 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage, Columns, Column, TextBlock, H1, Intro } from '@components'
+import { BedsteadsImage, Columns, Column, TextBlock, Intro } from '@components'
 import * as styles from './style.scss'
 const a1 = `what-makes-an-antique`
 const links = [

@@ -121,8 +121,6 @@ https://github.com/sass/sass/issues/2956
 Just bail & use xxl , or if were got many more xl2,xl3
 */
 
-const breakpointStr = sizes.map(([label, w]) => `${label} : ${w}px,`).join('\n')
-
 const lines = [
     `
 
