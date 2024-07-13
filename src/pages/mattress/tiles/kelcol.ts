@@ -1,4 +1,3 @@
-import { SLEEPWELL_LINK } from './constants'
 const tilesMap = {
   limoges: {
     details: `
@@ -87,7 +86,6 @@ prices.map((linearray) => {
     title,
     prices,
     ...tilesMap[name],
-    make: SLEEPWELL_LINK,
     slug: 'kelcol',
   })
 })

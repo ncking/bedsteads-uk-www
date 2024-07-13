@@ -1,5 +1,5 @@
 import { cx } from '@raiz/browser'
-import { BedsteadsImage, Intro, Columns, Column, EmailLink, H1, TextBlock, Html, MainBlock } from '@components'
+import { EmailLink, MainBlock } from '@components'
 import { Image } from '@raiz/react'
 import * as styles from './style.scss'
 import { Link } from '@raiz/nuggins'
@@ -8,11 +8,11 @@ const KELCOL_LINK = <Link href="https://kelcol.co.uk">Kelcol</Link>
 
 export default ({ sizes, tiles }) => {
 
-  
+
     return (
         <>
             <div className={styles.grid}>
-               {tiles.map(tile => <Tile tile={tile} sizes={sizes} />)}
+                {tiles.map(tile => <Tile key={tile} tile={tile} sizes={sizes} />)}
             </div>
 
             <MainBlock title="Mattresses & Bases">
@@ -81,10 +81,12 @@ export default ({ sizes, tiles }) => {
 
 
 
-const Tile = ({tile, sizes}) => {
+const Tile = ({ tile, sizes }) => {
 
-    const { alt, details, title, prices, name, make, slug } = tile
-    const img =  <Image className={styles.img} alt={alt} ratio="130" src={`/image/mattress/${slug}/${name},t_mattress.jpg`} />
+    const { alt, details, title, prices, name, isBedsteads, slug } = tile
+    const img = <Image className={styles.img} alt={alt} ratio="130" src={`/image/mattress/${slug}/${name},t_mattress.jpg`} />
+    const manufacturerLink = KELCOL_LINK ?  <Link href="/">Bedsteads</Link> : KELCOL_LINK 
+
     return (
         <div className={styles.tile}>
             {img}
@@ -92,7 +94,7 @@ const Tile = ({tile, sizes}) => {
                 <h2>{title}</h2>
                 <table>
                     {prices.map((str, i) => <tr><td>{sizes[i]}</td><td>{str}</td></tr>)}
-                    <tr><td>Manufacturer</td><td>{make}</td></tr>
+                    <tr><td>Manufacturer</td><td>{manufacturerLink}</td></tr>
                 </table>
                 {details}
             </div>

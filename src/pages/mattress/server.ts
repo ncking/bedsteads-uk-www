@@ -1,6 +1,6 @@
 import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server'
-import { bases } from './utils/bases'
-import { kelcolTiles } from './utils/kelcol'
+import { bases } from './tiles/bases'
+import { kelcolTiles } from './tiles/kelcol'
 
 const tiles = [...kelcolTiles, ...bases]
 const sizes = '2\'6"/75cm, 3\'0"/90cm, 4\'0"/120cm, 4\'6"/135cm, 5\'0"/150cm, 5\'6"/165cm, 6\'0"/180cm'.split(',')
