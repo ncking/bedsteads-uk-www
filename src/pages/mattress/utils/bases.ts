@@ -5,9 +5,9 @@ const tilesMap = {
     // noImage: true,
     slug: 'kelcol',
     details: `
-        Hard wood corner blocks<br/>
-        timber frame + supports<br/>
-        pad fabric cover<br/>
+        Hard wood corner blocks
+        timber frame + supports
+        pad fabric cover
         locating blocks
         `,
     alt: 'Side view photograph of 2&quot; / 4&quot; Hard Top base',
@@ -17,10 +17,10 @@ const tilesMap = {
     noImage: true,
     slug: 'kelcol',
     details: `
-        Hard wood corner blocks<br/>
-        timber frame + supports<br/>
-        interior coil springs<br/>
-        fabric cover<br/>
+        Hard wood corner blocks
+        timber frame + supports
+        interior coil springs
+        fabric cover
         locating blocks
         `,
     alt: 'Side view photograph of 4&quot; / 10cm Sprung base',
@@ -29,7 +29,7 @@ const tilesMap = {
     make: BEDSTEADS_LINK,
     slug: 'bedsteads',
     details: `
-        Slatted wooden bases,<br/> 
+        Slatted wooden bases,
         in a variety of woods`,
     alt: 'Side view photograph of wooden Slatted base',
   },

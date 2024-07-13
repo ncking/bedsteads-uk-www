@@ -1,16 +1,18 @@
 import { cx } from '@raiz/browser'
 import { BedsteadsImage, Intro, Columns, Column, EmailLink, H1, TextBlock, Html, MainBlock } from '@components'
+import { Image } from '@raiz/react'
 import * as styles from './style.scss'
 import { Link } from '@raiz/nuggins'
 const KELCOL_LINK = <Link href="https://kelcol.co.uk">Kelcol</Link>
 
 
-export default ({ content }) => {
+export default ({ sizes, tiles }) => {
 
+  
     return (
         <>
             <div className={styles.grid}>
-                <Html>{content}</Html>
+               {tiles.map(tile => <Tile tile={tile} sizes={sizes} />)}
             </div>
 
             <MainBlock title="Mattresses & Bases">
@@ -79,16 +81,13 @@ export default ({ content }) => {
 
 
 
-const Tile = () => {
+const Tile = ({tile, sizes}) => {
 
-
-    const { alt, details, title, prices, name, make, slug, noImage } = tile
-
-
-    const img = noImage ? <div></div> : <img alt={alt} ratio="130" src={`/image/mattress/${slug}/${name},t_mattress.jpg`} />
+    const { alt, details, title, prices, name, make, slug } = tile
+    const img =  <Image className={styles.img} alt={alt} ratio="130" src={`/image/mattress/${slug}/${name},t_mattress.jpg`} />
     return (
         <div className={styles.tile}>
-            ${img}
+            {img}
             <div className={styles.mattressStats}>
                 <h2>{title}</h2>
                 <table>

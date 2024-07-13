@@ -1,6 +1,21 @@
+.tile {
+    background-color: aquamarine;
+    overflow: hidden;
+    /* NEW */
+    min-width: 0;
+    /* NEW; needed for Firefox */
+}
+
+
+.img{
+    height:600px
+}
+
 .mattressStats {
-    padding: var(--gutter);
+    margin: var(--gutter);
+    background-color: bisque;
     font-size: 0.9rem;
+    white-space: pre;
 
     tr {
         border-bottom: 1px solid #ccc;
@@ -16,13 +31,13 @@
         }
     }
 
-    h2{
-        margin:0;
+    h2 {
+        margin: 0;
         height: 4rem;
-    line-height: 1.5rem;
-//background-color: red;
+        line-height: 1.5rem;
     }
 }
+
 
 .grid {
     /*
@@ -33,8 +48,9 @@
     grid-auto-flow: row dense;
 
     --c-grey: #fff; // inside the grid this is only use to alternate the bg on the tiles, so a cheap way of removing checker board
+
     @each $width,
-        $col in $tileMattressBreakpoints {
+    $col in $tileMattressBreakpoints {
         @media only screen and (min-width: #{$width}px) {
             //width: percentage(1/$col);
             grid-template-columns: repeat($col, 1fr);
@@ -42,7 +58,7 @@
     }
 
     @media only screen and (max-width: #{$showImageBr}px) {
-        .tile > div:nth-child(1) {
+        .tile>div:nth-child(1) {
             display: none;
         }
     }
