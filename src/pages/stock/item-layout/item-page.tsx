@@ -58,7 +58,7 @@ export const ItemPage = ({ activePanel, item }) => {
             <SaleStockBanner item={item} />
             )}
 
-        <MainBlock title={title} classNames={[]}>
+        <MainBlock title={title} classNames={[styles.h1]}>
           <Stats item={item} />
           <>{description}</>
         </MainBlock>

@@ -68,27 +68,10 @@ export const TextBlock = ({ className, ...rest }) => <div className={cx(styles.t
 
 export const H1 = ({ children, className }) => children ? <Column className={cx('col-span-full', styles.h1, className)}><TextBlock><h1>{children}</h1></TextBlock></Column> : null
 
-export const MainBlock = ({ title = null, children, classNames = [] }) => {
-
-  // if (stockReOrder) {
-  //   return (
-  //     <Columns className={cx('cols-1 md:cols-2', styles.mainBlock)}>
-
-
-  //       <TextBlock className={[classNames[1]]}>
-  //         {children[0]}
-  //       </TextBlock>
-  //       <H1 className={classNames[0]}>{title}</H1>
-  //       <TextBlock className={[classNames[2]]}>
-  //         {children[1]}
-  //       </TextBlock>
-  //     </Columns>
-  //   )
-
-  // }
+export const MainBlock = ({ title = null, children,className,  classNames = [] }) => {
 
   return (
-    <Columns className={cx('cols-1 md:cols-2', styles.mainBlock)}>
+    <Columns className={cx('cols-1 md:cols-2',className, styles.mainBlock)}>
 
       <H1 className={classNames[0]}>{title}</H1>
       <TextBlock className={[classNames[1]]}>
