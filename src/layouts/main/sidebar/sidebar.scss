@@ -1,4 +1,5 @@
-@import '/scss/config/index.scss';
+@import '/scss/config/index';
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -6,12 +7,12 @@
   bottom: 0;
   z-index: $z-sidenav-mobile;
   overflow: hidden;
+  width: var(--sidenav-w);
   background-color: var(--c-main);
   color: var(--c-main-font);
-  width: var(--sidenav-w);
   box-shadow: 0 0 5px #000;
 
-  @include mobile() {
+  @include mobile {
     position: fixed;
     overflow-y: scroll;
     width: calc(100% - 70px);
@@ -20,7 +21,7 @@
     transform: translateX(-105%); // not 100% need a bit extra for box-shadow
     will-change: transform;
 
-    @media screen and (min-width: 600px) {
+    @media screen and (width >= 600px) {
       overflow: hidden;
     }
   }
@@ -30,10 +31,6 @@
 
 
 body[data-nav] {
-
-
-
-
   .sidebar {
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(0);

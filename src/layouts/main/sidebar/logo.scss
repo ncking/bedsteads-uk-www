@@ -1,8 +1,9 @@
 .logo {
   h2 {
-    @include mobile() {
+    @include mobile {
       margin: 0;
     }
+
     a {
       display: inline-block;
       width: 100%;
@@ -17,8 +18,8 @@
       width: 100%;
 
       &:first-child {
-        line-height: 2.8em;
         font-size: 0.25em;
+        line-height: 2.8em;
       }
 
       &:last-child {
@@ -26,6 +27,7 @@
         font-size: 0.65em;
       }
     }
+
     //
   }
 }
