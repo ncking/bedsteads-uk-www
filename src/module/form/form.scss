@@ -64,8 +64,11 @@
 .submit {
   min-height: 40px;
   margin: 20px;
-  background-color: var(--c-main) !important; // otherwise for <button> you get the :focus style when clicked
+  background-color: var(--c-main); // otherwise for <button> you get the :focus style when clicked
   color: var(--c-body);
   cursor: pointer;
+  &:focus{
+    background-color: var(--c-main);
+  }
 }
 
