@@ -39,7 +39,7 @@ export const FavouriteBtnTotal = (props) => {
 
 interface Props {
   id: number
-  onClick?: CallableFunction
+  onClick?: (e:React.MouseEvent) => void
   render?: CallableFunction
   className?: string
 }
@@ -48,7 +48,7 @@ export const FavouriteBtn = (props: Props) => {
   const { id, className, onClick, render = noop } = props
   const isFave = favStore.isFavourite(id)
 
-  const handleClick = () => {
+  const handleClick = (e:React.MouseEvent):void => {
     favStore.toggleId(id)
     trigger({})
   }

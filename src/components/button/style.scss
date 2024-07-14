@@ -7,20 +7,15 @@
 .buttonIcon {
   border: none;
   flex-shrink: 0; // if its in a flex layout make sure it dosnt cahnge size
-  //background-color: orange;
   padding: 0;
   display: inline-block;
-
 
   &:disabled {
     opacity: 0.5;
   }
-
-
 }
 
 .iconWrap {
-  // margin: 0 4px;
   overflow: hidden;
   border-radius: calc($mobileHeaderHeight / 2);
   background-color: transparent;
@@ -29,9 +24,7 @@
   justify-content: center;
   width: var(--btn-width);
   height: $mobileHeaderHeight;
-
 }
-
 
 .hover {
   @include desktop() {
@@ -39,7 +32,3 @@
     @include hoverStyle();
   }
 }
-
-// .buttonIcon + .buttonIcon{
-//   margin-left: 4px;
-// }
