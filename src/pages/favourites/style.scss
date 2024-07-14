@@ -45,7 +45,7 @@ $break-point: 500px;
 .imgWrap div {
     width: 100vw;
 
-    @media only screen and (min-width: $breakPoint) {
+    @media only screen and (min-width: $break-point) {
         width: 200px;
     }
 

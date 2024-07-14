@@ -8,7 +8,6 @@
 		"stylelint-order"
 	],
     "rules": {
-        "indentation": 4,
         "no-invalid-double-slash-comments": true,
         "declaration-no-important": true,
         "at-rule-no-unknown": null,
