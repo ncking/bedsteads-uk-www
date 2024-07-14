@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, MouseEvent, ReactNode } from 'react'
 import { cx } from '@raiz/browser'
 import { ClientOnly } from '@raiz/react'
 import { Button } from '@components'
@@ -39,8 +39,8 @@ export const FavouriteBtnTotal = (props) => {
 
 interface Props {
   id: number
-  onClick?: (e: React.MouseEvent) => void
-  render?: ({ label }: { label: string }) => React.ReactNode
+  onClick?: (e: MouseEvent) => void
+  render?: ({ label }: { label: string }) => ReactNode
   className?: string
 }
 export const FavouriteBtn = (props: Props) => {
@@ -69,4 +69,3 @@ export const FavouriteBtn = (props: Props) => {
     </ClientOnly>
   )
 }
-
