@@ -1,5 +1,5 @@
-$showImageBr: 700;
-$tileMattressBreakpoints: (
+$show-image-br: 700;
+$tile-mattress-breakpoints: (
     $showImageBr: 2,
     800: 3,
     1450: 4,
@@ -18,14 +18,14 @@ $tileMattressBreakpoints: (
     background-color: #efefef;
 
     @each $width,
-    $col in $tileMattressBreakpoints {
+    $col in $tile-mattress-breakpoints {
         @media only screen and (min-width: #{$width}px) {
             //width: percentage(1/$col);
             grid-template-columns: repeat($col, 1fr);
         }
     }
 
-    @media only screen and (max-width: #{$showImageBr}px) {
+    @media only screen and (max-width: #{$show-image-br}px) {
         .tile>div:nth-child(1) {
             display: none;
         }
@@ -36,14 +36,6 @@ $tileMattressBreakpoints: (
             margin-top: 1rem;
         }
     }
-
-
-
-    // >div:nth-child(2n+1) {
-    //     background-color: var(--c-grey);
-    // }
-
-
 }
 
 

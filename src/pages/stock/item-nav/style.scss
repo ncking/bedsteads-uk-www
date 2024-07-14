@@ -1,23 +1,23 @@
 .itNav {
   position: fixed;
-  left:0;
+  left: 0;
   bottom: 0;
   z-index: $z-itemnav-mobile;
   width: 100%;
 
- // height: $itemNavbarHeight;
+  // height: $itemNavbarHeight;
   padding: 0;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(140%);
 
   @include desktop {
-    left:auto;
+    left: auto;
     right: $desktopGutter;
     bottom: $desktopGutter;
     display: block;
     width: auto;
 
-    //max-width: calc(var(--main-w) - 60px);
+    // max-width: calc(var(--main-w) - 60px);
     max-width: 60%; // this works for now otherwsie set css var for <main> width
   }
 

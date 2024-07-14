@@ -1,15 +1,11 @@
 $mobileHeaderHeight: 62px;
 $topGutter: $mobileHeaderHeight;
-
 $shadowHorizontal: 0 2px 5px rgba(#000, .4);
 $shadowHorizontalUp: 0 -2px 5px rgba(#000, .4);
-
 $mobileCopySideIndent: 20px;
 $desktopGutter: $mobileCopySideIndent;
-
 $itemNavbarPadd: 10px;
 $itemNavbarHeight: $mobileHeaderHeight + (2 * $itemNavbarPadd);
-
 $z-header: 7000;
 $z-itemnav-mobile: 8000;
 $z-sidenav-mobile: 9000;
