@@ -10,9 +10,7 @@ export const SpeedDial = ({ id }) => {
       </ContactButton>
       <FavouriteBtn
         id={id}
-        render={({ label }) => (
-          <div className={styles.text}>{label}</div>
-        )}
+        render={({ label }) => <div className={styles.text}>{label}</div>}
       />
     </div>
   )

@@ -1,11 +1,26 @@
 {
     "extends": "stylelint-config-standard-scss",
-
+    "ignoreFiles": [
+        ".output/**/*",
+        "public/**/*",
+        "**/minireset.min.css"
+    ],
+    "plugins": [
+        "stylelint-order"
+    ],
     "rules": {
-        "indentation": 4,
         "no-invalid-double-slash-comments": true,
         "declaration-no-important": true,
         "at-rule-no-unknown": null,
+        "selector-pseudo-class-no-unknown": [
+            true,
+            {
+                "ignorePseudoClasses": [
+                    "global",
+                    "export"
+                ]
+            }
+        ],
         "selector-type-no-unknown": [
             true,
             {

@@ -1,15 +1,15 @@
 
 
 .itemThumbs {
-  $buttonWidth: 40px;
-  $buttonWidths: 2 * $buttonWidth;
+  $button-width: 40px;
+  $button-widths: 2 * $button-width;
 
   position: relative;
   display: flex;
   overflow: hidden;
   width: 100%;
 
-  @include desktop() {
+  @include desktop {
     width: auto;
   }
 
@@ -24,7 +24,6 @@
   }
 }
 
-//
 .thumbs {
   display: flex;
   will-change: transform;

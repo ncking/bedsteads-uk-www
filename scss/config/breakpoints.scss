@@ -2,7 +2,7 @@
 Breakpoints Map
 from https://tailwindcss.com/docs/screens
 **/
-$breakpointsMap: (
+$breakpoints-map: (
     sm: 640px,
     small: 640px,
     tablet: 640px,
@@ -24,8 +24,8 @@ $breakpointsMap: (
 
 
 @mixin breakpoint($name) {
-    @each $label, $size in $breakpointsMap {
-        @if $name ==$label {
+    @each $label, $size in $breakpoints-map {
+        @if $name == $label {
             @media (min-width: $size) {
                 @content;
             }
@@ -36,24 +36,24 @@ $breakpointsMap: (
 
 // stylelint-disable --- we dont want @content being re-ordered as it is the overide 
 @mixin min($breakpoint) {
-    @if map-has-key($breakpointsMap, $breakpoint) {
-        @media screen and (min-width: map-get($breakpointsMap, $breakpoint) + 1px) {
+    @if map-has-key($breakpoints-map, $breakpoint) {
+        @media screen and (min-width: map-get($breakpoints-map, $breakpoint) + 1px) {
             @content;
         }
     }
     @else {
-        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpointsMap)}.";
+        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpoints-map)}.";
     }
 }
 
 @mixin max($breakpoint) {
-    @if map-has-key($breakpointsMap, $breakpoint) {
-        @media screen and (max-width: map-get($breakpointsMap, $breakpoint)) {
+    @if map-has-key($breakpoints-map, $breakpoint) {
+        @media screen and (max-width: map-get($breakpoints-map, $breakpoint)) {
             @content;
         }
     }
     @else {
-        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpointsMap)}.";
+        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpoints-map)}.";
     }
 }
 

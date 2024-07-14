@@ -1,0 +1,10 @@
+$mobile-header-height: 62px;
+$shadow-horizontal: 0 2px 5px rgba(#000, .4);
+$shadow-horizontal-up: 0 -2px 5px rgba(#000, .4);
+$mobile-copy-indent: 20px;
+$desktop-gutter: $mobile-copy-indent;
+$item-navbar-padding: 10px;
+$item-navbar-height: $mobile-header-height + (2 * $item-navbar-padding);
+$z-header: 7000;
+$z-itemnav-mobile: 8000;
+$z-sidenav-mobile: 9000;

@@ -1,12 +1,12 @@
 .btn {
-  width: $mobileHeaderHeight;
-  height: $mobileHeaderHeight;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  top: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  width:$mobile-header-height;
+  height: $mobile-header-height;
   font-size: 30px;
   cursor: pointer;
 

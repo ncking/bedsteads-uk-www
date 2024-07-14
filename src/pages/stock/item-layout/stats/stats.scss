@@ -1,16 +1,16 @@
 .stats {
   border-collapse: collapse;
 
-  @include desktop() {
+  @include desktop {
     // when in destop, drap it up, so that the text is in HZ line with teh next column
     // THis is because the text in the stats table is vertically centered in the cell
 
     position: relative; // need for desktop to constrain lines
+    flex:1;
+    flex-basis: auto;
     order: 2;
     margin: 0;
-    margin-top: -1rem;
-    flex-basis: auto;
-    flex:1
+    margin-top: -1rem
   }
 
   tr {
@@ -19,9 +19,10 @@
 
   td {
     vertical-align: top;
+
     // width: 50%;
 
-    padding: $tableCellVericalPadding 0;
+    padding:  0.75rem 0;
 
     &:first-child {
       font-weight: bold;

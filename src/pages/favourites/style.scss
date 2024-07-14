@@ -1,4 +1,4 @@
-$breakPoint: 500px;
+$break-point: 500px;
 
 .copy {
     display: flow;
@@ -6,31 +6,37 @@ $breakPoint: 500px;
 
 .favList {
     --c-bg-hover : #ddd;
-    padding: 0;
+
     margin: var(--gutter) 0;
+    padding: 0;
+
     li {
-        transition: all 0.5s ease-out;
-        background-color: #ddd;
-        border-bottom: 5px solid #fff;
-        border-bottom-width: 5px;
         position: relative;
-        opacity: 1;
         display: flex;
-        &:hover{
-            background-color: #fff;
-            cursor: pointer;
-        }
-        &.out {
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-            animation-name: slideOut;
-        }
+
         /**
         RESPONSIVE
         **/
         flex-direction: column;
-        @media only screen and (min-width: $breakPoint) {
+        border-bottom: 5px solid #fff;
+        border-bottom-width: 5px;
+        background-color: #ddd;
+        opacity: 1;
+        transition: all 0.5s ease-out;
+
+        @media only screen and (min-width: $break-point) {
             flex-direction: row;
+        }
+
+        &:hover{
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        &.out {
+            animation-name: slide-out;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
         }
     }
 }
@@ -38,50 +44,60 @@ $breakPoint: 500px;
 
 .imgWrap div {
     width: 100vw;
-    @media only screen and (min-width: $breakPoint) {
+
+    @media only screen and (min-width: $break-point) {
         width: 200px;
     }
 
-    @media only screen and (min-width: 700px) {
+    @media only screen and (width >= 700px) {
         width: 300px;
     }
 
-    @media only screen and (min-width: 800px) {
+    @media only screen and (width >= 800px) {
         width: 400px;
     }
 }
 
 .fav {
     position: absolute;
-    right: 0px;
-    top: 0px;
+    top: 0;
+    right: 0;
 }
 
-@keyframes slideOut {
+@keyframes slide-out {
     0% {
         left: 0;
     }
 
     100% {
-        opacity: 0;
         left: 100vw;
-        max-height: 0;
         overflow: hidden;
-        border-bottom: 0px;
+        max-height: 0;
+        border-bottom: 0;
+        opacity: 0;
     }
 }
 
 .details {
     position: relative;
-    padding: 16px;
     flex-grow: 1;
+    padding: 16px;
     padding-right: 60px;
+
+    @media only screen and (width >= 1200px) {
+        padding-left: var(--gutter-half);
+
+        h2{
+            font-size: 140%;
+        }
+    }
     
 
    
     h2,
     table {
         margin: 0;
+
         td {
             padding:0;
         }
@@ -90,14 +106,9 @@ $breakPoint: 500px;
 table{
     max-width:400px
 }
+
     h2 {
         margin-bottom: 20px;
         font-size: 110%;
-    }
-    @media only screen and (min-width: 1200px) {
-        padding-left: var(--gutter-half);
-        h2{
-            font-size: 140%;
-        }
     }
 }

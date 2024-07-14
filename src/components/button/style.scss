@@ -1,45 +1,35 @@
 :root {
-  --btn-width :#{$mobileHeaderHeight};
+  --btn-width :#{$mobile-header-height};
 }
 
 // if we use css modules to export the class, it looses the inital prependData/additional data of SASS; so re-add here
 
 .buttonIcon {
-  border: none;
-  flex-shrink: 0; // if its in a flex layout make sure it dosnt cahnge size
-  //background-color: orange;
-  padding: 0;
   display: inline-block;
-
+  flex-shrink: 0; // if its in a flex layout make sure it dosnt cahnge size
+  padding: 0;
+  border: none;
 
   &:disabled {
     opacity: 0.5;
   }
-
-
 }
 
 .iconWrap {
-  // margin: 0 4px;
-  overflow: hidden;
-  border-radius: calc($mobileHeaderHeight / 2);
-  background-color: transparent;
   display: inline-flex; // imporatnt as it tends to get overidden by the current layout styles
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   width: var(--btn-width);
-  height: $mobileHeaderHeight;
-
+  height:$mobile-header-height;
+  border-radius: calc($mobile-header-height / 2);
+  background-color: transparent;
 }
-
 
 .hover {
-  @include desktop() {
+  @include desktop {
     border-radius: 99px;
-    @include hoverStyle();
+
+    @include hover-style;
   }
 }
-
-// .buttonIcon + .buttonIcon{
-//   margin-left: 4px;
-// }

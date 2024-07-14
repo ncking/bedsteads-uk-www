@@ -3,14 +3,14 @@
 .item {
   position: relative;
 
-  &:after {
-    height: 5px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    position: absolute;
+  &::after {
     content: '';
-    box-shadow: $shadowHorizontalUp;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    box-shadow: $shadow-horizontal-up;
     opacity: 0;
     transition: opacity 0.65 ease;
 
@@ -24,6 +24,7 @@
   :first-child {
     order: 1;
     margin-bottom: var(--gutter);
+
     @include min(md) {
       order: -1;
       margin-bottom:  var(--gutter-half);

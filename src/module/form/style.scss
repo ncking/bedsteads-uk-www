@@ -5,13 +5,14 @@
 }
 
 .overlay {
-  --overlay-bg: rgba(0, 0, 0, 0.4);
+  --overlay-bg: rgb(0 0 0 / 40%);
+
   backdrop-filter: blur(4px) saturate(150%);
 
   > div {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100%;
   }
 }
@@ -21,6 +22,7 @@
   text-overflow: ellipsis;
   white-space:nowrap;
 }
+
 .stockList {
   display: flex;
   flex-direction: column;
@@ -31,21 +33,22 @@
   display: flex;
   align-items: center;
 }
+
 .stockItem {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+  margin-right: 10px;
+
   // opacity:.3;
   margin-bottom: 5px;
   border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
+  background-color: rgb(63 63 60 / 10%);
+  color: rgb(63 63 60);
+  box-shadow: rgb(63 63 60 / 60%) 0 0 0 1px inset; /// dropshaow to outline radius, works better tahn outline
   cursor: pointer;
-
-  background-color: rgba(63, 63, 60, 0.1);
-  box-shadow: rgba(63, 63, 60, 0.6) 0px 0px 0px 1px inset; /// dropshaow to outline radius, works better tahn outline
-  color: rgb(63, 63, 60);
-  height: 40px;
-  overflow: hidden;
-  flex-shrink: 0;
-  margin-right: 10px;
 }
 
 .img {
@@ -56,7 +59,7 @@
 }
 
 .ref {
+  padding: 0 10px;
   color: #000;
   font-weight: bold;
-  padding: 0 10px;
 }

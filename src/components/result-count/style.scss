@@ -6,36 +6,38 @@
 */
 
 .resultCount {
-  height: 100%;
   display: flex;
   align-items: center;
+  height: 100%;
   line-height: normal;
 }
 
 .total {
   display: inline-block;
   margin-top: -0.5rem;
-  font-size: 0.7rem;
   margin-left: 5px;
+  font-size: 0.7rem;
 }
 
 .odometer {
   display: inline-flex;
   margin: 0;
-  padding: 0;
   margin-left: var(--gutter-half);
+  padding: 0;
+
   li {
-    width: 1ch; //@nk since 2014 for all major. ch: Represents the width, or more precisely the advance measure, of the glyph "0" (zero, the Unicode character U+0030) in the element's font
+    width: 1ch; // @nk since 2014 for all major. ch: Represents the width, or more precisely the advance measure, of the glyph "0" (zero, the Unicode character U+0030) in the element's font
   }
 }
 
 nav .resultCount {
-  font-size: 24px;
   margin: 0 20px;
+  font-size: 24px;
 
   .odometer {
     margin: 0;
   }
+
   .total {
     font-size: 14px;
   }
