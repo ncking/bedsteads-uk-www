@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { cx, noop } from '@raiz/browser'
+import { cx } from '@raiz/browser'
 import { ClientOnly } from '@raiz/react'
 import { Button } from '@components'
 import { favStore } from '@store'
@@ -39,16 +39,16 @@ export const FavouriteBtnTotal = (props) => {
 
 interface Props {
   id: number
-  onClick?: (e:React.MouseEvent) => void
-  render?: CallableFunction
+  onClick?: (e: React.MouseEvent) => void
+  render?: ({ label }: { label: string }) => React.ReactNode
   className?: string
 }
 export const FavouriteBtn = (props: Props) => {
   const [, trigger] = useState({})
-  const { id, className, onClick, render = noop } = props
+  const { id, className, onClick, render = () => null } = props
   const isFave = favStore.isFavourite(id)
 
-  const handleClick = (e:React.MouseEvent):void => {
+  const handleClick = () => {
     favStore.toggleId(id)
     trigger({})
   }
@@ -69,3 +69,4 @@ export const FavouriteBtn = (props: Props) => {
     </ClientOnly>
   )
 }
+
