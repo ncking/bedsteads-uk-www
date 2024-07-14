@@ -30,6 +30,6 @@
   @include desktop {
     border-radius: 99px;
 
-    @include hoverStyle;
+    @include hover-style;
   }
 }

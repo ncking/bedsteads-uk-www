@@ -25,7 +25,7 @@ $breakpoints-map: (
 
 @mixin breakpoint($name) {
     @each $label, $size in $breakpoints-map {
-        @if $name ==$label {
+        @if $name == $label {
             @media (min-width: $size) {
                 @content;
             }

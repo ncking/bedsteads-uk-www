@@ -23,7 +23,7 @@
       display: block;
       line-height: 2.2rem;
 
-      @include hoverStyle;
+      @include hover-style;
     }
 
     a:not([href^="mailto:"]) {
