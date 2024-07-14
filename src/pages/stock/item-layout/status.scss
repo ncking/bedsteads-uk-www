@@ -3,13 +3,13 @@
     background-color: var(--c-main);
     color: #fff;
     font-weight: bold;
-    line-height: $mobileHeaderHeight;
+    line-height: $mobile-header-height;
     text-transform: uppercase;
 
     @include desktop {
         position: fixed;
-        top: $desktopGutter;
-        right: $desktopGutter;
+        top: $desktop-gutter;
+        right: $desktop-gutter;
         z-index: 999;
         height: 65px;
         padding: 0 1rem;

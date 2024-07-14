@@ -97,8 +97,8 @@
 
   @include desktop {
     position: fixed;
-    top: $desktopGutter;
-    right: $desktopGutter;
+    top: $desktop-gutter;
+    right: $desktop-gutter;
     z-index: 999;
     width: 30%;
     max-width: 300px;

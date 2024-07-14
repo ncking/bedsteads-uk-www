@@ -1,5 +1,5 @@
 :root {
-  --btn-width :#{$mobileHeaderHeight};
+  --btn-width :#{$mobile-header-height};
 }
 
 // if we use css modules to export the class, it looses the inital prependData/additional data of SASS; so re-add here
@@ -21,8 +21,8 @@
   justify-content: center;
   overflow: hidden;
   width: var(--btn-width);
-  height: $mobileHeaderHeight;
-  border-radius: calc($mobileHeaderHeight / 2);
+  height:$mobile-header-height;
+  border-radius: calc($mobile-header-height / 2);
   background-color: transparent;
 }
 

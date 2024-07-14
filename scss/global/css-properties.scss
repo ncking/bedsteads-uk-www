@@ -22,7 +22,7 @@
   --page-padding: clamp(0px, var(--scaler), var(--gutter-max));
   --sidenav-w: 0px;
   --main-w: 100vw;
-  --header-h: #{$mobileHeaderHeight};
+  --header-h: #{$mobile-header-height};
   --main-t: var(--header-h);
   --mobile-ht : calc( 100vh - var(--header-h));
   --panel-radius:0;

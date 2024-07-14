@@ -5,15 +5,14 @@
   z-index: $z-itemnav-mobile;
   width: 100%;
 
-  // height: $itemNavbarHeight;
   padding: 0;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(140%);
 
   @include desktop {
     left: auto;
-    right: $desktopGutter;
-    bottom: $desktopGutter;
+    right: $desktop-gutter;
+    bottom: $desktop-gutter;
     display: block;
     width: auto;
 
@@ -50,7 +49,7 @@
 
   //  width: 100%;
   // NO nigel height: 100%;
-  padding: $itemNavbarPadd;
+  padding: $item-navbar-padding;
   background-color: var(--c-main);
   color: var(--c-main-font);
   transition: width 0.75s cubic-bezier(0.4, 0, 0.2, 1);
@@ -75,8 +74,8 @@
   @include desktop {
     position: fixed;
     top: auto;
-    right: $desktopGutter;
-    bottom: $desktopGutter + $desktopGutter + $itemNavbarHeight;
+    right: $desktop-gutter;
+    bottom: $desktop-gutter + $desktop-gutter + $item-navbar-height;
     flex-direction: column;
     color: #000;
 

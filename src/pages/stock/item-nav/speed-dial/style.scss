@@ -4,7 +4,7 @@
   right: 0;
   z-index: 9999;
   display: flex;
-  height: $mobileHeaderHeight;
+  height: $mobile-header-height;
   color: inherit;
   color: var(--c-main-font);
 
@@ -15,8 +15,8 @@
   @include desktop {
     position: fixed;
     top: auto;
-    right: $desktopGutter;
-    bottom: $desktopGutter + $desktopGutter + $itemNavbarHeight;
+    right: $desktop-gutter;
+    bottom: $desktop-gutter + $desktop-gutter + $item-navbar-height;
     flex-direction: column;
     height: auto;
     color: #000;
@@ -26,7 +26,7 @@
       align-items: center;
       overflow: hidden;
       margin-top: 10px;
-      border-radius: calc($mobileHeaderHeight / 2) !important;
+      border-radius: calc($mobile-header-height / 2) !important;
       background-color: rgba(#fff, 0.6);
       box-shadow: 0 2px 2px rgba(#000, 0.5);
       transition: all 0.3s ease-out 0.1s;

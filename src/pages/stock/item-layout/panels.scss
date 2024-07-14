@@ -41,7 +41,7 @@
   width: 100%;
   min-width: 100%; // VERY important NIGEL, otherwise its dosent *instanly calc the correct width (leaves as auto, then expands to correct when image is loaded)
   min-height: 100vh;
-  padding-bottom: $itemNavbarHeight;
+  padding-bottom: $item-navbar-height;
   background-color: white;
   box-shadow: -4px -9px 9px rgb(0 0 0 / 35%);
 

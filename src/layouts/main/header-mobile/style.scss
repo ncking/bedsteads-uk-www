@@ -6,7 +6,7 @@
   right: 0;
   z-index: $z-header;
   display: flex;
-  height: $mobileHeaderHeight;
+  height: $mobile-header-height;
   color: var(--c-main-font);
 
 
@@ -24,7 +24,7 @@
 
     // put the bg all in one layer so we can fade it in/out
     background-color: var(--c-main);
-    box-shadow: $shadowHorizontal;
+    box-shadow: $shadow-horizontal;
     opacity: 1;
     transition: all 0.75s ease;
   }
