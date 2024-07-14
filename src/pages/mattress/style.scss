@@ -1,4 +1,13 @@
+$showImageBr: 700;
+$tileMattressBreakpoints: (
+    $showImageBr: 2,
+    800: 3,
+    1450: 4,
+);
+
+
 .grid {
+    
     /*
     * must be multiples of 2
     */
