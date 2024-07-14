@@ -10,7 +10,7 @@
     position: relative; // @NK dont remove this
     display: grid;
     grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-    grid-gap: var(--gap);
+   
 
     // WE dont need this & messes up a added padding, without border-box width: 100%;
     box-sizing: border-box;

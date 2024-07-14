@@ -75,7 +75,7 @@ grid-template-columns: repeat(auto-fill, minmax( (rowWidth/columncount)+'px', 1f
 
 
   .mainBlock {
-    grid-gap: 0 var(--gutter) !important;
+    grid-gap: 0 var(--gutter);
     max-width: 1000px;
 
     /**
