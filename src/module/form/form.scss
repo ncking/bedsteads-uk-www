@@ -25,7 +25,7 @@
     height: 32px;
     padding: 2px 5px;
     font-size: 14px;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     line-height: 32px;
     resize: none;
 
@@ -67,6 +67,7 @@
   background-color: var(--c-main); // otherwise for <button> you get the :focus style when clicked
   color: var(--c-body);
   cursor: pointer;
+
   &:focus{
     background-color: var(--c-main);
   }
