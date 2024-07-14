@@ -5,12 +5,21 @@
         "public/**/*"
     ],
     "plugins": [
-		"stylelint-order"
-	],
+        "stylelint-order"
+    ],
     "rules": {
         "no-invalid-double-slash-comments": true,
         "declaration-no-important": true,
         "at-rule-no-unknown": null,
+        "selector-pseudo-class-no-unknown": [
+            true,
+            {
+                "ignorePseudoClasses": [
+                    "global",
+                    "export"
+                ]
+            }
+        ],
         "selector-type-no-unknown": [
             true,
             {

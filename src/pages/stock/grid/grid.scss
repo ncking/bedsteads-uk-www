@@ -1,5 +1,5 @@
 .grid {
-  $tileBedBreakpoints: (
+  $tile-bed-breakpoints: (
     400: 2,
     520: 4,
     1440: 6,
@@ -10,7 +10,7 @@
   grid-template-columns: 2fr;
   grid-auto-flow: row dense;
 
-  @each $width, $col in $tileBedBreakpoints {
+  @each $width, $col in  $tile-bed-breakpoints {
     @media only screen and (min-width: #{$width}px) {
       grid-template-columns: repeat($col, 1fr);
     }
