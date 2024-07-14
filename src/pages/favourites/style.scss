@@ -34,7 +34,7 @@ $break-point: 500px;
         }
 
         &.out {
-            animation-name: slideOut;
+            animation-name: slide-out;
             animation-duration: 1s;
             animation-fill-mode: forwards;
         }
@@ -64,7 +64,7 @@ $break-point: 500px;
     right: 0;
 }
 
-@keyframes slideOut {
+@keyframes slide-out {
     0% {
         left: 0;
     }

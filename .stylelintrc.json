@@ -2,7 +2,8 @@
     "extends": "stylelint-config-standard-scss",
     "ignoreFiles": [
         ".output/**/*",
-        "public/**/*"
+        "public/**/*",
+        "**/minireset.min.css"
     ],
     "plugins": [
         "stylelint-order"

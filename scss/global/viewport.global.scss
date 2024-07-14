@@ -6,8 +6,6 @@
     **/
   height: 90vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
   height: calc(100vh - var(--main-t));
-
-  /*  */
   max-height: calc(100vh - (var(--main-t) + 40px)); // minus 2 * the minimim gutter
   max-height: 100svh;
   background-color: var(--c-img);
