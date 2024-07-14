@@ -3,8 +3,29 @@ $topGutter: $mobileHeaderHeight;
 
 
 $shadowHorizontal : 0px 2px 5px rgba(#000, .4);
+$shadowHorizontalUp : 0px -2px 5px rgba(#000, .4);
+
+
 $mobileCopySideIndent: 20px;
 $desktopGutter: $mobileCopySideIndent;
 
-$z-sidenav-mobile : 999;
+
+$itemNavbarPadd: 10px;
+$itemNavbarHeight: $mobileHeaderHeight + (2 * $itemNavbarPadd);
+
+$tableCellVericalPadding: 0.75rem;
+
+
+
 $z-header: 7000;
+$z-itemnav-mobile: 8000;
+$z-sidenav-mobile: 9000;
+
+
+
+$showImageBr: 700;
+$tileMattressBreakpoints: (
+    $showImageBr: 2,
+    800: 3,
+    1450: 4,
+);
