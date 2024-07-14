@@ -1,30 +1,43 @@
 .formWrap {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   max-width: 700px;
-  position: relative;
-
-  background-color: #fff;
-  overflow: hidden;
   padding: 20px;
-  @include desktop() {
-    margin-top: -50px;
+  background-color: #fff;
+
+  @include desktop {
     min-height: 600px;
+    margin-top: -50px;
   }
+
   h2 {
     font-size: calc(28px + 12 * (100vw - 300px) / 1600);
-    @include mobile(){
+
+    @include mobile{
       margin-top:0
     }
   }
+
+  
+  label {
+    color: #000;
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+  
   input,
   textarea {
     display: block;
-    font-family: Arial;
-    font-size: 14px;
-    line-height: 32px;
     height: 32px;
     padding: 2px 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    line-height: 32px;
     resize: none;
+
     &:focus,
     &:active {
       outline: 2px solid #000;
@@ -41,25 +54,23 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  label {
-    color: #000;
-  }
-  textarea {
-    min-height: 200px;
-  }
 }
 
 .fieldError {
-  color: red;
   min-height: 30px;
+  color: red;
   line-height: 30px;
 }
 
 .submit {
-  margin: 20px;
   min-height: 40px;
-  background-color: var(--c-main) !important; // otherwise for <button> you get the :focus style when clicked
+  margin: 20px;
+  background-color: var(--c-main); // otherwise for <button> you get the :focus style when clicked
   color: var(--c-body);
   cursor: pointer;
+
+  &:focus{
+    background-color: var(--c-main);
+  }
 }
 

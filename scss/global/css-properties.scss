@@ -1,38 +1,33 @@
 :root {
-
   --c-white: #fff;
   --c-grey: #eee;
   --c-img: #ccc;
   --c-black: #26282d;
+
   /**
   **/
   --c-main: var(--c-black);
   --c-main-font: #bbb;
   --c-body: #fff;
-  --c-bg-hover: rgba(255, 255, 255, 0.08);
-
-  --gutterMin: 10px;
-  --gutterMax: 160px;
+  --c-bg-hover: rgb(255 255 255 / 8%);
+  --gutter-min: 10px;
+  --gutter-max: 160px;
   --scaler: 4vw;
-  --gutter: clamp(var(--gutterMin), var(--scaler), var(--gutterMax));
+  --gutter: clamp(var(--gutter-min), var(--scaler), var(--gutter-max));
   --gutter-half: calc(var(--gutter) / 2);
   --gutter-half-n: calc(var( --gutter-half) * -1);
   --gutter-quater: calc(var(--gutter) / 4);
   --gutter2 : calc(var(--gutter) * 2);
- 
-
   --rz-img-bg:#dedede;
-
-  --page-padding: clamp(0px, var(--scaler), var(--gutterMax));
-
+  --page-padding: clamp(0px, var(--scaler), var(--gutter-max));
   --sidenav-w: 0px;
   --main-w: 100vw;
-  --header-h: #{$mobileHeaderHeight};
+  --header-h: #{$mobile-header-height};
   --main-t: var(--header-h);
-  --mobile-ht : calc( 100vh -  var(--header-h));
+  --mobile-ht : calc( 100vh - var(--header-h));
   --panel-radius:0;
   
-  @include desktop() {
+  @include desktop {
     --tmp-main: calc(100vh * 1.5151);
     --sidenav-w: clamp(300px, calc(100% - var(--tmp-main)), 650px);
     --main-w: calc(100% - calc(var(--sidenav-w) + 0px));

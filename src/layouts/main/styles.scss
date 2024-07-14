@@ -1,18 +1,17 @@
 .main {
-  position: absolute; //@important; we need is for all absolute child els ... dont remove
+  position: absolute; // @important; we need is for all absolute child els ... dont remove
   top: var(--main-t);
+  left:auto; // we now use the <OverlayMain/> compoent which has default styling
   right: 0;
   width: var(--main-w); // we now use the <OverlayMain/> compoent which has default styling
-  left:auto; // we now use the <OverlayMain/> compoent which has default styling
-  @include desktop() {
+    color:var(--c-black);
+
+  @include desktop {
     top: 0;
     min-height: 101vh; // @NK we really do ned this; ie map page needs a scrollbar forced
   }
-  //  background: rgba(#7e5c31, .2);
-    color:var(--c-black)
 }
 
 .overlay {
-  --menu-bg-c: rgba(0, 0, 0, 0.6);
-  //--menu-bd-filter: blur(4px) saturate(120%);
+  --menu-bg-c: rgb(0 0 0 / 60%);
 }

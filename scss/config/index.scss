@@ -1,6 +1,4 @@
 @use 'sass:math';
-@import "./breakpoints.scss";
-@import "./vars_sass.scss";
-@import "./mixins.scss";
-@import "./bedsteads_mixins.scss";
-@import "./media_mixins.scss";
+@import "./breakpoints";
+@import "./vars-sass";
+@import "./bedsteads-mixins";

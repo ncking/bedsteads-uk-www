@@ -1,12 +1,9 @@
-@import '../config/index.scss';
-@import "./css-properties.scss";
-
-@import "./reset/body.scss";
-@import "./reset/button_links_lists.scss";
-@import "./reset/fonts.scss";
-@import "./reset/table.scss";
-@import "./reset/typeography.scss";
-
-
-@import "./viewport.global.scss";
-@import "./logo.global.scss";
+@import '../config/index';
+@import "./css-properties";
+@import "./reset/body";
+@import "./reset/button-links-lists";
+@import "./reset/fonts";
+@import "./reset/table";
+@import "./reset/typeography";
+@import "./viewport.global";
+@import "./logo.global";

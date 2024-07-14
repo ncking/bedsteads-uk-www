@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { cx, noop } from '@raiz/browser'
+import { useEffect, useState, MouseEvent, ReactNode } from 'react'
+import { cx } from '@raiz/browser'
 import { ClientOnly } from '@raiz/react'
 import { Button } from '@components'
 import { favStore } from '@store'
@@ -39,13 +39,13 @@ export const FavouriteBtnTotal = (props) => {
 
 interface Props {
   id: number
-  onClick?: CallableFunction
-  render?: CallableFunction
+  onClick?: (e: MouseEvent) => void
+  render?: ({ label }: { label: string }) => ReactNode
   className?: string
 }
 export const FavouriteBtn = (props: Props) => {
   const [, trigger] = useState({})
-  const { id, className, onClick, render = noop } = props
+  const { id, className, onClick, render = () => null } = props
   const isFave = favStore.isFavourite(id)
 
   const handleClick = () => {

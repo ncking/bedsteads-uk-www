@@ -16,14 +16,14 @@
   }
 
   li {
-    $anchorHt: 40px;
     flex: 1;
     text-align: center;
 
     &:not(.contactSocial) a {
       display: block;
       line-height: 2.2rem;
-      @include hoverStyle();
+
+      @include hover-style;
     }
 
     a:not([href^="mailto:"]) {
@@ -49,9 +49,10 @@
 
 
 .privacy {
-  font-size: 80%;
   flex-basis: 40px;
+  font-size: 80%;
   text-align: center;
   opacity:.5;
+
   // background-color: aqua;
 }

@@ -1,17 +1,16 @@
 .wrap {
-  margin: auto;
+  position: relative;
+  z-index: 100;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   overflow: hidden;
-  position: relative;
-  //outline: 2px solid red;
-  z-index: 100;
+  margin: auto;
+  font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 
-  font-size: 30px;
-  @media screen and (min-width: 500px) {
+  @media screen and (width >= 500px) {
     font-size: 40px;
   }
 }
@@ -20,7 +19,7 @@
   display: block;
   background: #917744;
   background: linear-gradient(to right, #917744 11%, #e2d7a1 50%, #917744 91%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   
 

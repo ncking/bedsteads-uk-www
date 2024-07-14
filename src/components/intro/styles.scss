@@ -2,23 +2,17 @@
   position: absolute;
   bottom: 0;
   padding: var(--gutter);
-
-color: #fff;
- //background-color: yellow;
+  color: #fff;
 }
 
 .title {
+  font-weight: bold;
   font-size: calc(36px + (22) * ((100vw - 300px) / (1900 - 300)));
-
- font-weight: bold;
 
 }
 
 .list {
   margin: 0;
-  padding:0;
+  padding: 0;
   font-size: calc(16px + (8) * ((100vw - 300px) / (1900 - 300)));
-
-  //font-weight: bold;
-  // list-style-type: disc;
 }

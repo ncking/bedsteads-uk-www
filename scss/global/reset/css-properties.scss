@@ -9,23 +9,22 @@
   // --c-main-font: #eee;
 
   --c-body: #fff;
-  --c-bg-hover: rgba(255, 255, 255, 0.08);
-  --gutterMin: 20px;
-  --gutterMax: 160px;
+  --c-bg-hover: rgb(255 255 255 / 8%);
+  --gutter-min: 20px;
+  --gutter-max: 160px;
   --scaler: 4vw;
-  --gutter: clamp(var(--gutterMin), var(--scaler), var(--gutterMax));
+  --gutter: clamp(var(--gutter-min), var(--scaler), var(--gutter-max));
   --gutter-half: calc(var(--gutter) / 2);
   --gutter-quater: calc(var(--gutter) / 4);
-
-  //
   --sidenav-w: 0px;
   --main-w: 100vw;
   --header-h: #{$mobileHeaderHeight};
   --main-t: var(--header-h);
-  --mobile-ht : calc( 100vh -  var(--header-h));
+  --mobile-ht : calc( 100vh - var(--header-h));
   --panel-radius:0;
-  //
-  @include desktop() {
+
+
+  @include desktop {
     --tmp-main: calc(100vh * 1.5151);
     --sidenav-w: clamp(300px, calc(100% - var(--tmp-main)), 650px);
     --main-w: calc(100% - calc(var(--sidenav-w) + 0px));

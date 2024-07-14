@@ -34,7 +34,8 @@
     "cy:run": "cypress run",
     "format": "prettier --write \"{src,test}/**/*.{js,ts,tsx}\"",
     "lint": "eslint ./src",
-    "lint:css": "stylelint --allow-empty-input \"**/*.{css,scss}\"",
+    "lint:sass": "stylelint --allow-empty-input \"**/*.{css,scss}\"",
+    "lint:sass:fix": "stylelint --allow-empty-input \"**/*.{css,scss}\" --fix",
     "lint:fix": "eslint ./src  --fix"
   },
   "overrides": {
@@ -110,8 +111,9 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.42.1",
-    "stylelint": "^16.6.1",
+    "stylelint": "^16.7.0",
     "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
     "svgo": "^3.2.0",
     "terser": "^5.28.1",
     "tsx": "^4.7.1",

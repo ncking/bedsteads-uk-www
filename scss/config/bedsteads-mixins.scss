@@ -1,4 +1,4 @@
-@mixin icon($img, $bg: $menuBgColour, $size: 25px, $pos: 'center center') {
+@mixin icon($img, $bg , $size: 25px, $pos: 'center center') {
     background-size: #{$size} auto;
     cursor: pointer;
 
@@ -9,7 +9,7 @@
     }
 }
 
-@mixin hoverStyle() {
+@mixin hover-style() {
     transition: background-color 250ms ease-in;
 
     &:hover:not([disabled]) {
