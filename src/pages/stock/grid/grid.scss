@@ -12,7 +12,6 @@
 
   @each $width, $col in $tileBedBreakpoints {
     @media only screen and (min-width: #{$width}px) {
-      //width: percentage(1/$col);
       grid-template-columns: repeat($col, 1fr);
     }
   }

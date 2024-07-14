@@ -1,4 +1,4 @@
-$breakPoint: 500px;
+$break-point: 500px;
 
 .copy {
     display: flow;
@@ -24,7 +24,7 @@ $breakPoint: 500px;
         opacity: 1;
         transition: all 0.5s ease-out;
 
-        @media only screen and (min-width: $breakPoint) {
+        @media only screen and (min-width: $break-point) {
             flex-direction: row;
         }
 

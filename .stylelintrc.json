@@ -1,5 +1,9 @@
 {
     "extends": "stylelint-config-standard-scss",
+    "ignoreFiles": [
+        ".output/**/*",
+        "public/**/*"
+    ],
     "plugins": [
 		"stylelint-order"
 	],
