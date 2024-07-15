@@ -10,7 +10,7 @@
   width: var(--sidenav-w);
   background-color: var(--c-main);
   color: var(--c-main-font);
-  box-shadow: 0 0 5px #000;
+  box-shadow: 3px 0 5px #000;
 
   @include mobile {
     position: fixed;

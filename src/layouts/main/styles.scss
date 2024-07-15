@@ -1,6 +1,6 @@
 .main {
   position: absolute; // @important; we need is for all absolute child els ... dont remove
-  top: 0;//var(--main-t);
+  top:  var(--main-t);
   left: auto; // we now use the <OverlayMain/> compoent which has default styling
   right: 0;
   width: var(--main-w); // we now use the <OverlayMain/> compoent which has default styling
