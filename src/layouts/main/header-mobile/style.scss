@@ -44,11 +44,7 @@
 }
 
 @include mobile {
-  body.fullHeight {
-    main {
-      top: 0;
-    }
-  }
+
 
   :global(.header-on)::before {
     opacity: 1;

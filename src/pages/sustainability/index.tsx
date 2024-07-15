@@ -17,6 +17,7 @@ export default () => {
         className="viewport"
         responsive="1"
         src="/image/page/shavings,t_viewport.jpg"
+        setSizeMin={1}
       >
         <Intro className={cx()} links={links}>
           Sustainability & Returns
