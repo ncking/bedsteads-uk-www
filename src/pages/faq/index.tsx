@@ -7,7 +7,8 @@ const links = [
   { hash: '', label: 'Names of Makers' },
 ]
 
-export default () => {
+export default (props) => {
+
   return (
     <>
 

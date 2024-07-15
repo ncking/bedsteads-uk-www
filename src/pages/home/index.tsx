@@ -8,10 +8,10 @@ export default () => {
 
       <BedsteadsImage
         alt="Reflection of Bedsteads delivery van, in bed knob"
-        lazy="false"
+        lazy={false}
         tag="div"
         className="viewport"
-        responsive="1"
+        responsive={true}
         src="/image/index/cover,t_viewport.jpg"
       >
         <Intro className={cx('logotype', styles.intro)}>Bedsteads</Intro>
