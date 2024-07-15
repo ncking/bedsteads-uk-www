@@ -19,6 +19,7 @@ export default (props) => {
         className="viewport"
         responsive="1"
         src="/image/page/spanners,t_viewport.jpg"
+        setSizeMin={1}
       >
         <Intro className={cx()} links={links}>
           Additional information
