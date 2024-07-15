@@ -50,7 +50,7 @@
     "@types/sharp": "^0.32.0",
     "image-size": "^1.0.2",
     "linkedom": "^0.16.1",
-    "mongodb": "^6.2.0",
+    "mongodb": "^6.8.0",
     "nodemailer": "^6.9.10",
     "preact": "^10.19.3",
     "preact-render-to-string": "^6.5.4",
