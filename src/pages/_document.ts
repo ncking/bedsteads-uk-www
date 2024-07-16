@@ -54,21 +54,21 @@ export default async ({ response, tagRenderer, plugins, isDev }) => {
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   
   <link rel="shortcut icon" href="/favicon/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon/icon.svg" >
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon/icon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
-  <link rel="manifest" href="/favicon/manifest.webmanifest"/>
+  <link rel="manifest" href="/favicon/manifest.webmanifest">
   <link rel="yandex-tableau-widget" href="/favicon/yandex-browser-manifest.json">
 
   <meta name="application-name" content="${company}">
   <meta name="apple-mobile-web-app-title" content="${company}">
-  <meta name="mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <meta name="theme-color" content="${backgroundColour}"/>
-  <meta name="msapplication-TileColor" content="${backgroundColour}"/>
+  <meta name="theme-color" content="${backgroundColour}">
+  <meta name="msapplication-TileColor" content="${backgroundColour}">
   
   <meta name="msapplication-config" content="/favicon/browserconfig.xml">
   <meta name="ahrefs-site-verification" content="5d9efbbdc27cee8e5bdd3abb86d08046b5b568cfa94469740efcfa940949f129">

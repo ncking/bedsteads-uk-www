@@ -59,7 +59,7 @@ export const Button: FC<ButtonProps> = ({
       onClick={onClick}
       {...attr}
       aria-label={ariaLabel}
-      role="button"
+      // will trigger an HTML validator warning ... its not nessary .. role="button"
     >
       {iconFC}
       {children}
