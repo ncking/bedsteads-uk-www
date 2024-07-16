@@ -141,7 +141,7 @@ const lines = [
 
 .cols-subgrid {
     display:grid;
-    grid-template-columns: subgrid;
+    // ??? what are we trying to do here ??? grid-template-columns: subgrid;
 }
 
 .col-span-full {
