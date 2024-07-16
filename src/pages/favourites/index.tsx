@@ -116,7 +116,7 @@ export default () => {
       </div>
       {favsList?.length
         ? (
-          <ul className={styles.favList}>{favsList.reverse()}</ul>
+            <ul className={styles.favList}>{favsList.reverse()}</ul>
           )
         : (
             ''
