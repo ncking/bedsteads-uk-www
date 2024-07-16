@@ -13,9 +13,9 @@ const BurgerButton = () => {
       className={styles.burgerButton}
       ariaLabel="menu button"
     >
-      <div className={styles.hamburger}>
+      <span className={styles.hamburger}>
         <span>toggle menu</span>
-      </div>
+      </span>
     </Button>
   )
 }

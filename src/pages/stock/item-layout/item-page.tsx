@@ -52,10 +52,10 @@ export const ItemPage = ({ activePanel, item }) => {
 
         {status
           ? (
-            <div className={statusStyles.status}>{status}</div>
+              <div className={statusStyles.status}>{status}</div>
             )
           : (
-            <SaleStockBanner item={item} />
+              <SaleStockBanner item={item} />
             )}
 
         <MainBlock title={title} className={styles.reorder}>

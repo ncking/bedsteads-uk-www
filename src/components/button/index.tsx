@@ -35,9 +35,9 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   const iconFC = icon
     ? (
-      <span className={style.iconWrap}>
-        <Icon id={icon} className={iconClass} viewbox={viewbox} />
-      </span>
+        <span className={style.iconWrap}>
+          <Icon id={icon} className={iconClass} viewbox={viewbox} />
+        </span>
       )
     : null
 

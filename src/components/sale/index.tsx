@@ -6,9 +6,9 @@ const saleEnabled = false
 export const SaleMain = () =>
   saleEnabled
     ? (
-      <div className={styles.main}>
-        <SaleText />
-      </div>
+        <div className={styles.main}>
+          <SaleText />
+        </div>
       )
     : null
 export const isSaleItem = item => item?.isSale
