@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { cx } from '@raiz/browser'
 import { navigate } from '@raiz/nuggins'
 import { RESPONSE_SLICE_DATA } from '@raiz/nuggins/common'
-import { Tile, FavouriteBtn, StatsRow } from '@components'
+import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
 import { getFavourites } from '@lib'
 import { favStore } from '@store'
 import * as styles from './style.scss'
@@ -104,23 +104,24 @@ export default () => {
 
   return (
     <>
-      <div className={cx('flex flex-text', styles.copy)}>
-        <h1 className="flex__col--full">Favourite items</h1>
+      <MainBlock title="Favourite items">
         <p>
           Don't lose your favourites!.
           <br />
           Favourites are only saved to your device, until you clear
           your cache.
+          <br />
+          {favsList?.length ? '' : <h2>Nothing here... yet</h2>}
         </p>
-        {favsList?.length ? '' : <h2>Nothing here... yet</h2>}
-      </div>
+
+      </MainBlock>
       {favsList?.length
         ? (
-            <ul className={styles.favList}>{favsList.reverse()}</ul>
-          )
+          <ul className={styles.favList}>{favsList.reverse()}</ul>
+        )
         : (
-            ''
-          )}
+          ''
+        )}
     </>
   )
 }

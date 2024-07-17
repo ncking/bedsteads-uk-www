@@ -1,9 +1,10 @@
 import { baseChecks, checkRichSnippets, checkConsole, checkHTML } from '@raiz/cypress'
 import { urls } from './_constants'
-const url = urls.antique
+const url = urls.faq
 
 
-context('stock grid page', () => {
+
+context('FAQ page', () => {
   baseChecks(url)
   checkRichSnippets(url, 'LocalBusiness')
   checkConsole(url)
