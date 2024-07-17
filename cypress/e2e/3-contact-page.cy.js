@@ -1,10 +1,12 @@
-import { baseChecks, checkRichSnippets, checkConsole, shouldntRedirect } from '@raiz/cypress'
+import { baseChecks, checkRichSnippets, checkConsole, shouldntRedirect, checkHTML } from '@raiz/cypress'
+import { urls } from './_constants'
+const url = urls.contact
 
 
-const url = "/contact"
 context('contact page', () => {
   baseChecks(url)
   checkRichSnippets(url, 'LocalBusiness')
   checkConsole(url)
   shouldntRedirect(url + '/')
+  checkHTML(url)
 })

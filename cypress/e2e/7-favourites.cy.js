@@ -1,8 +1,10 @@
-import { baseChecks, checkInlinedSVG } from '@raiz/cypress'
+import { baseChecks, checkInlinedSVG, checkHTML } from '@raiz/cypress'
+import { urls } from './_constants'
+const url = urls.favourites
 
 context('favourites page', () => {
-  const url = "/favourites"
   baseChecks(url)
   checkInlinedSVG(url, 'favouriteOn')
   checkInlinedSVG(url, 'favouriteOff')
+  checkHTML(url)
 })
