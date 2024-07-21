@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { cx } from '@raiz/browser'
 import { navigate } from '@raiz/nuggins'
 import { RESPONSE_SLICE_DATA } from '@raiz/nuggins/common'
 import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
@@ -118,11 +117,11 @@ export default () => {
       </MainBlock>
       {favsList?.length
         ? (
-          <ul className={styles.favList}>{favsList.reverse()}</ul>
-        )
+            <ul className={styles.favList}>{favsList.reverse()}</ul>
+          )
         : (
-          ''
-        )}
+            ''
+          )}
     </>
   )
 }
