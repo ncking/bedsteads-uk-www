@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { cx } from '@raiz/browser'
 import { navigate } from '@raiz/nuggins'
 import { RESPONSE_SLICE_DATA } from '@raiz/nuggins/common'
 import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
@@ -105,23 +104,24 @@ export default () => {
   return (
     <>
       <MainBlock title="Favourite items">
-        <p>
-          Don't lose your favourites!.
-          <br />
-          Favourites are only saved to your device, until you clear
-          your cache.
+        <>
+          <p>
+            Don't lose your favourites!.
+            <br />
+            Favourites are only saved to your device, until you clear
+            your cache.
+          </p>
           <br />
           {favsList?.length ? '' : <h2>Nothing here... yet</h2>}
-        </p>
-
+        </>
       </MainBlock>
       {favsList?.length
         ? (
-          <ul className={styles.favList}>{favsList.reverse()}</ul>
-        )
+            <ul className={styles.favList}>{favsList.reverse()}</ul>
+          )
         : (
-          ''
-        )}
+            ''
+          )}
     </>
   )
 }

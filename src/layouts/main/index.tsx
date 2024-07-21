@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Overlay, OverlayMain } from '@raiz/nuggins'
+import { Overlay, OverlayMain, PageSwitch } from '@raiz/nuggins'
 import type { Context } from '@raiz/nuggins'
 import { HeaderMobile } from './header-mobile'
 import { burgerClose } from './header-mobile'
@@ -13,7 +13,6 @@ export const Layout = (props: Context) => {
 
   useEffect(() => {
     burgerClose()
-    scrollTo({ top: 0 })
   }, [request])
 
   return (
@@ -21,10 +20,9 @@ export const Layout = (props: Context) => {
       <HeaderMobile {...args} />
       <Sidebar />
       <OverlayMain className={style.main} error={response.status !== 200}>
-        {/* <PageSwitch animations={animations}>
-
-        </PageSwitch> */}
-        <Page {...args} />
+        <PageSwitch animations={null}>
+          <Page {...args} />
+        </PageSwitch>
       </OverlayMain>
       <Overlay className={style.overlay} hasTrans={false}></Overlay>
     </>
