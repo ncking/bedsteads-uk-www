@@ -13,7 +13,6 @@ export const Layout = (props: Context) => {
 
   useEffect(() => {
     burgerClose()
-    // scrollTo({ top: 0 })
   }, [request])
 
   return (
