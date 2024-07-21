@@ -44,8 +44,6 @@
 }
 
 @include mobile {
-
-
   :global(.header-on)::before {
     opacity: 1;
   }
