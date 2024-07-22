@@ -2,15 +2,13 @@ import { log } from '@raiz/core'
 import { image } from '@raiz/nuggins/server'
 import { findOnePublic } from '@server/repo/stock'
 
-
 function getHeight(w, ratio = 0.66) {
   return Math.ceil(w * ratio)
 }
 
-
 const f_Ratio = 1.5
 const f_tile_portrait_width = 400 // the breakpoint for single portrait
-const widths = [520, 1060, 1600, 2000,]
+const widths = [520, 1060, 1600, 2000]
 const f_tile_width = widths[0] // 520px
 const stockMatcher = new RegExp('/image/stock/(?<dec>[0-9]+)/(?<id>[0-9]+)/(?<file>[0-9]+),t_(?<token>(thumb-p|thumb|main-c|main|tile-p|tile-l|tile|gallery)+)(,s_)?(?<size>([0-9])+)?', 'i')
 const mainSizes = [
@@ -20,13 +18,11 @@ const mainSizes = [
   { width: widths[3], height: getHeight(2000) },
 ]
 
-
 export const templates = async ({ template, size, pathname, srcFile, outFile, srcDir }, httpError) => {
   let webP = true
   let quality = 70
 
   try {
-
     async function render(args) {
       const img = await image(srcFile)
       img.resize(args)
@@ -116,8 +112,6 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
 
   return httpError(404)
 }
-
-
 
 function makeMultipleSrc({ images, srcDir }) {
   const height = 1320
