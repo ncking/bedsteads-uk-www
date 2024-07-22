@@ -55,6 +55,10 @@ export default async ({ response, route, request }) => {
         ',t_main,s_1.jpg',
       ),
     )
+    const twitterCardImg = createAbsoluteUrl( `${sockImagePath}/${images[0].src}`.replace(
+      '.jpg',
+      ',t_twitter.jpg',
+    ))
 
     return response
       .setRobots('index,follow,max-snippet:150,max-image-preview:large')
@@ -66,7 +70,7 @@ export default async ({ response, route, request }) => {
       .setTwitterCard({
         title,
         description,
-        image: createTwitterImg(`${sockImagePath}/${images[0].src},t_twitter.jpg`),
+        image: twitterCardImg,
       })
       .setOg({
         type: 'article',
