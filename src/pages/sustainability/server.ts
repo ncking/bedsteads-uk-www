@@ -20,7 +20,7 @@ export default async ({ response, request }) => {
     .setTwitterCard({
       title,
       description,
-      image: createTwitterImg('spanners'),
+      image: createTwitterImg('shavings'),
     }) 
     .setOg({
       type: 'website',
