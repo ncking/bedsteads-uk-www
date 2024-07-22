@@ -14,7 +14,7 @@ const {
     appName,
     appShortName,
     appDescription,
-    developerName,
+    developer:developerName,
     developerURL,
     lang,
     background,
