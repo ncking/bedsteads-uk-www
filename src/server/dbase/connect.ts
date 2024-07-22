@@ -24,7 +24,6 @@ export const connect = async (collection = ENV_DBASE_TABLE): Promise<Collection>
       log.fatal('No database')
     }
   }
-
   const db: Db = conn?.db(ENV_DATABASE)
   return db.collection(collection)
 }
