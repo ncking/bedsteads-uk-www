@@ -36,8 +36,7 @@ export const findActive = async () => find({
 
 export const findFavourites = async (idsArray = []) => find({ id: { $in: idsArray } })
 
-
-async function find(filter: any, gridFormat: boolean = true) {
+async function find(filter, gridFormat: boolean = true) {
   const k = JSON.stringify(filter)
   const fn = async () => {
     const conn = await connect(STOCK_COLLECTION)

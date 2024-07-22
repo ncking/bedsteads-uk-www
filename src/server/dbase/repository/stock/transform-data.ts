@@ -8,7 +8,6 @@ function priceFormat(n) {
 }
 
 export function transformData(item, gridFormat: boolean): Stock {
-
   if (!item) {
     return null
   }
