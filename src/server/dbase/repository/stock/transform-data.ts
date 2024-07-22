@@ -7,8 +7,7 @@ function priceFormat(n) {
   return 'P.O.A'
 }
 
-export function transformData(item, options = {}): Stock {
-  const { gridDetails } = options
+export function transformData(item, gridFormat: boolean): Stock {
   if (!item) {
     return null
   }
@@ -144,7 +143,7 @@ export function transformData(item, options = {}): Stock {
   /**
      *
      */
-  if (gridDetails) {
+  if (gridFormat) {
     newItem.images = [images[0]]
   }
   else {
