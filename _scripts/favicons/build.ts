@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import pngQuantBinaryPath from 'pngquant-bin'
 import shelljs from 'shelljs'
 import favicons from 'favicons'
-import * as config from '#config'
+import * as config from '../../src/server/config'
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import packageInfo from '../../package.json'  with { type: "json" };
