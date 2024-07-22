@@ -26,8 +26,9 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
   let quality = 70
 
   try {
-    function render(args) {
-      const img = image(srcFile)
+
+    async function render(args) {
+      const img = await image(srcFile)
       img.resize(args)
       img.jpeg({ quality }).toFile(outFile)
       if (webP) {
@@ -101,7 +102,7 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
         }
         { // eslint Unexpected lexical declaration in case block  no-case-declarations
           const config = makeMultipleSrc({ images, srcDir })
-          const img = image(config)
+          const img = await image(config)
           img.resize(mainSizes[size])
           img.jpeg({ quality }).toFile(outFile)
           img.clone().webp({ quality: 80 }).toFile(`${outFile}.webp`)
@@ -118,7 +119,7 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
 
 
 
- function makeMultipleSrc({ images, srcDir }) {
+function makeMultipleSrc({ images, srcDir }) {
   const height = 1320
   const width = 2000
   const w1 = Math.floor(width / 2)
