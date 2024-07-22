@@ -64,9 +64,8 @@ export const templates = async (args, httpError) => {
      */
 
     switch (template) {
-      case 'twitter'://should fit 1.91:1 or 800px X 418px 
+      case 'twitter':// should fit 1.91:1 or 800px X 418px
         return render({ width: 800, height: 418 })
-
 
       case 'main':
         if (0 === size && !isFurniture) { // we need to make furniture a differnt tag ... or run behind cookie

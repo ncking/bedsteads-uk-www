@@ -55,7 +55,7 @@ export default async ({ response, route, request }) => {
         ',t_main,s_1.jpg',
       ),
     )
-    const twitterCardImg = createAbsoluteUrl( `${sockImagePath}/${images[0].src}`.replace(
+    const twitterCardImg = createAbsoluteUrl(`${sockImagePath}/${images[0].src}`.replace(
       '.jpg',
       ',t_twitter.jpg',
     ))
@@ -82,13 +82,10 @@ export default async ({ response, route, request }) => {
       })
   }
 
-
-
   /**
    * A category grid/tiles page
-   * 
+   *
    */
-
 
   const tag = size || category
 
@@ -126,7 +123,6 @@ export default async ({ response, route, request }) => {
   }
   if (!titles[tag]) return response.notFound()
 
-
   const [title, description] = titles[tag]
   response
     .setRobots('index,follow')
@@ -146,5 +142,4 @@ export default async ({ response, route, request }) => {
       site_name: 'Bedsteads',
       image: createOgUrl(tag),
     })
-
 }

@@ -1,4 +1,4 @@
-import { organizationJsonLd, createAbsoluteUrl, createOgUrl , createTwitterImg} from '@server'
+import { organizationJsonLd, createAbsoluteUrl, createOgUrl, createTwitterImg } from '@server'
 import { bases } from './tiles/bases'
 import { kelcolTiles } from './tiles/kelcol'
 

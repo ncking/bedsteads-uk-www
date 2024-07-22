@@ -21,7 +21,7 @@ export default async ({ response, request }) => {
       title,
       description,
       image: createTwitterImg('shavings'),
-    }) 
+    })
     .setOg({
       type: 'website',
       url: createAbsoluteUrl(request.pathname),
@@ -29,5 +29,5 @@ export default async ({ response, request }) => {
       title,
       description,
       image: createOgUrl(''),
-    }) 
+    })
 }
