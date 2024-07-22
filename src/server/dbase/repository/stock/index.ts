@@ -1,9 +1,11 @@
+import { createSimpleCache } from '@raiz/core'
 import { connect } from '@server/dbase'
 import { transformData } from './transform-data'
 
 export * from './utils'
 export const STOCK_COLLECTION = 'stock'
 
+const cache = createSimpleCache()
 const projection = {
   '_id': 0,
   'created': 0,
@@ -22,7 +24,7 @@ const projection = {
 }
 
 export const findOnePublic = async (id) => {
-  const results = await find({ id: +id })
+  const results = await find({ id: +id }, false)
   return results[0] || null
 }
 
@@ -35,21 +37,13 @@ export const findActive = async () => find({
 export const findFavourites = async (idsArray = []) => find({ id: { $in: idsArray } })
 
 
-async function find(filter: any, sort = { id: -1 }) {
-  console.log('find **************', find)
-  const conn = await connect(STOCK_COLLECTION)
-  const docs = await conn.find(filter).sort(sort).project(projection).toArray()// return the promise from .find  { id: 1, images: [{ first: "images" }] }
-  return docs.map(doc => transformData(doc))
+async function find(filter: any, gridFormat: boolean = true) {
+  const k = JSON.stringify(filter)
+  const fn = async () => {
+    const conn = await connect(STOCK_COLLECTION)
+    const docs = await conn.find(filter).sort({ id: -1 as const }).project(projection).toArray()
+    return docs.map(doc => transformData(doc, gridFormat))
+  }
+  const { data } = await cache.getUpdate(k, fn, 60 * 5)
+  return data
 }
-
-
-// const k = JSON.stringify(filters)
-// const fn = async () => {
-//   const conn = await connect(STOCK_COLLECTION)
-//   return await cb(conn.find(filters))
-// }
-// const { data } = await cache.getUpdate(k, fn, 60 * 5)
-// return data
-// const getResults = async ({ filters = {}, sort = { id: -1 } }) => {
-//   return await stockCache(filters, result => result.sort(sort).project(projection).sort(sort).toArray())
-// }
