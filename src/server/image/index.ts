@@ -1,21 +1,16 @@
 import { log } from '@raiz/core'
+import { image } from '@raiz/nuggins/server'
 import { findOnePublic } from '@server/repo/stock'
-import sharp from 'sharp'
-import { makeMultipleSrc, createCompositeImage } from './create-composite-image'
-
-const stockMatcher = new RegExp('/image/stock/(?<dec>[0-9]+)/(?<id>[0-9]+)/(?<file>[0-9]+),t_(?<token>(thumb-p|thumb|main-c|main|tile-p|tile-l|tile|gallery)+)(,s_)?(?<size>([0-9])+)?', 'i')
 
 function getHeight(w, ratio = 0.66) {
   return Math.ceil(w * ratio)
 }
-// @TODO move to sidecar
-export const widths = [
-  520,
-  1060,
-  1600,
-  2000,
-]
 
+const f_Ratio = 1.5
+const f_tile_portrait_width = 400 // the breakpoint for single portrait
+const widths = [520, 1060, 1600, 2000]
+const f_tile_width = widths[0] // 520px
+const stockMatcher = new RegExp('/image/stock/(?<dec>[0-9]+)/(?<id>[0-9]+)/(?<file>[0-9]+),t_(?<token>(thumb-p|thumb|main-c|main|tile-p|tile-l|tile|gallery)+)(,s_)?(?<size>([0-9])+)?', 'i')
 const mainSizes = [
   { width: widths[0], height: 365 }, // needed for furniture
   { width: widths[1], height: getHeight(1060) },
@@ -23,17 +18,13 @@ const mainSizes = [
   { width: widths[3], height: getHeight(2000) },
 ]
 
-const f_Ratio = 1.5
-const f_tile_portrait_width = 400 // the breakpoint for single portrait
-const f_tile_width = widths[0] // 520px
-
 export const templates = async ({ template, size, pathname, srcFile, outFile, srcDir }, httpError) => {
   let webP = true
   let quality = 70
 
   try {
-    function render(args) {
-      const img = sharp(srcFile)
+    async function render(args) {
+      const img = await image(srcFile)
       img.resize(args)
       img.jpeg({ quality }).toFile(outFile)
       if (webP) {
@@ -65,11 +56,11 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
     const isFurniture = category === 'furniture'
 
     /**
-         * @SECURITY
-         * We test for source ... if its not there we dont get this far
-         * 1. source is sanitized
-         * 2. plugin only runs if authed
-         */
+     * @SECURITY
+     * We test for source ... if its not there we dont get this far
+     * 1. source is sanitized
+     * 2. plugin only runs if authed
+     */
 
     switch (template) {
       case 'main':
@@ -107,10 +98,10 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
         }
         { // eslint Unexpected lexical declaration in case block  no-case-declarations
           const config = makeMultipleSrc({ images, srcDir })
-          const compositeImg = await createCompositeImage(config)
-          compositeImg.resize(mainSizes[size])
-          compositeImg.jpeg({ quality }).toFile(outFile)
-          compositeImg.clone().webp({ quality: 80 }).toFile(`${outFile}.webp`)
+          const img = await image(config)
+          img.resize(mainSizes[size])
+          img.jpeg({ quality }).toFile(outFile)
+          img.clone().webp({ quality: 80 }).toFile(`${outFile}.webp`)
         }
         return
     }
@@ -120,4 +111,19 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
   }
 
   return httpError(404)
+}
+
+function makeMultipleSrc({ images, srcDir }) {
+  const height = 1320
+  const width = 2000
+  const w1 = Math.floor(width / 2)
+  return {
+    width,
+    height,
+    background: '#000000',
+    images: [
+      { src: `${srcDir}/${images[0].src}`, width: w1, height, top: 0, left: 0 },
+      { src: `${srcDir}/${images[1].src}`, width: width - w1, height, top: 0, left: w1 },
+    ],
+  }
 }
