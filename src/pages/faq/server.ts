@@ -20,8 +20,8 @@ export default async ({ response, request }) => {
     .setTwitterCard({
       title,
       description,
-      image: createTwitterImg('bedsteads-uk'),
-    }) // min 200 x 200 px
+      image: createTwitterImg('spanners'),
+    })
     .setOg({
       type: 'website',
       url: createAbsoluteUrl(request.pathname),
@@ -29,5 +29,5 @@ export default async ({ response, request }) => {
       title,
       description,
       image: createOgUrl(''),
-    }) // min 200 x 200 px
+    })
 }

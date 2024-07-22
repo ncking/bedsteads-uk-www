@@ -1,4 +1,4 @@
-import { organizationJsonLd, createAbsoluteUrl, createOgUrl } from '@server'
+import { organizationJsonLd, createAbsoluteUrl, createOgUrl, createTwitterImg } from '@server'
 import { company } from '@server/config'
 
 export default async ({ request, response }) => {
@@ -11,6 +11,11 @@ export default async ({ request, response }) => {
     .setJsonLd(organizationJsonLd)
     .setTitle(title)
     .setDescription(description)
+    .setTwitterCard({
+      title,
+      description,
+      image: createTwitterImg('bedsteads'),
+    })
     .setOg({
       type: 'article',
       title,

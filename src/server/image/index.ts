@@ -10,7 +10,7 @@ const f_Ratio = 1.5
 const f_tile_portrait_width = 400 // the breakpoint for single portrait
 const widths = [520, 1060, 1600, 2000]
 const f_tile_width = widths[0] // 520px
-const stockMatcher = new RegExp('/image/stock/(?<dec>[0-9]+)/(?<id>[0-9]+)/(?<file>[0-9]+),t_(?<token>(thumb-p|thumb|main-c|main|tile-p|tile-l|tile|gallery)+)(,s_)?(?<size>([0-9])+)?', 'i')
+const stockMatcher = new RegExp('/image/stock/(?<dec>[0-9]+)/(?<id>[0-9]+)/(?<file>[0-9]+),t_(?<token>(thumb-p|thumb|main-c|twitter|main|tile-p|tile-l|tile|gallery)+)(,s_)?(?<size>([0-9])+)?', 'i')
 const mainSizes = [
   { width: widths[0], height: 365 }, // needed for furniture
   { width: widths[1], height: getHeight(1060) },
@@ -18,7 +18,8 @@ const mainSizes = [
   { width: widths[3], height: getHeight(2000) },
 ]
 
-export const templates = async ({ template, size, pathname, srcFile, outFile, srcDir }, httpError) => {
+export const templates = async (args, httpError) => {
+  const { template, size, pathname, srcFile, outFile, srcDir } = args
   let webP = true
   let quality = 70
 
@@ -63,6 +64,9 @@ export const templates = async ({ template, size, pathname, srcFile, outFile, sr
      */
 
     switch (template) {
+      case 'twitter':// should fit 1.91:1 or 800px X 418px
+        return render({ width: 800, height: 418 })
+
       case 'main':
         if (0 === size && !isFurniture) { // we need to make furniture a differnt tag ... or run behind cookie
           return render({ width: widths[0], height: 365 })
