@@ -1,14 +1,13 @@
 import { createSimpleCache } from '@raiz/core'
 import { connect } from '@server/dbase'
-import { STOCK_COLLECTION } from './constants'
 import { transformData } from './transform-data'
 
 export * from './utils'
+export const STOCK_COLLECTION = 'stock'
 
 const cache = createSimpleCache()
 const projection = {
   '_id': 0,
-
   'created': 0,
   'modified': 0,
   'visible': 0,
@@ -24,50 +23,26 @@ const projection = {
   'price.description': 0,
 }
 
-const stockCache = async (filters, cb) => {
-  const k = JSON.stringify(filters)
+export const findOnePublic = async (id) => {
+  const results = await find({ id: +id }, false)
+  return results[0] || null
+}
+
+export const findActive = async () => find({
+  deleted: { $ne: 1 },
+  visible: 1,
+  images: { $exists: true, $ne: [] },
+})
+
+export const findFavourites = async (idsArray = []) => find({ id: { $in: idsArray } })
+
+async function find(filter, gridFormat: boolean = true) {
+  const k = JSON.stringify(filter)
   const fn = async () => {
     const conn = await connect(STOCK_COLLECTION)
-    return await cb(conn.find(filters))
+    const docs = await conn.find(filter).sort({ id: -1 as const }).project(projection).toArray()
+    return docs.map(doc => transformData(doc, gridFormat))
   }
   const { data } = await cache.getUpdate(k, fn, 60 * 5)
   return data
-}
-
-const getResults = async ({ filters = {}, sort = { id: -1 } }) => {
-  return await stockCache(filters, result => result.sort(sort).project(projection).sort(sort).toArray())
-}
-
-/**
- * EXPORTS
- */
-export const findOnePublic = async (id) => {
-  const results = await stockCache({ id: +id }, result => result.project(projection).toArray())
-  if (!results) {
-    return null
-  }
-  return results?.length ? transformData(results[0]) : null
-}
-
-export const findActive = async () => {
-  const filters = {
-    deleted: { $ne: 1 },
-    visible: 1,
-    images: { $exists: true, $ne: [] },
-  }
-  const items = await getResults({ filters, sort: { id: -1 } })
-  const newItems = items.map(item => transformData(item, { gridDetails: true }))
-  return newItems
-}
-
-export const findAll = async () => {
-  const conn = await connect(STOCK_COLLECTION)
-  const data = await conn.find({}).sort({ id: -1 }).toArray()// return the promise from .find  { id: 1, images: [{ first: "images" }] }
-  return data
-}
-
-export const findFavourites = async (idsArray = []) => {
-  const conn = await connect(STOCK_COLLECTION)
-  const favs = await conn.find({ id: { $in: idsArray } }).project(projection).toArray()// return the promise from .find  { id: 1, images: [{ first: "images" }] }
-  return favs.map(fav => transformData(fav))
 }
