@@ -1,6 +1,6 @@
 import { env } from '@raiz/cli'
 import { log } from '@raiz/core'
-import { MongoClient, Db, Collection } from 'mongodb'
+import { MongoClient, Db } from 'mongodb'
 
 const ENV_SERVER_DBASE_URL = env.stringRequired('SERVER_DBASE_URL')
 const ENV_DATABASE = env.stringRequired('DATABASE')
