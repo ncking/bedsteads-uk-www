@@ -8,7 +8,7 @@ const ENV_DBASE_TABLE = env.stringRequired('DATABASE_TABLE')
 
 let conn
 
-export const connect = async (collection = ENV_DBASE_TABLE): Promise<Collection> => {
+export const connect = async (collection = ENV_DBASE_TABLE) => {
   if (!conn) {
     const connectionConfig = {
       serverSelectionTimeoutMS: 2000, // this is for the initial connection
