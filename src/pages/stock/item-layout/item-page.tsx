@@ -45,7 +45,6 @@ export const ItemPage = ({ activePanel, item }) => {
         src={src}
         ratio={66}
         id={activePanel && getGalleryId(0)}
-        className={styles.mainImage}
       >
       </BedsteadsImage>
       <SlideUp start={arrayValues(info)}>
