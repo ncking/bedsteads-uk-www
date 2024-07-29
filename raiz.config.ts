@@ -47,13 +47,6 @@ export default ({ log }) => {
                     }
                     log.info(`SERVE_STATIC: no cache control for ext, ${ext}`)
                 }
-            }),
-            apiPlugin({
-                dir: './src/api',
-                prefix: '/api',
-                type: 'rest',
-                debug: true,
-                expires: 0
             })
         ]
     }
