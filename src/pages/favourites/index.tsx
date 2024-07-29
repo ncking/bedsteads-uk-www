@@ -12,7 +12,7 @@ export default () => {
 
   useEffect(() => {
     const ids = Array.from(favs).map(item => item[0])
-    getFavourites(ids).then((res) => {
+    getFavourites({ids}).then((res) => {
       const loadedItems = {}
       const { favourites = [] } = res[RESPONSE_SLICE_DATA] || {}
       favourites.map(item => (loadedItems[item.id] = item))
