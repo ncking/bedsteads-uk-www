@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { navigate } from '@raiz/nuggins'
 import { RESPONSE_SLICE_DATA } from '@raiz/nuggins/common'
 import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
-import { getFavourites } from '@lib'
+import { getFavourites } from './actions'
 import { favStore } from '@store'
 import * as styles from './style.scss'
 
