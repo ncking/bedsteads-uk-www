@@ -10,7 +10,6 @@ import swPlugin from "@raiz/nuggins/modules/service-worker"
 import ssrPlugin from "@raiz/nuggins/modules/ssr"
 import redirectPlugin from "@raiz/nuggins/modules/redirect"
 import svgPlugin from "@raiz/nuggins/modules/svg"
-import apiPlugin from "@raiz/nuggins/modules/api"
 import staticFilesPlugin from "@raiz/nuggins/modules/static"
 
 
