@@ -43,7 +43,7 @@ export const routes = [
     page: 'mattress',
     id: 'mattresses',
     meta: { title: 'mattresses & bases', label: 'mattresses & bases' },
-    chunkName : 'nuggins'
+    chunkName: 'nuggins',
   },
   {
     url: '/antique',

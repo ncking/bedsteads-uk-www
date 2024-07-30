@@ -86,7 +86,7 @@ export default ({ sizes, tiles }) => {
 
 const Tile = ({ tile, sizes }) => {
   const { alt, details, title, prices, name, isBedsteads, slug } = tile
-  const img = <ImageLoadLazy  alt={alt} ratio="130" src={`/image/mattress/${slug}/${name},t_mattress.jpg`} />
+  const img = <ImageLoadLazy alt={alt} ratio="130" src={`/image/mattress/${slug}/${name},t_mattress.jpg`} />
   const manufacturerLink = isBedsteads ? <Link href="/">Bedsteads</Link> : KELCOL_LINK
 
   return (

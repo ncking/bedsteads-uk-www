@@ -56,7 +56,6 @@ export const HeaderMobile = ({ route, filters }) => {
     )
   }
 
- // setUnsetBodyClass(styles.fullHeight, enableStickyHeader)
   return (
     <>
       <NavMask />

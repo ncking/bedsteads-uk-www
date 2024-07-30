@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react'
 import { navigate } from '@raiz/nuggins'
 
 import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
-import { getFavourites } from './actions'
 import { favStore } from '@store'
+import { getFavourites } from './actions'
 import * as styles from './style.scss'
 
 export default () => {
-  
   const [loadedItems, setLoadedItems] = useState(null)
   const favs = favStore.useStore(s => s.favs)
 
@@ -118,11 +117,11 @@ export default () => {
       </MainBlock>
       {favsList?.length
         ? (
-          <ul className={styles.favList}>{favsList.reverse()}</ul>
-        )
+            <ul className={styles.favList}>{favsList.reverse()}</ul>
+          )
         : (
-          ''
-        )}
+            ''
+          )}
     </>
   )
 }
