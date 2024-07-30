@@ -7,14 +7,13 @@ import { favStore } from '@store'
 import * as styles from './style.scss'
 
 export default () => {
+  
   const [loadedItems, setLoadedItems] = useState(null)
   const favs = favStore.useStore(s => s.favs)
 
   useEffect(() => {
     const ids = Array.from(favs).map(item => item[0])
     getFavourites({ ids }).then((res) => {
-
-      console.log(res)
       const loadedItems = {}
       const { favourites = [] } = res
       favourites.map(item => (loadedItems[item.id] = item))

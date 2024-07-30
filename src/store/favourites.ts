@@ -9,6 +9,9 @@ const favourites = new Map(storage.get(KEY) || [])
 const isFavourite = (id: number) => favourites.has(+id)
 const state = { favs: [...favourites] }
 
+
+
+
 const actions = (set) => {
   function update() {
     const favs = [...favourites]
