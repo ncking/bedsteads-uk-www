@@ -1,4 +1,4 @@
-import { setUnsetBodyClass, cx } from '@raiz/browser'
+import { cx } from '@raiz/browser'
 import { Link, getPathname } from '@raiz/nuggins'
 import { HeaderSticky } from '@raiz/react'
 import { Button, ResultCount } from '@components'
