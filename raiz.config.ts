@@ -10,9 +10,8 @@ import swPlugin from "@raiz/nuggins/modules/service-worker"
 import ssrPlugin from "@raiz/nuggins/modules/ssr"
 import redirectPlugin from "@raiz/nuggins/modules/redirect"
 import svgPlugin from "@raiz/nuggins/modules/svg"
-import apiPlugin from "@raiz/nuggins/modules/api"
 import staticFilesPlugin from "@raiz/nuggins/modules/static"
-
+import actionsPlugin from "@raiz/nuggins/modules/actions"
 
 
 export default ({ log }) => {
@@ -32,6 +31,7 @@ export default ({ log }) => {
                 '/doubles': '/double',
                 '/singles': '/single'
             }),
+            actionsPlugin(),
             staticFilesPlugin({
                 images: {
                     publicDir: './public',
@@ -47,13 +47,6 @@ export default ({ log }) => {
                     }
                     log.info(`SERVE_STATIC: no cache control for ext, ${ext}`)
                 }
-            }),
-            apiPlugin({
-                dir: './src/api',
-                prefix: '/api',
-                type: 'rest',
-                debug: true,
-                expires: 0
             })
         ]
     }

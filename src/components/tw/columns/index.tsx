@@ -27,7 +27,7 @@ export const Columns = ({
 
 export const Column = ({ className = '', children }) => (
   // SPAN only works with a responsive size ... as the NUMBER OF COLUMNS CHANGE!!!
-  <div className={cx( className)}>{children}</div>
+  <div className={cx(className)}>{children}</div>
 )
 
 export const TextBlock = ({ className, ...rest }) => <div className={cx(styles.textBlock, className)} {...rest}></div>

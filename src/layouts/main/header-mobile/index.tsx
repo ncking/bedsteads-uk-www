@@ -1,4 +1,4 @@
-import { setUnsetBodyClass, cx } from '@raiz/browser'
+import { cx } from '@raiz/browser'
 import { Link, getPathname } from '@raiz/nuggins'
 import { HeaderSticky } from '@raiz/react'
 import { Button, ResultCount } from '@components'
@@ -56,7 +56,6 @@ export const HeaderMobile = ({ route, filters }) => {
     )
   }
 
- // setUnsetBodyClass(styles.fullHeight, enableStickyHeader)
   return (
     <>
       <NavMask />
