@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { navigate } from '@raiz/nuggins'
-import { RESPONSE_SLICE_DATA } from '@raiz/nuggins/common'
+
 import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
-import { getFavourites } from '@lib'
 import { favStore } from '@store'
+import { getFavourites } from './actions'
 import * as styles from './style.scss'
 
 export default () => {
@@ -12,9 +12,9 @@ export default () => {
 
   useEffect(() => {
     const ids = Array.from(favs).map(item => item[0])
-    getFavourites(ids).then((res) => {
+    getFavourites({ ids }).then((res) => {
       const loadedItems = {}
-      const { favourites = [] } = res[RESPONSE_SLICE_DATA] || {}
+      const { favourites = [] } = res
       favourites.map(item => (loadedItems[item.id] = item))
       setLoadedItems(loadedItems)
     })

@@ -2,8 +2,8 @@ import { sendEmails } from '@server'
 import { saveEnquiry } from '@server/repo/enquiry'
 import { findOnePublic, getCanonical } from '@server/repo/stock'
 
-export const create = async ({ body }) => {
-  const { id, enquiry, email } = body
+export const createEnquiry = async (data) => {
+  const { id, enquiry, email } = data
   const stock = await findOnePublic(id)
   let success = 0
   if (stock) {
