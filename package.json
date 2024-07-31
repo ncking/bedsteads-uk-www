@@ -22,7 +22,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "start": "node ./.output/init.js",
+    "start": "node ./.server/init.js",
     "dev": "nuggins dev",
     "build": "nuggins build && npm run build:sw",
     "build:docker": "nuggins build --docker",

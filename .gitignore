@@ -71,3 +71,4 @@ public/google*.html
 assets/*
 .build
 .output
+.server
