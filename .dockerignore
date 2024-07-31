@@ -2,8 +2,8 @@
 **
 
 !./public
-!./.build
 !./.output
+!./.server
 !./package.json 
 !./package-lock.json 
 
