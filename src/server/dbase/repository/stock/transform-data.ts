@@ -76,7 +76,7 @@ export function transformData(item, gridFormat: boolean): Stock {
     }
     else {
       /**
-            * Fix this crappy price from dbase & setup sale price
+            * Fix the price from dbase & setup sale price
             *
             *  item{
             *      price
