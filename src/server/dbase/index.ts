@@ -1,3 +1,3 @@
-import mongodb from 'mongodb'
 import { connect } from '@raiz/nuggins/dbase/mongo'
-export const con = await connect(mongodb)
+import mongodb from 'mongodb'
+export const db = await connect(mongodb)
