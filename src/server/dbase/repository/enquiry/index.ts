@@ -1,25 +1,10 @@
-import { log } from '@raiz/core'
-import { connect } from '@server/dbase'
-
-const ENQUIRY_COLLECTION = 'enquiry'
+import { con } from '@server/dbase'
+const ENTITY ='enquiry'
 
 export const saveEnquiry = async (data) => {
   data.ceated = new Date()
-  const conn = await connect(ENQUIRY_COLLECTION)
-  return await conn.insertOne(data)
+  return await con[ENTITY].insertOne(data)
 }
 
-export const findUnsent = async () => {
-  const conn = await connect(ENQUIRY_COLLECTION)
-  return await conn.find({ sent_at: null })// .toArray()// not set or null
-}
-
-export const markSent = async (doc) => {
-  try {
-    const conn = await connect(ENQUIRY_COLLECTION)
-    await conn.updateOne({ _id: doc._id }, { $set: { sent_at: new Date() } }, { w: 1, j: true })
-  }
-  catch (e) {
-    log.error(e)
-  }
-}
+export const findUnsent = async () =>  con[ENTITY].find({ sent_at: null })
+export const markSent = async (doc) =>  con[ENTITY].updateOne({ _id: doc._id }, { $set: { sent_at: new Date() } }, { w: 1, j: true })
