@@ -1,6 +1,3 @@
 import { getGlobalStore } from '@raiz/nuggins'
-export default () => getGlobalStore().config as Record<
-  string,
-    number | string | boolean | number[]
-
->
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+export default () => getGlobalStore().config as Record< string, any>

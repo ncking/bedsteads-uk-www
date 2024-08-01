@@ -1,7 +1,7 @@
 import { Gmap } from '@raiz/react'
 import { Button, EmailLink, TelLink } from '@components'
 import config from '@config'
-import mapJson from './gmap.json'
+import _mapJson from './gmap.json'
 import mapStyle from './style/grey.json'
 import * as styles from './styles.scss'
 
@@ -16,7 +16,8 @@ export default (props) => {
     facebookLink,
     instagramLink,
   } = config()
-
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  const mapJson = _mapJson as Record<string, any>
   mapJson.mapOptions.styles = mapStyle
   mapJson.id = 'location-map'
   mapJson.className = 'viewport'
@@ -41,7 +42,7 @@ export default (props) => {
           {postcode}
         </p>
         <p>
-          {openingHours.join('<br />')}
+          {openingHours?.join('<br />')}
           <br />
           Saturday by arrangement - please do contact us to arrange a visit on a Saturday.
         </p>
