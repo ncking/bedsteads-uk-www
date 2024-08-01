@@ -1,10 +1,9 @@
 import { createSimpleCache } from '@raiz/core'
-import { connect } from '@server/dbase'
+import { db } from '@server/dbase'
 import { transformData } from './transform-data'
-
 export * from './utils'
-export const STOCK_COLLECTION = 'stock'
 
+const ENTITY = 'stock'
 const cache = createSimpleCache()
 const projection = {
   '_id': 0,
@@ -39,8 +38,7 @@ export const findFavourites = async (idsArray = []) => find({ id: { $in: idsArra
 async function find(filter, gridFormat: boolean = true) {
   const k = JSON.stringify(filter)
   const fn = async () => {
-    const conn = await connect(STOCK_COLLECTION)
-    const docs = await conn.find(filter).sort({ id: -1 as const }).project(projection).toArray()
+    const docs = await db[ENTITY].find(filter).sort({ id: -1 as const }).project(projection).toArray()
     return docs.map(doc => transformData(doc, gridFormat))
   }
   const { data } = await cache.getUpdate(k, fn, 60 * 5)

@@ -19,7 +19,6 @@ export const createItemLinkForFilter = (model, { size: filterSize, category: fil
     }
   }
   else {
-    // no size but not in crrect category ... ie a bed slug with the category of 'furniture'  /furniture/xxxx_some_bed_667
     if (modelCategory !== filterCategory) {
       return false
     }

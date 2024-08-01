@@ -35,16 +35,10 @@ export function transformData(item, gridFormat: boolean): Stock {
   const isFurniture = category === 'furniture'
   const ref = `#${id}`
 
-  // fix all those dodgy floats
   images?.map((image) => {
     image.r = Math.floor(image.r)
   })
 
-  /**
-     *
-     * THERE IS NO "SOLD" FLAG ON BEDSTEADS
-     *
-     */
   let isSold = false
   let status = ''
   if (isDeleted) {
@@ -81,7 +75,7 @@ export function transformData(item, gridFormat: boolean): Stock {
     }
     else {
       /**
-            * Fix this crappy price from dbase & setup sale price
+            * Fix the price from dbase & setup sale price
             *
             *  item{
             *      price

@@ -1,15 +1,12 @@
 import * as styles from './style.scss'
 
 export default (props) => {
-  // !!NOT from current request as we my have code triggered errors
-
   const { response } = props
   const { status } = response || {} // @NK we need the Object fallback ... sometimes this is NULL??
   let copy = ''
   let message = ''
 
   if (200 !== status) {
-    // its a Response Error
     if (404 === status) {
       message = '404: Page not Found'
     }
