@@ -39,7 +39,6 @@ export function transformData(item, gridFormat: boolean): Stock {
     image.r = Math.floor(image.r)
   })
 
-
   let isSold = false
   let status = ''
   if (isDeleted) {
