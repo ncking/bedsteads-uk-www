@@ -20,7 +20,7 @@ export default [
             },
         },
         linterOptions: {
-            noInlineConfig: true,
+            noInlineConfig: false,
             reportUnusedDisableDirectives: true,
         },
 

@@ -1,7 +1,6 @@
 import * as styles from './style.scss'
 
 export default (props) => {
-
   const { response } = props
   const { status } = response || {} // @NK we need the Object fallback ... sometimes this is NULL??
   let copy = ''

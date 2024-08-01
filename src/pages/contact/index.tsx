@@ -16,8 +16,8 @@ export default (props) => {
     facebookLink,
     instagramLink,
   } = config()
-
-  const mapJson  = _mapJson as Record<string, any>; 
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  const mapJson = _mapJson as Record<string, any>
   mapJson.mapOptions.styles = mapStyle
   mapJson.id = 'location-map'
   mapJson.className = 'viewport'
