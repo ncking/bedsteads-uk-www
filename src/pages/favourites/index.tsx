@@ -3,7 +3,7 @@ import { navigate } from '@raiz/nuggins'
 
 import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
 import { favStore } from '@store'
-import { getFavourites } from './actions'
+import { findFavourites } from './actions'
 import * as styles from './style.scss'
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
 
   useEffect(() => {
     const ids = Array.from(favs).map(item => item[0])
-    getFavourites({ ids }).then((res) => {
+    findFavourites({ ids }).then((res) => {
       const loadedItems = {}
       const { favourites = [] } = res
       favourites.map(item => (loadedItems[item.id] = item))
