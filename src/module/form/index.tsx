@@ -32,11 +32,7 @@ const ContactForm = ({ item }) => {
 
     onSubmit(data) {
       data.id = id
-      createEnquiry(data).then((res) => {
-        const { data } = res
-        const didSubmit = !!(data && data?.success)
-        setSuccess(didSubmit)
-      })
+      createEnquiry(data).then(({ success }) => setSuccess(success))
     },
   })
 
