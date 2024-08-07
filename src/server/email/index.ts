@@ -1,4 +1,4 @@
-import { __DEV__, env } from '@raiz/cli'
+import { env } from '@raiz/cli'
 import { log } from '@raiz/core'
 import { findUnsent, markSent } from '@server/repo/enquiry'
 import nodemailer from 'nodemailer'
@@ -14,6 +14,10 @@ export const sendEmails = async () => {
   const data = await findUnsent()
   const arr = await data.toArray()
   log.info(`${arr.length} emails to send`)
+
+  if (process.env.IS_DEV) {
+    return log.info('DEVELOPMENT: skipping email')
+  }
 
   await Promise.all(
     arr.map(async (doc) => {
@@ -39,10 +43,6 @@ const sendEmail = async (props) => {
     text: enquiry,
     replyTo: email,
     html,
-  }
-
-  if (__DEV__) {
-    return log.info('DEVELOPMENT: skipping email')
   }
 
   const transporter = nodemailer.createTransport({

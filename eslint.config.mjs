@@ -17,6 +17,7 @@ export default [
             parser: typescriptParser,
             globals: {
                 ...globals.browser,
+                "process": true // both browser & node ... especially now weve implemented server actions
             },
         },
         linterOptions: {
