@@ -48,6 +48,7 @@ const sendEmail = async (props) => {
   const transporter = nodemailer.createTransport({
     host,
     port,
+    maxConnections: 1,
     auth: {
       user,
       pass,
