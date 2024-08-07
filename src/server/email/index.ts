@@ -45,8 +45,6 @@ const sendEmail = async (props) => {
     html,
   }
 
-
-
   const transporter = nodemailer.createTransport({
     host,
     port,
