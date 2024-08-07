@@ -1,5 +1,4 @@
 export * from './analytics'
-export * from './api-fetcher'
 export * from './get-gallery-id'
 export * from './navigate-methods'
 export * from './get-site-link'
