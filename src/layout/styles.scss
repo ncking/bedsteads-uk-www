@@ -1,4 +1,4 @@
-.main {
+main.main { // need the specificty as diffrent from normal <main/>
   position: absolute; // @important; we need is for all absolute child els ... dont remove
   top:  var(--main-t);
   left: auto; // we now use the <OverlayMain/> compoent which has default styling

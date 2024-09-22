@@ -63,6 +63,7 @@ export const HeaderMobile = ({ route, filters }) => {
         enable={enableStickyHeader}
         triggerY={80}
         className={cx(styles.header)}
+        onClass={styles.sticky}
       >
         {children}
       </HeaderSticky>

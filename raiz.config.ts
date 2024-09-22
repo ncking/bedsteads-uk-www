@@ -11,7 +11,7 @@ import ssrPlugin from "@raiz/nuggins/modules/ssr"
 import redirectPlugin from "@raiz/nuggins/modules/redirect"
 import svgPlugin from "@raiz/nuggins/modules/svg"
 import staticFilesPlugin from "@raiz/nuggins/modules/static"
-import actionsPlugin from "@raiz/nuggins/modules/actions"
+import actionsPlugin from "@raiz/nuggins/modules/server-actions"
 
 
 export default ({ log }) => {
