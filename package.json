@@ -22,6 +22,7 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "start:deno": "deno --allow-run --allow-env --allow-read --allow-sys --allow-ffi --allow-net ./.server/init.js",
     "start": "node ./.server/init.js",
     "dev": "nuggins dev",
     "build": "nuggins build && npm run build:sw",
