@@ -7,7 +7,6 @@ export default async ({ request, response }) => {
 
   response
     .setRobots('index,follow')
-    .setData({})
     .setJsonLd(organizationJsonLd)
     .setTitle(title)
     .setDescription(description)

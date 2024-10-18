@@ -5,11 +5,11 @@ import { ItemLayout } from './item-layout'
 import { ItemNav } from './item-nav'
 
 const StockPage = (props) => {
-  const { item: ajaxRequestedItem, filters } = props
+  const { item, params: filters } = props
   const gridRef = useRef<HTMLDivElement>(null!)
   const { id } = filters
-  if (ajaxRequestedItem) stockStore.add(ajaxRequestedItem) // we do this so that once loaded its not constantly flashing from empty
-  const { stock, item } = stockStore.init(filters)
+  // if (item) stockStore.add(ajaxRequestedItem) // we do this so that once loaded its not constantly flashing from empty
+  const { stock, item: itemMin } = stockStore.init(filters)
 
   useEffect(() => {
     stockStore.updateState()
@@ -21,8 +21,8 @@ const StockPage = (props) => {
 
   return (
     <>
-      <ItemLayout item={item} />
-      <ItemNav item={item} />
+      <ItemLayout item={item || itemMin} />
+      <ItemNav item={item || itemMin} />
     </>
   )
 }

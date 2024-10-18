@@ -14,7 +14,6 @@ export default async ({ response, request }) => {
     .setRobots('index,follow')
     .setJsonLd(organizationJsonLd)
     .setTitle(metaTitle)
-  // .setData({ content })
     .setDescription(description)
     .setTwitterCard({
       title,

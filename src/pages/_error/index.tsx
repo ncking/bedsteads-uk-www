@@ -1,12 +1,17 @@
 import * as styles from './style.scss'
 
-export default (props) => {
-  const { response } = props
+/**
+ * Error page can be thrown anywhere ...
+ * We might not have the context
+ *
+ */
+export default ({ context } = {}) => {
+  const { response } = context || {}
   const { status } = response || {} // @NK we need the Object fallback ... sometimes this is NULL??
   let copy = ''
   let message = ''
 
-  if (200 !== status) {
+  if (status && (200 !== status)) {
     if (404 === status) {
       message = '404: Page not Found'
     }
@@ -15,7 +20,7 @@ export default (props) => {
     }
   }
   else {
-    message = 'Page not available'
+    message = 'Browser error'
     copy = 'Something went wrong while displaying this webpage.'
   }
 

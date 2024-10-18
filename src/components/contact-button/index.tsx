@@ -6,8 +6,8 @@ import * as styles from './style.scss'
 
 export const ContactButton = ({ children, id }) => {
   const handleClick = async () => {
-    const ContactForm = await loadChunk('form')
-
+    const exprts = await loadChunk('form')
+    const ContactForm = exprts.default
     ContactForm && Overlay.show(<ContactForm item={stockStore.getItemById(id)} />, {
       className: styles.overlay,
       close: 'esc',

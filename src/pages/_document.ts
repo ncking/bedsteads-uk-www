@@ -5,7 +5,6 @@ export default async ({ response, tagRenderer, plugins, isDev }) => {
   let headTags = ''
   const store = plugins.getPlugin('store')
   store.data.stock = await findActive()
-  store.setPageData(response.toJson())
   const company = store.data.config.company
 
   if (!isDev) {

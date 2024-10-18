@@ -4,7 +4,7 @@ import { EmailLink, MainBlock } from '@components'
 import * as styles from './style.scss'
 const KELCOL_LINK = <Link href="https://kelcol.co.uk">Kelcol</Link>
 
-export default ({ sizes, tiles }) => {
+export default ({ sizes, tiles = [] }) => {
   return (
     <>
       <div className={styles.grid}>
@@ -54,7 +54,7 @@ export default ({ sizes, tiles }) => {
             any unusual size or shape. Please email
             &nbsp;
             <EmailLink />
-&nbsp;for a quote.
+            &nbsp;for a quote.
           </p>
         </>
 
