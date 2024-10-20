@@ -27,7 +27,7 @@ export default ({ log }) => {
             healthPlugin(),
             consolePlugin(),
             swPlugin(),
-           // ssrPlugin(),
+            ssrPlugin(),
             svgPlugin({ inline: svgs }),
             redirectPlugin({
                 '/doubles': '/double',
