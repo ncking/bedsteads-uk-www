@@ -1,5 +1,5 @@
-#FROM node:22.5.1-alpine3.20
-FROM denoland/deno:alpine-2.0.0-rc.10
+FROM node:22.5.1-alpine3.20
+#FROM denoland/deno:alpine-2.0.0-rc.10
 RUN apk add nano curl
 WORKDIR /usr/src/app
 ARG NODE_ENV=production
