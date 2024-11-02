@@ -20,7 +20,7 @@ export const ItemPage = (props) => {
     description,
     priceWasFmt,
     status,
-    info
+    info=[]
   } = item || {}
   const [mainImage, ...otherImages] = images
   const src = getMainImageSrc({
@@ -29,13 +29,17 @@ export const ItemPage = (props) => {
   })
 
 
-/**
- * Price is always the first item
- */
+  /**
+   * Price is always the first item
+   * Wath deref the arrays 
+   */
+  const rows = info.map( ([label, value],i) =>{
+    if (!i && priceWasFmt) {
+      return [ label, <><span className={styles.was}>{`${priceWasFmt} `} </span>{value}</>]
+    }
+    return [label, value]
+  })
 
-  if (priceWasFmt) {
-    info[0][1] = (<><span className={styles.was}>{`${priceWasFmt} `} </span> {info[0][1]}</>)
-  }
 
 
 
@@ -58,7 +62,7 @@ export const ItemPage = (props) => {
 
 
       <MainBlock title={title} className={styles.reorder}>
-        <Stats rows={info} key={`${id}-${info?.length}`}/>
+        <Stats rows={rows} key={`${id}-${rows?.length}`} />
         <>{description}</>
       </MainBlock>
 
