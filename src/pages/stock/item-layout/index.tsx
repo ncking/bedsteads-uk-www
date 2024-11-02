@@ -19,8 +19,11 @@ const onChange = (dir) => {
  */
 
 let hasLoaded = false
-export const ItemLayout = ({ item }) => {
+export const ItemLayout = (props) => {
+  const { item} = props
   const { isDesktop } = useWindowSize()
+  console.log('props should have pending', props)
+
 
   useEffect(() => {
     // for SSR we need to switch to mobile after load - SSR was getting confused and magling on hydration

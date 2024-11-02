@@ -9,7 +9,10 @@ import * as statusStyles from './status.scss'
  * So its **alkways in the store, either from Document request or
  * from the embeded store
  */
-export const ItemPage = ({ activePanel, item }) => {
+export const ItemPage = (props) => {
+const { activePanel, item} = props
+
+
   if (!item) {
     return null
   }
@@ -47,41 +50,30 @@ export const ItemPage = ({ activePanel, item }) => {
         id={activePanel && getGalleryId(0)}
       >
       </BedsteadsImage>
-      <SlideUp start={arrayValues(info)}>
 
-        {status
-          ? (
-              <div className={statusStyles.status}>{status}</div>
-            )
-          : (
-              <SaleStockBanner item={item} />
-            )}
+      <MainBlock title={title} className={styles.reorder}>
+        <Stats item={item} />
+        <>{description}</>
+      </MainBlock>
 
-        <MainBlock title={title} className={styles.reorder}>
-          <Stats item={item} />
-          <>{description}</>
-        </MainBlock>
-
-        <Column>
-          {(activePanel ? otherImages : []).map(({ src, r }, i) => {
-            // a hack so that only the active panel has full height ... now that they are stacked the tallest will set the height!! if we dont do this
-            return (
-              <BedsteadsImage
-                responsive={true}
-                timeout={200}
-                key={src}
-                id={activePanel && getGalleryId(i + 1)}
-                src={stockGallerySrc({ id, src })}
-                alt={`${title} - photo angle #${i + 1}`}
-                style={{
-                  paddingTop: `${r}%`,
-                }}
-              />
-            )
-          })}
-        </Column>
-
-      </SlideUp>
+      <Column>
+        {(activePanel ? otherImages : []).map(({ src, r }, i) => {
+          // a hack so that only the active panel has full height ... now that they are stacked the tallest will set the height!! if we dont do this
+          return (
+            <BedsteadsImage
+              responsive={true}
+              timeout={200}
+              key={src}
+              id={activePanel && getGalleryId(i + 1)}
+              src={stockGallerySrc({ id, src })}
+              alt={`${title} - photo angle #${i + 1}`}
+              style={{
+                paddingTop: `${r}%`,
+              }}
+            />
+          )
+        })}
+      </Column>
     </>
   )
 }
