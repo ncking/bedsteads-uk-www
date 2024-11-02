@@ -49,15 +49,14 @@ export const ItemPage = (props) => {
         ratio={66}
         id={activePanel && getGalleryId(0)}
       >
-      </BedsteadsImage>
-
-      {status
+          {status
         ? (
           <div className={statusStyles.status}>{status}</div>
         )
-        : (
-          <SaleStockBanner item={item} />
-        )}
+        : null}
+      </BedsteadsImage>
+
+    
       <MainBlock title={title} className={styles.reorder}>
         <Stats item={item} />
         <>{description}</>

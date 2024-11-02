@@ -1,10 +1,13 @@
 .status {
     padding: 0 var(--gutter);
-    background-color: var(--c-main);
-    color: #fff;
+    background-color: #fff;
     font-weight: bold;
-    line-height: $mobile-header-height;
+    color: var(--c-main);
+   //line-height: $mobile-header-height;
     text-transform: uppercase;
+    position: absolute;
+    bottom:var(--gutter);
+    right:var(--gutter);
 
     @include desktop {
         position: fixed;
@@ -13,8 +16,8 @@
         z-index: 999;
         height: 65px;
         padding: 0 1rem;
-        background-color: #fff;
-        color: var(--c-main);
+   
+   
         font-size: 2.5rem;
         line-height: 65px;
     }
