@@ -20,8 +20,8 @@
   }
 }
 
-.reorder {
-  :first-child {
+.reorder   {
+  > div:first-child {
     order: 1;
     margin-bottom: var(--gutter);
 
@@ -31,7 +31,7 @@
     }
   }
 
-  :last-child {
+   :last-child {
     order: 2;
   }
 
@@ -40,5 +40,10 @@
 
 .gallery>div {
   margin-bottom: 1px;
+}
+
+.was{
+  margin-right: 5px;
+  text-decoration: line-through;
 }
 

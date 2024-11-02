@@ -1,8 +1,4 @@
-
-
 .itemThumbs {
-  $button-width: 40px;
-  $button-widths: 2 * $button-width;
 
   position: relative;
   display: flex;
@@ -27,11 +23,11 @@
 .thumbs {
   display: flex;
   will-change: transform;
-
+  height: 65px; // must have height while loading
 
   .thumb {
     width: 100px;
-    height: 65px;
+    height: 100%;
     margin-right: 10px;
     background-color: var(--c-img);
     transition: opacity 0.5s;

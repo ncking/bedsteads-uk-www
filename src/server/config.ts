@@ -26,7 +26,8 @@ export const priceRange = '£150 - £20000'
 
 export const GA = 'UA-672201-1'
 export const gmapApiKey = 'UA-672201-1'
-export const googleWebmasterVerification = 'S7aP7w4mEgJVKolP4FP1-8c1UOvlyzEQnZi87peQLkE'
+export const googleWebmasterVerification =
+    'S7aP7w4mEgJVKolP4FP1-8c1UOvlyzEQnZi87peQLkE'
 export const sitemapUrl = `${domain}/sitemap/index.xml` // need for robots.txt & sitemap gen ....
 
 /**
@@ -36,14 +37,14 @@ const CACHE_FOREVER = 'max-age=31557600, immutable'
 const CACHE_ONE_DAY = 'max-age=604800, stale-while-revalidate=86400'
 
 export const cacheControlExtensionMap = {
-  jpg: CACHE_FOREVER,
-  webp: CACHE_FOREVER,
-  png: CACHE_FOREVER,
-  js: CACHE_FOREVER,
-  css: CACHE_FOREVER,
-  //
-  svg: CACHE_ONE_DAY,
-  ico: CACHE_ONE_DAY,
-  txt: CACHE_ONE_DAY,
-  webmanifest: CACHE_ONE_DAY,
+    jpg: CACHE_FOREVER,
+    webp: CACHE_FOREVER,
+    png: CACHE_FOREVER,
+    js: CACHE_FOREVER,
+    css: CACHE_FOREVER,
+    //
+    svg: CACHE_ONE_DAY,
+    ico: CACHE_ONE_DAY,
+    txt: CACHE_ONE_DAY,
+    webmanifest: CACHE_ONE_DAY,
 }

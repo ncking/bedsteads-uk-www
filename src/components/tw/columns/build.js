@@ -156,10 +156,10 @@ const lines = [
     snippet,
 ] /// for the base mobile sizes
 sizes.map((size) => {
-  const line = `@include min(${size}){
+    const line = `@include min(${size}){
         ${snippet.replaceAll('.', `.${size}\\:`)}
     }`
-  lines.push(line)
+    lines.push(line)
 })
 
 const str = lines.join('\n')
