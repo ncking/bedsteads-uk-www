@@ -40,6 +40,7 @@ const StockPage = (props) => {
       styles={styles}
       Panel={ItemPage}
       onChange={onChange}
+      isLoading={loading}
     />
   }
 
