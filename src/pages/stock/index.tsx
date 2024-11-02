@@ -14,7 +14,7 @@ const onChange = (dir) => {
     : (prev(), itemAnalyics('swipe prev'))
 }
 
-
+let hasLoaded = false
 const StockPage = (props) => {
   const { item, params, loading } = props
   stockStore.init(params)
@@ -25,11 +25,18 @@ const StockPage = (props) => {
 
   const { isDesktop } = useWindowSize()
 
+  useEffect(() => {
+    // for SSR we need to switch to mobile after load - SSR was getting confused and magling on hydration
+    // I guess it was tring to make sense of 2 differnt layouts
+    // for inital load boath show the SEO/SSR single product
+    hasLoaded = true
+  }, [])
+
+  const isSwiper = !isDesktop && TOUCH_DEVICE
+  const hasLoadedAndMobile = hasLoaded && isSwiper
   let itemLayout
 
-  if (process.env.SSR || isDesktop || !TOUCH_DEVICE) {
-    itemLayout = <ItemPage key="product" activePanel={true} item={item} />
-  } else {
+  if (hasLoadedAndMobile) {
     const items = stockStore.getSwipSet()
     if (item) items[1] = item
     itemLayout = <SwipeStack
@@ -40,6 +47,10 @@ const StockPage = (props) => {
       onChange={onChange}
       isLoading={loading}
     />
+  } else {
+
+    itemLayout = <ItemPage key="product" activePanel={true} item={item} />
+
   }
 
   return (
