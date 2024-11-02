@@ -1,7 +1,7 @@
 import { arrayValues } from '@raiz/browser'
 import { BedsteadsImage, SlideUp, SaleStockBanner, Column, MainBlock } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
-import Stats from './stats'
+import Stats from '../stats'
 import * as styles from './item.scss'
 import * as statusStyles from './status.scss'
 
