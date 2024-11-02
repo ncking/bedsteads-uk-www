@@ -3,10 +3,11 @@ import { ContactButton, FavouriteBtn } from '@components'
 import  styles from './style.scss'
 
 
-console.log(styles)
+
 export const SpeedDial = ({ id }) => {
   return (
     <div className={cx(styles.speedDial)}>
+      **********************
       <ContactButton id={id}>
         <div className={styles.text}>contact us</div>
       </ContactButton>

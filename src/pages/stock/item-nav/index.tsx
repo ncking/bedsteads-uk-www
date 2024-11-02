@@ -10,7 +10,7 @@ import * as styles from './style.scss'
  * after the item view ... so it cant be part of the item view
  *
  */
-export const ItemNav = ({ item={} }) => {
+export const ItemNav = ({ item = {} }) => {
   const complete = useDelay(500)
 
   return (
@@ -26,7 +26,7 @@ export const ItemNav = ({ item={} }) => {
           <ButtonNav />
         </nav>
       </div>
-      <SpeedDial id={item.id} />
+      <SpeedDial id={item?.id} />
     </>
   )
 }
