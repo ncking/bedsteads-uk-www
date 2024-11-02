@@ -5,10 +5,11 @@ import * as styles from './stats.scss'
 
 const skelteton = [
   [8, 12],
-  [12, 14], [16, 12], [8, 12], [18, 12], [8, 12], [8, 12], [8, 12], 
+  [12, 14], [16, 12], [8, 12], [18, 12], [8, 12], [8, 12], [8, 12], [8, 12], 
+
 ]
 
-export const Stats = ({ rows }) => {
+export const Stats = ({ rows, isFurniture }) => {
   let trs = []
 
   if (rows.length) {
@@ -22,7 +23,8 @@ export const Stats = ({ rows }) => {
     })
 
   } else {
-    trs = skelteton.map(([a, b], i) => {
+ 
+    trs = skelteton.slice(0, isFurniture ? 6 : 99).map(([a, b], i) => {
       return (
         <tr key={`${i}-s`}>
           <td><SkeletonText ch={a} /></td>

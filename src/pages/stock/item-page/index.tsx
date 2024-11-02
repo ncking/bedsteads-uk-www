@@ -20,6 +20,7 @@ export const ItemPage = (props) => {
     description,
     priceWasFmt,
     status,
+    isFurniture,
     info=[]
   } = item || {}
   const [mainImage, ...otherImages] = images
@@ -62,7 +63,7 @@ export const ItemPage = (props) => {
 
 
       <MainBlock title={title} className={styles.reorder}>
-        <Stats rows={rows} key={`${id}-${rows?.length}`} />
+        <Stats rows={rows} key={`${id}-${rows?.length}`} isFurniture={isFurniture}/>
         <>{description}</>
       </MainBlock>
 
