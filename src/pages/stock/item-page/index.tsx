@@ -1,5 +1,4 @@
-import { arrayValues } from '@raiz/browser'
-import { BedsteadsImage, SlideUp, SaleStockBanner, Column, MainBlock } from '@components'
+import { BedsteadsImage, Column, MainBlock } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
 import Stats from '../stats'
 import * as styles from './item.scss'
@@ -10,35 +9,22 @@ import * as statusStyles from './status.scss'
  * from the embeded store
  */
 export const ItemPage = (props) => {
-  const { activePanel, item } = props
 
-  if (!item?.info) {
-    /// retirn skelton
-    return null
-  }
+  const { activePanel, item } = props
   const {
     id,
     images = [],
     title = '',
     description,
-    status,
-    info,
+    status
   } = item
   const [mainImage, ...otherImages] = images
-  // @ nk this is the cause of all my empty images problems
-  if (!arrayValues(images)) {
-    return null
-  }
-
   const src = getMainImageSrc({
     id,
     ...mainImage,
   })
 
-  /**
-     * all stats are no prepared SERVER side
-     * Makes it simple, extensable 7 meanswe can remove some props for teh stock list
-     */
+
   return (
     <>
       <BedsteadsImage
