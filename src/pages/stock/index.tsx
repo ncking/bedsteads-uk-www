@@ -47,7 +47,7 @@ const StockPage = (props) => {
   return (
     <>
       {itemLayout}
-      {/* <ItemNav item={item} /> */}
+      <ItemNav item={item} />
     </>
   )
 }
