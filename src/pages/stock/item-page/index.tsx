@@ -10,10 +10,10 @@ import * as statusStyles from './status.scss'
  * from the embeded store
  */
 export const ItemPage = (props) => {
-const { activePanel, item} = props
+  const { activePanel, item } = props
 
-
-  if (!item) {
+  if (!item?.info) {
+    /// retirn skelton
     return null
   }
   const {
@@ -51,6 +51,13 @@ const { activePanel, item} = props
       >
       </BedsteadsImage>
 
+      {status
+        ? (
+          <div className={statusStyles.status}>{status}</div>
+        )
+        : (
+          <SaleStockBanner item={item} />
+        )}
       <MainBlock title={title} className={styles.reorder}>
         <Stats item={item} />
         <>{description}</>

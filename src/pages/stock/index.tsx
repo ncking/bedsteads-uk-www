@@ -18,22 +18,21 @@ const onChange = (dir) => {
 
 const StockPage = (props) => {
   const { item, params: filters, loading } = props
-  const { id } = filters
-  // if (item) stockStore.add(ajaxRequestedItem) // we do this so that once loaded its not constantly flashing from empty
-  const { item: itemMin } = stockStore.init(filters)
-  console.log('props should have pending', props)
-  useEffect(() => {
-    stockStore.updateState()
-  }, [id])
+  stockStore.init(filters)
+
+  // useEffect(() => {
+  //   stockStore.updateState()
+  // }, [id])
 
   const { isDesktop } = useWindowSize()
 
   let itemLayout
 
-  if (process.env.SSR || isDesktop || !TOUCH_DEVICE){
+  if (process.env.SSR || isDesktop || !TOUCH_DEVICE) {
     itemLayout = <ItemPage key="product" activePanel={true} item={item} />
   } else {
     const items = stockStore.getSwipSet()
+    if(item)items[1] = item
     itemLayout = <SwipeStack
       key="swipestack"
       items={items}
@@ -48,7 +47,7 @@ const StockPage = (props) => {
   return (
     <>
       {itemLayout}
-      <ItemNav item={item || itemMin} />
+      {/* <ItemNav item={item} /> */}
     </>
   )
 }
