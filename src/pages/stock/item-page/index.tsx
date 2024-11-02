@@ -1,6 +1,6 @@
 import { BedsteadsImage, Column, MainBlock } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
-import Stats from '../stats'
+import { Stats } from '../stats'
 import * as styles from './item.scss'
 import * as statusStyles from './status.scss'
 
@@ -16,7 +16,9 @@ export const ItemPage = (props) => {
     images = [],
     title = '',
     description,
-    status
+    priceWasFmt,
+    status,
+    info
   } = item
   const [mainImage, ...otherImages] = images
   const src = getMainImageSrc({
@@ -24,6 +26,14 @@ export const ItemPage = (props) => {
     ...mainImage,
   })
 
+
+/**
+ * Price is always the first item
+ */
+
+  if (priceWasFmt) {
+    info[0][1] = (<><span className={styles.was}>{`${priceWasFmt} `} </span> {info[0][1]}</>)
+  }
 
   return (
     <>
@@ -35,16 +45,16 @@ export const ItemPage = (props) => {
         ratio={66}
         id={activePanel && getGalleryId(0)}
       >
-          {status
-        ? (
-          <div className={statusStyles.status}>{status}</div>
-        )
-        : null}
+        {status
+          ? (
+            <div className={statusStyles.status}>{status}</div>
+          )
+          : null}
       </BedsteadsImage>
 
-    
+
       <MainBlock title={title} className={styles.reorder}>
-        <Stats item={item} />
+        <Stats rows={info} />
         <>{description}</>
       </MainBlock>
 
@@ -69,3 +79,4 @@ export const ItemPage = (props) => {
     </>
   )
 }
+
