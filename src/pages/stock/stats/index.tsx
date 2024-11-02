@@ -35,13 +35,11 @@ const Stats = ({ item }) => {
   }
 
   return (
-    <>
-      <div className={styles.stats}>
-        <table>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </>
+    <div className={styles.stats}>
+      <table>
+        <tbody>{rows}</tbody>
+      </table>
+    </div>
   )
 }
 
