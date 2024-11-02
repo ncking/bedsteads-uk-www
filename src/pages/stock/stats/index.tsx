@@ -13,13 +13,23 @@ const Stats = ({ item }) => {
       newStats.shift()
     }
     newStats.map(([label, value]) => {
+
+      const { priceWasFmt } = item
+      if ('price' === label && priceWasFmt) {
+        value = (
+          <>
+            <span className={styles.was}>
+              {`${priceWasFmt}  `}
+            </span>
+            {value}
+          </>
+        )
+      }
       rows.push(
-        <StatsRow
-          key={label}
-          label={label}
-          value={value}
-          item={item}
-        />,
+        <tr key={label}>
+          <td>{label}</td>
+          <td>{value}</td>
+        </tr>
       )
     })
   }
@@ -36,3 +46,5 @@ const Stats = ({ item }) => {
 }
 
 export default Stats
+
+
