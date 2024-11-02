@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { navigate } from '@raiz/nuggins'
 
-import { Tile, FavouriteBtn, StatsRow, MainBlock } from '@components'
+import { Tile, FavouriteBtn, MainBlock } from '@components'
 import { favStore } from '@store'
 import { findFavourites } from './actions'
 import * as styles from './style.scss'

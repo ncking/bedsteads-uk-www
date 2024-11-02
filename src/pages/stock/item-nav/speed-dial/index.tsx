@@ -1,7 +1,9 @@
 import { cx } from '@raiz/browser'
 import { ContactButton, FavouriteBtn } from '@components'
-import * as styles from './style.scss'
+import  styles from './style.scss'
 
+
+console.log(styles)
 export const SpeedDial = ({ id }) => {
   return (
     <div className={cx(styles.speedDial)}>

@@ -21,7 +21,7 @@ export const ItemPage = (props) => {
     priceWasFmt,
     status,
     info
-  } = item
+  } = item || {}
   const [mainImage, ...otherImages] = images
   const src = getMainImageSrc({
     id,
@@ -38,7 +38,6 @@ export const ItemPage = (props) => {
   }
 
 
-  console.log(info)
 
   return (
     <>
