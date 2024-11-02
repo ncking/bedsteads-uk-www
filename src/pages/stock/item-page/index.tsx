@@ -8,6 +8,8 @@ import * as statusStyles from './status.scss'
  * So its **alkways in the store, either from Document request or
  * from the embeded store
  */
+
+
 export const ItemPage = (props) => {
 
   const { activePanel, item } = props
@@ -35,6 +37,9 @@ export const ItemPage = (props) => {
     info[0][1] = (<><span className={styles.was}>{`${priceWasFmt} `} </span> {info[0][1]}</>)
   }
 
+
+  console.log(info)
+
   return (
     <>
       <BedsteadsImage
@@ -54,7 +59,7 @@ export const ItemPage = (props) => {
 
 
       <MainBlock title={title} className={styles.reorder}>
-        <Stats rows={info} />
+        <Stats rows={info} key={`${id}-${info?.length}`}/>
         <>{description}</>
       </MainBlock>
 

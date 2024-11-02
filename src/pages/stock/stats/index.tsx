@@ -1,13 +1,27 @@
 import * as styles from './stats.scss'
 
 
+const skelteton =[
+  ['', ''],
+  ['', ''],
+  ['', ''],
+  ['', ''],
+  ['', ''],
+  ['', ''],
+  ['', ''],
+  ['', ''],
+  ['', ''],
+]
+
 export const Stats = ({ rows }) => {
+
+  
   return (
     <div className={styles.stats}>
       <table>
         <tbody>
-          {rows?.map(([label, value]) => (
-            <tr key={label}>
+          {(rows|| skelteton).map(([label, value],i) => (
+            <tr key={i}>
               <td>{label}</td>
               <td>{value}</td>
             </tr>))}
