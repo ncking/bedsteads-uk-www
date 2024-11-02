@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { stockStore } from '@store'
-import { ItemLayout } from './item-layout'
 import { ItemNav } from './item-nav'
 
 
@@ -28,11 +27,10 @@ const StockPage = (props) => {
   }, [id])
 
   const { isDesktop } = useWindowSize()
-  const isSwiper = !isDesktop && TOUCH_DEVICE
 
   let itemLayout
 
-  if (process.env.SSR || isDesktop){
+  if (process.env.SSR || isDesktop || !TOUCH_DEVICE){
     itemLayout = <ItemPage key="product" activePanel={true} item={item} />
   } else {
     const items = stockStore.getSwipSet()
