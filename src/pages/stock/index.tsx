@@ -17,12 +17,12 @@ const onChange = (dir) => {
 
 
 const StockPage = (props) => {
-  const { item, params: filters, loading } = props
-  stockStore.init(filters)
+  const { item, params, loading } = props
+  stockStore.init(params)
 
-  // useEffect(() => {
-  //   stockStore.updateState()
-  // }, [id])
+  useEffect(() => {
+    stockStore.updateState()
+  }, [params.id])
 
   const { isDesktop } = useWindowSize()
 
