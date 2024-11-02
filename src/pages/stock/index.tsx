@@ -1,13 +1,12 @@
 import { useEffect } from 'react'
 import { stockStore } from '@store'
 import { ItemNav } from './item-nav'
-
-
 import { TOUCH_DEVICE } from '@raiz/browser'
 import { SwipeStack, useWindowSize } from '@raiz/react'
 import { next, prev, itemAnalyics } from '@lib'
 import { ItemPage } from './item-page'
 import * as styles from './panels.scss'
+
 
 const onChange = (dir) => {
   dir === 1
@@ -32,7 +31,7 @@ const StockPage = (props) => {
     itemLayout = <ItemPage key="product" activePanel={true} item={item} />
   } else {
     const items = stockStore.getSwipSet()
-    if(item)items[1] = item
+    if (item) items[1] = item
     itemLayout = <SwipeStack
       key="swipestack"
       items={items}
@@ -42,7 +41,6 @@ const StockPage = (props) => {
       isLoading={loading}
     />
   }
-
 
   return (
     <>
