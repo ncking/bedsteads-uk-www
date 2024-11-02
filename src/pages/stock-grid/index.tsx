@@ -9,6 +9,7 @@ const StockGridPage = (props) => {
   const { params: filters } = props
   const { stock } = stockStore.init(filters)
   const { category, size } = filters
+
   /**
    * STOCK always there !!!
    * Please dont overthink this .... this is ***CORRECT
