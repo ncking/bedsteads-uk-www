@@ -20,7 +20,7 @@ export const Stats = ({ rows }) => {
     <div className={styles.stats}>
       <table>
         <tbody>
-          {(rows|| skelteton).map(([label, value],i) => (
+          {(rows.length  ? rows :  skelteton)?.map(([label, value],i) => (
             <tr key={i}>
               <td>{label}</td>
               <td>{value}</td>
