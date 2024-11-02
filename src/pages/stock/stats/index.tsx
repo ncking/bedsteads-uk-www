@@ -5,7 +5,7 @@ import * as styles from './stats.scss'
 
 const skelteton = [
   [8, 12],
-  [12, 14], [16, 12], [8, 12], [18, 12], [8, 12], [8, 12], 
+  [12, 14], [16, 12], [8, 12], [18, 12], [8, 12], [8, 12], [8, 12], 
 ]
 
 export const Stats = ({ rows }) => {
