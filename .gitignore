@@ -66,6 +66,8 @@ public/image
 public/sitemap
 public/dist
 public/google*.html
+public/humans.txt
+public/service-worker.js
 # public/robots.txt
 # public/humans.txt
 assets/*
