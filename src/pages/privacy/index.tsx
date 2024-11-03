@@ -2,7 +2,7 @@ import { Link } from '@raiz/nuggins'
 import { EmailLink, MainBlock } from '@components'
 import config from '@config'
 import { getSiteLink } from '@lib'
-import styles from './style.scss'
+import * as styles from './style.scss'
 
 export default () => {
     const { streetAddress, postcode } = config()
