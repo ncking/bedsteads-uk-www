@@ -1,3 +1,4 @@
+@use "sass:map";
 /**
 Breakpoints Map
 from https://tailwindcss.com/docs/screens
@@ -36,24 +37,24 @@ $breakpoints-map: (
 
 // stylelint-disable --- we dont want @content being re-ordered as it is the overide 
 @mixin min($breakpoint) {
-    @if map-has-key($breakpoints-map, $breakpoint) {
-        @media screen and (min-width: map-get($breakpoints-map, $breakpoint) + 1px) {
+    @if map.has-key($breakpoints-map, $breakpoint) {
+        @media screen and (min-width: map.get($breakpoints-map, $breakpoint) + 1px) {
             @content;
         }
     }
     @else {
-        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpoints-map)}.";
+        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map.keys($breakpoints-map)}.";
     }
 }
 
 @mixin max($breakpoint) {
-    @if map-has-key($breakpoints-map, $breakpoint) {
-        @media screen and (max-width: map-get($breakpoints-map, $breakpoint)) {
+    @if map.has-key($breakpoints-map, $breakpoint) {
+        @media screen and (max-width: map.get($breakpoints-map, $breakpoint)) {
             @content;
         }
     }
     @else {
-        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map-keys($breakpoints-map)}.";
+        @warn "#{$breakpoint} is not a valid breakpoint. "+"Valid breakpoints are: #{map.keys($breakpoints-map)}.";
     }
 }
 

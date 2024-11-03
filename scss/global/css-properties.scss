@@ -1,3 +1,6 @@
+@use "../config/breakpoints";
+@use "../config/vars-sass";
+
 :root {
   --c-white: #fff;
   --c-grey: #eee;
@@ -22,12 +25,12 @@
   --page-padding: clamp(0px, var(--scaler), var(--gutter-max));
   --sidenav-w: 0px;
   --main-w: 100vw;
-  --header-h: #{$mobile-header-height};
+  --header-h: #{vars-sass.$mobile-header-height};
   --main-t: var(--header-h);
   --mobile-ht : calc( 100vh - var(--header-h));
   --panel-radius:0;
   
-  @include desktop {
+  @include breakpoints.desktop {
     --tmp-main: calc(100vh * 1.5151);
     --sidenav-w: clamp(300px, calc(100% - var(--tmp-main)), 650px);
     --main-w: calc(100% - calc(var(--sidenav-w) + 0px));

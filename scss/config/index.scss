@@ -1,4 +1,4 @@
-@use 'sass:math';
-@import "./breakpoints";
-@import "./vars-sass";
-@import "./bedsteads-mixins";
+@forward 'sass:math';
+@forward "breakpoints";
+@forward "vars-sass";
+@forward "bedsteads-mixins";

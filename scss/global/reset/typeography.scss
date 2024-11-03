@@ -1,3 +1,5 @@
+@use "../../config/breakpoints";
+
 h1,
 h2 {
     color: rgb(36 42 49);
@@ -21,7 +23,7 @@ h2 {
     margin: 2rem 0;
     font-size: calc(22px + (0) * ((100vw - 300px) / (1900 - 300)));
 
-    @include desktop {
+    @include breakpoints.desktop {
         &:first-child {
             margin-top: 0;
         }
@@ -41,7 +43,7 @@ p {
     hyphenate-limit-last: always;
     hyphenate-limit-zone: 8%;
 
-    @include desktop {
+    @include breakpoints.desktop {
         text-align: initial;
     }
 

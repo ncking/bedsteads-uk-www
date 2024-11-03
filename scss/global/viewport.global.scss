@@ -1,3 +1,5 @@
+@use "../config/breakpoints";
+
 .viewport {
   width: 100%;
 
@@ -11,7 +13,7 @@
   background-color: var(--c-img);
   background-color: #333;
 
-  @include desktop {
+  @include breakpoints.desktop {
     height: auto; // for desktop its the ratio that gives the height
     max-height: 100vh;
     padding-top: 66%;
