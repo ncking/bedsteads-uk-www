@@ -25,11 +25,11 @@
     "start:deno": "deno --allow-run --allow-env --allow-read --allow-sys --allow-ffi --allow-net ./.server/init.js",
     "start": "node ./.server/init.js",
     "dev": "nuggins dev",
-    "build": "nuggins build && npm run build:sw",
+    "build": "nuggins build",
     "build:docker": "nuggins build --docker",
     "build:server": "nuggins build --server",
     "build:client": "nuggins build --client",
-    "build:sw": "tsx ./service-worker/build-sw.js",
+    "build:sw": "nuggins sw",
     "build:favicons": "tsx _scripts/favicons/build",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
@@ -37,7 +37,7 @@
     "lint": "eslint ./src",
     "lint:sass": "stylelint --allow-empty-input \"**/*.{css,scss}\"",
     "lint:sass:fix": "stylelint --allow-empty-input \"**/*.{css,scss}\" --fix",
-    "lint:fix": "eslint ./src  --fix"
+    "lint:fix": "eslint ./src --fix"
   },
   "overrides": {
     "@testing-library/cypress": {
@@ -107,7 +107,6 @@
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-order": "^6.0.4",
     "svgo": "^3.2.0",
-    "terser": "^5.31.3",
     "tsx": "4.15.7",
     "typescript": "^5.5.3",
     "workbox": "^0.0.0",
