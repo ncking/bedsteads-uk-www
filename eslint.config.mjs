@@ -6,6 +6,7 @@ import imports from 'eslint-plugin-import';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import stylistic from '@stylistic/eslint-plugin'
+import reactCompiler from 'eslint-plugin-react-compiler'
 
 
 export default [
@@ -30,9 +31,11 @@ export default [
             "react": react,
             "react-hooks": reactHooks,
             import: imports,
+            'react-compiler': reactCompiler,
             '@stylistic': stylistic
         },
         rules: {
+            "react-compiler/react-compiler": "error",
             ...react.configs['jsx-runtime'].rules,
             ...reactHooks.configs.recommended.rules,
             ...esJs.configs.recommended.rules,

@@ -74,3 +74,6 @@ assets/*
 .build
 .output
 .server
+/playwright-report/
+/blob-report/
+/playwright/.cache/

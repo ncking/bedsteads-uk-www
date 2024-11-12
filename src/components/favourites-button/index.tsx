@@ -10,62 +10,62 @@ const on = 'favouriteOn'
 const off = 'favouriteOff'
 
 export const FavouriteBtnTotal = (props) => {
-    const total = favStore.useStore(() => favStore.getTotal())
+  const total = favStore.useStore(() => favStore.getTotal())
 
-    useEffect(() => {
-        lastTotal = total
-    }, [total])
+  useEffect(() => {
+    lastTotal = total
+  }, [total])
 
-    return (
-        <ClientOnly>
-            <div
-                key={total}
-                className={cx(
-                    style.numberFavs,
-                    lastTotal !== total && style.pulse,
-                )}
-            >
-                <Button
-                    className={style.favourite}
-                    icon={on}
-                    {...props}
-                    label="Favourite items"
-                />
-                {total ? <span className={style.total}>{total}</span> : null}
-            </div>
-        </ClientOnly>
-    )
+  return (
+    <ClientOnly>
+      <div
+        key={total}
+        className={cx(
+          style.numberFavs,
+          lastTotal !== total && style.pulse,
+        )}
+      >
+        <Button
+          className={style.favourite}
+          icon={on}
+          {...props}
+          label="Favourite items"
+        />
+        {total ? <span className={style.total}>{total}</span> : null}
+      </div>
+    </ClientOnly>
+  )
 }
 
 interface Props {
-    id: number
-    onClick?: (e: MouseEvent) => void
-    render?: ({ label }: { label: string }) => ReactNode
-    className?: string
+  id: number
+  onClick?: (e: MouseEvent) => void
+  render?: ({ label }: { label: string }) => ReactNode
+  className?: string
 }
 export const FavouriteBtn = (props: Props) => {
-    const [, trigger] = useState({})
-    const { id, className, onClick, render = () => null } = props
-    const isFave = favStore.isFavourite(id)
+  const [, trigger] = useState({})
+  const { id, className, onClick, render = () => null } = props
+  const isFave = favStore.isFavourite(id)
 
-    const handleClick = () => {
-        favStore.toggleId(id)
-        trigger({})
-    }
+  const handleClick = () => {
+    favStore.toggleId(id)
+    trigger({})
+  }
 
-    const label = (isFave ? 'remove' : 'add') + ' favourites'
-    return (
-        <ClientOnly>
-            <Button
-                {...props}
-                className={cx(style.favourite, className)}
-                icon={isFave ? on : off}
-                onClick={onClick || handleClick}
-                label={label}
-                hoverStyle={false}
-            >
-                {render({ label })}
-            </Button>
-        </ClientOnly>
-    )
+  const label = (isFave ? 'remove' : 'add') + ' favourites'
+  return (
+    <ClientOnly>
+      <Button
+        {...props}
+        className={cx(style.favourite, className)}
+        icon={isFave ? on : off}
+        onClick={onClick || handleClick}
+        label={label}
+        hoverStyle={false}
+      >
+        {render({ label })}
+      </Button>
+    </ClientOnly>
+  )
 }

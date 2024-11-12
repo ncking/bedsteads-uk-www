@@ -13,29 +13,30 @@ import './style.scss'
  */
 let lastActive: boolean | string = 'init'
 export const PanelStack = ({ active = false, children }) => {
-    const [, setStep] = useState(active ? 'on' : 'off')
-    const isMounted = useIsMounted()
+  const [, setStep] = useState(active ? 'on' : 'off')
+  const isMounted = useIsMounted()
 
-    useEffect(() => {
-        if (lastActive !== 'init') {
-            /**
+  useEffect(() => {
+    if (lastActive !== 'init') {
+      /**
              * SO we need to replace CSS with transition styles ...
              * 1. set the inline style pos & cause reflow...
              * 2. then add the class opening/closing
              * 3. add the final class open/closed
              */
-            if (active) {
-                // const clss = ['init', 'opening', 'on']
-            } else {
-                const clss = ['closing-init', 'closing', 'off']
-                chainTimeouts(
-                    [100, 500, 500],
-                    (i) => isMounted() && setStep(clss[i]),
-                )
-            }
-        }
-        lastActive = active
-    }, [active, isMounted])
+      if (active) {
+        // const clss = ['init', 'opening', 'on']
+      }
+      else {
+        const clss = ['closing-init', 'closing', 'off']
+        chainTimeouts(
+          [100, 500, 500],
+          i => isMounted() && setStep(clss[i]),
+        )
+      }
+    }
+    lastActive = active
+  }, [active, isMounted])
 
-    return children[active ? 1 : 0]
+  return children[active ? 1 : 0]
 }

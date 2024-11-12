@@ -29,7 +29,8 @@
       "@server/repo/*": ["./src/server/dbase/repository/*"],
       "@store" : ["./src/store/index"],
       "@store/*" : ["./src/store/*"],
-      "@types" : ["./src/types"]
+      "@types" : ["./src/types"],
+      "@raiz/nuggins": ["./node_modules/@raiz/js/packages/nuggins"],
     },
     "typeRoots": [
       "./types",
