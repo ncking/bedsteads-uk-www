@@ -6,12 +6,12 @@ export const SpeedDial = ({ id }) => {
   return (
     <div className={cx(styles.speedDial)}>
       <ContactButton id={id}>
-        <div className={styles.text}>contact us</div>
+        <span className={styles.text}>contact us</span>
       </ContactButton>
       <FavouriteBtn
         id={id}
         render={({ label }) => (
-          <div className={styles.text}>{label}</div>
+          <span className={styles.text}>{label}</span>
         )}
       />
     </div>

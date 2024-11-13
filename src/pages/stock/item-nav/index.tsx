@@ -16,7 +16,7 @@ export const ItemNav = ({ item = {} }) => {
   return (
     <>
       <div className={cx(styles.itNav, complete && styles.itemNavOn)}>
-        <nav className={styles.nav}>
+        <nav className={styles.nav} aria-label="Stock navigaton">
           <ThumbNav {...item} key={item?.id} />
           <ButtonNav />
         </nav>

@@ -29,10 +29,9 @@ const NavLink = ({ id, noLi = false, ...rest }) => {
 export const Sidebar = () => {
   const { company } = config()
   return (
-    <nav className={styles.sidebar}>
+    <nav className={styles.sidebar} aria-label="Primary">
       <div
         className={stylesMenu.menu}
-        role="navigation"
         aria-hidden="false"
       >
         <div className={logoStyles.logo}>

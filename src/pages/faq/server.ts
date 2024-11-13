@@ -8,16 +8,14 @@ import {
 export default async ({ response, request }) => {
   const description
         = 'Large range of antique beds, French beds, iron Beds & antique furniture. 100s of antique beds on show at our Somerset showroom, South West of Bristol'
-  const metaTitle
-        = 'Bedsteads is a well established, family run company that specialises in sourcing & restoring antique beds'
 
   const title
-        = 'Huge range of Antique Beds, French beds, iron Beds & antique furniture'
+        = 'Huge range of Antique Beds, French beds, iron Beds, antique furniture'
 
   response
     .setRobots('index,follow')
     .setJsonLd(organizationJsonLd)
-    .setTitle(metaTitle)
+    .setTitle(title)
     .setDescription(description)
     .setTwitterCard({
       title,

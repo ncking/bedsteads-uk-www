@@ -7,16 +7,21 @@ let linkMap
 export const getSiteLink = (id) => {
   if (!linkMap) {
     const { email, company, tel, facebookLink, instagramLink } = config()
+
+    
     linkMap = {
       email: {
         url: `mailto:${email}`,
         title: email,
         label: `email ${company}`,
       },
-      tel: { url: `tel:${tel}`, title: tel },
+      tel: {
+        tel,
+      },
       facebook: { url: facebookLink },
       instagram: { url: instagramLink },
     }
+
     routes.map((route) => {
       const { url, id, meta = {} } = route
       const { title, label } = meta

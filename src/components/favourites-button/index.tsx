@@ -30,6 +30,7 @@ export const FavouriteBtnTotal = (props) => {
           icon={on}
           {...props}
           label="Favourite items"
+
         />
         {total ? <span className={style.total}>{total}</span> : null}
       </div>
@@ -63,6 +64,8 @@ export const FavouriteBtn = (props: Props) => {
         onClick={onClick || handleClick}
         label={label}
         hoverStyle={false}
+        tag="button"
+        aria-label={`${isFave ? 'remove' : 'add'} from favourites`}
       >
         {render({ label })}
       </Button>

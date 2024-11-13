@@ -1,4 +1,6 @@
+import { hyphenNBR } from '@raiz/core'
 const TLD = 'bedsteads-uk.co.uk'
+
 /**
  *
  */
@@ -12,8 +14,8 @@ export const postcode = 'BS48 4AA'
 /**
  *
  */
-export const tel = '01275-464-114'
-export const telInt = '+44-1275-464-114'
+export const tel = hyphenNBR('01275-464-114')
+export const telInt = hyphenNBR('+44-1275-464-114')
 export const facebookLink = 'https://www.facebook.com/bedsteadsuk/'
 export const instagramLink = 'https://www.instagram.com/bedsteads_uk/?hl=en'
 

@@ -72,9 +72,9 @@ export const ThumbNav = ({ images = [], id }) => {
                 })}
                 alt={`thumbnail - photo angle #${i}`}
                 ratio="fill"
-                tag="div"
+                tag="button"
                 key={src}
-                role="button"
+                type="button"
                 className={cx(
                   styles.thumb,
                   isPortrait ? styles.portraitThumb : null,

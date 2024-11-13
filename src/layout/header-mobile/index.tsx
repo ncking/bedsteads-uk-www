@@ -24,14 +24,15 @@ export const HeaderMobile = ({ route, filters }) => {
   if (itemPage) {
     children = (
       <>
-        <Link href={catUrl} className="logotype">
+        <div className={cx('logotype', styles.backLink)}>
           <Button
             icon="arrow"
             className={styles.backBtn}
             ariaLabel="back to list"
+            href={catUrl}
           />
           {categoryLabel}
-        </Link>
+        </div>
         <ResultCount />
       </>
     )

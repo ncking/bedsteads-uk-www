@@ -21,7 +21,7 @@
   justify-content: center;
   overflow: hidden;
   width: var(--btn-width);
-  height:$mobile-header-height;
+  height: $mobile-header-height;
   border-radius: calc($mobile-header-height / 2);
   background-color: transparent;
 }
@@ -33,3 +33,14 @@
     @include hover-style;
   }
 }
+
+
+// a.buttonIcon{
+
+//     background-color: yellow;
+//   }
+
+// button.buttonIcon{
+//     background-color: red;
+//     outline:2px solid red
+//   }

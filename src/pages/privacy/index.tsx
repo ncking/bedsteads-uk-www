@@ -1,7 +1,6 @@
 import { Link } from '@raiz/nuggins'
-import { EmailLink, MainBlock } from '@components'
+import { EmailLink, TelLink, MainBlock } from '@components'
 import config from '@config'
-import { getSiteLink } from '@lib'
 import * as styles from './style.scss'
 
 export default () => {
@@ -38,7 +37,7 @@ export default () => {
             </li>
             <li>
               <span>Phone Number:</span>
-              <Link {...getSiteLink('tel')} />
+              <TelLink />
             </li>
             <li>
               <span>E-mail:</span>
@@ -254,7 +253,7 @@ export default () => {
           <br />
           Helpline number:
           {' '}
-          <Link tel="0303 123 1113" />
+          <Link tel="0303-123-1113" />
           <br />
           ICO website:
           {' '}

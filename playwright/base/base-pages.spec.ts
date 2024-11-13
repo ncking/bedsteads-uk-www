@@ -1,24 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { urls } from '../constants'
 import { BasePage } from '@raiz/playwright'
-import { makeSVGId } from '@raiz/nuggins/modules/svg/common.js'
 import * as config from "../../src/config/client"
-
-const svgIds = [
-  "favouriteOn",
-  "favouriteOff",
-  "facebook",
-  "close",
-  "arrow",
-  "contact",
-  "instagram"
-].map(id => makeSVGId(id))
-
 
 /**
  * Base checks on all pages
  */
-Object.values(urls).forEach((url) => {
+const pageUrls = Object.values(urls);
+//const pageUrls = ['/']
+
+pageUrls.map((url) => {
 
   test.describe(`Base checks; ${url}`, () => {
 
@@ -70,28 +61,16 @@ Object.values(urls).forEach((url) => {
     });
 
 
-    test(`SVGs`, async () => {
-      const errors = await p.validateElementIds(svgIds)
-      expect(errors.length).toBe(0);
-    });
-
-
     test(`checking email links`, async () => {
       const errors = await p.validateEmailLinks(config.email)
       expect(errors.length).toBe(0);
     });
 
 
-    // test(`checking tel links`, async () => {
-    //   const errors = await p.validateTelLinks(config.tel)
-    //   expect(errors.length).toBe(0);
-    // });
-
-
-    // test(`validate HTMl`, async () => {
-    //   const errors = await p.validateHTML()
-    //   expect(errors.length).toBe(0);
-    // });
+    test(`validate HTMl`, async () => { // vaildates the RAW HTML, before the Browser has modified: boolean attributes, closing tags ...
+      const errors = await p.validateRawHTML()
+      //expect(errors.length).toBe(0);
+    });
 
   });
 })

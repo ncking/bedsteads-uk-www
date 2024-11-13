@@ -24,6 +24,8 @@ export const ContactButton = ({ children, id }) => {
       className={cx(styles.btn)}
       onClick={handleClick}
       hoverStyle={false}
+      aria-label="Open contact form"
+      tag="button"
     />
   )
 }

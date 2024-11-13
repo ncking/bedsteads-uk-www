@@ -7,7 +7,7 @@ import {
 import { company, email, streetAddress, postcode, tel } from '@server/config'
 
 export default async ({ request, response }) => {
-  const title = `Contact ${company} | Location | Hours of business | Sales and Services, Contact us`
+  const title = `Contact ${company}, Location, Hours of business`
   const description = `tel: ${tel} email: ${email}. Located just to the SW of Bristol we are easily reached via the M5 motorway. address: ${streetAddress} ${postcode}`
 
   response

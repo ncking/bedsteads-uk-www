@@ -15,7 +15,7 @@ const sizes
 
 export default async ({ response, request }) => {
   const title
-        = 'Mattresses - British Made mattress renowned worldwide for quality and comfort, and handmade bed bases'
+        = 'Mattresses - British Made mattress renowned for quality and comfort'
   const description
         = 'Large range of antique beds, French beds, iron Beds & antique furniture. 100s of antique beds on show at our Somerset showroom, South West of Bristol'
   response

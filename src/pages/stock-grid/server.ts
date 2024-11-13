@@ -25,11 +25,11 @@ export default async ({ response, route, request }) => {
       defaultDesc,
     ],
     reproduction: [
-      'Reproduction beds | Edwardian style beds | Victorian style beds | Replica beds',
+      'Reproduction, Edwardian, Victorian, Replica beds',
       'Reproduction beds in just about any size you want. Faithful copies of original English and French Victorian and Edwardian designs, in sizes that are difficult to find in original antique beds.',
     ],
     furniture: [
-      'Antique Furniture | French Armoire | Victorain chest | French chairs',
+      'Antique Furniture, Armoires, French chairs',
       'Bedsteads has a large selection of antique furniture; Antique French armoires, Antique french, furniture, antique wardrobes, chairs.',
     ],
     superking: [
@@ -41,7 +41,7 @@ export default async ({ response, route, request }) => {
       defaultDesc,
     ],
     double: [
-      'Antique Double beds | Antique Three-quater Beds | Iron Beds | French Beds',
+      'Antique Double beds, Iron Beds | French Beds',
       defaultDesc,
     ],
     single: [

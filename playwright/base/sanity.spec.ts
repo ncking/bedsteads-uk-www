@@ -1,7 +1,17 @@
 import { test, expect, request } from '@playwright/test';
-import { parseHeaders } from '@raiz/playwright'
-import { assetUrls, errorUrls } from '../constants'
+import { parseHeaders, BasePage } from '@raiz/playwright'
+import { makeSVGId } from '@raiz/nuggins/modules/svg/common.js'
+import { assetUrls, errorUrls, urls } from '../constants'
 
+const svgIds = [
+  "favouriteOn",
+  "favouriteOff",
+  "facebook",
+  "close",
+  "arrow",
+  "contact",
+  "instagram"
+].map(id => makeSVGId(id))
 
 
 assetUrls.forEach((url) => {
@@ -35,5 +45,14 @@ test.describe('Basic sanity checks', () => {
       console.log(`Error navigating to ${url}:`);
     }
   });
+
+
+  test(`SVGs`, async ({page}) => {
+    const p = new BasePage(page);
+    await page.goto(urls.home);
+    const errors = await p.validateElementIds(svgIds)
+    expect(errors.length).toBe(0);
+  });
+
 })
 

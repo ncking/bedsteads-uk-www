@@ -32,6 +32,7 @@ export const Button: FC<ButtonProps> = ({
   children,
   viewbox,
   hoverStyle = true,
+  tag: Tag = 'a',
 }) => {
   const iconFC = icon
     ? (
@@ -40,13 +41,16 @@ export const Button: FC<ButtonProps> = ({
         </span>
       )
     : null
-
+  const isButton = Tag !== 'a'
   const attr = {
     disabled,
     className: cx(style.buttonIcon, className, hoverStyle && style.hover),
   }
+  if (isButton) attr.type = 'button'
 
-  if (url) {
+  // A button is intended for actions, anchors for navigation
+
+  if (!isButton && url) { // navigate to a new page
     return (
       <Link href={url} {...attr} ariaLabel={ariaLabel}>
         {iconFC}
@@ -54,15 +58,20 @@ export const Button: FC<ButtonProps> = ({
       </Link>
     )
   }
+
+  /**
+   * So can be a button or an anchor, but we navigate via callback,
+   * ie scroll to image
+   */
   return (
-    <button
+    <Tag
       onClick={onClick}
       {...attr}
       aria-label={ariaLabel}
-      // will trigger an HTML validator warning ... its not nessary .. role="button"
+    // will trigger an HTML validator warning ... its not nessary .. role="button"
     >
       {iconFC}
       {children}
-    </button>
+    </Tag>
   )
 }
