@@ -22,17 +22,13 @@ export default () => {
       <MainBlock title="Welcome to Bedsteads">
         <>
           <p>
-            For a huge range of Antique Beds and furniture come and
-            see Mark & Nikki Ashton at their showroom housed in
-            Chelvey Court Barn a picturesque medieval stone barn on
-            the outskirt of Bristol
+            For a wide selection of antique beds and furniture, visit Bedsteads at their showroom located in Chelvey Court Barn,
+            a picturesque medieval stone barn on the outskirts of Bristol. <br />
+            The Ashton family has been running the business for over 30 years. Founded by Mark and Nikki Ashton, it is now managed by their son Bill,
+            who has worked alongside his parents since leaving school, and his wife Rose. <br/>Mark and Nikki continue to provide support to the business.
           </p>
           <p>
-            Mark and Nikki and their team of skilled craftspeople
-            have been sourcing restoring and recreating antique beds
-            and bedroom furniture for over 30 years conserving
-            beautiful pieces of history and making heirlooms for the
-            future.
+            The team of skilled craftsmen at Bedsteads has been sourcing, restoring, and recreating antique beds and bedroom furniture for over three decades, preserving beautiful pieces of history and creating heirlooms for the future.
           </p>
           <p>
             Our unique pieces have been sourced from all over the
