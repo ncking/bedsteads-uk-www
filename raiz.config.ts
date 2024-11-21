@@ -15,8 +15,6 @@ import actionsPlugin from "@raiz/nuggins/modules/server-actions"
 
 
 export default ({ log }) => {
-
-
     return {
         app: {
             expires: 60 * 5,
