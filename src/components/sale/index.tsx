@@ -1,7 +1,7 @@
 import { SaleText } from './text'
 import * as styles from './style.scss'
 
-const saleEnabled = false
+const saleEnabled = true
 
 export const SaleMain = () =>
   saleEnabled

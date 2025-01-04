@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { nativeScrollbar, loadScript } from '@raiz/browser'
 import { Overlay, OverlayMain, scrollHistory } from '@raiz/nuggins'
 import { onloadComplete, importModule } from '@raiz/nuggins'
+import { SaleMain } from '@/components'
 
 import { HeaderMobile, burgerClose } from './header-mobile'
 import { Sidebar } from './sidebar'
@@ -22,7 +23,10 @@ const Layout = ({ children, context }) => {
     <>
       <HeaderMobile {...args} />
       <Sidebar />
-      <OverlayMain className={style.main}>{children}</OverlayMain>
+      <OverlayMain className={style.main}>
+        <SaleMain></SaleMain>
+        {children}
+        </OverlayMain>
       <Overlay className={style.overlay} hasTrans={false}></Overlay>
     </>
   )
