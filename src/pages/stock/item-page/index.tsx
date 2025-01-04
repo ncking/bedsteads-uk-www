@@ -32,7 +32,7 @@ export const ItemPage = (props) => {
                     <div className={statusStyles.status}>{status}</div>
                 ) : null}
             </BedsteadsImage>
-            {activePanel && <SaleStockBanner item={item} />}
+            <SaleStockBanner item={item} />
             <MainBlock title={title} className={styles.reorder}>
                 <Stats item={item} />
                 <>{description}</>

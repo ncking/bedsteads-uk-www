@@ -29,7 +29,7 @@ export const SalePriceStats = ( item ) => {
 /**
  *
  */
-export const SaleStockBanner = ({ item }) => {
+export const SaleStockBanner = ({ item , activePanel}) => {
   if (isSaleItem(item)) {
     return (
       <div className={styles.saleStockBanner}>
