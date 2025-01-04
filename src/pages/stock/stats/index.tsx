@@ -1,5 +1,5 @@
 import { SkeletonText } from '@raiz/react'
-import { SalePrice } from '@components'
+import { SalePriceStats } from '@components'
 import * as styles from './stats.scss'
 
 const skelteton = [
@@ -14,7 +14,8 @@ const skelteton = [
     [8, 12],
 ]
 
-export const Stats = ({ info = [], isFurniture, status, priceWasFmt }) => {
+export const Stats = ({ item={} }) => {
+    const { info = [], isFurniture, status, priceWasFmt } = item
     let trs = []
 
     if (info?.length) {
@@ -24,7 +25,7 @@ export const Stats = ({ info = [], isFurniture, status, priceWasFmt }) => {
          */
         trs = info.map(([label, value], i) => {
             if (!i && priceWasFmt) {
-                return (
+                return SalePriceStats(item) || (
                     <tr key={i}>
                         <td>{label}</td>
                         <td>

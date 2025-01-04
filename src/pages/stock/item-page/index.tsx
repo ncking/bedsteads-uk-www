@@ -34,7 +34,7 @@ export const ItemPage = (props) => {
             </BedsteadsImage>
             {activePanel && <SaleStockBanner item={item} />}
             <MainBlock title={title} className={styles.reorder}>
-                <Stats {...item} />
+                <Stats item={item} />
                 <>{description}</>
             </MainBlock>
 
