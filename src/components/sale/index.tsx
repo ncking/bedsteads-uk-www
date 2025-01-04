@@ -6,7 +6,7 @@ const saleEnabled = true
 export const SaleMain = () =>
   saleEnabled
     ? (
-        <div className={styles.main}>
+        <div className={styles.saleMain}>
           <SaleText />
         </div>
       )
