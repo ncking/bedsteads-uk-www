@@ -122,7 +122,7 @@ Just bail & use xxl , or if were got many more xl2,xl3
 */
 
 const lines = [
-  `
+    `
 
 :root{
     --columns: 12;
@@ -153,13 +153,13 @@ const lines = [
     display:none
 }
 `,
-  snippet,
+    snippet,
 ] /// for the base mobile sizes
 sizes.map((size) => {
-  const line = `@include min(${size}){
+    const line = `@include min(${size}){
         ${snippet.replaceAll('.', `.${size}\\:`)}
     }`
-  lines.push(line)
+    lines.push(line)
 })
 
 const str = lines.join('\n')

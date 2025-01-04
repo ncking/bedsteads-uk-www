@@ -5,33 +5,32 @@ import config from '@config'
 let linkMap
 
 export const getSiteLink = (id) => {
-  if (!linkMap) {
-    const { email, company, tel, facebookLink, instagramLink } = config()
+    if (!linkMap) {
+        const { email, company, tel, facebookLink, instagramLink } = config()
 
-    
-    linkMap = {
-      email: {
-        url: `mailto:${email}`,
-        title: email,
-        label: `email ${company}`,
-      },
-      tel: {
-        tel,
-      },
-      facebook: { url: facebookLink },
-      instagram: { url: instagramLink },
+        linkMap = {
+            email: {
+                url: `mailto:${email}`,
+                title: email,
+                label: `email ${company}`,
+            },
+            tel: {
+                tel,
+            },
+            facebook: { url: facebookLink },
+            instagram: { url: instagramLink },
+        }
+
+        routes.map((route) => {
+            const { url, id, meta = {} } = route
+            const { title, label } = meta
+            linkMap[id] = { url, title: title || label || id }
+        })
     }
 
-    routes.map((route) => {
-      const { url, id, meta = {} } = route
-      const { title, label } = meta
-      linkMap[id] = { url, title: title || label || id }
-    })
-  }
-
-  if (!linkMap[id]) {
-    log.error(`unknown route: ${id}`, routes)
-    return '/'
-  }
-  return linkMap[id]
+    if (!linkMap[id]) {
+        log.error(`unknown route: ${id}`, routes)
+        return '/'
+    }
+    return linkMap[id]
 }
