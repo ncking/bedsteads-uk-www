@@ -1,10 +1,16 @@
 import type { Stock } from '@types'
+import { SALE_PERCENT, SALE_ENABLED } from '@/common'
 
 function priceFormat(n) {
     if (n) {
         return `£${Number(n).toLocaleString()}`
     }
     return 'P.O.A'
+}
+
+
+function reduceByPercentage(value: number, percentage: number = 0) {
+    return value * (1 - percentage / 100)
 }
 
 export function transformData(item, gridFormat: boolean): Stock {
@@ -84,7 +90,7 @@ export function transformData(item, gridFormat: boolean): Stock {
              *          price: priceFmt
              *      }
              */
-            const saleEnabled = false
+
             const [oldPrice, currentPrice] = String(
                 priceObj?.price || '',
             ).split(',')
@@ -94,20 +100,20 @@ export function transformData(item, gridFormat: boolean): Stock {
                 newItem.price = currentPrice
                 // we dont need the old price unformatted
                 newItem.priceWasFmt = priceFormat(oldPrice)
-            } else if (saleEnabled) {
+            } else if (SALE_ENABLED) {
                 /**
                  * Adjust for sale
                  */
-                newItem.price = Math.floor(oldPrice * 0.9) // 10% off
+                newItem.price = Math.floor(reduceByPercentage(oldPrice, SALE_PERCENT)) // SALE% off
                 newItem.priceWasFmt = oldPrice && priceFormat(oldPrice)
             } else {
-                newItem.price = Math.floor(oldPrice) // 10% off
+                newItem.price = Math.floor(oldPrice) // SALE% off
             }
             newItem.priceFmt = priceFormat(newItem.price)
             /**
              * Sale
              */
-            newItem.isSale = saleEnabled
+            newItem.isSale = SALE_ENABLED ? 1 : 0
             /**
              * Add the current price to the info Obj
              */

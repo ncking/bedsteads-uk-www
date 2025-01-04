@@ -1,10 +1,9 @@
 import { SaleText } from './text'
 import * as styles from './style.scss'
-
-const saleEnabled = true
+import {SALE_ENABLED, SALE_PERCENT} from '@common'
 
 export const SaleMain = () =>
-    saleEnabled ? (
+  SALE_ENABLED ? (
         <div className={styles.saleMain}>
             <SaleText />
         </div>
@@ -29,7 +28,7 @@ export const SalePrice = ({ item }) => {
  *
  */
 export const SaleStockBanner = ({ item }) => {
-    if (saleEnabled && isSaleItem(item)) {
+    if (SALE_ENABLED && isSaleItem(item)) {
         return (
             <div className={styles.saleStockBanner}>
                 <SaleText />
