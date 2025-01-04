@@ -19,14 +19,15 @@ const Layout = ({ children, context }) => {
     scrollHistory.setScrollPosition() // not using PageSwitch so call manually
   }, [request])
 
+  console.log(route)
   return (
     <>
       <HeaderMobile {...args} />
       <Sidebar />
       <OverlayMain className={style.main}>
-        <SaleMain></SaleMain>
+        {['contact', 'item'].includes(route.id) ? null : <SaleMain></SaleMain>}
         {children}
-        </OverlayMain>
+      </OverlayMain>
       <Overlay className={style.overlay} hasTrans={false}></Overlay>
     </>
   )
