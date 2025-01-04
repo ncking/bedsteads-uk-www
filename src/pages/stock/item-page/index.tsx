@@ -11,37 +11,11 @@ import * as statusStyles from './status.scss'
 
 export const ItemPage = (props) => {
     const { activePanel, item } = props
-    const {
-        id,
-        images = [],
-        title = '',
-        description,
-        priceWasFmt,
-        status,
-        isFurniture,
-        info = [],
-    } = item || {}
+    const { id, images = [], title = '', description, status } = item || {}
     const [mainImage, ...otherImages] = images
     const src = getMainImageSrc({
         id,
         ...mainImage,
-    })
-
-    /**
-     * Price is always the first item
-     * Wath deref the arrays
-     */
-    const rows = info.map(([label, value], i) => {
-        if (!i && priceWasFmt) {
-            return [
-                label,
-                <>
-                    <span className={styles.was}>{`${priceWasFmt} `} </span>
-                    {value}
-                </>,
-            ]
-        }
-        return [label, value]
     })
 
     return (
@@ -58,13 +32,9 @@ export const ItemPage = (props) => {
                     <div className={statusStyles.status}>{status}</div>
                 ) : null}
             </BedsteadsImage>
-            <SaleStockBanner item={item} />
+            {activePanel && <SaleStockBanner item={item} />}
             <MainBlock title={title} className={styles.reorder}>
-                <Stats
-                    rows={rows}
-                    key={`${id}-${rows?.length}`}
-                    isFurniture={isFurniture}
-                />
+                <Stats {...item} />
                 <>{description}</>
             </MainBlock>
 

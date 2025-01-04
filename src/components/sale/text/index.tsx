@@ -1,4 +1,4 @@
-import { SALE_PERCENT} from '@common'
+import { SALE_PERCENT } from '@common'
 import * as styles from './style.scss'
 
 export const SaleText = () => (

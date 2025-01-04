@@ -8,7 +8,6 @@ function priceFormat(n) {
     return 'P.O.A'
 }
 
-
 function reduceByPercentage(value: number, percentage: number = 0) {
     return value * (1 - percentage / 100)
 }
@@ -104,7 +103,9 @@ export function transformData(item, gridFormat: boolean): Stock {
                 /**
                  * Adjust for sale
                  */
-                newItem.price = Math.floor(reduceByPercentage(oldPrice, SALE_PERCENT)) // SALE% off
+                newItem.price = Math.floor(
+                    reduceByPercentage(oldPrice, SALE_PERCENT),
+                ) // SALE% off
                 newItem.priceWasFmt = oldPrice && priceFormat(oldPrice)
             } else {
                 newItem.price = Math.floor(oldPrice) // SALE% off

@@ -1,4 +1,5 @@
 import { SkeletonText } from '@raiz/react'
+import { SalePrice } from '@components'
 import * as styles from './stats.scss'
 
 const skelteton = [
@@ -13,11 +14,28 @@ const skelteton = [
     [8, 12],
 ]
 
-export const Stats = ({ rows, isFurniture }) => {
+export const Stats = ({ info = [], isFurniture, status, priceWasFmt }) => {
     let trs = []
 
-    if (rows.length) {
-        trs = rows.map(([label, value], i) => {
+    if (info?.length) {
+        /**
+         * Price is always the first item
+         * Wath deref the arrays
+         */
+        trs = info.map(([label, value], i) => {
+            if (!i && priceWasFmt) {
+                return (
+                    <tr key={i}>
+                        <td>{label}</td>
+                        <td>
+                            <span
+                                className={styles.was}
+                            >{`${priceWasFmt}`}</span>
+                            {value}
+                        </td>
+                    </tr>
+                )
+            }
             return (
                 <tr key={i}>
                     <td>{label}</td>

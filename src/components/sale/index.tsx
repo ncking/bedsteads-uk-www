@@ -1,9 +1,9 @@
 import { SaleText } from './text'
 import * as styles from './style.scss'
-import {SALE_ENABLED, SALE_PERCENT} from '@common'
+import { SALE_ENABLED } from '@common'
 
 export const SaleMain = () =>
-  SALE_ENABLED ? (
+    SALE_ENABLED ? (
         <div className={styles.saleMain}>
             <SaleText />
         </div>
