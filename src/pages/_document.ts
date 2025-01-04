@@ -2,45 +2,45 @@ import { backgroundColour, author } from '@server/config'
 import { findActive } from '@server/repo/stock'
 
 export default async ({ response, tagRenderer, plugins, isDev, TOKENS }) => {
-  const store = plugins.getPlugin('store')
-  store.data.stock = await findActive()
-  const company = store.data.config.company
+    const store = plugins.getPlugin('store')
+    store.data.stock = await findActive()
+    const company = store.data.config.company
 
-  if (!isDev) {
-    tagRenderer.enableNonce()
+    if (!isDev) {
+        tagRenderer.enableNonce()
 
-    const googleDomains
-            = '*.gstatic.com *.google.com *.googleapis.com *.google-analytics.com *.googletagmanager.com'
-    const rules = [
-      "base-uri 'self'",
-      `default-src 'self' ${googleDomains}`,
-      `script-src 'nonce-${tagRenderer.getNonce()}' 'self' 'strict-dynamic' 'unsafe-inline' ${googleDomains}`, // @NK need the 'self' for unsupported browsers ... "waek" rules are cancelled if browser supports stricter directives
-      `font-src 'self' 'unsafe-inline'  ${googleDomains}`,
-      `img-src 'self' data: ${googleDomains}`, //  Must have inline images (generated runtime) for Gmaps ...
-      `style-src 'self' 'unsafe-inline' ${googleDomains}`, // add in nonced tags for unsafe-inline
-    ]
-    response.addHeaders(
-      ['Content-Security-Policy', rules.join(';')],
-      [
-        'feature-policy',
-        `accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'`,
-      ],
-      ['referrer-policy', 'strict-origin-when-cross-origin'],
-      [
-        'strict-transport-security',
-        'max-age=63072000; includeSubDomains; preload',
-      ], // https://tylermade.net/2017/05/01/nginx-security-hardening/
-      ['x-frame-options', 'SAMEORIGIN'],
-      ['x-content-type-options', 'nosniff'],
-      ['x-xss-protection', '1; mode=block'],
-    )
-  }
+        const googleDomains =
+            '*.gstatic.com *.google.com *.googleapis.com *.google-analytics.com *.googletagmanager.com'
+        const rules = [
+            "base-uri 'self'",
+            `default-src 'self' ${googleDomains}`,
+            `script-src 'nonce-${tagRenderer.getNonce()}' 'self' 'strict-dynamic' 'unsafe-inline' ${googleDomains}`, // @NK need the 'self' for unsupported browsers ... "waek" rules are cancelled if browser supports stricter directives
+            `font-src 'self' 'unsafe-inline'  ${googleDomains}`,
+            `img-src 'self' data: ${googleDomains}`, //  Must have inline images (generated runtime) for Gmaps ...
+            `style-src 'self' 'unsafe-inline' ${googleDomains}`, // add in nonced tags for unsafe-inline
+        ]
+        response.addHeaders(
+            ['Content-Security-Policy', rules.join(';')],
+            [
+                'feature-policy',
+                `accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'`,
+            ],
+            ['referrer-policy', 'strict-origin-when-cross-origin'],
+            [
+                'strict-transport-security',
+                'max-age=63072000; includeSubDomains; preload',
+            ], // https://tylermade.net/2017/05/01/nginx-security-hardening/
+            ['x-frame-options', 'SAMEORIGIN'],
+            ['x-content-type-options', 'nosniff'],
+            ['x-xss-protection', '1; mode=block'],
+        )
+    }
 
-  /**
+    /**
      *
      */
 
-  return String.raw`
+    return String.raw`
 <!DOCTYPE html>
 <html lang="en">
   <head>

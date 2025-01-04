@@ -11,17 +11,17 @@ import * as styles from './style.scss'
  *
  */
 export const ItemNav = ({ item = {} }) => {
-  const complete = useDelay(500)
+    const complete = useDelay(500)
 
-  return (
-    <>
-      <div className={cx(styles.itNav, complete && styles.itemNavOn)}>
-        <nav className={styles.nav} aria-label="Stock navigaton">
-          <ThumbNav {...item} key={item?.id} />
-          <ButtonNav />
-        </nav>
-      </div>
-      <SpeedDial id={item?.id} />
-    </>
-  )
+    return (
+        <>
+            <div className={cx(styles.itNav, complete && styles.itemNavOn)}>
+                <nav className={styles.nav} aria-label="Stock navigaton">
+                    <ThumbNav {...item} key={item?.id} />
+                    <ButtonNav />
+                </nav>
+            </div>
+            <SpeedDial id={item?.id} />
+        </>
+    )
 }

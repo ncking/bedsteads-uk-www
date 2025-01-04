@@ -10,17 +10,17 @@
   background-size: 100% auto, 100%;
   background-repeat: no-repeat;
 
-  @media screen and (width >= 600px) {
+  @media screen and (width >=600px) {
     background-position: center -60px, center;
   }
 
-  @media screen and (width >= 800px) {
+  @media screen and (width >=800px) {
     background-position: center -120px, center;
     background-size: 100% auto, 100%;
   }
 
 
-  @media screen and (width >= 1400px) {
+  @media screen and (width >=1400px) {
     background-position: center -120px, center;
     background-size: 80% auto, 100%;
   }
@@ -44,23 +44,24 @@
     color: #fff;
   }
 
-  @media screen and (width >= 400px) {
+  @media screen and (width >=400px) {
     font-size: 140%;
   }
 
-  @media screen and (width >= 500px) {
+  @media screen and (width >=500px) {
     font-size: 180%;
   }
 
   td {
-    text-transform: uppercase ;
+    text-transform: uppercase;
   }
 }
 
-.stockBanner {
+.saleStockBanner {
   height: 140px;
   padding: 0 var(--gutter);
   color: #fff;
+  position: relative;
 
   @include mobile {
     &::before {
@@ -70,7 +71,7 @@
       left: 0;
       right: 0;
       z-index: 0;
-      height: 200px;
+      height: 100%;
       background: #3d3e3f;
       background-image: url("/img/new-year-sale-bg.png"),
         linear-gradient(to right, #3d3e3f 0%, #1c1c1c 50%, #0f0f0f 100%);
@@ -82,7 +83,7 @@
         100%;
       background-repeat: no-repeat;
 
-      @media screen and (width >= 700px) {
+      @media screen and (width >=700px) {
         background-position:
           center -50px,
           center top;
