@@ -11,7 +11,7 @@ export const SaleMain = () =>
 
 export const isSaleItem = (item) => SALE_ENABLED && item?.isSale
 
-export const SalePriceStats = ( item ) => {
+export const SalePriceStats = (item) => {
   if (isSaleItem(item)) {
     const { priceFmt, priceWasFmt } = item
     return (
@@ -27,13 +27,16 @@ export const SalePriceStats = ( item ) => {
 }
 
 /**
- *
+ * So if its a Repo it wont have a status or isSale flag 
  */
-export const SaleStockBanner = ({ item , activePanel}) => {
-  if (isSaleItem(item)) {
+export const SaleStockBanner = ({ item={} }) => {
+
+  const { status } = item
+  if (isSaleItem(item) || status) {
     return (
       <div className={styles.saleStockBanner}>
         <SaleText />
+        {status ? <div className={styles.status}>{status}</div> : null}
       </div>
     )
   }
