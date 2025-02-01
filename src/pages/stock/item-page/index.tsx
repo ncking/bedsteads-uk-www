@@ -1,4 +1,5 @@
-import { BedsteadsImage, Column, MainBlock, SaleStockBanner } from '@components'
+import { BedsteadsImage, Column, MainBlock } from '@components'
+// @SALE import {  SaleStockBanner } from '@sale'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
 import { Stats } from '../stats'
 import * as styles from './item.scss'
@@ -31,7 +32,7 @@ export const ItemPage = (props) => {
             >
                 
             </BedsteadsImage>
-            <SaleStockBanner item={item} ></SaleStockBanner>
+            {/* <SaleStockBanner item={item} ></SaleStockBanner> */}
             <MainBlock title={title} className={styles.reorder}>
                 <Stats item={item} />
                 <>{description}</>

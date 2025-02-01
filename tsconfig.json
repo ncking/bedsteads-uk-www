@@ -19,6 +19,7 @@
     "paths": {
       "@/*" : ["./src/*"],
       "@common": ["./src/common"],
+      "@sale/*" : ["./src/module/sale/*"],
       "@components" : ["./src/components"],
       "@components/*" : ["./src/components*"],
       "@config": ["./src/config/embeded-client-config"],

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { nativeScrollbar, loadScript } from '@raiz/browser'
 import { Overlay, OverlayMain, scrollHistory } from '@raiz/nuggins'
 import { onloadComplete, importModule } from '@raiz/nuggins'
-import { SaleMain } from '@/components'
+// @SALE import { SaleMain } from '@sale'
 
 import { HeaderMobile, burgerClose } from './header-mobile'
 import { Sidebar } from './sidebar'
@@ -12,8 +12,8 @@ import * as style from './styles.scss'
 const Layout = ({ children, context }) => {
     const { route, request } = context
     const filters = { ...route.params }
-    const args = { route, filters } // reshape the args ... need to lift this up above to @raiz/client
-    const notSale = ['contact', 'item', 'reproduction'].includes(route.id)
+    const args = { route, filters }
+    //const notSale = ['contact', 'item', 'reproduction'].includes(route.id)
 
     useEffect(() => {
         burgerClose()
@@ -25,7 +25,7 @@ const Layout = ({ children, context }) => {
             <HeaderMobile {...args} />
             <Sidebar />
             <OverlayMain className={style.main}>
-                {notSale ? null : <SaleMain></SaleMain>}
+                {/* {notSale ? null : <SaleMain></SaleMain>} */}
                 {children}
             </OverlayMain>
             <Overlay className={style.overlay} hasTrans={false}></Overlay>

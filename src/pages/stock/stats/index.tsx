@@ -1,5 +1,5 @@
 import { SkeletonText } from '@raiz/react'
-import { SalePriceStats } from '@components'
+// import { SalePriceStats } from '@sale'
 import * as styles from './stats.scss'
 
 const skelteton = [
@@ -25,7 +25,8 @@ export const Stats = ({ item={} }) => {
          */
         trs = info.map(([label, value], i) => {
             if (!i && priceWasFmt) {
-                return SalePriceStats(item) || (
+                // @SALE SalePriceStats(item) ||
+                return  (
                     <tr key={i}>
                         <td>{label}</td>
                         <td>

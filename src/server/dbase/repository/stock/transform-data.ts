@@ -1,5 +1,5 @@
 import type { Stock } from '@types'
-import { SALE_PERCENT, SALE_ENABLED } from '@/common'
+import { SALE_PERCENT, SALE_ENABLED } from '@sale/common'
 
 function priceFormat(n) {
     if (n) {
