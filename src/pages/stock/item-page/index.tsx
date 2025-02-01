@@ -11,51 +11,51 @@ import * as styles from './item.scss'
  */
 
 export const ItemPage = (props) => {
-    const { activePanel, item } = props
-    const { id, images = [], title = '', description, status } = item || {}
-    const [mainImage, ...otherImages] = images
+  const { activePanel, item } = props
+  const { id, images = [], title = '', description } = item || {}
+  const [mainImage, ...otherImages] = images
 
-    const src = getMainImageSrc({
-        id,
-        ...mainImage,
-    })
+  const src = getMainImageSrc({
+    id,
+    ...mainImage,
+  })
 
-    return (
-        <>
+  return (
+    <>
+      <BedsteadsImage
+        alt={title}
+        responsive={false}
+        key={src}
+        src={src}
+        ratio={66}
+        id={activePanel && getGalleryId(0)}
+      >
+
+      </BedsteadsImage>
+      {/* <SaleStockBanner item={item} ></SaleStockBanner> */}
+      <MainBlock title={title} className={styles.reorder}>
+        <Stats item={item} />
+        <>{description}</>
+      </MainBlock>
+
+      <Column>
+        {(activePanel ? otherImages : []).map(({ src, r }, i) => {
+          // a hack so that only the active panel has full height ... now that they are stacked the tallest will set the height!! if we dont do this
+          return (
             <BedsteadsImage
-                alt={title}
-                responsive={false}
-                key={src}
-                src={src}
-                ratio={66}
-                id={activePanel && getGalleryId(0)}
-            >
-                
-            </BedsteadsImage>
-            {/* <SaleStockBanner item={item} ></SaleStockBanner> */}
-            <MainBlock title={title} className={styles.reorder}>
-                <Stats item={item} />
-                <>{description}</>
-            </MainBlock>
-
-            <Column>
-                {(activePanel ? otherImages : []).map(({ src, r }, i) => {
-                    // a hack so that only the active panel has full height ... now that they are stacked the tallest will set the height!! if we dont do this
-                    return (
-                        <BedsteadsImage
-                            responsive={true}
-                            timeout={200}
-                            key={src}
-                            id={activePanel && getGalleryId(i + 1)}
-                            src={stockGallerySrc({ id, src })}
-                            alt={`${title} - photo angle #${i + 1}`}
-                            style={{
-                                paddingTop: `${r}%`,
-                            }}
-                        />
-                    )
-                })}
-            </Column>
-        </>
-    )
+              responsive={true}
+              timeout={200}
+              key={src}
+              id={activePanel && getGalleryId(i + 1)}
+              src={stockGallerySrc({ id, src })}
+              alt={`${title} - photo angle #${i + 1}`}
+              style={{
+                paddingTop: `${r}%`,
+              }}
+            />
+          )
+        })}
+      </Column>
+    </>
+  )
 }

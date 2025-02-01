@@ -1,15 +1,17 @@
+import { SALE_ENABLED } from '@common'
 import { SaleText } from './text'
 import * as styles from './style.scss'
-import { SALE_ENABLED } from '@common'
 
 export const SaleMain = () =>
-  SALE_ENABLED ? (
-    <div className={styles.saleMain}>
-      <SaleText />
-    </div>
-  ) : null
+  SALE_ENABLED
+    ? (
+        <div className={styles.saleMain}>
+          <SaleText />
+        </div>
+      )
+    : null
 
-export const isSaleItem = (item) => SALE_ENABLED && item?.isSale
+export const isSaleItem = item => SALE_ENABLED && item?.isSale
 
 export const SalePriceStats = (item) => {
   if (isSaleItem(item)) {
@@ -27,10 +29,9 @@ export const SalePriceStats = (item) => {
 }
 
 /**
- * So if its a Repo it wont have a status or isSale flag 
+ * So if its a Repo it wont have a status or isSale flag
  */
-export const SaleStockBanner = ({ item={} }) => {
-
+export const SaleStockBanner = ({ item = {} }) => {
   const { status } = item
   if (isSaleItem(item) || status) {
     return (

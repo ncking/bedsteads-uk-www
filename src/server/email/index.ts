@@ -11,47 +11,48 @@ const pass = env.stringRequired('EMAIL_USER_PASSWORD')
 const toEmail = env.stringRequired('EMAIL_SEND_ENQUIRY')
 
 export const sendEmails = async () => {
-    const data = await findUnsent()
-    const arr = await data.toArray()
-    log.info(`${arr.length} emails to send`)
+  const data = await findUnsent()
+  const arr = await data.toArray()
+  log.info(`${arr.length} emails to send`)
 
-    if (process.env.IS_DEV) {
-        return log.info('DEVELOPMENT: skipping email')
-    }
+  if (process.env.IS_DEV) {
+    return log.info('DEVELOPMENT: skipping email')
+  }
 
-    await Promise.all(
-        arr.map(async (doc) => {
-            try {
-                await sendEmail(doc)
-                await markSent(doc)
-            } catch (e) {
-                log.error('sending email failed', e)
-                return null
-            }
-        }),
-    )
+  await Promise.all(
+    arr.map(async (doc) => {
+      try {
+        await sendEmail(doc)
+        await markSent(doc)
+      }
+      catch (e) {
+        log.error('sending email failed', e)
+        return null
+      }
+    }),
+  )
 }
 
 const sendEmail = async (props) => {
-    const { email, enquiry } = props
-    const html = emailTemplate(props)
-    const rec = {
-        from: `"Website enquiry 🌐" <${user}>`,
-        to: toEmail,
-        subject: 'Website enquiry',
-        text: enquiry,
-        replyTo: email,
-        html,
-    }
+  const { email, enquiry } = props
+  const html = emailTemplate(props)
+  const rec = {
+    from: `"Website enquiry 🌐" <${user}>`,
+    to: toEmail,
+    subject: 'Website enquiry',
+    text: enquiry,
+    replyTo: email,
+    html,
+  }
 
-    const transporter = nodemailer.createTransport({
-        host,
-        port,
-        maxConnections: 1,
-        auth: {
-            user,
-            pass,
-        },
-    })
-    await transporter.sendMail(rec)
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    maxConnections: 1,
+    auth: {
+      user,
+      pass,
+    },
+  })
+  await transporter.sendMail(rec)
 }

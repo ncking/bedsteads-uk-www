@@ -6,12 +6,12 @@ import { z } from 'zod'
 import { postTags } from '@/db/schema'
 
 export const tag = pgTable('tag', {
-    id: serial('id').primaryKey(),
-    name: varchar('name', { length: 255 }).notNull().unique(),
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull().unique(),
 })
 
 export const tagRelations = relations(tag, ({ many }) => ({
-    postToTag: many(postTags),
+  postToTag: many(postTags),
 }))
 
 const tagSchema = createInsertSchema(tag)
