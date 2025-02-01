@@ -12,6 +12,9 @@ import redirectPlugin from "@raiz/nuggins/modules/redirect"
 import svgPlugin from "@raiz/nuggins/modules/svg"
 import staticFilesPlugin from "@raiz/nuggins/modules/static"
 import actionsPlugin from "@raiz/nuggins/modules/server-actions"
+import * as projectData from '@server/config'
+
+
 
 
 export default ({ log }) => {
@@ -20,7 +23,7 @@ export default ({ log }) => {
             expires: 60 * 5,
         },
         modules: [// order is respected for middleware & plugins ... DEV middleware/plugins dropped in PROD, module.deps = [mudule, module2] for dependences
-            vitePlugin({ ssr: false }),
+            vitePlugin({ ssr: false, projectData }),
             storePlugin({ data: { config: clientConfig } }),
             healthPlugin(),
             consolePlugin(),
@@ -77,33 +80,3 @@ export const svgs = {
 
 
 
-export const buildConfig = () => {
-    return {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    additionalData: `@use "/scss/config/index.scss" as *;`, /// essentall this removethe namespace so we can use as before
-                }
-            }
-        },
-        ssr: {
-            noExternal: ['@raiz/react-simple-store'], // imports 'react' but SSR is Preact, so have to load Preact as alias of React in node, or just bring into the bundle 
-        },
-        build: {
-            rollupOptions: {
-                output: {
-                    manualChunks: (id) => {
-                        if (id.includes('react-simple-form')) return 'form'
-                        if (id.includes('gmap')) return 'contact'
-                        if (id.includes('panel-stack')) return 'stock'
-                        if (id.includes('drag')) return 'stock'
-                        if (id.includes('swipe-stack')) return 'stock'
-                        if (id.includes('item-nav')) return 'stock'
-                        if (id.includes('preact')) return 'preact'
-                        if (id.includes('node_modules')) return 'vendor'
-                    }
-                },
-            },
-        },
-    }
-}
