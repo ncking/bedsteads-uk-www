@@ -15,7 +15,7 @@ const skelteton = [
 ]
 
 export const Stats = ({ item = {} }) => {
-  const { info = [], isFurniture,  priceWasFmt } = item
+  const { info = [], isFurniture, priceWasFmt } = item
   let trs = []
 
   if (info?.length) {
