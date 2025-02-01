@@ -80,3 +80,33 @@ export const svgs = {
 
 
 
+export const buildConfig = () => {
+    return {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@use "/scss/config/index.scss" as *;`, /// essentall this removethe namespace so we can use as before
+                }
+            }
+        },
+        ssr: {
+            noExternal: ['@raiz/react-simple-store'], // imports 'react' but SSR is Preact, so have to load Preact as alias of React in node, or just bring into the bundle 
+        },
+        build: {
+            rollupOptions: {
+                output: {
+                    manualChunks: (id) => {
+                        if (id.includes('react-simple-form')) return 'form'
+                        if (id.includes('gmap')) return 'contact'
+                        if (id.includes('panel-stack')) return 'stock'
+                        if (id.includes('drag')) return 'stock'
+                        if (id.includes('swipe-stack')) return 'stock'
+                        if (id.includes('item-nav')) return 'stock'
+                        if (id.includes('preact')) return 'preact'
+                        if (id.includes('node_modules')) return 'vendor'
+                    }
+                },
+            },
+        },
+    }
+}
