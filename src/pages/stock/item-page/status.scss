@@ -1,21 +1,21 @@
-.status {
-    padding: 0 var(--gutter);
-    background-color: #fff;
-    font-weight: bold;
-    color: var(--c-main);
-    text-transform: uppercase;
-    position: absolute;
-    bottom:var(--gutter);
-    right:var(--gutter);
+// .status {
+//     padding: 0 var(--gutter);
+//     background-color: #fff;
+//     font-weight: bold;
+//     color: var(--c-main);
+//     text-transform: uppercase;
+//     position: absolute;
+//     bottom:var(--gutter);
+//     right:var(--gutter);
 
-    @include desktop {
-        position: fixed;
-        top: $desktop-gutter;
-        right: $desktop-gutter;
-        z-index: 999;
-        height: 65px;
-        padding: 0 1rem;
-        font-size: 2.5rem;
-        line-height: 65px;
-    }
-}
+//     @include desktop {
+//         position: fixed;
+//         top: $desktop-gutter;
+//         right: $desktop-gutter;
+//         z-index: 999;
+//         height: 65px;
+//         padding: 0 1rem;
+//         font-size: 2.5rem;
+//         line-height: 65px;
+//     }
+// }

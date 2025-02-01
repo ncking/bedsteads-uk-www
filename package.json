@@ -1,6 +1,6 @@
 {
   "name": "bedsteads-www",
-  "version": "6.0.8",
+  "version": "6.0.12",
   "description": "Antique Beds and furniture website",
   "author": "nigel.c.king@gmail.com",
   "license": "ISC",
@@ -59,12 +59,12 @@
   "devDependencies": {
     "@eslint/js": "^9.7.0",
     "@playwright/test": "^1.48.2",
-    "@raiz/playwright": "file:D:/srv/@raiz/js/packages/playwright",
     "@raiz/browser": "file:D:/srv/@raiz/js/packages/browser",
     "@raiz/cli": "file:D:/srv/@raiz/js/packages/cli",
     "@raiz/core": "file:D:/srv/@raiz/js/packages/core",
     "@raiz/documenter": "file:D:/srv/@raiz/js/packages/documenter",
     "@raiz/nuggins": "file:../../@raiz/js/packages/nuggins",
+    "@raiz/playwright": "file:D:/srv/@raiz/js/packages/playwright",
     "@raiz/react": "file:D:/srv/@raiz/js/packages/react",
     "@raiz/react-simple-form": "file:D:/srv/@raiz/react-simple-form",
     "@raiz/react-simple-store": "^2.0.4",

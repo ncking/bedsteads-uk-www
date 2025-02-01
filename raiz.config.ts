@@ -12,6 +12,9 @@ import redirectPlugin from "@raiz/nuggins/modules/redirect"
 import svgPlugin from "@raiz/nuggins/modules/svg"
 import staticFilesPlugin from "@raiz/nuggins/modules/static"
 import actionsPlugin from "@raiz/nuggins/modules/server-actions"
+import * as projectData from '@server/config'
+
+
 
 
 export default ({ log }) => {
@@ -20,7 +23,7 @@ export default ({ log }) => {
             expires: 60 * 5,
         },
         modules: [// order is respected for middleware & plugins ... DEV middleware/plugins dropped in PROD, module.deps = [mudule, module2] for dependences
-            vitePlugin({ ssr: false }),
+            vitePlugin({ ssr: false, projectData }),
             storePlugin({ data: { config: clientConfig } }),
             healthPlugin(),
             consolePlugin(),
