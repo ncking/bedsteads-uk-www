@@ -38,7 +38,7 @@ export const scroller = ({
         if (adjustByXtoPutInbounds !== 0) {
           _targetX
                         += delta
-                        * dragOutOfBoundsMultiplier(adjustByXtoPutInbounds)
+                          * dragOutOfBoundsMultiplier(adjustByXtoPutInbounds)
         }
         updateCallback(_targetX)
         _dragLocked = false
