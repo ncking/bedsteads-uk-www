@@ -3,7 +3,7 @@ import { BedsteadsImage, Column, MainBlock } from '@components'
 import { getMainImageSrc, getGalleryId, stockGallerySrc } from '@lib'
 import { Stats } from '../stats'
 import * as styles from './item.scss'
-// import * as statusStyles from './status.scss'
+import * as statusStyles from './status.scss'
 
 /**
  * So its **alkways in the store, either from Document request or
@@ -12,7 +12,7 @@ import * as styles from './item.scss'
 
 export const ItemPage = (props) => {
   const { activePanel, item } = props
-  const { id, images = [], title = '', description } = item || {}
+  const { id, images = [], title = '', description, status} = item || {}
   const [mainImage, ...otherImages] = images
 
   const src = getMainImageSrc({
@@ -30,6 +30,11 @@ export const ItemPage = (props) => {
         ratio={66}
         id={activePanel && getGalleryId(0)}
       >
+           {status
+        ? (
+          <div className={statusStyles.status}>{status}</div>
+        )
+        : null}
 
       </BedsteadsImage>
       {/* <SaleStockBanner item={item} ></SaleStockBanner> */}
