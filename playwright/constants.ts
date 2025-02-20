@@ -29,6 +29,23 @@ export const assetUrls = [
     '/image/stock/22/2213/1709291108776,t_main,s_0.jpg'
 ]
 
-export const errorUrls = {
-    404: '/dsfd/fd/f/f/d/fdf/'
-} 
+
+const badUid = 354354
+export const notFoundUrls = [
+    `/dsfd/fd/f/f/d/fdf/`,
+    `/antique/delightfully-shaped-irish-king-size-no-end_${badUid}`,
+    `/superking/classic-victorian-super-king-size-no-end_${badUid}`,
+    `/reproduction/the-basic_${badUid}`,
+    `/kingsize/delightfully-shaped-irish-king-size-no-end_${badUid}`,
+    `/furniture/mahogany-victorian-dressing-mirror-with-turned-columns_${badUid}`
+]
+
+
+
+export const soldUrls = [
+    `/antique/magnificent-victorian-brass-and-iron_1678`,
+    `/antique/simple-pair-of-single-victorian-iron-and-brass_1699`,
+    `/antique/stylish-french-art-deco-brass-double-bed_1719`
+]
+
+

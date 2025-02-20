@@ -12,7 +12,7 @@ import * as statusStyles from './status.scss'
 
 export const ItemPage = (props) => {
   const { activePanel, item } = props
-  const { id, images = [], title = '', description, status} = item || {}
+  const { id, images = [], title = '', description, status } = item || {}
   const [mainImage, ...otherImages] = images
 
   const src = getMainImageSrc({
@@ -30,11 +30,11 @@ export const ItemPage = (props) => {
         ratio={66}
         id={activePanel && getGalleryId(0)}
       >
-           {status
-        ? (
-          <div className={statusStyles.status}>{status}</div>
-        )
-        : null}
+        {status
+          ? (
+              <div className={statusStyles.status} data-testid="status">{status}</div>
+            )
+          : null}
 
       </BedsteadsImage>
       {/* <SaleStockBanner item={item} ></SaleStockBanner> */}

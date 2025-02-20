@@ -1,7 +1,7 @@
 import { test, expect, request } from '@playwright/test';
 import { parseHeaders, BasePage } from '@raiz/playwright'
 import { makeSVGId } from '@raiz/nuggins/modules/svg/common.js'
-import { assetUrls, errorUrls, urls } from '../constants'
+import { assetUrls, notFoundUrls, urls } from '../constants'
 
 const svgIds = [
   "favouriteOn",
@@ -15,7 +15,6 @@ const svgIds = [
 
 
 assetUrls.forEach((url) => {
-
   test.describe(`Assets cache-control headers`, () => {
     test(`age: ${url}`, async () => {
       // Create a new API request context
@@ -34,20 +33,20 @@ assetUrls.forEach((url) => {
 
 
 
-
-test.describe('Basic sanity checks', () => {
-  const url = errorUrls[404]
-  test(`checking 404: ${url}`, async ({ page }) => {
-    try {
+notFoundUrls.forEach((url) => {
+  test.describe(`Checking 404s: status & HTML`, () => {
+    test(`checking 404: ${url}`, async ({ page }) => {
       const response = await page.goto(url);
       expect(response.status()).toBe(404);
-    } catch (error) {
-      console.log(`Error navigating to ${url}:`);
-    }
+      await expect(page.locator("h1")).toHaveText("404: Page not Found");
+    });
   });
+})
 
 
-  test(`SVGs`, async ({page}) => {
+
+test.describe('Basic sanity checks', () => {
+  test(`SVGs`, async ({ page }) => {
     const p = new BasePage(page);
     await page.goto(urls.home);
     const errors = await p.validateElementIds(svgIds)

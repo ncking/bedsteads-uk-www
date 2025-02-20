@@ -53,6 +53,7 @@ export function transformData(item, gridFormat: boolean): Stock {
   else if (isReserved) {
     status = 'reserved'
   }
+
   /**
      *
      */
@@ -159,6 +160,5 @@ export function transformData(item, gridFormat: boolean): Stock {
     newItem.description = description.trim()
     newItem.images = images
   }
-
   return newItem
 }
